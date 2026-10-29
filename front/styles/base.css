@@ -1,0 +1,13 @@
+    .stApp {
+        background: #e8eee7;
+        color: var(--ink);
+        font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+    }
+
+
+    [data-testid="stHeader"],
+    [data-testid="stToolbar"],
+    [data-testid="stDecoration"],
+    [data-testid="stHeaderActionElements"] {
+        display: none;
+    }

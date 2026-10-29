@@ -1,0 +1,342 @@
+:root {
+        --ink: #263d38;
+        --muted: #829088;
+        --green: #237b61;
+        --pale: #f6f6ee;
+        --line: #e6ebe5;
+    }
+
+    [data-testid="stMainBlockContainer"] {
+        max-width: 1440px;
+        padding: 3px 4px;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] {
+        gap: 0 !important;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] {
+        align-items: stretch;
+        gap: 0 !important;
+        min-height: calc(100vh - 6px);
+        overflow: hidden;
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] {
+        padding: 0;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child {
+        flex: 0 0 17% !important;
+        background: var(--pale);
+        position: relative;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(2) {
+        flex: 1 1 83% !important;
+        background: #fff;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child > [data-testid="stVerticalBlock"] {
+        min-height: calc(100vh - 6px);
+        padding: 22px 7px 9px;
+        box-sizing: border-box;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(2) > [data-testid="stVerticalBlock"] {
+        padding: 40px 5% 48px 7.8%;
+        box-sizing: border-box;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin: 0 0 34px;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 750;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+        display: inline-flex;
+        width: 19px;
+        height: 19px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fff;
+        font-size: 12px;
+    }
+
+    [data-testid="stButton"] > button {
+        min-height: 29px;
+        padding: 5px 8px;
+        border: 0;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 9px;
+        font-weight: 650;
+    }
+
+    [data-testid="stButton"] > button p {
+        margin: 0 !important;
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child [data-testid="stButton"] > button {
+        width: calc(100% - 8px);
+        background: var(--green);
+        color: #fff;
+    }
+
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child [data-testid="stButton"] > button:hover {
+        background: #1d6b54;
+        color: #fff;
+    }
+
+    .history-heading {
+        margin: 0 0 12px;
+        color: #8c9891;
+        font-size: 8px;
+    }
+
+    .history-item {
+        display: flex;
+        gap: 6px;
+        align-items: flex-start;
+        margin: 0 0 12px;
+        padding: 3px 5px;
+        color: #50635a;
+        font-size: 9px;
+        line-height: 1.55;
+    }
+
+    .history-icon {
+        position: relative;
+        display: inline-block;
+        width: 8px;
+        height: 7px;
+        flex: 0 0 8px;
+        margin-top: 3px;
+        border: 1px solid #84958b;
+        border-radius: 50%;
+        box-sizing: border-box;
+    }
+
+    .history-icon::after {
+        position: absolute;
+        bottom: -3px;
+        left: 1px;
+        width: 3px;
+        height: 3px;
+        border-left: 1px solid #84958b;
+        content: "";
+        transform: skewY(-35deg);
+    }
+
+    .history-time {
+        display: block;
+        padding-left: 15px;
+        color: #9aa59f;
+        font-size: 8px;
+    }
+
+    .sidebar-bottom {
+        position: fixed;
+        bottom: 5px;
+        left: max(11px, calc((100vw - 1440px) / 2 + 11px));
+        width: clamp(95px, calc(17vw - 24px), 225px);
+    }
+
+    .sidebar-quote {
+        margin: 0 0 13px;
+        padding: 8px 10px;
+        border: 1px solid #e4e9e3;
+        border-radius: 14px;
+        background: #fff;
+        color: var(--green);
+        font-size: 8px;
+        font-weight: 600;
+        line-height: 1.7;
+    }
+
+    .sidebar-settings {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        margin-bottom: 12px;
+        padding: 8px;
+        border-radius: 9px;
+        background: #dceee2;
+        color: #4a6558;
+        font-size: 9px;
+        font-weight: 650;
+    }
+
+    .sidebar-user {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        padding: 2px 0;
+        color: #52665c;
+        font-size: 9px;
+        font-weight: 600;
+    }
+
+    .avatar {
+        display: inline-flex;
+        width: 19px;
+        height: 19px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #d8eee0;
+        color: var(--green);
+        font-size: 8px;
+        font-weight: 700;
+    }
+
+    .page-eyebrow {
+        margin: 0 0 17px;
+        color: var(--green);
+        font-size: 7px;
+        letter-spacing: 0.06em;
+    }
+
+    .page-title {
+        margin: 0 0 14px !important;
+        color: var(--ink);
+        font-size: 18px !important;
+        font-weight: 750;
+        line-height: 1.3 !important;
+        padding: 0 !important;
+    }
+
+    .page-description {
+        margin: 0 0 10px !important;
+        color: #8b9790;
+        font-size: 9px !important;
+        line-height: 1.6 !important;
+    }
+
+    .account-card {
+        width: 100%;
+    }
+
+    .st-key-account_card {
+        position: relative;
+        max-width: 585px;
+        min-height: 142px;
+        padding: 22px 19px 16px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: #fff;
+        box-sizing: border-box;
+    }
+
+    .st-key-account_card > [data-testid="stVerticalBlock"] {
+        gap: 0 !important;
+    }
+
+    .account-heading {
+        margin: 0 0 9px;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 750;
+        line-height: 1.3;
+    }
+
+    .account-name {
+        margin: 0 0 11px;
+        color: #4e6258;
+        font-size: 9px;
+        font-weight: 650;
+        line-height: 1.3;
+    }
+
+    .account-description {
+        margin: 0 0 9px !important;
+        color: #87948c;
+        font-size: 9px !important;
+        line-height: 1.5 !important;
+    }
+
+    .logout-heading {
+        margin: 0 0 6px;
+        color: #52665c;
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+    .logout-description {
+        margin: 0 !important;
+        color: #87948c;
+        font-size: 8px !important;
+        line-height: 1.5 !important;
+    }
+
+    .st-key-account_card [data-testid="stButton"] > button {
+        width: 100%;
+        min-height: 28px;
+        height: 28px;
+        background: #fff1ee !important;
+        color: #c97769 !important;
+    }
+
+    .st-key-account_card [data-testid="stButton"] {
+        position: absolute;
+        top: 93px;
+        right: 19px;
+        width: 105px;
+    }
+
+    .st-key-account_card [data-testid="stElementContainer"] {
+        position: static !important;
+    }
+
+    .st-key-account_card [data-testid="stButton"] > button:hover {
+        background: #ffe4de !important;
+        color: #a95245 !important;
+    }
+
+    @media (max-width: 680px) {
+        [data-testid="stMainBlockContainer"] {
+            padding: 3px;
+        }
+
+        [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] {
+            flex-wrap: nowrap !important;
+        }
+
+        [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child {
+            flex: 0 0 112px !important;
+            min-width: 0 !important;
+        }
+
+        [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(2) {
+            flex: 1 1 auto !important;
+            min-width: 0 !important;
+        }
+
+        [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(2) > [data-testid="stVerticalBlock"] {
+            padding: 30px 15px;
+        }
+
+        .st-key-account_card {
+            min-height: 190px;
+            padding: 15px 13px;
+        }
+
+        .st-key-account_card [data-testid="stButton"] {
+            top: 155px;
+            right: 13px;
+            width: 82px;
+        }
+    }
