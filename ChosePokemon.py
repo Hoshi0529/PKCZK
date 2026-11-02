@@ -3,9 +3,10 @@ import streamlit as st
 from back.conversations import create_conversation, get_conversation
 from front.layout import configure_page
 from front.history import render_history
+from front.pokemon_detail_types import PokemonProfile
 
 
-POKEMON = {
+POKEMON: dict[str, PokemonProfile] = {
     "ピカチュウ": {
         "number": "#025",
         "type": "でんき",
@@ -72,7 +73,7 @@ def _start_new_advice() -> None:
 
 
 def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
-    pokemon = POKEMON[pokemon_name]
+    pokemon: PokemonProfile = POKEMON[pokemon_name]
     with st.container(key=card_key):
         art_col, text_col = st.columns([0.42, 0.58], vertical_alignment="center")
         with art_col:

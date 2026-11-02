@@ -2,7 +2,9 @@ from html import escape
 
 import streamlit as st
 
+from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import append_message, create_conversation, get_conversation
+from front.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
 from front.history import render_history
 from front.layout import configure_page
 
@@ -95,6 +97,42 @@ def _render_team_cards(pokemon_names: list[str]) -> None:
             )
 
 
+def _render_battle_data(pokemon_name: str) -> None:
+    if pokemon_name not in SHOWDOWN_IDS:
+        return
+    try:
+        data: BattleDataResponse = get_battle_data(pokemon_name, "Doubles")
+    except (RuntimeError, ValueError) as error:
+        st.warning(f"対戦データ API を取得できませんでした。{error}")
+        return
+
+    categories = [
+        ("move", "よく使われる技"),
+        ("item", "持ち物"),
+        ("teammate", "よく組まれる相棒"),
+    ]
+    category_cols = st.columns(len(categories), gap="medium")
+    for column, (category, title) in zip(category_cols, categories):
+        rows = rows_for_category(data, category)[:4]
+        with column:
+            if rows:
+                content = "<br>".join(
+                    f'{escape(row["name"])}'
+                    f'<span class="battle-percentage">{escape(str(row.get("percentage") or ""))}</span>'
+                    for row in rows
+                )
+            else:
+                content = "データなし"
+            st.markdown(
+                f'<div class="api-battle-stat"><b>{title}</b><div>{content}</div></div>',
+                unsafe_allow_html=True,
+            )
+    st.markdown(
+        f'<div class="api-attribution">{API_ATTRIBUTION}</div>',
+        unsafe_allow_html=True,
+    )
+
+
 def render() -> None:
     configure_page("pokecham | 相談", "pokemon.css")
     conversation = _active_conversation()
@@ -138,6 +176,7 @@ def render() -> None:
 
         _render_build_card(pokemon_name)
         _render_team_cards(pokemon_names)
+        _render_battle_data(pokemon_name)
 
         messages = conversation.get("messages", [])
         if messages:

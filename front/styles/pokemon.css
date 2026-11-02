@@ -514,6 +514,44 @@
     font-size: 9px;
 }
 
+.api-battle-stat {
+    min-height: 75px;
+    padding: 10px 11px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: #fff;
+    color: #64766c;
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.api-battle-stat b {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ink);
+    font-size: 10px;
+}
+
+.battle-percentage {
+    margin-left: 5px;
+    color: #89968e;
+    font-size: 8px;
+}
+
+.api-attribution {
+    margin: 12px 0 4px;
+    color: #96a199;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.api-attribution a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+.api-attribution a:hover { text-decoration: underline; }
+
 [data-testid="stChatInput"] {
     margin-top: 20px;
 }

@@ -1,16 +1,28 @@
 import re
+from html import escape
+from typing import cast
 
 import streamlit as st
 
+from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import create_conversation, list_conversations
+from front.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
 from front.layout import configure_page
+from front.pokemon_detail_types import (
+    EffortValues,
+    PokemonBuild,
+    PokemonBuildMap,
+    PokemonProfile,
+    PokemonSpecies,
+    StatName,
+)
 
 
-SPECIES = {
+SPECIES: dict[str, PokemonSpecies] = {
     "ピカチュウ": {
         "base_stats": [35, 55, 40, 50, 50, 90],
         "abilities": ["せいでんき", "ひらいしん"],
-        "moves": ["10まんボルト", "かみなり", "ボルトチェンジ", "でんこうせっか", "くさむすび", "なみのり", "アンコール", "でんじは"],
+        "moves": ["10まんボルト", "かみなり", "でんこうせっか", "くさむすび", "なみのり", "アンコール", "でんじは"],
     },
     "ガブリアス": {
         "base_stats": [108, 130, 95, 80, 85, 102],
@@ -34,9 +46,28 @@ SPECIES = {
     },
 }
 
-STAT_NAMES = ["HP", "こうげき", "ぼうぎょ", "とくこう", "とくぼう", "すばやさ"]
+STAT_NAMES: list[StatName] = ["HP", "こうげき", "ぼうぎょ", "とくこう", "とくぼう", "すばやさ"]
 NATURES = ["指定なし", "いじっぱり", "ようき", "ひかえめ", "おくびょう", "ずぶとい", "しんちょう", "わんぱく", "おだやか", "むじゃき", "せっかち"]
 ITEMS = ["指定しない", "きあいのタスキ", "いのちのたま", "こだわりハチマキ", "こだわりスカーフ", "こだわりメガネ", "たべのこし", "オボンのみ", "とつげきチョッキ"]
+
+
+def _category_rows(
+    battle_data: BattleDataResponse | None, category: str
+) -> list[BattleRow]:
+    return rows_for_category(battle_data, category) if battle_data else []
+
+
+def _options_from_api(rows: list[BattleRow]) -> list[str]:
+    return list(dict.fromkeys(row["name"] for row in rows if row.get("name")))
+
+
+def _format_options(rows: list[BattleRow]):
+    usage = {
+        row["name"]: row.get("percentage", "")
+        for row in rows
+        if row.get("name")
+    }
+    return lambda name: f"{name}　{usage[name]}" if usage.get(name) else name
 
 
 def _key(pokemon_name: str, field: str) -> str:
@@ -85,19 +116,44 @@ def render() -> None:
         _render_sidebar()
 
     with content:
-        pokemon_name = st.session_state.get("pokemon_detail_target")
-        pokemon = st.session_state.get("pokemon_detail_profile")
-        if not pokemon_name or not pokemon:
+        pokemon_name = cast(str | None, st.session_state.get("pokemon_detail_target"))
+        raw_pokemon = st.session_state.get("pokemon_detail_profile")
+        if not pokemon_name or not raw_pokemon:
             st.warning("ポケモン選択画面から設定する相棒を選んでください。")
             if st.button("ポケモン選択へ戻る", type="primary"):
                 st.switch_page("pages/NewAdvice.py")
             return
+        pokemon = cast(PokemonProfile, raw_pokemon)
 
-        species = SPECIES.get(pokemon_name, SPECIES["ピカチュウ"])
-        builds = st.session_state.setdefault("pokemon_builds", {})
-        saved = builds.get(pokemon_name, {})
-        saved_moves = (saved.get("moves") or []) + [""] * 4
-        saved_stats = saved.get("effort", {})
+        species: PokemonSpecies = SPECIES.get(pokemon_name, SPECIES["ピカチュウ"])
+        builds = cast(PokemonBuildMap, st.session_state.setdefault("pokemon_builds", {}))
+        saved: PokemonBuild = builds.get(pokemon_name, {})
+        saved_moves: list[str] = (saved.get("moves") or []) + [""] * 4
+        saved_stats: EffortValues = saved.get("effort", {})
+
+        battle_data: BattleDataResponse | None = None
+        if pokemon_name in SHOWDOWN_IDS:
+            try:
+                battle_data = get_battle_data(pokemon_name, "Doubles")
+            except (RuntimeError, ValueError) as error:
+                st.warning(f"対戦データ API を取得できませんでした。{error}")
+
+        ability_rows = _category_rows(battle_data, "ability")
+        move_rows = _category_rows(battle_data, "move")
+        item_rows = _category_rows(battle_data, "item")
+        nature_rows = _category_rows(battle_data, "nature")
+        abilities = _options_from_api(ability_rows) or species["abilities"]
+        move_names = _options_from_api(move_rows) or species["moves"]
+        item_names = _options_from_api(item_rows) or ITEMS
+        nature_names = _options_from_api(nature_rows) or NATURES
+
+        if battle_data:
+            st.caption(
+                f"バトルデータ: {battle_data.get('format', 'Doubles')} / "
+                f"{battle_data.get('season', 'Current')}（API取得・6時間キャッシュ）"
+            )
+        if any(not rows for rows in (ability_rows, move_rows, item_rows, nature_rows)):
+            st.caption("APIに項目がない場合は、選択肢の不足分に標準候補を表示します。")
 
         st.markdown(
             '<div class="step-label">04　ポケモン選択 / 個体の詳細設定</div>'
@@ -120,18 +176,37 @@ def render() -> None:
 
             nature_col, ability_col, item_col = st.columns(3, gap="medium")
             with nature_col:
-                nature = st.selectbox("性格", NATURES, key=_key(pokemon_name, "nature"), index=NATURES.index(saved.get("nature", "指定なし")) if saved.get("nature", "指定なし") in NATURES else 0)
+                saved_nature = saved.get("nature", "指定なし")
+                nature = st.selectbox(
+                    "性格",
+                    nature_names,
+                    key=_key(pokemon_name, "nature"),
+                    index=nature_names.index(saved_nature) if saved_nature in nature_names else 0,
+                    format_func=_format_options(nature_rows),
+                )
             with ability_col:
-                abilities = species["abilities"]
                 saved_ability = saved.get("ability", abilities[0])
-                ability = st.selectbox("特性", abilities, key=_key(pokemon_name, "ability"), index=abilities.index(saved_ability) if saved_ability in abilities else 0)
+                ability = st.selectbox(
+                    "特性",
+                    abilities,
+                    key=_key(pokemon_name, "ability"),
+                    index=abilities.index(saved_ability) if saved_ability in abilities else 0,
+                    format_func=_format_options(ability_rows),
+                )
             with item_col:
-                item = st.selectbox("持ち物", ITEMS, key=_key(pokemon_name, "item"), index=ITEMS.index(saved.get("item", "指定しない")) if saved.get("item", "指定しない") in ITEMS else 0)
+                saved_item = saved.get("item", "指定しない")
+                item = st.selectbox(
+                    "持ち物",
+                    item_names,
+                    key=_key(pokemon_name, "item"),
+                    index=item_names.index(saved_item) if saved_item in item_names else 0,
+                    format_func=_format_options(item_rows),
+                )
 
             build_left, build_right = st.columns([1.02, 0.98], gap="large")
             with build_left:
                 st.markdown('<div class="build-section-title">能力ポイント <span class="count-pill">努力値</span></div>', unsafe_allow_html=True)
-                effort = {}
+                effort: EffortValues = {}
                 for stat_name, base_value in zip(STAT_NAMES, species["base_stats"]):
                     stat_col, base_col = st.columns([0.72, 0.28], vertical_alignment="center")
                     with stat_col:
@@ -152,7 +227,7 @@ def render() -> None:
 
             with build_right:
                 st.markdown('<div class="build-section-title">決めてもらう技</div>', unsafe_allow_html=True)
-                move_options = ["指定しない", *species["moves"]]
+                move_options = ["指定しない", *move_names]
                 moves = []
                 for index in range(4):
                     saved_move = saved_moves[index]
@@ -163,15 +238,25 @@ def render() -> None:
                             move_options,
                             index=move_index,
                             key=_key(pokemon_name, f"move_{index}"),
+                            format_func=_format_options(move_rows),
                         )
                     )
 
                 selected_moves = [move for move in moves if move != "指定しない"]
                 move_summary = "、".join(selected_moves) if selected_moves else "技はまだ選択されていません。"
+                popular_move_rows = _category_rows(battle_data, "move")[:4]
+                if popular_move_rows:
+                    popular_moves = "　/　".join(
+                        f"{escape(row['name'])} {escape(str(row.get('percentage') or ''))}".strip()
+                        for row in popular_move_rows
+                    )
+                else:
+                    popular_moves = "この形式の技データはまだありません。"
                 st.markdown(
-                    f'<div class="build-summary"><b>注目の使い方</b><br>{pokemon_name}の設定内容を相談時に参照します。<br><br>'
-                    f'<span>性格: {nature}　/　特性: {ability}　/　持ち物: {item}</span><br>'
-                    f'<span>技: {move_summary}</span></div>',
+                    f'<div class="build-summary"><b>APIのバトルデータ</b><br>'
+                    f'<span>よく使われる技: {popular_moves}</span><br><br>'
+                    f'<span>設定中: 性格 {escape(nature)}　/　特性 {escape(ability)}　/　持ち物 {escape(item)}</span><br>'
+                    f'<span>選択した技: {escape(move_summary)}</span></div>',
                     unsafe_allow_html=True,
                 )
 
@@ -217,3 +302,8 @@ def render() -> None:
                 st.session_state.active_conversation_id = conversation["id"]
                 st.session_state.page = "Chat"
                 st.switch_page("pages/Chat.py")
+
+        st.markdown(
+            f'<div class="api-attribution">{API_ATTRIBUTION}</div>',
+            unsafe_allow_html=True,
+        )
