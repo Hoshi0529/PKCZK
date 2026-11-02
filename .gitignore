@@ -12,6 +12,7 @@ ENV/
 .env
 .env.*
 !.env.example
+/env
 
 # Streamlit local configuration and secrets
 .streamlit/secrets.toml
