@@ -12,7 +12,9 @@ StatName: TypeAlias = Literal[
     "すばやさ",
 ]
 
-EffortValues: TypeAlias = dict[StatName, int]
+StatPointValues: TypeAlias = dict[StatName, int]
+# Compatibility alias for callers that still use the old EV-oriented name.
+EffortValues: TypeAlias = StatPointValues
 
 
 class PokemonProfile(TypedDict):
@@ -37,7 +39,8 @@ class PokemonBuild(TypedDict, total=False):
     nature: str
     ability: str
     item: str
-    effort: EffortValues
+    stat_points: StatPointValues
+    effort: EffortValues  # Legacy EV field, migrated when the build is loaded.
     moves: list[str]
 
 

@@ -9,12 +9,12 @@ from back.conversations import create_conversation, list_conversations
 from front.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
 from front.layout import configure_page
 from front.pokemon_detail_types import (
-    EffortValues,
     PokemonBuild,
     PokemonBuildMap,
     PokemonProfile,
     PokemonSpecies,
     StatName,
+    StatPointValues,
 )
 
 
@@ -47,8 +47,37 @@ SPECIES: dict[str, PokemonSpecies] = {
 }
 
 STAT_NAMES: list[StatName] = ["HP", "こうげき", "ぼうぎょ", "とくこう", "とくぼう", "すばやさ"]
-NATURES = ["指定なし", "いじっぱり", "ようき", "ひかえめ", "おくびょう", "ずぶとい", "しんちょう", "わんぱく", "おだやか", "むじゃき", "せっかち"]
+NATURES = [
+    "指定なし", "さみしがり", "いじっぱり", "やんちゃ", "ゆうかん",
+    "ずぶとい", "わんぱく", "のうてんき", "のんき",
+    "ひかえめ", "おっとり", "うっかりや", "れいせい",
+    "おだやか", "おとなしい", "しんちょう", "なまいき",
+    "おくびょう", "せっかち", "ようき", "むじゃき",
+    "がんばりや", "きまぐれ", "すなお", "てれや", "まじめ",
+]
 ITEMS = ["指定しない", "きあいのタスキ", "いのちのたま", "こだわりハチマキ", "こだわりスカーフ", "こだわりメガネ", "たべのこし", "オボンのみ", "とつげきチョッキ"]
+NATURE_MODIFIERS: dict[str, tuple[StatName, StatName]] = {
+    "さみしがり": ("こうげき", "ぼうぎょ"),
+    "いじっぱり": ("こうげき", "とくこう"),
+    "やんちゃ": ("こうげき", "とくぼう"),
+    "ゆうかん": ("こうげき", "すばやさ"),
+    "のうてんき": ("ぼうぎょ", "とくぼう"),
+    "のんき": ("ぼうぎょ", "すばやさ"),
+    "ようき": ("すばやさ", "とくこう"),
+    "ひかえめ": ("とくこう", "こうげき"),
+    "おっとり": ("とくこう", "ぼうぎょ"),
+    "うっかりや": ("とくこう", "とくぼう"),
+    "れいせい": ("とくこう", "すばやさ"),
+    "おくびょう": ("すばやさ", "こうげき"),
+    "ずぶとい": ("ぼうぎょ", "こうげき"),
+    "しんちょう": ("とくぼう", "とくこう"),
+    "わんぱく": ("ぼうぎょ", "とくこう"),
+    "おだやか": ("とくぼう", "こうげき"),
+    "おとなしい": ("とくぼう", "ぼうぎょ"),
+    "なまいき": ("とくぼう", "すばやさ"),
+    "むじゃき": ("すばやさ", "とくぼう"),
+    "せっかち": ("すばやさ", "ぼうぎょ"),
+}
 
 
 def _category_rows(
@@ -68,6 +97,53 @@ def _format_options(rows: list[BattleRow]):
         if row.get("name")
     }
     return lambda name: f"{name}　{usage[name]}" if usage.get(name) else name
+
+
+def _load_stat_points(saved: PokemonBuild) -> StatPointValues:
+    if "stat_points" in saved:
+        points = saved.get("stat_points", {})
+        return {
+            stat: min(32, max(0, int(points.get(stat, 0))))
+            for stat in STAT_NAMES
+        }
+
+    # Earlier versions stored mainline EVs in multiples of four.
+    legacy_evs = saved.get("effort", {})
+    return {
+        stat: min(
+            32,
+            1 + max(0, (int(legacy_evs.get(stat, 0)) - 4) // 8)
+            if int(legacy_evs.get(stat, 0)) > 0
+            else 0,
+        )
+        for stat in STAT_NAMES
+    }
+
+
+def _calculate_champions_stats(
+    base_stats: list[int], stat_points: StatPointValues, nature: str
+) -> dict[StatName, int]:
+    """Calculate level-50 Champions stats with max-equivalent IVs fixed."""
+    modifier = NATURE_MODIFIERS.get(nature)
+    raised_stat = modifier[0] if modifier else None
+    lowered_stat = modifier[1] if modifier else None
+    actual_stats: dict[StatName, int] = {}
+    for stat_name, base_value in zip(STAT_NAMES, base_stats):
+        points = stat_points.get(stat_name, 0)
+        # At level 50, fixed max-equivalent IVs simplify to base + 75 + SP.
+        if stat_name == "HP":
+            actual_stats[stat_name] = base_value + 75 + points
+            continue
+
+        # Other stats simplify to base + 20 + SP before the nature modifier.
+        neutral_value = base_value + 20 + points
+        if stat_name == raised_stat:
+            actual_stats[stat_name] = neutral_value * 11 // 10
+        elif stat_name == lowered_stat:
+            actual_stats[stat_name] = neutral_value * 9 // 10
+        else:
+            actual_stats[stat_name] = neutral_value
+    return actual_stats
 
 
 def _key(pokemon_name: str, field: str) -> str:
@@ -129,7 +205,7 @@ def render() -> None:
         builds = cast(PokemonBuildMap, st.session_state.setdefault("pokemon_builds", {}))
         saved: PokemonBuild = builds.get(pokemon_name, {})
         saved_moves: list[str] = (saved.get("moves") or []) + [""] * 4
-        saved_stats: EffortValues = saved.get("effort", {})
+        saved_stats = _load_stat_points(saved)
 
         battle_data: BattleDataResponse | None = None
         if pokemon_name in SHOWDOWN_IDS:
@@ -184,6 +260,21 @@ def render() -> None:
                     index=nature_names.index(saved_nature) if saved_nature in nature_names else 0,
                     format_func=_format_options(nature_rows),
                 )
+                nature_modifier = NATURE_MODIFIERS.get(nature)
+                if nature_modifier:
+                    st.markdown(
+                        '<div class="nature-effect">'
+                        f'<span class="nature-up">↑ {nature_modifier[0]} ×1.1</span>'
+                        '<span class="nature-down">↓ '
+                        f'{nature_modifier[1]} ×0.9</span>'
+                        '</div>',
+                        unsafe_allow_html=True,
+                    )
+                else:
+                    st.markdown(
+                        '<div class="nature-effect nature-neutral">この性格は能力値を補正しません</div>',
+                        unsafe_allow_html=True,
+                    )
             with ability_col:
                 saved_ability = saved.get("ability", abilities[0])
                 ability = st.selectbox(
@@ -205,25 +296,52 @@ def render() -> None:
 
             build_left, build_right = st.columns([1.02, 0.98], gap="large")
             with build_left:
-                st.markdown('<div class="build-section-title">能力ポイント <span class="count-pill">努力値</span></div>', unsafe_allow_html=True)
-                effort: EffortValues = {}
+                st.markdown('<div class="build-section-title">能力ポイント <span class="count-pill">Stat Points</span></div>', unsafe_allow_html=True)
+                st.caption("実数値はLv.50基準・個体値は最高相当で固定して計算します。")
+                stat_header_cols = st.columns([0.20, 0.27, 0.20, 0.33], vertical_alignment="center")
+                for column, title in zip(stat_header_cols, ("能力", "SP", "種族値", "実数値")):
+                    with column:
+                        st.markdown(f'<div class="stat-table-header">{title}</div>', unsafe_allow_html=True)
+
+                stat_points: StatPointValues = {}
                 for stat_name, base_value in zip(STAT_NAMES, species["base_stats"]):
-                    stat_col, base_col = st.columns([0.72, 0.28], vertical_alignment="center")
+                    nature_marker = ""
+                    if nature_modifier and stat_name == nature_modifier[0]:
+                        nature_marker = '<span class="nature-mark nature-up">↑</span>'
+                    elif nature_modifier and stat_name == nature_modifier[1]:
+                        nature_marker = '<span class="nature-mark nature-down">↓</span>'
+                    stat_col, points_col, base_col, actual_col = st.columns(
+                        [0.20, 0.27, 0.20, 0.33], vertical_alignment="center"
+                    )
                     with stat_col:
-                        effort[stat_name] = st.number_input(
-                            stat_name,
+                        st.markdown(
+                            f'<div class="stat-name">{stat_name}{nature_marker}</div>',
+                            unsafe_allow_html=True,
+                        )
+                    with points_col:
+                        stat_points[stat_name] = st.number_input(
+                            f"{stat_name}能力ポイント",
                             min_value=0,
-                            max_value=252,
-                            step=4,
+                            max_value=32,
+                            step=1,
                             value=int(saved_stats.get(stat_name, 0)),
-                            key=_key(pokemon_name, f"effort_{stat_name}"),
+                            key=_key(pokemon_name, f"stat_points_{stat_name}"),
+                            label_visibility="collapsed",
                         )
                     with base_col:
-                        st.markdown(f'<div class="base-stat">基礎値 <b>{base_value}</b></div>', unsafe_allow_html=True)
-                total_effort = sum(effort.values())
-                st.caption(f"能力ポイント合計: {total_effort} / 510")
-                if total_effort > 510:
-                    st.error("能力ポイントの合計は510以下にしてください。")
+                        st.markdown(f'<div class="base-stat">{base_value}</div>', unsafe_allow_html=True)
+                    with actual_col:
+                        actual_stats = _calculate_champions_stats(
+                            species["base_stats"], stat_points, nature
+                        )
+                        st.markdown(
+                            f'<div class="actual-stat">{actual_stats[stat_name]}</div>',
+                            unsafe_allow_html=True,
+                        )
+                total_stat_points = sum(stat_points.values())
+                st.caption(f"能力ポイント合計: {total_stat_points} / 66　・　各能力は最大32")
+                if total_stat_points > 66:
+                    st.error("能力ポイントの合計は66以下にしてください。")
 
             with build_right:
                 st.markdown('<div class="build-section-title">決めてもらう技</div>', unsafe_allow_html=True)
@@ -269,13 +387,13 @@ def render() -> None:
                 "この内容で相談する　→",
                 type="primary",
                 use_container_width=True,
-                disabled=total_effort > 510,
+                disabled=total_stat_points > 66,
             ):
                 builds[pokemon_name] = {
                     "nature": nature,
                     "ability": ability,
                     "item": item,
-                    "effort": effort,
+                    "stat_points": stat_points,
                     "moves": moves,
                 }
                 st.session_state.pokemon_builds = builds
