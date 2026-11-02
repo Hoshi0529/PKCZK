@@ -15,6 +15,7 @@ ENV/
 
 # Streamlit local configuration and secrets
 .streamlit/secrets.toml
+.data/
 
 # Test, type-checker, and linter caches
 .pytest_cache/

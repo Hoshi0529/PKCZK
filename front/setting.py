@@ -1,5 +1,6 @@
 import streamlit as st
 
+from front.history import render_history
 from front.layout import configure_page
 
 
@@ -13,18 +14,13 @@ def render() -> None:
             '<div class="brand"><span class="brand-mark">✦</span><span>pokecham</span></div>',
             unsafe_allow_html=True,
         )
-        st.button("＋ アドバイスをもらう", use_container_width=True)
+        if st.button("＋ アドバイスをもらう", use_container_width=True):
+            for key in ("first_pokemon_select", "second_pokemon_select"):
+                st.session_state.pop(key, None)
+            st.switch_page("pages/NewAdvice.py")
+        render_history()
         st.markdown(
             """
-            <div class="history-heading">これまでの相談</div>
-            <div class="history-item">
-                <span class="history-icon"></span>
-                <span>ピカチュウ<span class="history-time">今日 14:32</span></span>
-            </div>
-            <div class="history-item">
-                <span class="history-icon"></span>
-                <span>ガブリアス<span class="history-time">昨日 18:30</span></span>
-            </div>
             <div class="sidebar-bottom">
                 <div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div>
                 <div class="sidebar-settings"><span>⚙</span><span>設定</span></div>
