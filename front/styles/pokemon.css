@@ -312,7 +312,7 @@
 }
 
 .base-stat {
-    padding-top: 22px;
+    padding: 7px 0;
     color: #8b9790;
     font-size: 9px;
     white-space: nowrap;
@@ -321,6 +321,51 @@
 .base-stat b {
     margin-left: 4px;
     color: #52665c;
+}
+
+.stat-table-header {
+    padding: 0 0 5px;
+    color: #85938a;
+    font-size: 8px;
+    font-weight: 650;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.stat-name {
+    color: #52665c;
+    font-size: 9px;
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+.nature-effect {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 5px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.nature-up { color: #16805e; }
+.nature-down { color: #c34e48; }
+.nature-neutral { color: #87948c; font-weight: 500; }
+
+.nature-mark {
+    margin-left: 3px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.actual-stat {
+    padding: 5px 4px;
+    border-radius: 7px;
+    background: #eaf5ee;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 750;
+    text-align: center;
 }
 
 .build-summary {
