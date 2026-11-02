@@ -88,6 +88,17 @@ def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
             f'<p class="pokemon-description">{pokemon["description"]}</p>',
             unsafe_allow_html=True,
         )
+        if st.button(
+            "個体の型を設定する",
+            key=f"configure_build_{pokemon_name}",
+            use_container_width=True,
+        ):
+            st.session_state.pokemon_detail_target = pokemon_name
+            st.session_state.pokemon_detail_profile = pokemon
+            st.session_state.pokemon_detail_slot = (
+                "second" if card_key == "partner_detail_card" else "first"
+            )
+            st.switch_page("pages/PokemonDetail.py")
 
 
 def render() -> None:
@@ -204,6 +215,7 @@ def run_app() -> None:
         st.Page("pages/Chat.py", title="相談"),
         st.Page("pages/Setting.py", title="設定"),
         st.Page("pages/Login.py", title="ログイン"),
+        st.Page("pages/PokemonDetail.py", title="個体の型を設定"),
     ]
     st.navigation(pages, position="hidden").run()
 

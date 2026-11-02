@@ -289,6 +289,76 @@
     font-size: 10px;
 }
 
+.st-key-build_editor_card {
+    margin-top: 18px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: #fff;
+}
+
+.build-pokemon-name {
+    margin-top: 3px;
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.build-section-title {
+    margin: 19px 0 9px;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.base-stat {
+    padding-top: 22px;
+    color: #8b9790;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.base-stat b {
+    margin-left: 4px;
+    color: #52665c;
+}
+
+.build-summary {
+    margin-top: 17px;
+    padding: 12px 13px;
+    border-radius: 11px;
+    background: #eaf5ee;
+    color: #52685c;
+    font-size: 10px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.build-summary b {
+    color: var(--green);
+    font-size: 11px;
+}
+
+.build-summary span {
+    color: #75857b;
+}
+
+[data-testid="stNumberInput"] input,
+[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+    border-color: var(--line);
+    border-radius: 8px;
+    font-size: 10px;
+}
+
+.st-key-build_editor_card [data-testid="stHorizontalBlock"] {
+    align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+    .st-key-build_editor_card { padding: 14px; }
+    .base-stat { font-size: 8px; }
+}
+
 [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stHorizontalBlock"]:last-child [data-testid="stButton"] button[kind="primary"] {
     min-height: 40px;
     border: 0;
