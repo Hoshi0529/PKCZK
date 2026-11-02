@@ -86,6 +86,9 @@ def render() -> None:
         if session and session.user:
             st.markdown('<h2 class="form-heading">ログイン済み</h2>', unsafe_allow_html=True)
             st.success(st.session_state.get("account_success", "ログインしています。"))
+            username = (session.user.user_metadata or {}).get("username")
+            if username:
+                st.text(username)
             st.text(session.user.email or "")
             return
 
@@ -117,6 +120,12 @@ def render() -> None:
         is_registering = mode == "新規登録"
 
         with st.form("account_form", border=False):
+            username = ""
+            if is_registering:
+                username = st.text_input(
+                    "ユーザー名", placeholder="例：ピカチュウ好き", max_chars=50,
+                    key="account_username",
+                )
             email = st.text_input("メールアドレス", placeholder="you@example.com", key="account_email")
             password = st.text_input(
                 "パスワード", type="password", placeholder="8文字以上", key="account_password"
@@ -136,14 +145,16 @@ def render() -> None:
 
         if submitted:
             error = validate_account_input(
-                email, password, is_registering, confirm_password
+                email, password, is_registering, confirm_password, username=username
             )
             if error:
                 st.error(error)
             else:
                 try:
                     with st.spinner("新規登録しています..." if is_registering else "ログインしています..."):
-                        result = authenticate_account(client, email, password, is_registering)
+                        result = authenticate_account(
+                            client, email, password, is_registering, username=username
+                        )
                 except AuthenticationError as error:
                     st.error(str(error))
                 else:

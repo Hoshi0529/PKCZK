@@ -74,9 +74,17 @@ def _auth_error_message(error: AuthError) -> str:
 
 
 def authenticate_account(
-    client: Client, email: str, password: str, is_registering: bool
+    client: Client, email: str, password: str, is_registering: bool,
+    *, username: str = "",
 ) -> AccountResult:
     credentials = {"email": email.strip(), "password": password}
+    if is_registering:
+        error = validate_account_input(
+            email, password, True, password, username=username
+        )
+        if error:
+            raise AuthenticationError(error)
+        credentials["options"] = {"data": {"username": username.strip()}}
     try:
         response = (
             client.auth.sign_up(credentials)
@@ -116,7 +124,13 @@ def validate_account_input(
     password: str,
     is_registering: bool,
     confirm_password: str,
+    *, username: str = "",
 ) -> str | None:
+    if is_registering:
+        if not username.strip():
+            return "ユーザー名を入力してください。"
+        if len(username.strip()) > 50:
+            return "ユーザー名は50文字以内で入力してください。"
     if not email.strip() or not password:
         return "メールアドレスとパスワードを入力してください。"
     if not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email.strip()):
