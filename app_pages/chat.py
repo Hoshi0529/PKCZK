@@ -101,7 +101,7 @@ def _render_battle_data(pokemon_name: str) -> None:
     if pokemon_name not in SHOWDOWN_IDS:
         return
     try:
-        data: BattleDataResponse = get_battle_data(pokemon_name, "Doubles")
+        data: BattleDataResponse = get_battle_data(pokemon_name, "Singles")
     except (RuntimeError, ValueError) as error:
         st.warning(f"対戦データ API を取得できませんでした。{error}")
         return

@@ -1,6 +1,10 @@
 import re
+import json
 from html import escape
+from pathlib import Path
 from typing import cast
+from urllib.error import URLError
+from urllib.request import Request, urlopen
 
 import streamlit as st
 
@@ -16,6 +20,15 @@ from ui.pokemon_types import (
     StatName,
     StatPointValues,
 )
+
+DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+PCBD_METADATA_NAMES = {
+    "ピカチュウ": "pikachu",
+    "ガブリアス": "garchomp",
+    "マリル": "marill",
+    "ルカリオ": "lucario",
+    "イーブイ": "eevee",
+}
 
 
 SPECIES: dict[str, PokemonSpecies] = {
@@ -90,17 +103,58 @@ def _options_from_api(rows: list[BattleRow]) -> list[str]:
     return list(dict.fromkeys(row["name"] for row in rows if row.get("name")))
 
 
-def _ability_options(rows: list[BattleRow], fallback: list[str]) -> list[str]:
-    """Use the species' Japanese ability names while preserving API usage order."""
-    api_names = _options_from_api(rows)
-    if not api_names:
-        return fallback
+def _load_local_options(filename: str, key: str) -> list[str]:
+    try:
+        with (DATA_DIR / filename).open(encoding="utf-8") as file:
+            return cast(list[str], json.load(file)[key])
+    except (OSError, KeyError, json.JSONDecodeError, TypeError):
+        return []
 
-    # Battle data may return English identifiers while this screen is Japanese.
-    # Map by order, which the API ranks by usage, to the known Japanese names.
-    if fallback and all(name.isascii() for name in api_names):
-        return [fallback[index] for index in range(min(len(api_names), len(fallback)))]
-    return api_names
+
+@st.cache_data(ttl=24 * 60 * 60, show_spinner=False)
+def _fetch_species_metadata(pokemon_name: str) -> dict[str, object] | None:
+    metadata_name = PCBD_METADATA_NAMES.get(pokemon_name)
+    if not metadata_name:
+        return None
+    request = Request(
+        f"https://championsbattledata.com/api/metadata/{metadata_name}",
+        headers={"Accept": "application/json", "User-Agent": "pokecham/1.0"},
+    )
+    try:
+        with urlopen(request, timeout=8) as response:
+            payload = json.load(response)
+    except (URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError):
+        return None
+    rows = payload.get("rows", []) if isinstance(payload, dict) else []
+    if not isinstance(rows, list):
+        return None
+    row = next((item for item in rows if isinstance(item, dict) and not item.get("form")), None)
+    return row if isinstance(row, dict) else None
+
+
+def _metadata_abilities(metadata: dict[str, object] | None, fallback: list[str]) -> list[str]:
+    raw = metadata.get("abilities") if metadata else None
+    if isinstance(raw, str) and raw:
+        return [name.strip() for name in raw.split("|") if name.strip()]
+    return fallback
+
+
+def _metadata_stats(metadata: dict[str, object] | None, fallback: list[int]) -> list[int]:
+    if not metadata:
+        return fallback
+    keys = ("hp", "atk", "def", "spa", "spd", "spe")
+    values = [metadata.get(key) for key in keys]
+    return [int(value) for value in values] if all(isinstance(value, (int, float)) for value in values) else fallback
+
+
+def _local_moves(pokemon_name: str, fallback: list[str]) -> list[str]:
+    try:
+        with (DATA_DIR / "learnable_moves.json").open(encoding="utf-8") as file:
+            data = json.load(file)
+        moves = data.get("pokemon", {}).get(pokemon_name, [])
+        return [str(move) for move in moves] if moves else fallback
+    except (OSError, AttributeError, json.JSONDecodeError, TypeError):
+        return fallback
 
 
 def _format_options(rows: list[BattleRow]):
@@ -215,6 +269,13 @@ def render() -> None:
         pokemon = cast(PokemonProfile, raw_pokemon)
 
         species: PokemonSpecies = SPECIES.get(pokemon_name, SPECIES["ピカチュウ"])
+        metadata = _fetch_species_metadata(pokemon_name)
+        species = {
+            **species,
+            "base_stats": _metadata_stats(metadata, species["base_stats"]),
+            "abilities": _metadata_abilities(metadata, species["abilities"]),
+            "moves": _local_moves(pokemon_name, species["moves"]),
+        }
         builds = cast(PokemonBuildMap, st.session_state.setdefault("pokemon_builds", {}))
         saved: PokemonBuild = builds.get(pokemon_name, {})
         saved_moves: list[str] = (saved.get("moves") or []) + [""] * 4
@@ -223,26 +284,23 @@ def render() -> None:
         battle_data: BattleDataResponse | None = None
         if pokemon_name in SHOWDOWN_IDS:
             try:
-                battle_data = get_battle_data(pokemon_name, "Doubles")
+                battle_data = get_battle_data(pokemon_name, "Singles")
             except (RuntimeError, ValueError) as error:
                 st.warning(f"対戦データ API を取得できませんでした。{error}")
 
-        ability_rows = _category_rows(battle_data, "ability")
         move_rows = _category_rows(battle_data, "move")
-        item_rows = _category_rows(battle_data, "item")
-        nature_rows = _category_rows(battle_data, "nature")
-        abilities = _ability_options(ability_rows, species["abilities"])
-        move_names = _options_from_api(move_rows) or species["moves"]
-        item_names = _options_from_api(item_rows) or ITEMS
-        nature_names = _options_from_api(nature_rows) or NATURES
+        abilities = species["abilities"]
+        move_names = species["moves"]
+        item_names = _load_local_options("items.json", "items") or ITEMS
+        nature_names = _load_local_options("natures.json", "natures") or NATURES
 
         if battle_data:
             st.caption(
-                f"バトルデータ: {battle_data.get('format', 'Doubles')} / "
+                f"バトルデータ: {battle_data.get('format', 'Singles')} / "
                 f"{battle_data.get('season', 'Current')}（API取得・6時間キャッシュ）"
             )
-        if any(not rows for rows in (ability_rows, move_rows, item_rows, nature_rows)):
-            st.caption("APIに項目がない場合は、選択肢の不足分に標準候補を表示します。")
+        if not battle_data:
+            st.caption("PCBDのSinglesデータを取得できないため、使用率の表示は利用できません。")
 
         st.markdown(
             '<div class="step-label">04　ポケモン選択 / 個体の詳細設定</div>'
@@ -271,7 +329,6 @@ def render() -> None:
                     nature_names,
                     key=_key(pokemon_name, "nature"),
                     index=nature_names.index(saved_nature) if saved_nature in nature_names else 0,
-                    format_func=_format_options(nature_rows),
                 )
                 nature_modifier = NATURE_MODIFIERS.get(nature)
                 if nature_modifier:
@@ -295,7 +352,6 @@ def render() -> None:
                     abilities,
                     key=_key(pokemon_name, "ability"),
                     index=abilities.index(saved_ability) if saved_ability in abilities else 0,
-                    format_func=_format_options(ability_rows),
                 )
             with item_col:
                 saved_item = saved.get("item", "指定しない")
@@ -304,7 +360,6 @@ def render() -> None:
                     item_names,
                     key=_key(pokemon_name, "item"),
                     index=item_names.index(saved_item) if saved_item in item_names else 0,
-                    format_func=_format_options(item_rows),
                 )
 
             build_left, build_right = st.columns([1.02, 0.98], gap="large")

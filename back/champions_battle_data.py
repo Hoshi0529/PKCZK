@@ -32,7 +32,7 @@ class BattleDataResponse(TypedDict, total=False):
 
 
 def fetch_pokemon_battle_data(
-    showdown_id: str, battle_format: BattleFormat = "Doubles"
+    showdown_id: str, battle_format: BattleFormat = "Singles"
 ) -> BattleDataResponse:
     """Fetch current battle rows for one Pokémon from the public API."""
     if not re.fullmatch(r"[a-z0-9]+", showdown_id):

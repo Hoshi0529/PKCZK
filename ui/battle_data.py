@@ -23,7 +23,7 @@ API_ATTRIBUTION = (
 
 @st.cache_data(ttl=6 * 60 * 60, show_spinner=False)
 def get_battle_data(
-    pokemon_name: str, battle_format: BattleFormat = "Doubles"
+    pokemon_name: str, battle_format: BattleFormat = "Singles"
 ) -> BattleDataResponse:
     showdown_id = SHOWDOWN_IDS.get(pokemon_name)
     if showdown_id is None:
