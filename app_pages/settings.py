@@ -1,7 +1,7 @@
 import streamlit as st
 
-from front.history import render_history
-from front.layout import configure_page
+from ui.history import render_history
+from ui.layout import configure_page
 
 
 def render() -> None:
@@ -17,7 +17,7 @@ def render() -> None:
         if st.button("＋ アドバイスをもらう", use_container_width=True):
             for key in ("first_pokemon_select", "second_pokemon_select"):
                 st.session_state.pop(key, None)
-            st.switch_page("pages/NewAdvice.py")
+            st.switch_page("app_pages/pokemon_selection.py")
         render_history()
         st.markdown(
             """
@@ -58,3 +58,6 @@ def render() -> None:
             )
             if st.button("ログアウト", use_container_width=True):
                 st.info("ログアウト機能はまだ接続されていません。")
+
+
+render()

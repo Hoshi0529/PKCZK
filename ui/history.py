@@ -22,4 +22,4 @@ def render_history() -> None:
         label = f"{title[:24]}\n{pokemon}　{updated_label}"
         if st.button(label, key=f"open_conversation_{conversation['id']}", use_container_width=True):
             st.session_state.active_conversation_id = conversation["id"]
-            st.switch_page("pages/Chat.py")
+            st.switch_page("app_pages/chat.py")

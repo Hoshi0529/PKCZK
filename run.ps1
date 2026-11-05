@@ -8,5 +8,5 @@ if (-not (Test-Path -LiteralPath $python)) {
 }
 
 Set-Location -LiteralPath $projectRoot
-& $python -m streamlit run (Join-Path $projectRoot "ChosePokemon.py") --server.port 8765
+& $python -m streamlit run (Join-Path $projectRoot "streamlit_app.py") --server.port 8765
 exit $LASTEXITCODE

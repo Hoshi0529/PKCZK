@@ -4,9 +4,9 @@ import streamlit as st
 
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import append_message, create_conversation, get_conversation
-from front.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
-from front.history import render_history
-from front.layout import configure_page
+from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
+from ui.history import render_history
+from ui.layout import configure_page
 
 
 POKEMON_ART = {
@@ -72,7 +72,7 @@ def _render_build_card(pokemon_name: str) -> None:
             "number": "", "type": info[0], "image": image_url, "description": "", "color": "#237b61"
         }
         st.session_state.pokemon_detail_slot = "first"
-        st.switch_page("pages/PokemonDetail.py")
+        st.switch_page("app_pages/pokemon_detail.py")
 
 
 def _render_team_cards(pokemon_names: list[str]) -> None:
@@ -149,14 +149,14 @@ def render() -> None:
         if st.button("＋ アドバイスをもらう", use_container_width=True, key="new_chat_button"):
             for key in ("first_pokemon_select", "second_pokemon_select"):
                 st.session_state.pop(key, None)
-            st.switch_page("pages/NewAdvice.py")
+            st.switch_page("app_pages/pokemon_selection.py")
         render_history()
         st.markdown(
             '<div class="sidebar-bottom"><div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div></div>',
             unsafe_allow_html=True,
         )
         if st.button("⚙　設定", use_container_width=True, key="settings_button"):
-            st.switch_page("pages/Setting.py")
+            st.switch_page("app_pages/settings.py")
         st.markdown('<div class="sidebar-user">◉　だいき</div>', unsafe_allow_html=True)
 
     with content:
@@ -196,5 +196,4 @@ def render() -> None:
                 st.rerun()
 
 
-if __name__ == "__main__":
-    render()
+render()

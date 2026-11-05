@@ -6,9 +6,9 @@ import streamlit as st
 
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import create_conversation, list_conversations
-from front.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
-from front.layout import configure_page
-from front.pokemon_detail_types import (
+from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
+from ui.layout import configure_page
+from ui.pokemon_types import (
     PokemonBuild,
     PokemonBuildMap,
     PokemonProfile,
@@ -160,7 +160,7 @@ def _render_sidebar() -> None:
         if st.button("＋ アドバイスをもらう", use_container_width=True, key="build_new_advice"):
             for key in ("first_pokemon_select", "second_pokemon_select"):
                 st.session_state.pop(key, None)
-            st.switch_page("pages/NewAdvice.py")
+            st.switch_page("app_pages/pokemon_selection.py")
 
         st.markdown('<div class="history-heading">これまでの会話</div>', unsafe_allow_html=True)
         conversations = list_conversations()
@@ -174,14 +174,14 @@ def _render_sidebar() -> None:
                 use_container_width=True,
             ):
                 st.session_state.active_conversation_id = conversation["id"]
-                st.switch_page("pages/Chat.py")
+                st.switch_page("app_pages/chat.py")
 
         st.markdown(
             '<div class="sidebar-bottom"><div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div></div>',
             unsafe_allow_html=True,
         )
         if st.button("⚙　設定", use_container_width=True, key="build_settings"):
-            st.switch_page("pages/Setting.py")
+            st.switch_page("app_pages/settings.py")
         st.markdown('<div class="sidebar-user">◉　だいき</div>', unsafe_allow_html=True)
 
 
@@ -197,7 +197,7 @@ def render() -> None:
         if not pokemon_name or not raw_pokemon:
             st.warning("ポケモン選択画面から設定する相棒を選んでください。")
             if st.button("ポケモン選択へ戻る", type="primary"):
-                st.switch_page("pages/NewAdvice.py")
+                st.switch_page("app_pages/pokemon_selection.py")
             return
         pokemon = cast(PokemonProfile, raw_pokemon)
 
@@ -381,7 +381,7 @@ def render() -> None:
         back_col, save_col = st.columns([0.52, 0.48], gap="small")
         with back_col:
             if st.button("← ポケモン選択に戻る", use_container_width=True):
-                st.switch_page("pages/NewAdvice.py")
+                st.switch_page("app_pages/pokemon_selection.py")
         with save_col:
             if st.button(
                 "この内容で相談する　→",
@@ -419,9 +419,12 @@ def render() -> None:
                 conversation = create_conversation(first_pokemon, second_pokemon)
                 st.session_state.active_conversation_id = conversation["id"]
                 st.session_state.page = "Chat"
-                st.switch_page("pages/Chat.py")
+                st.switch_page("app_pages/chat.py")
 
         st.markdown(
             f'<div class="api-attribution">{API_ATTRIBUTION}</div>',
             unsafe_allow_html=True,
         )
+
+
+render()

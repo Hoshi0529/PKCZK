@@ -1,9 +1,9 @@
 import streamlit as st
 
 from back.conversations import create_conversation, get_conversation
-from front.layout import configure_page
-from front.history import render_history
-from front.pokemon_detail_types import PokemonProfile
+from ui.layout import configure_page
+from ui.history import render_history
+from ui.pokemon_types import PokemonProfile
 
 
 POKEMON: dict[str, PokemonProfile] = {
@@ -99,7 +99,7 @@ def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
             st.session_state.pokemon_detail_slot = (
                 "second" if card_key == "partner_detail_card" else "first"
             )
-            st.switch_page("pages/PokemonDetail.py")
+            st.switch_page("app_pages/pokemon_detail.py")
 
 
 def render() -> None:
@@ -124,7 +124,7 @@ def render() -> None:
             unsafe_allow_html=True,
         )
         if st.button("⚙　設定", use_container_width=True, key="settings_button"):
-            st.switch_page("pages/Setting.py")
+            st.switch_page("app_pages/settings.py")
         st.markdown('<div class="sidebar-user">◉　だいき</div>', unsafe_allow_html=True)
 
     with content:
@@ -202,24 +202,7 @@ def render() -> None:
                 )
                 st.session_state.active_conversation_id = conversation["id"]
                 st.session_state.page = "Chat"
-                st.switch_page("pages/Chat.py")
+                st.switch_page("app_pages/chat.py")
 
 
-def run_app() -> None:
-    pages = [
-        st.Page(
-            "pages/NewAdvice.py",
-            title="ポケモン選択",
-            url_path="new-advice",
-            default=True,
-        ),
-        st.Page("pages/Chat.py", title="相談"),
-        st.Page("pages/Setting.py", title="設定"),
-        st.Page("pages/Login.py", title="ログイン"),
-        st.Page("pages/PokemonDetail.py", title="個体の型を設定"),
-    ]
-    st.navigation(pages, position="hidden").run()
-
-
-if __name__ == "__main__":
-    run_app()
+render()

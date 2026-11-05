@@ -2,7 +2,7 @@ import streamlit as st
 
 from back.auth import validate_account_input
 from back.pokemon import fetch_pokemon_artwork
-from front.layout import configure_page
+from ui.layout import configure_page
 
 
 FALLBACK_ARTWORK = {
@@ -110,3 +110,6 @@ def render() -> None:
             '<p class="form-footnote">好きなポケモンで勝ちたい。その気持ちを応援するよ。</p>',
             unsafe_allow_html=True,
         )
+
+
+render()
