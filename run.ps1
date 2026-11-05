@@ -1,10 +1,13 @@
 $ErrorActionPreference = "Stop"
 
 $projectRoot = $PSScriptRoot
+$venvPython = Join-Path $projectRoot ".venv\Scripts\python.exe"
 $python = Join-Path $env:LOCALAPPDATA "Programs\Python\Python311\python.exe"
 
-if (-not (Test-Path -LiteralPath $python)) {
-    throw "Python 3.11 was not found at '$python'. Install Python or update the path in run.ps1."
+if (Test-Path -LiteralPath $venvPython) {
+    $python = $venvPython
+} elseif (-not (Test-Path -LiteralPath $python)) {
+    throw "Python was not found. Create the project's .venv or install Python 3.11 at '$python'."
 }
 
 Set-Location -LiteralPath $projectRoot
