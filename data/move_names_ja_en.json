@@ -1,2062 +1,3092 @@
 {
   "accelerock": {
     "name_ja": "アクセルロック",
-    "name_en": "Accelerock"
+    "name_en": "Accelerock",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "acidarmor": {
     "name_ja": "とける",
-    "name_en": "Acid Armor"
+    "name_en": "Acid Armor",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "acidspray": {
     "name_ja": "アシッドボム",
-    "name_en": "Acid Spray"
+    "name_en": "Acid Spray",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "acrobatics": {
     "name_ja": "アクロバット",
-    "name_en": "Acrobatics"
+    "name_en": "Acrobatics",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "acupressure": {
     "name_ja": "つぼをつく",
-    "name_en": "Acupressure"
+    "name_en": "Acupressure",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "aerialace": {
     "name_ja": "つばめがえし",
-    "name_en": "Aerial Ace"
+    "name_en": "Aerial Ace",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "afteryou": {
     "name_ja": "おさきにどうぞ",
-    "name_en": "After You"
+    "name_en": "After You",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "agility": {
     "name_ja": "こうそくいどう",
-    "name_en": "Agility"
+    "name_en": "Agility",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "aircutter": {
     "name_ja": "エアカッター",
-    "name_en": "Air Cutter"
+    "name_en": "Air Cutter",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "airslash": {
     "name_ja": "エアスラッシュ",
-    "name_en": "Air Slash"
+    "name_en": "Air Slash",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "alluringvoice": {
     "name_ja": "みわくのボイス",
-    "name_en": "Alluring Voice"
+    "name_en": "Alluring Voice",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "allyswitch": {
     "name_ja": "サイドチェンジ",
-    "name_en": "Ally Switch"
+    "name_en": "Ally Switch",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "amnesia": {
     "name_ja": "ドわすれ",
-    "name_en": "Amnesia"
+    "name_en": "Amnesia",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "ancientpower": {
     "name_ja": "げんしのちから",
-    "name_en": "Ancient Power"
+    "name_en": "Ancient Power",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "appleacid": {
     "name_ja": "りんごさん",
-    "name_en": "Apple Acid"
+    "name_en": "Apple Acid",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "aquacutter": {
     "name_ja": "アクアカッター",
-    "name_en": "Aqua Cutter"
+    "name_en": "Aqua Cutter",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "aquajet": {
     "name_ja": "アクアジェット",
-    "name_en": "Aqua Jet"
+    "name_en": "Aqua Jet",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "aquaring": {
     "name_ja": "アクアリング",
-    "name_en": "Aqua Ring"
+    "name_en": "Aqua Ring",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "aquastep": {
     "name_ja": "アクアステップ",
-    "name_en": "Aqua Step"
+    "name_en": "Aqua Step",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "aquatail": {
     "name_ja": "アクアテール",
-    "name_en": "Aqua Tail"
+    "name_en": "Aqua Tail",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "armorcannon": {
     "name_ja": "アーマーキャノン",
-    "name_en": "Armor Cannon"
+    "name_en": "Armor Cannon",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "aromaticmist": {
     "name_ja": "アロマミスト",
-    "name_en": "Aromatic Mist"
+    "name_en": "Aromatic Mist",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "assurance": {
     "name_ja": "ダメおし",
-    "name_en": "Assurance"
+    "name_en": "Assurance",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "attract": {
     "name_ja": "メロメロ",
-    "name_en": "Attract"
+    "name_en": "Attract",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "aurasphere": {
     "name_ja": "はどうだん",
-    "name_en": "Aura Sphere"
+    "name_en": "Aura Sphere",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "aurawheel": {
     "name_ja": "オーラぐるま",
-    "name_en": "Aura Wheel"
+    "name_en": "Aura Wheel",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "auroraveil": {
     "name_ja": "オーロラベール",
-    "name_en": "Aurora Veil"
+    "name_en": "Aurora Veil",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "avalanche": {
     "name_ja": "ゆきなだれ",
-    "name_en": "Avalanche"
+    "name_en": "Avalanche",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "axekick": {
     "name_ja": "かかとおとし",
-    "name_en": "Axe Kick"
+    "name_en": "Axe Kick",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "babydolleyes": {
     "name_ja": "つぶらなひとみ",
-    "name_en": "Baby-Doll Eyes"
+    "name_en": "Baby-Doll Eyes",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "banefulbunker": {
     "name_ja": "トーチカ",
-    "name_en": "Baneful Bunker"
+    "name_en": "Baneful Bunker",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "barbbarrage": {
     "name_ja": "どくばりセンボン",
-    "name_en": "Barb Barrage"
+    "name_en": "Barb Barrage",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "batonpass": {
     "name_ja": "バトンタッチ",
-    "name_en": "Baton Pass"
+    "name_en": "Baton Pass",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "beakblast": {
     "name_ja": "くちばしキャノン",
-    "name_en": "Beak Blast"
+    "name_en": "Beak Blast",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "beatup": {
     "name_ja": "ふくろだたき",
-    "name_en": "Beat Up"
+    "name_en": "Beat Up",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "belch": {
     "name_ja": "ゲップ",
-    "name_en": "Belch"
+    "name_en": "Belch",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "bellydrum": {
     "name_ja": "はらだいこ",
-    "name_en": "Belly Drum"
+    "name_en": "Belly Drum",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "bind": {
     "name_ja": "しめつける",
-    "name_en": "Bind"
+    "name_en": "Bind",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "bite": {
     "name_ja": "かみつく",
-    "name_en": "Bite"
+    "name_en": "Bite",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "bitterblade": {
     "name_ja": "むねんのつるぎ",
-    "name_en": "Bitter Blade"
+    "name_en": "Bitter Blade",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "bittermalice": {
     "name_ja": "うらみつらみ",
-    "name_en": "Bitter Malice"
+    "name_en": "Bitter Malice",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "blastburn": {
     "name_ja": "ブラストバーン",
-    "name_en": "Blast Burn"
+    "name_en": "Blast Burn",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "blazekick": {
     "name_ja": "ブレイズキック",
-    "name_en": "Blaze Kick"
+    "name_en": "Blaze Kick",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "blizzard": {
     "name_ja": "ふぶき",
-    "name_en": "Blizzard"
+    "name_en": "Blizzard",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "block": {
     "name_ja": "とおせんぼう",
-    "name_en": "Block"
+    "name_en": "Block",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "bodypress": {
     "name_ja": "ボディプレス",
-    "name_en": "Body Press"
+    "name_en": "Body Press",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "bodyslam": {
     "name_ja": "のしかかり",
-    "name_en": "Body Slam"
+    "name_en": "Body Slam",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "bonerush": {
     "name_ja": "ボーンラッシュ",
-    "name_en": "Bone Rush"
+    "name_en": "Bone Rush",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "boomburst": {
     "name_ja": "ばくおんぱ",
-    "name_en": "Boomburst"
+    "name_en": "Boomburst",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "bounce": {
     "name_ja": "とびはねる",
-    "name_en": "Bounce"
+    "name_en": "Bounce",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "bravebird": {
     "name_ja": "ブレイブバード",
-    "name_en": "Brave Bird"
+    "name_en": "Brave Bird",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "breakingswipe": {
     "name_ja": "ワイドブレイカー",
-    "name_en": "Breaking Swipe"
+    "name_en": "Breaking Swipe",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "brickbreak": {
     "name_ja": "かわらわり",
-    "name_en": "Brick Break"
+    "name_en": "Brick Break",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "brutalswing": {
     "name_ja": "ぶんまわす",
-    "name_en": "Brutal Swing"
+    "name_en": "Brutal Swing",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "bugbite": {
     "name_ja": "むしくい",
-    "name_en": "Bug Bite"
+    "name_en": "Bug Bite",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "bugbuzz": {
     "name_ja": "むしのさざめき",
-    "name_en": "Bug Buzz"
+    "name_en": "Bug Buzz",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "bulkup": {
     "name_ja": "ビルドアップ",
-    "name_en": "Bulk Up"
+    "name_en": "Bulk Up",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "bulldoze": {
     "name_ja": "じならし",
-    "name_en": "Bulldoze"
+    "name_en": "Bulldoze",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "bulletpunch": {
     "name_ja": "バレットパンチ",
-    "name_en": "Bullet Punch"
+    "name_en": "Bullet Punch",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "bulletseed": {
     "name_ja": "タネマシンガン",
-    "name_en": "Bullet Seed"
+    "name_en": "Bullet Seed",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "burningjealousy": {
     "name_ja": "しっとのほのお",
-    "name_en": "Burning Jealousy"
+    "name_en": "Burning Jealousy",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "burnup": {
     "name_ja": "もえつきる",
-    "name_en": "Burn Up"
+    "name_en": "Burn Up",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "calmmind": {
     "name_ja": "めいそう",
-    "name_en": "Calm Mind"
+    "name_en": "Calm Mind",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "ceaselessedge": {
     "name_ja": "ひけん・ちえなみ",
-    "name_en": "Ceaseless Edge"
+    "name_en": "Ceaseless Edge",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "charge": {
     "name_ja": "じゅうでん",
-    "name_en": "Charge"
+    "name_en": "Charge",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "chargebeam": {
     "name_ja": "チャージビーム",
-    "name_en": "Charge Beam"
+    "name_en": "Charge Beam",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "charm": {
     "name_ja": "あまえる",
-    "name_en": "Charm"
+    "name_en": "Charm",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "chillingwater": {
     "name_ja": "ひやみず",
-    "name_en": "Chilling Water"
+    "name_en": "Chilling Water",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "chillyreception": {
     "name_ja": "さむいギャグ",
-    "name_en": "Chilly Reception"
+    "name_en": "Chilly Reception",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "circlethrow": {
     "name_ja": "ともえなげ",
-    "name_en": "Circle Throw"
+    "name_en": "Circle Throw",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "clangingscales": {
     "name_ja": "スケイルノイズ",
-    "name_en": "Clanging Scales"
+    "name_en": "Clanging Scales",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "clangoroussoul": {
     "name_ja": "ソウルビート",
-    "name_en": "Clangorous Soul"
+    "name_en": "Clangorous Soul",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "clearsmog": {
     "name_ja": "クリアスモッグ",
-    "name_en": "Clear Smog"
+    "name_en": "Clear Smog",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "closecombat": {
     "name_ja": "インファイト",
-    "name_en": "Close Combat"
+    "name_en": "Close Combat",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "coaching": {
     "name_ja": "コーチング",
-    "name_en": "Coaching"
+    "name_en": "Coaching",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "coil": {
     "name_ja": "とぐろをまく",
-    "name_en": "Coil"
+    "name_en": "Coil",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "comeuppance": {
     "name_ja": "ほうふく",
-    "name_en": "Comeuppance"
+    "name_en": "Comeuppance",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "confuseray": {
     "name_ja": "あやしいひかり",
-    "name_en": "Confuse Ray"
+    "name_en": "Confuse Ray",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "copycat": {
     "name_ja": "まねっこ",
-    "name_en": "Copycat"
+    "name_en": "Copycat",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "corrosivegas": {
     "name_ja": "ふしょくガス",
-    "name_en": "Corrosive Gas"
+    "name_en": "Corrosive Gas",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "cosmicpower": {
     "name_ja": "コスモパワー",
-    "name_en": "Cosmic Power"
+    "name_en": "Cosmic Power",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "cottonguard": {
     "name_ja": "コットンガード",
-    "name_en": "Cotton Guard"
+    "name_en": "Cotton Guard",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "cottonspore": {
     "name_ja": "わたほうし",
-    "name_en": "Cotton Spore"
+    "name_en": "Cotton Spore",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "counter": {
     "name_ja": "カウンター",
-    "name_en": "Counter"
+    "name_en": "Counter",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "courtchange": {
     "name_ja": "コートチェンジ",
-    "name_en": "Court Change"
+    "name_en": "Court Change",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "covet": {
     "name_ja": "ほしがる",
-    "name_en": "Covet"
+    "name_en": "Covet",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "crabhammer": {
     "name_ja": "クラブハンマー",
-    "name_en": "Crabhammer"
+    "name_en": "Crabhammer",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "crosschop": {
     "name_ja": "クロスチョップ",
-    "name_en": "Cross Chop"
+    "name_en": "Cross Chop",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "crosspoison": {
     "name_ja": "クロスポイズン",
-    "name_en": "Cross Poison"
+    "name_en": "Cross Poison",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "crunch": {
     "name_ja": "かみくだく",
-    "name_en": "Crunch"
+    "name_en": "Crunch",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "crushclaw": {
     "name_ja": "ブレイククロー",
-    "name_en": "Crush Claw"
+    "name_en": "Crush Claw",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "curse": {
     "name_ja": "のろい",
-    "name_en": "Curse"
+    "name_en": "Curse",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "darkestlariat": {
     "name_ja": "ＤＤラリアット",
-    "name_en": "Darkest Lariat"
+    "name_en": "Darkest Lariat",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "darkpulse": {
     "name_ja": "あくのはどう",
-    "name_en": "Dark Pulse"
+    "name_en": "Dark Pulse",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "dazzlinggleam": {
     "name_ja": "マジカルシャイン",
-    "name_en": "Dazzling Gleam"
+    "name_en": "Dazzling Gleam",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "decorate": {
     "name_ja": "デコレーション",
-    "name_en": "Decorate"
+    "name_en": "Decorate",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "defog": {
     "name_ja": "きりばらい",
-    "name_en": "Defog"
+    "name_en": "Defog",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "destinybond": {
     "name_ja": "みちづれ",
-    "name_en": "Destiny Bond"
+    "name_en": "Destiny Bond",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "detect": {
     "name_ja": "みきり",
-    "name_en": "Detect"
+    "name_en": "Detect",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "dig": {
     "name_ja": "あなをほる",
-    "name_en": "Dig"
+    "name_en": "Dig",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "direclaw": {
     "name_ja": "フェイタルクロー",
-    "name_en": "Dire Claw"
+    "name_en": "Dire Claw",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "disable": {
     "name_ja": "かなしばり",
-    "name_en": "Disable"
+    "name_en": "Disable",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "disarmingvoice": {
     "name_ja": "チャームボイス",
-    "name_en": "Disarming Voice"
+    "name_en": "Disarming Voice",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "discharge": {
     "name_ja": "ほうでん",
-    "name_en": "Discharge"
+    "name_en": "Discharge",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "dive": {
     "name_ja": "ダイビング",
-    "name_en": "Dive"
+    "name_en": "Dive",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "doubleedge": {
     "name_ja": "すてみタックル",
-    "name_en": "Double-Edge"
+    "name_en": "Double-Edge",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "doublehit": {
     "name_ja": "ダブルアタック",
-    "name_en": "Double Hit"
+    "name_en": "Double Hit",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "doubleshock": {
     "name_ja": "でんこうそうげき",
-    "name_en": "Double Shock"
+    "name_en": "Double Shock",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "doubleteam": {
     "name_ja": "かげぶんしん",
-    "name_en": "Double Team"
+    "name_en": "Double Team",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "dracometeor": {
     "name_ja": "りゅうせいぐん",
-    "name_en": "Draco Meteor"
+    "name_en": "Draco Meteor",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "dragoncheer": {
     "name_ja": "ドラゴンエール",
-    "name_en": "Dragon Cheer"
+    "name_en": "Dragon Cheer",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "dragonclaw": {
     "name_ja": "ドラゴンクロー",
-    "name_en": "Dragon Claw"
+    "name_en": "Dragon Claw",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "dragondance": {
     "name_ja": "りゅうのまい",
-    "name_en": "Dragon Dance"
+    "name_en": "Dragon Dance",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "dragondarts": {
     "name_ja": "ドラゴンアロー",
-    "name_en": "Dragon Darts"
+    "name_en": "Dragon Darts",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "dragonpulse": {
     "name_ja": "りゅうのはどう",
-    "name_en": "Dragon Pulse"
+    "name_en": "Dragon Pulse",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "dragonrush": {
     "name_ja": "ドラゴンダイブ",
-    "name_en": "Dragon Rush"
+    "name_en": "Dragon Rush",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "dragontail": {
     "name_ja": "ドラゴンテール",
-    "name_en": "Dragon Tail"
+    "name_en": "Dragon Tail",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "drainingkiss": {
     "name_ja": "ドレインキッス",
-    "name_en": "Draining Kiss"
+    "name_en": "Draining Kiss",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "drainpunch": {
     "name_ja": "ドレインパンチ",
-    "name_en": "Drain Punch"
+    "name_en": "Drain Punch",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "drillpeck": {
     "name_ja": "ドリルくちばし",
-    "name_en": "Drill Peck"
+    "name_en": "Drill Peck",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "drillrun": {
     "name_ja": "ドリルライナー",
-    "name_en": "Drill Run"
+    "name_en": "Drill Run",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "drumbeating": {
     "name_ja": "ドラムアタック",
-    "name_en": "Drum Beating"
+    "name_en": "Drum Beating",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "dualwingbeat": {
     "name_ja": "ダブルウイング",
-    "name_en": "Dual Wingbeat"
+    "name_en": "Dual Wingbeat",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "dynamicpunch": {
     "name_ja": "ばくれつパンチ",
-    "name_en": "Dynamic Punch"
+    "name_en": "Dynamic Punch",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "earthpower": {
     "name_ja": "だいちのちから",
-    "name_en": "Earth Power"
+    "name_en": "Earth Power",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "earthquake": {
     "name_ja": "じしん",
-    "name_en": "Earthquake"
+    "name_en": "Earthquake",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "eerieimpulse": {
     "name_ja": "かいでんぱ",
-    "name_en": "Eerie Impulse"
+    "name_en": "Eerie Impulse",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "eeriespell": {
     "name_ja": "ぶきみなじゅもん",
-    "name_en": "Eerie Spell"
+    "name_en": "Eerie Spell",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "electricterrain": {
     "name_ja": "エレキフィールド",
-    "name_en": "Electric Terrain"
+    "name_en": "Electric Terrain",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "electrify": {
     "name_ja": "そうでん",
-    "name_en": "Electrify"
+    "name_en": "Electrify",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "electroball": {
     "name_ja": "エレキボール",
-    "name_en": "Electro Ball"
+    "name_en": "Electro Ball",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "electroshot": {
     "name_ja": "エレクトロビーム",
-    "name_en": "Electro Shot"
+    "name_en": "Electro Shot",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "electroweb": {
     "name_ja": "エレキネット",
-    "name_en": "Electroweb"
+    "name_en": "Electroweb",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "encore": {
     "name_ja": "アンコール",
-    "name_en": "Encore"
+    "name_en": "Encore",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "endeavor": {
     "name_ja": "がむしゃら",
-    "name_en": "Endeavor"
+    "name_en": "Endeavor",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "endure": {
     "name_ja": "こらえる",
-    "name_en": "Endure"
+    "name_en": "Endure",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "energyball": {
     "name_ja": "エナジーボール",
-    "name_en": "Energy Ball"
+    "name_en": "Energy Ball",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "entrainment": {
     "name_ja": "なかまづくり",
-    "name_en": "Entrainment"
+    "name_en": "Entrainment",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "eruption": {
     "name_ja": "ふんか",
-    "name_en": "Eruption"
+    "name_en": "Eruption",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "expandingforce": {
     "name_ja": "ワイドフォース",
-    "name_en": "Expanding Force"
+    "name_en": "Expanding Force",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "explosion": {
     "name_ja": "だいばくはつ",
-    "name_en": "Explosion"
+    "name_en": "Explosion",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "extrasensory": {
     "name_ja": "じんつうりき",
-    "name_en": "Extrasensory"
+    "name_en": "Extrasensory",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "extremespeed": {
     "name_ja": "しんそく",
-    "name_en": "Extreme Speed"
+    "name_en": "Extreme Speed",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "facade": {
     "name_ja": "からげんき",
-    "name_en": "Facade"
+    "name_en": "Facade",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "fairylock": {
     "name_ja": "フェアリーロック",
-    "name_en": "Fairy Lock"
+    "name_en": "Fairy Lock",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "fakeout": {
     "name_ja": "ねこだまし",
-    "name_en": "Fake Out"
+    "name_en": "Fake Out",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "faketears": {
     "name_ja": "うそなき",
-    "name_en": "Fake Tears"
+    "name_en": "Fake Tears",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "featherdance": {
     "name_ja": "フェザーダンス",
-    "name_en": "Feather Dance"
+    "name_en": "Feather Dance",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "feint": {
     "name_ja": "フェイント",
-    "name_en": "Feint"
+    "name_en": "Feint",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "fellstinger": {
     "name_ja": "とどめばり",
-    "name_en": "Fell Stinger"
+    "name_en": "Fell Stinger",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "ficklebeam": {
     "name_ja": "きまぐレーザー",
-    "name_en": "Fickle Beam"
+    "name_en": "Fickle Beam",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "fierydance": {
     "name_ja": "ほのおのまい",
-    "name_en": "Fiery Dance"
+    "name_en": "Fiery Dance",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "finalgambit": {
     "name_ja": "いのちがけ",
-    "name_en": "Final Gambit"
+    "name_en": "Final Gambit",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "fireblast": {
     "name_ja": "だいもんじ",
-    "name_en": "Fire Blast"
+    "name_en": "Fire Blast",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "firefang": {
     "name_ja": "ほのおのキバ",
-    "name_en": "Fire Fang"
+    "name_en": "Fire Fang",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "firelash": {
     "name_ja": "ほのおのムチ",
-    "name_en": "Fire Lash"
+    "name_en": "Fire Lash",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "firepunch": {
     "name_ja": "ほのおのパンチ",
-    "name_en": "Fire Punch"
+    "name_en": "Fire Punch",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "firespin": {
     "name_ja": "ほのおのうず",
-    "name_en": "Fire Spin"
+    "name_en": "Fire Spin",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "firstimpression": {
     "name_ja": "であいがしら",
-    "name_en": "First Impression"
+    "name_en": "First Impression",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "fissure": {
     "name_ja": "じわれ",
-    "name_en": "Fissure"
+    "name_en": "Fissure",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "flail": {
     "name_ja": "じたばた",
-    "name_en": "Flail"
+    "name_en": "Flail",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "flamecharge": {
     "name_ja": "ニトロチャージ",
-    "name_en": "Flame Charge"
+    "name_en": "Flame Charge",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "flamethrower": {
     "name_ja": "かえんほうしゃ",
-    "name_en": "Flamethrower"
+    "name_en": "Flamethrower",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "flareblitz": {
     "name_ja": "フレアドライブ",
-    "name_en": "Flare Blitz"
+    "name_en": "Flare Blitz",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "flashcannon": {
     "name_ja": "ラスターカノン",
-    "name_en": "Flash Cannon"
+    "name_en": "Flash Cannon",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "flatter": {
     "name_ja": "おだてる",
-    "name_en": "Flatter"
+    "name_en": "Flatter",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "fling": {
     "name_ja": "なげつける",
-    "name_en": "Fling"
+    "name_en": "Fling",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "flipturn": {
     "name_ja": "クイックターン",
-    "name_en": "Flip Turn"
+    "name_en": "Flip Turn",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "flowertrick": {
     "name_ja": "トリックフラワー",
-    "name_en": "Flower Trick"
+    "name_en": "Flower Trick",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "fly": {
     "name_ja": "そらをとぶ",
-    "name_en": "Fly"
+    "name_en": "Fly",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "flyingpress": {
     "name_ja": "フライングプレス",
-    "name_en": "Flying Press"
+    "name_en": "Flying Press",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "focusblast": {
     "name_ja": "きあいだま",
-    "name_en": "Focus Blast"
+    "name_en": "Focus Blast",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "focusenergy": {
     "name_ja": "きあいだめ",
-    "name_en": "Focus Energy"
+    "name_en": "Focus Energy",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "focuspunch": {
     "name_ja": "きあいパンチ",
-    "name_en": "Focus Punch"
+    "name_en": "Focus Punch",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "followme": {
     "name_ja": "このゆびとまれ",
-    "name_en": "Follow Me"
+    "name_en": "Follow Me",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "forestscurse": {
     "name_ja": "もりののろい",
-    "name_en": "Forest's Curse"
+    "name_en": "Forest's Curse",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "foulplay": {
     "name_ja": "イカサマ",
-    "name_en": "Foul Play"
+    "name_en": "Foul Play",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "freezedry": {
     "name_ja": "フリーズドライ",
-    "name_en": "Freeze-Dry"
+    "name_en": "Freeze-Dry",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "frenzyplant": {
     "name_ja": "ハードプラント",
-    "name_en": "Frenzy Plant"
+    "name_en": "Frenzy Plant",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "frostbreath": {
     "name_ja": "こおりのいぶき",
-    "name_en": "Frost Breath"
+    "name_en": "Frost Breath",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "futuresight": {
     "name_ja": "みらいよち",
-    "name_en": "Future Sight"
+    "name_en": "Future Sight",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "gastroacid": {
     "name_ja": "いえき",
-    "name_en": "Gastro Acid"
+    "name_en": "Gastro Acid",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "gigadrain": {
     "name_ja": "ギガドレイン",
-    "name_en": "Giga Drain"
+    "name_en": "Giga Drain",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "gigaimpact": {
     "name_ja": "ギガインパクト",
-    "name_en": "Giga Impact"
+    "name_en": "Giga Impact",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "gigatonhammer": {
     "name_ja": "デカハンマー",
-    "name_en": "Gigaton Hammer"
+    "name_en": "Gigaton Hammer",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "glaiverush": {
     "name_ja": "きょけんとつげき",
-    "name_en": "Glaive Rush"
+    "name_en": "Glaive Rush",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "glare": {
     "name_ja": "へびにらみ",
-    "name_en": "Glare"
+    "name_en": "Glare",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "grassknot": {
     "name_ja": "くさむすび",
-    "name_en": "Grass Knot"
+    "name_en": "Grass Knot",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "grassyglide": {
     "name_ja": "グラススライダー",
-    "name_en": "Grassy Glide"
+    "name_en": "Grassy Glide",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "grassyterrain": {
     "name_ja": "グラスフィールド",
-    "name_en": "Grassy Terrain"
+    "name_en": "Grassy Terrain",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "gravapple": {
     "name_ja": "Ｇのちから",
-    "name_en": "Grav Apple"
+    "name_en": "Grav Apple",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "gravity": {
     "name_ja": "じゅうりょく",
-    "name_en": "Gravity"
+    "name_en": "Gravity",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "growth": {
     "name_ja": "せいちょう",
-    "name_en": "Growth"
+    "name_en": "Growth",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "guardsplit": {
     "name_ja": "ガードシェア",
-    "name_en": "Guard Split"
+    "name_en": "Guard Split",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "guardswap": {
     "name_ja": "ガードスワップ",
-    "name_en": "Guard Swap"
+    "name_en": "Guard Swap",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "guillotine": {
     "name_ja": "ハサミギロチン",
-    "name_en": "Guillotine"
+    "name_en": "Guillotine",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "gunkshot": {
     "name_ja": "ダストシュート",
-    "name_en": "Gunk Shot"
+    "name_en": "Gunk Shot",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "gyroball": {
     "name_ja": "ジャイロボール",
-    "name_en": "Gyro Ball"
+    "name_en": "Gyro Ball",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "hammerarm": {
     "name_ja": "アームハンマー",
-    "name_en": "Hammer Arm"
+    "name_en": "Hammer Arm",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "hardpress": {
     "name_ja": "ハードプレス",
-    "name_en": "Hard Press"
+    "name_en": "Hard Press",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "haze": {
     "name_ja": "くろいきり",
-    "name_en": "Haze"
+    "name_en": "Haze",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "headlongrush": {
     "name_ja": "ぶちかまし",
-    "name_en": "Headlong Rush"
+    "name_en": "Headlong Rush",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "headsmash": {
     "name_ja": "もろはのずつき",
-    "name_en": "Head Smash"
+    "name_en": "Head Smash",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "healbell": {
     "name_ja": "いやしのすず",
-    "name_en": "Heal Bell"
+    "name_en": "Heal Bell",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "healingwish": {
     "name_ja": "いやしのねがい",
-    "name_en": "Healing Wish"
+    "name_en": "Healing Wish",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "healpulse": {
     "name_ja": "いやしのはどう",
-    "name_en": "Heal Pulse"
+    "name_en": "Heal Pulse",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "heatcrash": {
     "name_ja": "ヒートスタンプ",
-    "name_en": "Heat Crash"
+    "name_en": "Heat Crash",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "heatwave": {
     "name_ja": "ねっぷう",
-    "name_en": "Heat Wave"
+    "name_en": "Heat Wave",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "heavyslam": {
     "name_ja": "ヘビーボンバー",
-    "name_en": "Heavy Slam"
+    "name_en": "Heavy Slam",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "helpinghand": {
     "name_ja": "てだすけ",
-    "name_en": "Helping Hand"
+    "name_en": "Helping Hand",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "hex": {
     "name_ja": "たたりめ",
-    "name_en": "Hex"
+    "name_en": "Hex",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "highhorsepower": {
     "name_ja": "１０まんばりき",
-    "name_en": "High Horsepower"
+    "name_en": "High Horsepower",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "highjumpkick": {
     "name_ja": "とびひざげり",
-    "name_en": "High Jump Kick"
+    "name_en": "High Jump Kick",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "honeclaws": {
     "name_ja": "つめとぎ",
-    "name_en": "Hone Claws"
+    "name_en": "Hone Claws",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "horndrill": {
     "name_ja": "つのドリル",
-    "name_en": "Horn Drill"
+    "name_en": "Horn Drill",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "hornleech": {
     "name_ja": "ウッドホーン",
-    "name_en": "Horn Leech"
+    "name_en": "Horn Leech",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "howl": {
     "name_ja": "とおぼえ",
-    "name_en": "Howl"
+    "name_en": "Howl",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "hurricane": {
     "name_ja": "ぼうふう",
-    "name_en": "Hurricane"
+    "name_en": "Hurricane",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "hydrocannon": {
     "name_ja": "ハイドロカノン",
-    "name_en": "Hydro Cannon"
+    "name_en": "Hydro Cannon",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "hydropump": {
     "name_ja": "ハイドロポンプ",
-    "name_en": "Hydro Pump"
+    "name_en": "Hydro Pump",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "hyperbeam": {
     "name_ja": "はかいこうせん",
-    "name_en": "Hyper Beam"
+    "name_en": "Hyper Beam",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "hypervoice": {
     "name_ja": "ハイパーボイス",
-    "name_en": "Hyper Voice"
+    "name_en": "Hyper Voice",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "hypnosis": {
     "name_ja": "さいみんじゅつ",
-    "name_en": "Hypnosis"
+    "name_en": "Hypnosis",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "icebeam": {
     "name_ja": "れいとうビーム",
-    "name_en": "Ice Beam"
+    "name_en": "Ice Beam",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "icefang": {
     "name_ja": "こおりのキバ",
-    "name_en": "Ice Fang"
+    "name_en": "Ice Fang",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "icehammer": {
     "name_ja": "アイスハンマー",
-    "name_en": "Ice Hammer"
+    "name_en": "Ice Hammer",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "icepunch": {
     "name_ja": "れいとうパンチ",
-    "name_en": "Ice Punch"
+    "name_en": "Ice Punch",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "iceshard": {
     "name_ja": "こおりのつぶて",
-    "name_en": "Ice Shard"
+    "name_en": "Ice Shard",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "icespinner": {
     "name_ja": "アイススピナー",
-    "name_en": "Ice Spinner"
+    "name_en": "Ice Spinner",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "iciclecrash": {
     "name_ja": "つららおとし",
-    "name_en": "Icicle Crash"
+    "name_en": "Icicle Crash",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "iciclespear": {
     "name_ja": "つららばり",
-    "name_en": "Icicle Spear"
+    "name_en": "Icicle Spear",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "icywind": {
     "name_ja": "こごえるかぜ",
-    "name_en": "Icy Wind"
+    "name_en": "Icy Wind",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "imprison": {
     "name_ja": "ふういん",
-    "name_en": "Imprison"
+    "name_en": "Imprison",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "infernalparade": {
     "name_ja": "ひゃっきやこう",
-    "name_en": "Infernal Parade"
+    "name_en": "Infernal Parade",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "inferno": {
     "name_ja": "れんごく",
-    "name_en": "Inferno"
+    "name_en": "Inferno",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "infestation": {
     "name_ja": "まとわりつく",
-    "name_en": "Infestation"
+    "name_en": "Infestation",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "ingrain": {
     "name_ja": "ねをはる",
-    "name_en": "Ingrain"
+    "name_en": "Ingrain",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "instruct": {
     "name_ja": "さいはい",
-    "name_en": "Instruct"
+    "name_en": "Instruct",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "irondefense": {
     "name_ja": "てっぺき",
-    "name_en": "Iron Defense"
+    "name_en": "Iron Defense",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "ironhead": {
     "name_ja": "アイアンヘッド",
-    "name_en": "Iron Head"
+    "name_en": "Iron Head",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "irontail": {
     "name_ja": "アイアンテール",
-    "name_en": "Iron Tail"
+    "name_en": "Iron Tail",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "jawlock": {
     "name_ja": "くらいつく",
-    "name_en": "Jaw Lock"
+    "name_en": "Jaw Lock",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "jetpunch": {
     "name_ja": "ジェットパンチ",
-    "name_en": "Jet Punch"
+    "name_en": "Jet Punch",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "kingsshield": {
     "name_ja": "キングシールド",
-    "name_en": "King's Shield"
+    "name_en": "King's Shield",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "knockoff": {
     "name_ja": "はたきおとす",
-    "name_en": "Knock Off"
+    "name_en": "Knock Off",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "kowtowcleave": {
     "name_ja": "ドゲザン",
-    "name_en": "Kowtow Cleave"
+    "name_en": "Kowtow Cleave",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "lashout": {
     "name_ja": "うっぷんばらし",
-    "name_en": "Lash Out"
+    "name_en": "Lash Out",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "lastresort": {
     "name_ja": "とっておき",
-    "name_en": "Last Resort"
+    "name_en": "Last Resort",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "lastrespects": {
     "name_ja": "おはかまいり",
-    "name_en": "Last Respects"
+    "name_en": "Last Respects",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "lavaplume": {
     "name_ja": "ふんえん",
-    "name_en": "Lava Plume"
+    "name_en": "Lava Plume",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "leafblade": {
     "name_ja": "リーフブレード",
-    "name_en": "Leaf Blade"
+    "name_en": "Leaf Blade",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "leafstorm": {
     "name_ja": "リーフストーム",
-    "name_en": "Leaf Storm"
+    "name_en": "Leaf Storm",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "leechlife": {
     "name_ja": "きゅうけつ",
-    "name_en": "Leech Life"
+    "name_en": "Leech Life",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "leechseed": {
     "name_ja": "やどりぎのタネ",
-    "name_en": "Leech Seed"
+    "name_en": "Leech Seed",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "lifedew": {
     "name_ja": "いのちのしずく",
-    "name_en": "Life Dew"
+    "name_en": "Life Dew",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "lightofruin": {
     "name_ja": "はめつのひかり",
-    "name_en": "Light of Ruin"
+    "name_en": "Light of Ruin",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "lightscreen": {
     "name_ja": "ひかりのかべ",
-    "name_en": "Light Screen"
+    "name_en": "Light Screen",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "liquidation": {
     "name_ja": "アクアブレイク",
-    "name_en": "Liquidation"
+    "name_en": "Liquidation",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "lockon": {
     "name_ja": "ロックオン",
-    "name_en": "Lock-On"
+    "name_en": "Lock-On",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "lowkick": {
     "name_ja": "けたぐり",
-    "name_en": "Low Kick"
+    "name_en": "Low Kick",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "lowsweep": {
     "name_ja": "ローキック",
-    "name_en": "Low Sweep"
+    "name_en": "Low Sweep",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "luminacrash": {
     "name_ja": "ルミナコリジョン",
-    "name_en": "Lumina Crash"
+    "name_en": "Lumina Crash",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "lunge": {
     "name_ja": "とびかかる",
-    "name_en": "Lunge"
+    "name_en": "Lunge",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "machpunch": {
     "name_ja": "マッハパンチ",
-    "name_en": "Mach Punch"
+    "name_en": "Mach Punch",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "magicalleaf": {
     "name_ja": "マジカルリーフ",
-    "name_en": "Magical Leaf"
+    "name_en": "Magical Leaf",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "magicpowder": {
     "name_ja": "まほうのこな",
-    "name_en": "Magic Powder"
+    "name_en": "Magic Powder",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "magicroom": {
     "name_ja": "マジックルーム",
-    "name_en": "Magic Room"
+    "name_en": "Magic Room",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "magneticflux": {
     "name_ja": "じばそうさ",
-    "name_en": "Magnetic Flux"
+    "name_en": "Magnetic Flux",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "magnetrise": {
     "name_ja": "でんじふゆう",
-    "name_en": "Magnet Rise"
+    "name_en": "Magnet Rise",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "makeitrain": {
     "name_ja": "ゴールドラッシュ",
-    "name_en": "Make It Rain"
+    "name_en": "Make It Rain",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "matchagotcha": {
     "name_ja": "シャカシャカほう",
-    "name_en": "Matcha Gotcha"
+    "name_en": "Matcha Gotcha",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "meanlook": {
     "name_ja": "くろいまなざし",
-    "name_en": "Mean Look"
+    "name_en": "Mean Look",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "megahorn": {
     "name_ja": "メガホーン",
-    "name_en": "Megahorn"
+    "name_en": "Megahorn",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "megakick": {
     "name_ja": "メガトンキック",
-    "name_en": "Mega Kick"
+    "name_en": "Mega Kick",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "memento": {
     "name_ja": "おきみやげ",
-    "name_en": "Memento"
+    "name_en": "Memento",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "metalburst": {
     "name_ja": "メタルバースト",
-    "name_en": "Metal Burst"
+    "name_en": "Metal Burst",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "metalsound": {
     "name_ja": "きんぞくおん",
-    "name_en": "Metal Sound"
+    "name_en": "Metal Sound",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "meteorassault": {
     "name_ja": "スターアサルト",
-    "name_en": "Meteor Assault"
+    "name_en": "Meteor Assault",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "meteorbeam": {
     "name_ja": "メテオビーム",
-    "name_en": "Meteor Beam"
+    "name_en": "Meteor Beam",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "meteormash": {
     "name_ja": "コメットパンチ",
-    "name_en": "Meteor Mash"
+    "name_en": "Meteor Mash",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "milkdrink": {
     "name_ja": "ミルクのみ",
-    "name_en": "Milk Drink"
+    "name_en": "Milk Drink",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "minimize": {
     "name_ja": "ちいさくなる",
-    "name_en": "Minimize"
+    "name_en": "Minimize",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "mirrorcoat": {
     "name_ja": "ミラーコート",
-    "name_en": "Mirror Coat"
+    "name_en": "Mirror Coat",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "mistyexplosion": {
     "name_ja": "ミストバースト",
-    "name_en": "Misty Explosion"
+    "name_en": "Misty Explosion",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "mistyterrain": {
     "name_ja": "ミストフィールド",
-    "name_en": "Misty Terrain"
+    "name_en": "Misty Terrain",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "moonblast": {
     "name_ja": "ムーンフォース",
-    "name_en": "Moonblast"
+    "name_en": "Moonblast",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "moonlight": {
     "name_ja": "つきのひかり",
-    "name_en": "Moonlight"
+    "name_en": "Moonlight",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "morningsun": {
     "name_ja": "あさのひざし",
-    "name_en": "Morning Sun"
+    "name_en": "Morning Sun",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "mortalspin": {
     "name_ja": "キラースピン",
-    "name_en": "Mortal Spin"
+    "name_en": "Mortal Spin",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "mountaingale": {
     "name_ja": "ひょうざんおろし",
-    "name_en": "Mountain Gale"
+    "name_en": "Mountain Gale",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "muddywater": {
     "name_ja": "だくりゅう",
-    "name_en": "Muddy Water"
+    "name_en": "Muddy Water",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "mudshot": {
     "name_ja": "マッドショット",
-    "name_en": "Mud Shot"
+    "name_en": "Mud Shot",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "mudslap": {
     "name_ja": "どろかけ",
-    "name_en": "Mud-Slap"
+    "name_en": "Mud-Slap",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "mysticalfire": {
     "name_ja": "マジカルフレイム",
-    "name_en": "Mystical Fire"
+    "name_en": "Mystical Fire",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "nastyplot": {
     "name_ja": "わるだくみ",
-    "name_en": "Nasty Plot"
+    "name_en": "Nasty Plot",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "nightdaze": {
     "name_ja": "ナイトバースト",
-    "name_en": "Night Daze"
+    "name_en": "Night Daze",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "nightshade": {
     "name_ja": "ナイトヘッド",
-    "name_en": "Night Shade"
+    "name_en": "Night Shade",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "nightslash": {
     "name_ja": "つじぎり",
-    "name_en": "Night Slash"
+    "name_en": "Night Slash",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "nobleroar": {
     "name_ja": "おたけび",
-    "name_en": "Noble Roar"
+    "name_en": "Noble Roar",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "noretreat": {
     "name_ja": "はいすいのじん",
-    "name_en": "No Retreat"
+    "name_en": "No Retreat",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "nuzzle": {
     "name_ja": "ほっぺすりすり",
-    "name_en": "Nuzzle"
+    "name_en": "Nuzzle",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "octolock": {
     "name_ja": "たこがため",
-    "name_en": "Octolock"
+    "name_en": "Octolock",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "outrage": {
     "name_ja": "げきりん",
-    "name_en": "Outrage"
+    "name_en": "Outrage",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "overdrive": {
     "name_ja": "オーバードライブ",
-    "name_en": "Overdrive"
+    "name_en": "Overdrive",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "overheat": {
     "name_ja": "オーバーヒート",
-    "name_en": "Overheat"
+    "name_en": "Overheat",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "painsplit": {
     "name_ja": "いたみわけ",
-    "name_en": "Pain Split"
+    "name_en": "Pain Split",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "paraboliccharge": {
     "name_ja": "パラボラチャージ",
-    "name_en": "Parabolic Charge"
+    "name_en": "Parabolic Charge",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "partingshot": {
     "name_ja": "すてゼリフ",
-    "name_en": "Parting Shot"
+    "name_en": "Parting Shot",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "payback": {
     "name_ja": "しっぺがえし",
-    "name_en": "Payback"
+    "name_en": "Payback",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "perishsong": {
     "name_ja": "ほろびのうた",
-    "name_en": "Perish Song"
+    "name_en": "Perish Song",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "petalblizzard": {
     "name_ja": "はなふぶき",
-    "name_en": "Petal Blizzard"
+    "name_en": "Petal Blizzard",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "petaldance": {
     "name_ja": "はなびらのまい",
-    "name_en": "Petal Dance"
+    "name_en": "Petal Dance",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "phantomforce": {
     "name_ja": "ゴーストダイブ",
-    "name_en": "Phantom Force"
+    "name_en": "Phantom Force",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "pinmissile": {
     "name_ja": "ミサイルばり",
-    "name_en": "Pin Missile"
+    "name_en": "Pin Missile",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "playrough": {
     "name_ja": "じゃれつく",
-    "name_en": "Play Rough"
+    "name_en": "Play Rough",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "pluck": {
     "name_ja": "ついばむ",
-    "name_en": "Pluck"
+    "name_en": "Pluck",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "poisonfang": {
     "name_ja": "どくどくのキバ",
-    "name_en": "Poison Fang"
+    "name_en": "Poison Fang",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "poisonjab": {
     "name_ja": "どくづき",
-    "name_en": "Poison Jab"
+    "name_en": "Poison Jab",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "poisonpowder": {
     "name_ja": "どくのこな",
-    "name_en": "Poison Powder"
+    "name_en": "Poison Powder",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "pollenpuff": {
     "name_ja": "かふんだんご",
-    "name_en": "Pollen Puff"
+    "name_en": "Pollen Puff",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "poltergeist": {
     "name_ja": "ポルターガイスト",
-    "name_en": "Poltergeist"
+    "name_en": "Poltergeist",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "populationbomb": {
     "name_ja": "ネズミざん",
-    "name_en": "Population Bomb"
+    "name_en": "Population Bomb",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "pounce": {
     "name_ja": "とびつく",
-    "name_en": "Pounce"
+    "name_en": "Pounce",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "powergem": {
     "name_ja": "パワージェム",
-    "name_en": "Power Gem"
+    "name_en": "Power Gem",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "powersplit": {
     "name_ja": "パワーシェア",
-    "name_en": "Power Split"
+    "name_en": "Power Split",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "powerswap": {
     "name_ja": "パワースワップ",
-    "name_en": "Power Swap"
+    "name_en": "Power Swap",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "powertrick": {
     "name_ja": "パワートリック",
-    "name_en": "Power Trick"
+    "name_en": "Power Trick",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "powertrip": {
     "name_ja": "つけあがる",
-    "name_en": "Power Trip"
+    "name_en": "Power Trip",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "powerwhip": {
     "name_ja": "パワーウィップ",
-    "name_en": "Power Whip"
+    "name_en": "Power Whip",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "protect": {
     "name_ja": "まもる",
-    "name_en": "Protect"
+    "name_en": "Protect",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "psychic": {
     "name_ja": "サイコキネシス",
-    "name_en": "Psychic"
+    "name_en": "Psychic",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "psychicfangs": {
     "name_ja": "サイコファング",
-    "name_en": "Psychic Fangs"
+    "name_en": "Psychic Fangs",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "psychicnoise": {
     "name_ja": "サイコノイズ",
-    "name_en": "Psychic Noise"
+    "name_en": "Psychic Noise",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "psychicterrain": {
     "name_ja": "サイコフィールド",
-    "name_en": "Psychic Terrain"
+    "name_en": "Psychic Terrain",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "psychocut": {
     "name_ja": "サイコカッター",
-    "name_en": "Psycho Cut"
+    "name_en": "Psycho Cut",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "psychup": {
     "name_ja": "じこあんじ",
-    "name_en": "Psych Up"
+    "name_en": "Psych Up",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "psyshieldbash": {
     "name_ja": "バリアーラッシュ",
-    "name_en": "Psyshield Bash"
+    "name_en": "Psyshield Bash",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "psyshock": {
     "name_ja": "サイコショック",
-    "name_en": "Psyshock"
+    "name_en": "Psyshock",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "pyroball": {
     "name_ja": "かえんボール",
-    "name_en": "Pyro Ball"
+    "name_en": "Pyro Ball",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "quash": {
     "name_ja": "さきおくり",
-    "name_en": "Quash"
+    "name_en": "Quash",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "quickattack": {
     "name_ja": "でんこうせっか",
-    "name_en": "Quick Attack"
+    "name_en": "Quick Attack",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "quickguard": {
     "name_ja": "ファストガード",
-    "name_en": "Quick Guard"
+    "name_en": "Quick Guard",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "quiverdance": {
     "name_ja": "ちょうのまい",
-    "name_en": "Quiver Dance"
+    "name_en": "Quiver Dance",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "ragefist": {
     "name_ja": "ふんどのこぶし",
-    "name_en": "Rage Fist"
+    "name_en": "Rage Fist",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "ragepowder": {
     "name_ja": "いかりのこな",
-    "name_en": "Rage Powder"
+    "name_en": "Rage Powder",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "ragingbull": {
     "name_ja": "レイジングブル",
-    "name_en": "Raging Bull"
+    "name_en": "Raging Bull",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "ragingfury": {
     "name_ja": "だいふんげき",
-    "name_en": "Raging Fury"
+    "name_en": "Raging Fury",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "raindance": {
     "name_ja": "あまごい",
-    "name_en": "Rain Dance"
+    "name_en": "Rain Dance",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "rapidspin": {
     "name_ja": "こうそくスピン",
-    "name_en": "Rapid Spin"
+    "name_en": "Rapid Spin",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "razorshell": {
     "name_ja": "シェルブレード",
-    "name_en": "Razor Shell"
+    "name_en": "Razor Shell",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "recover": {
     "name_ja": "じこさいせい",
-    "name_en": "Recover"
+    "name_en": "Recover",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "recycle": {
     "name_ja": "リサイクル",
-    "name_en": "Recycle"
+    "name_en": "Recycle",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "reflect": {
     "name_ja": "リフレクター",
-    "name_en": "Reflect"
+    "name_en": "Reflect",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "reflecttype": {
     "name_ja": "ミラータイプ",
-    "name_en": "Reflect Type"
+    "name_en": "Reflect Type",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "rest": {
     "name_ja": "ねむる",
-    "name_en": "Rest"
+    "name_en": "Rest",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "reversal": {
     "name_ja": "きしかいせい",
-    "name_en": "Reversal"
+    "name_en": "Reversal",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "revivalblessing": {
     "name_ja": "さいきのいのり",
-    "name_en": "Revival Blessing"
+    "name_en": "Revival Blessing",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "risingvoltage": {
     "name_ja": "ライジングボルト",
-    "name_en": "Rising Voltage"
+    "name_en": "Rising Voltage",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "roar": {
     "name_ja": "ほえる",
-    "name_en": "Roar"
+    "name_en": "Roar",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "rockblast": {
     "name_ja": "ロックブラスト",
-    "name_en": "Rock Blast"
+    "name_en": "Rock Blast",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "rockpolish": {
     "name_ja": "ロックカット",
-    "name_en": "Rock Polish"
+    "name_en": "Rock Polish",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "rockslide": {
     "name_ja": "いわなだれ",
-    "name_en": "Rock Slide"
+    "name_en": "Rock Slide",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "rocktomb": {
     "name_ja": "がんせきふうじ",
-    "name_en": "Rock Tomb"
+    "name_en": "Rock Tomb",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "rockwrecker": {
     "name_ja": "がんせきほう",
-    "name_en": "Rock Wrecker"
+    "name_en": "Rock Wrecker",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "roleplay": {
     "name_ja": "なりきり",
-    "name_en": "Role Play"
+    "name_en": "Role Play",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "roost": {
     "name_ja": "はねやすめ",
-    "name_en": "Roost"
+    "name_en": "Roost",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "round": {
     "name_ja": "りんしょう",
-    "name_en": "Round"
+    "name_en": "Round",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "sacredsword": {
     "name_ja": "せいなるつるぎ",
-    "name_en": "Sacred Sword"
+    "name_en": "Sacred Sword",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "safeguard": {
     "name_ja": "しんぴのまもり",
-    "name_en": "Safeguard"
+    "name_en": "Safeguard",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "saltcure": {
     "name_ja": "しおづけ",
-    "name_en": "Salt Cure"
+    "name_en": "Salt Cure",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "sandstorm": {
     "name_ja": "すなあらし",
-    "name_en": "Sandstorm"
+    "name_en": "Sandstorm",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "sandtomb": {
     "name_ja": "すなじごく",
-    "name_en": "Sand Tomb"
+    "name_en": "Sand Tomb",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "scald": {
     "name_ja": "ねっとう",
-    "name_en": "Scald"
+    "name_en": "Scald",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "scaleshot": {
     "name_ja": "スケイルショット",
-    "name_en": "Scale Shot"
+    "name_en": "Scale Shot",
+    "type_ja": "ドラゴン",
+    "type_en": "dragon"
   },
   "scaryface": {
     "name_ja": "こわいかお",
-    "name_en": "Scary Face"
+    "name_en": "Scary Face",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "scorchingsands": {
     "name_ja": "ねっさのだいち",
-    "name_en": "Scorching Sands"
+    "name_en": "Scorching Sands",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "screech": {
     "name_ja": "いやなおと",
-    "name_en": "Screech"
+    "name_en": "Screech",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "seedbomb": {
     "name_ja": "タネばくだん",
-    "name_en": "Seed Bomb"
+    "name_en": "Seed Bomb",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "seismictoss": {
     "name_ja": "ちきゅうなげ",
-    "name_en": "Seismic Toss"
+    "name_en": "Seismic Toss",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "selfdestruct": {
     "name_ja": "じばく",
-    "name_en": "Self-Destruct"
+    "name_en": "Self-Destruct",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "shadowball": {
     "name_ja": "シャドーボール",
-    "name_en": "Shadow Ball"
+    "name_en": "Shadow Ball",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "shadowclaw": {
     "name_ja": "シャドークロー",
-    "name_en": "Shadow Claw"
+    "name_en": "Shadow Claw",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "shadowpunch": {
     "name_ja": "シャドーパンチ",
-    "name_en": "Shadow Punch"
+    "name_en": "Shadow Punch",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "shadowsneak": {
     "name_ja": "かげうち",
-    "name_en": "Shadow Sneak"
+    "name_en": "Shadow Sneak",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "shedtail": {
     "name_ja": "しっぽきり",
-    "name_en": "Shed Tail"
+    "name_en": "Shed Tail",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "sheercold": {
     "name_ja": "ぜったいれいど",
-    "name_en": "Sheer Cold"
+    "name_en": "Sheer Cold",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "shellsidearm": {
     "name_ja": "シェルアームズ",
-    "name_en": "Shell Side Arm"
+    "name_en": "Shell Side Arm",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "shellsmash": {
     "name_ja": "からをやぶる",
-    "name_en": "Shell Smash"
+    "name_en": "Shell Smash",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "shelter": {
     "name_ja": "たてこもる",
-    "name_en": "Shelter"
+    "name_en": "Shelter",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "shiftgear": {
     "name_ja": "ギアチェンジ",
-    "name_en": "Shift Gear"
+    "name_en": "Shift Gear",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "simplebeam": {
     "name_ja": "シンプルビーム",
-    "name_en": "Simple Beam"
+    "name_en": "Simple Beam",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "sing": {
     "name_ja": "うたう",
-    "name_en": "Sing"
+    "name_en": "Sing",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "skillswap": {
     "name_ja": "スキルスワップ",
-    "name_en": "Skill Swap"
+    "name_en": "Skill Swap",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "skittersmack": {
     "name_ja": "はいよるいちげき",
-    "name_en": "Skitter Smack"
+    "name_en": "Skitter Smack",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "skyattack": {
     "name_ja": "ゴッドバード",
-    "name_en": "Sky Attack"
+    "name_en": "Sky Attack",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "slackoff": {
     "name_ja": "なまける",
-    "name_en": "Slack Off"
+    "name_en": "Slack Off",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "slash": {
     "name_ja": "きりさく",
-    "name_en": "Slash"
+    "name_en": "Slash",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "sleeppowder": {
     "name_ja": "ねむりごな",
-    "name_en": "Sleep Powder"
+    "name_en": "Sleep Powder",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "sleeptalk": {
     "name_ja": "ねごと",
-    "name_en": "Sleep Talk"
+    "name_en": "Sleep Talk",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "sludgebomb": {
     "name_ja": "ヘドロばくだん",
-    "name_en": "Sludge Bomb"
+    "name_en": "Sludge Bomb",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "sludgewave": {
     "name_ja": "ヘドロウェーブ",
-    "name_en": "Sludge Wave"
+    "name_en": "Sludge Wave",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "smackdown": {
     "name_ja": "うちおとす",
-    "name_en": "Smack Down"
+    "name_en": "Smack Down",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "smartstrike": {
     "name_ja": "スマートホーン",
-    "name_en": "Smart Strike"
+    "name_en": "Smart Strike",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "snaptrap": {
     "name_ja": "トラバサミ",
-    "name_en": "Snap Trap"
+    "name_en": "Snap Trap",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "snarl": {
     "name_ja": "バークアウト",
-    "name_en": "Snarl"
+    "name_en": "Snarl",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "snipeshot": {
     "name_ja": "ねらいうち",
-    "name_en": "Snipe Shot"
+    "name_en": "Snipe Shot",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "snore": {
     "name_ja": "いびき",
-    "name_en": "Snore"
+    "name_en": "Snore",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "snowscape": {
     "name_ja": "ゆきげしき",
-    "name_en": "Snowscape"
+    "name_en": "Snowscape",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "soak": {
     "name_ja": "みずびたし",
-    "name_en": "Soak"
+    "name_en": "Soak",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "solarbeam": {
     "name_ja": "ソーラービーム",
-    "name_en": "Solar Beam"
+    "name_en": "Solar Beam",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "solarblade": {
     "name_ja": "ソーラーブレード",
-    "name_en": "Solar Blade"
+    "name_en": "Solar Blade",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "sparklingaria": {
     "name_ja": "うたかたのアリア",
-    "name_en": "Sparkling Aria"
+    "name_en": "Sparkling Aria",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "speedswap": {
     "name_ja": "スピードスワップ",
-    "name_en": "Speed Swap"
+    "name_en": "Speed Swap",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "spicyextract": {
     "name_ja": "ハバネロエキス",
-    "name_en": "Spicy Extract"
+    "name_en": "Spicy Extract",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "spikes": {
     "name_ja": "まきびし",
-    "name_en": "Spikes"
+    "name_en": "Spikes",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "spikyshield": {
     "name_ja": "ニードルガード",
-    "name_en": "Spiky Shield"
+    "name_en": "Spiky Shield",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "spiritbreak": {
     "name_ja": "ソウルクラッシュ",
-    "name_en": "Spirit Break"
+    "name_en": "Spirit Break",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "spiritshackle": {
     "name_ja": "かげぬい",
-    "name_en": "Spirit Shackle"
+    "name_en": "Spirit Shackle",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "spite": {
     "name_ja": "うらみ",
-    "name_en": "Spite"
+    "name_en": "Spite",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "spitup": {
     "name_ja": "はきだす",
-    "name_en": "Spit Up"
+    "name_en": "Spit Up",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "splash": {
     "name_ja": "はねる",
-    "name_en": "Splash"
+    "name_en": "Splash",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "stealthrock": {
     "name_ja": "ステルスロック",
-    "name_en": "Stealth Rock"
+    "name_en": "Stealth Rock",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "steelbeam": {
     "name_ja": "てっていこうせん",
-    "name_en": "Steel Beam"
+    "name_en": "Steel Beam",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "steelroller": {
     "name_ja": "アイアンローラー",
-    "name_en": "Steel Roller"
+    "name_en": "Steel Roller",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "steelwing": {
     "name_ja": "はがねのつばさ",
-    "name_en": "Steel Wing"
+    "name_en": "Steel Wing",
+    "type_ja": "はがね",
+    "type_en": "steel"
   },
   "stickyweb": {
     "name_ja": "ねばねばネット",
-    "name_en": "Sticky Web"
+    "name_en": "Sticky Web",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "stockpile": {
     "name_ja": "たくわえる",
-    "name_en": "Stockpile"
+    "name_en": "Stockpile",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "stompingtantrum": {
     "name_ja": "じだんだ",
-    "name_en": "Stomping Tantrum"
+    "name_en": "Stomping Tantrum",
+    "type_ja": "じめん",
+    "type_en": "ground"
   },
   "stoneaxe": {
     "name_ja": "がんせきアックス",
-    "name_en": "Stone Axe"
+    "name_en": "Stone Axe",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "stoneedge": {
     "name_ja": "ストーンエッジ",
-    "name_en": "Stone Edge"
+    "name_en": "Stone Edge",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "storedpower": {
     "name_ja": "アシストパワー",
-    "name_en": "Stored Power"
+    "name_en": "Stored Power",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "stormthrow": {
     "name_ja": "やまあらし",
-    "name_en": "Storm Throw"
+    "name_en": "Storm Throw",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "strengthsap": {
     "name_ja": "ちからをすいとる",
-    "name_en": "Strength Sap"
+    "name_en": "Strength Sap",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "stringshot": {
     "name_ja": "いとをはく",
-    "name_en": "String Shot"
+    "name_en": "String Shot",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "strugglebug": {
     "name_ja": "むしのていこう",
-    "name_en": "Struggle Bug"
+    "name_en": "Struggle Bug",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "stuffcheeks": {
     "name_ja": "ほおばる",
-    "name_en": "Stuff Cheeks"
+    "name_en": "Stuff Cheeks",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "stunspore": {
     "name_ja": "しびれごな",
-    "name_en": "Stun Spore"
+    "name_en": "Stun Spore",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "substitute": {
     "name_ja": "みがわり",
-    "name_en": "Substitute"
+    "name_en": "Substitute",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "suckerpunch": {
     "name_ja": "ふいうち",
-    "name_en": "Sucker Punch"
+    "name_en": "Sucker Punch",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "sunnyday": {
     "name_ja": "にほんばれ",
-    "name_en": "Sunny Day"
+    "name_en": "Sunny Day",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "supercellslam": {
     "name_ja": "サンダーダイブ",
-    "name_en": "Supercell Slam"
+    "name_en": "Supercell Slam",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "superfang": {
     "name_ja": "いかりのまえば",
-    "name_en": "Super Fang"
+    "name_en": "Super Fang",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "superpower": {
     "name_ja": "ばかぢから",
-    "name_en": "Superpower"
+    "name_en": "Superpower",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "surf": {
     "name_ja": "なみのり",
-    "name_en": "Surf"
+    "name_en": "Surf",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "swagger": {
     "name_ja": "いばる",
-    "name_en": "Swagger"
+    "name_en": "Swagger",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "swallow": {
     "name_ja": "のみこむ",
-    "name_en": "Swallow"
+    "name_en": "Swallow",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "sweetkiss": {
     "name_ja": "てんしのキッス",
-    "name_en": "Sweet Kiss"
+    "name_en": "Sweet Kiss",
+    "type_ja": "フェアリー",
+    "type_en": "fairy"
   },
   "sweetscent": {
     "name_ja": "あまいかおり",
-    "name_en": "Sweet Scent"
+    "name_en": "Sweet Scent",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "switcheroo": {
     "name_ja": "すりかえ",
-    "name_en": "Switcheroo"
+    "name_en": "Switcheroo",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "swordsdance": {
     "name_ja": "つるぎのまい",
-    "name_en": "Swords Dance"
+    "name_en": "Swords Dance",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "synthesis": {
     "name_ja": "こうごうせい",
-    "name_en": "Synthesis"
+    "name_en": "Synthesis",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "syrupbomb": {
     "name_ja": "みずあめボム",
-    "name_en": "Syrup Bomb"
+    "name_en": "Syrup Bomb",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "tailslap": {
     "name_ja": "スイープビンタ",
-    "name_en": "Tail Slap"
+    "name_en": "Tail Slap",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "tailwind": {
     "name_ja": "おいかぜ",
-    "name_en": "Tailwind"
+    "name_en": "Tailwind",
+    "type_ja": "ひこう",
+    "type_en": "flying"
   },
   "taunt": {
     "name_ja": "ちょうはつ",
-    "name_en": "Taunt"
+    "name_en": "Taunt",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "tearfullook": {
     "name_ja": "なみだめ",
-    "name_en": "Tearful Look"
+    "name_en": "Tearful Look",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "teatime": {
     "name_ja": "おちゃかい",
-    "name_en": "Teatime"
+    "name_en": "Teatime",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "teeterdance": {
     "name_ja": "フラフラダンス",
-    "name_en": "Teeter Dance"
+    "name_en": "Teeter Dance",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "temperflare": {
     "name_ja": "やけっぱち",
-    "name_en": "Temper Flare"
+    "name_en": "Temper Flare",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "terrainpulse": {
     "name_ja": "だいちのはどう",
-    "name_en": "Terrain Pulse"
+    "name_en": "Terrain Pulse",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "thief": {
     "name_ja": "どろぼう",
-    "name_en": "Thief"
+    "name_en": "Thief",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "thrash": {
     "name_ja": "あばれる",
-    "name_en": "Thrash"
+    "name_en": "Thrash",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "throatchop": {
     "name_ja": "じごくづき",
-    "name_en": "Throat Chop"
+    "name_en": "Throat Chop",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "thunder": {
     "name_ja": "かみなり",
-    "name_en": "Thunder"
+    "name_en": "Thunder",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "thunderbolt": {
     "name_ja": "１０まんボルト",
-    "name_en": "Thunderbolt"
+    "name_en": "Thunderbolt",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "thunderfang": {
     "name_ja": "かみなりのキバ",
-    "name_en": "Thunder Fang"
+    "name_en": "Thunder Fang",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "thunderpunch": {
     "name_ja": "かみなりパンチ",
-    "name_en": "Thunder Punch"
+    "name_en": "Thunder Punch",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "thundershock": {
     "name_ja": "でんきショック",
-    "name_en": "Thunder Shock"
+    "name_en": "Thunder Shock",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "thunderwave": {
     "name_ja": "でんじは",
-    "name_en": "Thunder Wave"
+    "name_en": "Thunder Wave",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "tickle": {
     "name_ja": "くすぐる",
-    "name_en": "Tickle"
+    "name_en": "Tickle",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "tidyup": {
     "name_ja": "おかたづけ",
-    "name_en": "Tidy Up"
+    "name_en": "Tidy Up",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "topsyturvy": {
     "name_ja": "ひっくりかえす",
-    "name_en": "Topsy-Turvy"
+    "name_en": "Topsy-Turvy",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "torchsong": {
     "name_ja": "フレアソング",
-    "name_en": "Torch Song"
+    "name_en": "Torch Song",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "torment": {
     "name_ja": "いちゃもん",
-    "name_en": "Torment"
+    "name_en": "Torment",
+    "type_ja": "あく",
+    "type_en": "dark"
   },
   "toxic": {
     "name_ja": "どくどく",
-    "name_en": "Toxic"
+    "name_en": "Toxic",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "toxicspikes": {
     "name_ja": "どくびし",
-    "name_en": "Toxic Spikes"
+    "name_en": "Toxic Spikes",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "toxicthread": {
     "name_ja": "どくのいと",
-    "name_en": "Toxic Thread"
+    "name_en": "Toxic Thread",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "trailblaze": {
     "name_ja": "くさわけ",
-    "name_en": "Trailblaze"
+    "name_en": "Trailblaze",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "transform": {
     "name_ja": "へんしん",
-    "name_en": "Transform"
+    "name_en": "Transform",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "triattack": {
     "name_ja": "トライアタック",
-    "name_en": "Tri Attack"
+    "name_en": "Tri Attack",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "trick": {
     "name_ja": "トリック",
-    "name_en": "Trick"
+    "name_en": "Trick",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "trickortreat": {
     "name_ja": "ハロウィン",
-    "name_en": "Trick-or-Treat"
+    "name_en": "Trick-or-Treat",
+    "type_ja": "ゴースト",
+    "type_en": "ghost"
   },
   "trickroom": {
     "name_ja": "トリックルーム",
-    "name_en": "Trick Room"
+    "name_en": "Trick Room",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "triplearrows": {
     "name_ja": "３ぼんのや",
-    "name_en": "Triple Arrows"
+    "name_en": "Triple Arrows",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "tripleaxel": {
     "name_ja": "トリプルアクセル",
-    "name_en": "Triple Axel"
+    "name_en": "Triple Axel",
+    "type_ja": "こおり",
+    "type_en": "ice"
   },
   "tropkick": {
     "name_ja": "トロピカルキック",
-    "name_en": "Trop Kick"
+    "name_en": "Trop Kick",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "twinbeam": {
     "name_ja": "ツインビーム",
-    "name_en": "Twin Beam"
+    "name_en": "Twin Beam",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "upperhand": {
     "name_ja": "はやてがえし",
-    "name_en": "Upper Hand"
+    "name_en": "Upper Hand",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "uproar": {
     "name_ja": "さわぐ",
-    "name_en": "Uproar"
+    "name_en": "Uproar",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "uturn": {
     "name_ja": "とんぼがえり",
-    "name_en": "U-turn"
+    "name_en": "U-turn",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "vacuumwave": {
     "name_ja": "しんくうは",
-    "name_en": "Vacuum Wave"
+    "name_en": "Vacuum Wave",
+    "type_ja": "かくとう",
+    "type_en": "fight"
   },
   "venoshock": {
     "name_ja": "ベノムショック",
-    "name_en": "Venoshock"
+    "name_en": "Venoshock",
+    "type_ja": "どく",
+    "type_en": "poison"
   },
   "voltswitch": {
     "name_ja": "ボルトチェンジ",
-    "name_en": "Volt Switch"
+    "name_en": "Volt Switch",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "volttackle": {
     "name_ja": "ボルテッカー",
-    "name_en": "Volt Tackle"
+    "name_en": "Volt Tackle",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "waterfall": {
     "name_ja": "たきのぼり",
-    "name_en": "Waterfall"
+    "name_en": "Waterfall",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "waterpulse": {
     "name_ja": "みずのはどう",
-    "name_en": "Water Pulse"
+    "name_en": "Water Pulse",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "watershuriken": {
     "name_ja": "みずしゅりけん",
-    "name_en": "Water Shuriken"
+    "name_en": "Water Shuriken",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "waterspout": {
     "name_ja": "しおふき",
-    "name_en": "Water Spout"
+    "name_en": "Water Spout",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "wavecrash": {
     "name_ja": "ウェーブタックル",
-    "name_en": "Wave Crash"
+    "name_en": "Wave Crash",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "weatherball": {
     "name_ja": "ウェザーボール",
-    "name_en": "Weather Ball"
+    "name_en": "Weather Ball",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "whirlpool": {
     "name_ja": "うずしお",
-    "name_en": "Whirlpool"
+    "name_en": "Whirlpool",
+    "type_ja": "みず",
+    "type_en": "water"
   },
   "whirlwind": {
     "name_ja": "ふきとばし",
-    "name_en": "Whirlwind"
+    "name_en": "Whirlwind",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "wideguard": {
     "name_ja": "ワイドガード",
-    "name_en": "Wide Guard"
+    "name_en": "Wide Guard",
+    "type_ja": "いわ",
+    "type_en": "rock"
   },
   "wildcharge": {
     "name_ja": "ワイルドボルト",
-    "name_en": "Wild Charge"
+    "name_en": "Wild Charge",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "willowisp": {
     "name_ja": "おにび",
-    "name_en": "Will-O-Wisp"
+    "name_en": "Will-O-Wisp",
+    "type_ja": "ほのお",
+    "type_en": "fire"
   },
   "wish": {
     "name_ja": "ねがいごと",
-    "name_en": "Wish"
+    "name_en": "Wish",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "wonderroom": {
     "name_ja": "ワンダールーム",
-    "name_en": "Wonder Room"
+    "name_en": "Wonder Room",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "woodhammer": {
     "name_ja": "ウッドハンマー",
-    "name_en": "Wood Hammer"
+    "name_en": "Wood Hammer",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "worryseed": {
     "name_ja": "なやみのタネ",
-    "name_en": "Worry Seed"
+    "name_en": "Worry Seed",
+    "type_ja": "くさ",
+    "type_en": "grass"
   },
   "wrap": {
     "name_ja": "まきつく",
-    "name_en": "Wrap"
+    "name_en": "Wrap",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "xscissor": {
     "name_ja": "シザークロス",
-    "name_en": "X-Scissor"
+    "name_en": "X-Scissor",
+    "type_ja": "むし",
+    "type_en": "bug"
   },
   "yawn": {
     "name_ja": "あくび",
-    "name_en": "Yawn"
+    "name_en": "Yawn",
+    "type_ja": "ノーマル",
+    "type_en": "normal"
   },
   "zapcannon": {
     "name_ja": "でんじほう",
-    "name_en": "Zap Cannon"
+    "name_en": "Zap Cannon",
+    "type_ja": "でんき",
+    "type_en": "electric"
   },
   "zenheadbutt": {
     "name_ja": "しねんのずつき",
-    "name_en": "Zen Headbutt"
+    "name_en": "Zen Headbutt",
+    "type_ja": "エスパー",
+    "type_en": "psychic"
   },
   "zingzap": {
     "name_ja": "びりびりちくちく",
-    "name_en": "Zing Zap"
+    "name_en": "Zing Zap",
+    "type_ja": "でんき",
+    "type_en": "electric"
   }
 }
