@@ -1,5 +1,5 @@
-import re
 import json
+import re
 from html import escape
 from pathlib import Path
 from typing import cast
@@ -22,13 +22,22 @@ from ui.pokemon_types import (
 )
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
-PCBD_METADATA_NAMES = {
-    "ピカチュウ": "pikachu",
-    "ガブリアス": "garchomp",
-    "マリル": "marill",
-    "ルカリオ": "lucario",
-    "イーブイ": "eevee",
-}
+
+
+def _read_json(filename: str) -> dict:
+    try:
+        with (DATA_DIR / filename).open(encoding="utf-8") as file:
+            result = json.load(file)
+        return result if isinstance(result, dict) else {}
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+POKEMON_NAMES = _read_json("pokemon_champions_names_all_forms.json")
+PCBD_FORMS = _read_json("pcbd_forms.json")
+POKEMON_MOVES = _read_json("pokemon_moves.json")
+MOVE_NAMES = _read_json("move_names_ja_en.json")
+ABILITY_NAMES_JA = _read_json("pcbd_ability_names_ja.json")
 
 
 SPECIES: dict[str, PokemonSpecies] = {
@@ -111,10 +120,21 @@ def _load_local_options(filename: str, key: str) -> list[str]:
         return []
 
 
+def _showdown_id_for_name(pokemon_name: str) -> str | None:
+    for showdown_id, names in POKEMON_NAMES.items():
+        if isinstance(names, dict) and names.get("name_ja") == pokemon_name:
+            return showdown_id
+    return None
+
+
 @st.cache_data(ttl=24 * 60 * 60, show_spinner=False)
 def _fetch_species_metadata(pokemon_name: str) -> dict[str, object] | None:
-    metadata_name = PCBD_METADATA_NAMES.get(pokemon_name)
-    if not metadata_name:
+    showdown_id = _showdown_id_for_name(pokemon_name)
+    form = PCBD_FORMS.get(showdown_id) if showdown_id else None
+    if not isinstance(form, dict) or not form.get("metadata_row_available"):
+        return None
+    metadata_name = form.get("metadata_id")
+    if not isinstance(metadata_name, str) or not metadata_name:
         return None
     request = Request(
         f"https://championsbattledata.com/api/metadata/{metadata_name}",
@@ -128,14 +148,26 @@ def _fetch_species_metadata(pokemon_name: str) -> dict[str, object] | None:
     rows = payload.get("rows", []) if isinstance(payload, dict) else []
     if not isinstance(rows, list):
         return None
-    row = next((item for item in rows if isinstance(item, dict) and not item.get("form")), None)
+    row = next(
+        (
+            item
+            for item in rows
+            if isinstance(item, dict)
+            and item.get("saved_name") == form.get("saved_name")
+        ),
+        None,
+    )
     return row if isinstance(row, dict) else None
 
 
 def _metadata_abilities(metadata: dict[str, object] | None, fallback: list[str]) -> list[str]:
     raw = metadata.get("abilities") if metadata else None
     if isinstance(raw, str) and raw:
-        return [name.strip() for name in raw.split("|") if name.strip()]
+        return [
+            ABILITY_NAMES_JA.get(name.strip(), name.strip())
+            for name in raw.split("|")
+            if name.strip()
+        ]
     return fallback
 
 
@@ -148,13 +180,20 @@ def _metadata_stats(metadata: dict[str, object] | None, fallback: list[int]) -> 
 
 
 def _local_moves(pokemon_name: str, fallback: list[str]) -> list[str]:
-    try:
-        with (DATA_DIR / "learnable_moves.json").open(encoding="utf-8") as file:
-            data = json.load(file)
-        moves = data.get("pokemon", {}).get(pokemon_name, [])
-        return [str(move) for move in moves] if moves else fallback
-    except (OSError, AttributeError, json.JSONDecodeError, TypeError):
+    showdown_id = _showdown_id_for_name(pokemon_name)
+    moves = POKEMON_MOVES.get(showdown_id, []) if showdown_id else []
+    if not isinstance(moves, list) or not moves:
         return fallback
+    localized: list[str] = []
+    for move_id in moves:
+        move_info = MOVE_NAMES.get(move_id)
+        if isinstance(move_info, dict):
+            name = move_info.get("name_ja") or move_info.get("name_en")
+        else:
+            name = None
+        if isinstance(name, str) and name and name not in localized:
+            localized.append(name)
+    return localized or fallback
 
 
 def _format_options(rows: list[BattleRow]):
@@ -414,16 +453,38 @@ def render() -> None:
             with build_right:
                 st.markdown('<div class="build-section-title">決めてもらう技</div>', unsafe_allow_html=True)
                 move_options = ["指定しない", *move_names]
+                move_keys = [
+                    _key(pokemon_name, f"move_{index}") for index in range(4)
+                ]
+                # Repair duplicate values from saved builds or stale widget state.
+                seen_moves: set[str] = set()
+                for index, move_key in enumerate(move_keys):
+                    selected = st.session_state.get(move_key, saved_moves[index])
+                    if selected not in move_options or selected in seen_moves:
+                        selected = "指定しない"
+                    st.session_state[move_key] = selected
+                    if selected != "指定しない":
+                        seen_moves.add(selected)
+
                 moves = []
                 for index in range(4):
-                    saved_move = saved_moves[index]
-                    move_index = move_options.index(saved_move) if saved_move in move_options else 0
+                    move_key = move_keys[index]
+                    selected_elsewhere = {
+                        st.session_state[key]
+                        for other_index, key in enumerate(move_keys)
+                        if other_index != index
+                        and st.session_state[key] != "指定しない"
+                    }
+                    available_moves = [
+                        move
+                        for move in move_options
+                        if move == "指定しない" or move not in selected_elsewhere
+                    ]
                     moves.append(
                         st.selectbox(
                             f"技{index + 1}",
-                            move_options,
-                            index=move_index,
-                            key=_key(pokemon_name, f"move_{index}"),
+                            available_moves,
+                            key=move_key,
                             format_func=_format_options(move_rows),
                         )
                     )
