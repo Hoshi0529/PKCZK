@@ -1,6 +1,12 @@
 import streamlit as st
 
-from back.auth import validate_account_input
+from back.auth import (
+    AuthenticationError,
+    authenticate_account,
+    create_auth_client,
+    get_account_session,
+    validate_account_input,
+)
 from back.pokemon import fetch_pokemon_artwork
 from ui.layout import configure_page
 
@@ -59,6 +65,37 @@ def render() -> None:
         )
 
     with right:
+        if st.session_state.pop("clear_account_passwords", False):
+            st.session_state.pop("account_password", None)
+            st.session_state.pop("account_confirm_password", None)
+
+        try:
+            if "auth_client" not in st.session_state:
+                st.session_state.auth_client = create_auth_client()
+            client = st.session_state.auth_client
+        except AuthenticationError as error:
+            st.error(str(error))
+            return
+
+        try:
+            session = get_account_session(client)
+        except AuthenticationError as error:
+            st.error(str(error))
+            session = None
+
+        if session and session.user:
+            st.markdown('<h2 class="form-heading">ログイン済み</h2>', unsafe_allow_html=True)
+            st.success(st.session_state.get("account_success", "ログインしています。"))
+            username = (session.user.user_metadata or {}).get("username")
+            if username:
+                st.text(username)
+            st.text(session.user.email or "")
+            return
+
+        notice = st.session_state.pop("account_notice", None)
+        if notice:
+            st.info(notice)
+
         mode = st.session_state.get("account_mode", "ログイン")
         is_registering = mode == "新規登録"
         st.markdown(
@@ -83,14 +120,23 @@ def render() -> None:
         is_registering = mode == "新規登録"
 
         with st.form("account_form", border=False):
-            email = st.text_input("メールアドレス", placeholder="you@example.com")
-            password = st.text_input("パスワード", type="password", placeholder="8文字以上")
+            username = ""
+            if is_registering:
+                username = st.text_input(
+                    "ユーザー名", placeholder="例：ピカチュウ好き", max_chars=50,
+                    key="account_username",
+                )
+            email = st.text_input("メールアドレス", placeholder="you@example.com", key="account_email")
+            password = st.text_input(
+                "パスワード", type="password", placeholder="8文字以上", key="account_password"
+            )
             confirm_password = ""
             if is_registering:
                 confirm_password = st.text_input(
                     "パスワード（確認）",
                     type="password",
                     placeholder="もう一度入力してください",
+                    key="account_confirm_password",
                 )
             submitted = st.form_submit_button(
                 "新規登録" if is_registering else "ログイン",
@@ -99,12 +145,28 @@ def render() -> None:
 
         if submitted:
             error = validate_account_input(
-                email, password, is_registering, confirm_password
+                email, password, is_registering, confirm_password, username=username
             )
             if error:
                 st.error(error)
             else:
-                st.info("ログイン機能はまだ接続されていません。")
+                try:
+                    with st.spinner("新規登録しています..." if is_registering else "ログインしています..."):
+                        result = authenticate_account(
+                            client, email, password, is_registering, username=username
+                        )
+                except AuthenticationError as error:
+                    st.error(str(error))
+                else:
+                    st.session_state.clear_account_passwords = True
+                    if result.user and result.session:
+                        st.session_state.account_success = (
+                            "新規登録が完了しました。ログインしています。"
+                            if is_registering else "ログインしました。"
+                        )
+                    else:
+                        st.session_state.account_notice = result.notice
+                    st.rerun()
 
         st.markdown(
             '<p class="form-footnote">好きなポケモンで勝ちたい。その気持ちを応援するよ。</p>',
