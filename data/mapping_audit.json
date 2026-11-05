@@ -1,0 +1,4650 @@
+{
+  "target_moves": 515,
+  "matched": 515,
+  "unmatched": 0,
+  "generated_at_utc": "2026-11-04T00:50:09.848790+00:00",
+  "sources": {
+    "game_text_jpn": "https://github.com/projectpokemon/champout/blob/50e7233b78c3b81df29563f9695386c28e77fc95/rom-txt/jpn/wazaname.json",
+    "game_text_usa": "https://github.com/projectpokemon/champout/blob/50e7233b78c3b81df29563f9695386c28e77fc95/rom-txt/usa/wazaname.json",
+    "pokeapi": "https://github.com/PokeAPI/pokeapi/blob/e5b79b2e15d7c50735a945936afd4cd1cfd94eae/data/v2/csv/move_names.csv"
+  },
+  "name_differences": [],
+  "moves": [
+    {
+      "move_id": "accelerock",
+      "pcbd_name_en": "Accelerock",
+      "game_name_en": "Accelerock",
+      "name_ja": "アクセルロック",
+      "game_label": "WAZANAME_709",
+      "pokeapi_move_id": 709,
+      "pokeapi_name_ja": "アクセルロック"
+    },
+    {
+      "move_id": "acidarmor",
+      "pcbd_name_en": "Acid Armor",
+      "game_name_en": "Acid Armor",
+      "name_ja": "とける",
+      "game_label": "WAZANAME_151",
+      "pokeapi_move_id": 151,
+      "pokeapi_name_ja": "とける"
+    },
+    {
+      "move_id": "acidspray",
+      "pcbd_name_en": "Acid Spray",
+      "game_name_en": "Acid Spray",
+      "name_ja": "アシッドボム",
+      "game_label": "WAZANAME_491",
+      "pokeapi_move_id": 491,
+      "pokeapi_name_ja": "アシッドボム"
+    },
+    {
+      "move_id": "acrobatics",
+      "pcbd_name_en": "Acrobatics",
+      "game_name_en": "Acrobatics",
+      "name_ja": "アクロバット",
+      "game_label": "WAZANAME_512",
+      "pokeapi_move_id": 512,
+      "pokeapi_name_ja": "アクロバット"
+    },
+    {
+      "move_id": "acupressure",
+      "pcbd_name_en": "Acupressure",
+      "game_name_en": "Acupressure",
+      "name_ja": "つぼをつく",
+      "game_label": "WAZANAME_367",
+      "pokeapi_move_id": 367,
+      "pokeapi_name_ja": "つぼをつく"
+    },
+    {
+      "move_id": "aerialace",
+      "pcbd_name_en": "Aerial Ace",
+      "game_name_en": "Aerial Ace",
+      "name_ja": "つばめがえし",
+      "game_label": "WAZANAME_332",
+      "pokeapi_move_id": 332,
+      "pokeapi_name_ja": "つばめがえし"
+    },
+    {
+      "move_id": "afteryou",
+      "pcbd_name_en": "After You",
+      "game_name_en": "After You",
+      "name_ja": "おさきにどうぞ",
+      "game_label": "WAZANAME_495",
+      "pokeapi_move_id": 495,
+      "pokeapi_name_ja": "おさきにどうぞ"
+    },
+    {
+      "move_id": "agility",
+      "pcbd_name_en": "Agility",
+      "game_name_en": "Agility",
+      "name_ja": "こうそくいどう",
+      "game_label": "WAZANAME_097",
+      "pokeapi_move_id": 97,
+      "pokeapi_name_ja": "こうそくいどう"
+    },
+    {
+      "move_id": "aircutter",
+      "pcbd_name_en": "Air Cutter",
+      "game_name_en": "Air Cutter",
+      "name_ja": "エアカッター",
+      "game_label": "WAZANAME_314",
+      "pokeapi_move_id": 314,
+      "pokeapi_name_ja": "エアカッター"
+    },
+    {
+      "move_id": "airslash",
+      "pcbd_name_en": "Air Slash",
+      "game_name_en": "Air Slash",
+      "name_ja": "エアスラッシュ",
+      "game_label": "WAZANAME_403",
+      "pokeapi_move_id": 403,
+      "pokeapi_name_ja": "エアスラッシュ"
+    },
+    {
+      "move_id": "alluringvoice",
+      "pcbd_name_en": "Alluring Voice",
+      "game_name_en": "Alluring Voice",
+      "name_ja": "みわくのボイス",
+      "game_label": "WAZANAME_914",
+      "pokeapi_move_id": 914,
+      "pokeapi_name_ja": "みわくのボイス"
+    },
+    {
+      "move_id": "allyswitch",
+      "pcbd_name_en": "Ally Switch",
+      "game_name_en": "Ally Switch",
+      "name_ja": "サイドチェンジ",
+      "game_label": "WAZANAME_502",
+      "pokeapi_move_id": 502,
+      "pokeapi_name_ja": "サイドチェンジ"
+    },
+    {
+      "move_id": "amnesia",
+      "pcbd_name_en": "Amnesia",
+      "game_name_en": "Amnesia",
+      "name_ja": "ドわすれ",
+      "game_label": "WAZANAME_133",
+      "pokeapi_move_id": 133,
+      "pokeapi_name_ja": "ドわすれ"
+    },
+    {
+      "move_id": "ancientpower",
+      "pcbd_name_en": "Ancient Power",
+      "game_name_en": "Ancient Power",
+      "name_ja": "げんしのちから",
+      "game_label": "WAZANAME_246",
+      "pokeapi_move_id": 246,
+      "pokeapi_name_ja": "げんしのちから"
+    },
+    {
+      "move_id": "appleacid",
+      "pcbd_name_en": "Apple Acid",
+      "game_name_en": "Apple Acid",
+      "name_ja": "りんごさん",
+      "game_label": "WAZANAME_787",
+      "pokeapi_move_id": 787,
+      "pokeapi_name_ja": "りんごさん"
+    },
+    {
+      "move_id": "aquacutter",
+      "pcbd_name_en": "Aqua Cutter",
+      "game_name_en": "Aqua Cutter",
+      "name_ja": "アクアカッター",
+      "game_label": "WAZANAME_895",
+      "pokeapi_move_id": 895,
+      "pokeapi_name_ja": "アクアカッター"
+    },
+    {
+      "move_id": "aquajet",
+      "pcbd_name_en": "Aqua Jet",
+      "game_name_en": "Aqua Jet",
+      "name_ja": "アクアジェット",
+      "game_label": "WAZANAME_453",
+      "pokeapi_move_id": 453,
+      "pokeapi_name_ja": "アクアジェット"
+    },
+    {
+      "move_id": "aquaring",
+      "pcbd_name_en": "Aqua Ring",
+      "game_name_en": "Aqua Ring",
+      "name_ja": "アクアリング",
+      "game_label": "WAZANAME_392",
+      "pokeapi_move_id": 392,
+      "pokeapi_name_ja": "アクアリング"
+    },
+    {
+      "move_id": "aquastep",
+      "pcbd_name_en": "Aqua Step",
+      "game_name_en": "Aqua Step",
+      "name_ja": "アクアステップ",
+      "game_label": "WAZANAME_872",
+      "pokeapi_move_id": 872,
+      "pokeapi_name_ja": "アクアステップ"
+    },
+    {
+      "move_id": "aquatail",
+      "pcbd_name_en": "Aqua Tail",
+      "game_name_en": "Aqua Tail",
+      "name_ja": "アクアテール",
+      "game_label": "WAZANAME_401",
+      "pokeapi_move_id": 401,
+      "pokeapi_name_ja": "アクアテール"
+    },
+    {
+      "move_id": "armorcannon",
+      "pcbd_name_en": "Armor Cannon",
+      "game_name_en": "Armor Cannon",
+      "name_ja": "アーマーキャノン",
+      "game_label": "WAZANAME_890",
+      "pokeapi_move_id": 890,
+      "pokeapi_name_ja": "アーマーキャノン"
+    },
+    {
+      "move_id": "aromaticmist",
+      "pcbd_name_en": "Aromatic Mist",
+      "game_name_en": "Aromatic Mist",
+      "name_ja": "アロマミスト",
+      "game_label": "WAZANAME_597",
+      "pokeapi_move_id": 597,
+      "pokeapi_name_ja": "アロマミスト"
+    },
+    {
+      "move_id": "assurance",
+      "pcbd_name_en": "Assurance",
+      "game_name_en": "Assurance",
+      "name_ja": "ダメおし",
+      "game_label": "WAZANAME_372",
+      "pokeapi_move_id": 372,
+      "pokeapi_name_ja": "ダメおし"
+    },
+    {
+      "move_id": "attract",
+      "pcbd_name_en": "Attract",
+      "game_name_en": "Attract",
+      "name_ja": "メロメロ",
+      "game_label": "WAZANAME_213",
+      "pokeapi_move_id": 213,
+      "pokeapi_name_ja": "メロメロ"
+    },
+    {
+      "move_id": "aurasphere",
+      "pcbd_name_en": "Aura Sphere",
+      "game_name_en": "Aura Sphere",
+      "name_ja": "はどうだん",
+      "game_label": "WAZANAME_396",
+      "pokeapi_move_id": 396,
+      "pokeapi_name_ja": "はどうだん"
+    },
+    {
+      "move_id": "aurawheel",
+      "pcbd_name_en": "Aura Wheel",
+      "game_name_en": "Aura Wheel",
+      "name_ja": "オーラぐるま",
+      "game_label": "WAZANAME_783",
+      "pokeapi_move_id": 783,
+      "pokeapi_name_ja": "オーラぐるま"
+    },
+    {
+      "move_id": "auroraveil",
+      "pcbd_name_en": "Aurora Veil",
+      "game_name_en": "Aurora Veil",
+      "name_ja": "オーロラベール",
+      "game_label": "WAZANAME_694",
+      "pokeapi_move_id": 694,
+      "pokeapi_name_ja": "オーロラベール"
+    },
+    {
+      "move_id": "avalanche",
+      "pcbd_name_en": "Avalanche",
+      "game_name_en": "Avalanche",
+      "name_ja": "ゆきなだれ",
+      "game_label": "WAZANAME_419",
+      "pokeapi_move_id": 419,
+      "pokeapi_name_ja": "ゆきなだれ"
+    },
+    {
+      "move_id": "axekick",
+      "pcbd_name_en": "Axe Kick",
+      "game_name_en": "Axe Kick",
+      "name_ja": "かかとおとし",
+      "game_label": "WAZANAME_853",
+      "pokeapi_move_id": 853,
+      "pokeapi_name_ja": "かかとおとし"
+    },
+    {
+      "move_id": "babydolleyes",
+      "pcbd_name_en": "Baby-Doll Eyes",
+      "game_name_en": "Baby-Doll Eyes",
+      "name_ja": "つぶらなひとみ",
+      "game_label": "WAZANAME_608",
+      "pokeapi_move_id": 608,
+      "pokeapi_name_ja": "つぶらなひとみ"
+    },
+    {
+      "move_id": "banefulbunker",
+      "pcbd_name_en": "Baneful Bunker",
+      "game_name_en": "Baneful Bunker",
+      "name_ja": "トーチカ",
+      "game_label": "WAZANAME_661",
+      "pokeapi_move_id": 661,
+      "pokeapi_name_ja": "トーチカ"
+    },
+    {
+      "move_id": "barbbarrage",
+      "pcbd_name_en": "Barb Barrage",
+      "game_name_en": "Barb Barrage",
+      "name_ja": "どくばりセンボン",
+      "game_label": "WAZANAME_839",
+      "pokeapi_move_id": 839,
+      "pokeapi_name_ja": "どくばりセンボン"
+    },
+    {
+      "move_id": "batonpass",
+      "pcbd_name_en": "Baton Pass",
+      "game_name_en": "Baton Pass",
+      "name_ja": "バトンタッチ",
+      "game_label": "WAZANAME_226",
+      "pokeapi_move_id": 226,
+      "pokeapi_name_ja": "バトンタッチ"
+    },
+    {
+      "move_id": "beakblast",
+      "pcbd_name_en": "Beak Blast",
+      "game_name_en": "Beak Blast",
+      "name_ja": "くちばしキャノン",
+      "game_label": "WAZANAME_690",
+      "pokeapi_move_id": 690,
+      "pokeapi_name_ja": "くちばしキャノン"
+    },
+    {
+      "move_id": "beatup",
+      "pcbd_name_en": "Beat Up",
+      "game_name_en": "Beat Up",
+      "name_ja": "ふくろだたき",
+      "game_label": "WAZANAME_251",
+      "pokeapi_move_id": 251,
+      "pokeapi_name_ja": "ふくろだたき"
+    },
+    {
+      "move_id": "belch",
+      "pcbd_name_en": "Belch",
+      "game_name_en": "Belch",
+      "name_ja": "ゲップ",
+      "game_label": "WAZANAME_562",
+      "pokeapi_move_id": 562,
+      "pokeapi_name_ja": "ゲップ"
+    },
+    {
+      "move_id": "bellydrum",
+      "pcbd_name_en": "Belly Drum",
+      "game_name_en": "Belly Drum",
+      "name_ja": "はらだいこ",
+      "game_label": "WAZANAME_187",
+      "pokeapi_move_id": 187,
+      "pokeapi_name_ja": "はらだいこ"
+    },
+    {
+      "move_id": "bind",
+      "pcbd_name_en": "Bind",
+      "game_name_en": "Bind",
+      "name_ja": "しめつける",
+      "game_label": "WAZANAME_020",
+      "pokeapi_move_id": 20,
+      "pokeapi_name_ja": "しめつける"
+    },
+    {
+      "move_id": "bite",
+      "pcbd_name_en": "Bite",
+      "game_name_en": "Bite",
+      "name_ja": "かみつく",
+      "game_label": "WAZANAME_044",
+      "pokeapi_move_id": 44,
+      "pokeapi_name_ja": "かみつく"
+    },
+    {
+      "move_id": "bitterblade",
+      "pcbd_name_en": "Bitter Blade",
+      "game_name_en": "Bitter Blade",
+      "name_ja": "むねんのつるぎ",
+      "game_label": "WAZANAME_891",
+      "pokeapi_move_id": 891,
+      "pokeapi_name_ja": "むねんのつるぎ"
+    },
+    {
+      "move_id": "bittermalice",
+      "pcbd_name_en": "Bitter Malice",
+      "game_name_en": "Bitter Malice",
+      "name_ja": "うらみつらみ",
+      "game_label": "WAZANAME_841",
+      "pokeapi_move_id": 841,
+      "pokeapi_name_ja": "うらみつらみ"
+    },
+    {
+      "move_id": "blastburn",
+      "pcbd_name_en": "Blast Burn",
+      "game_name_en": "Blast Burn",
+      "name_ja": "ブラストバーン",
+      "game_label": "WAZANAME_307",
+      "pokeapi_move_id": 307,
+      "pokeapi_name_ja": "ブラストバーン"
+    },
+    {
+      "move_id": "blazekick",
+      "pcbd_name_en": "Blaze Kick",
+      "game_name_en": "Blaze Kick",
+      "name_ja": "ブレイズキック",
+      "game_label": "WAZANAME_299",
+      "pokeapi_move_id": 299,
+      "pokeapi_name_ja": "ブレイズキック"
+    },
+    {
+      "move_id": "blizzard",
+      "pcbd_name_en": "Blizzard",
+      "game_name_en": "Blizzard",
+      "name_ja": "ふぶき",
+      "game_label": "WAZANAME_059",
+      "pokeapi_move_id": 59,
+      "pokeapi_name_ja": "ふぶき"
+    },
+    {
+      "move_id": "block",
+      "pcbd_name_en": "Block",
+      "game_name_en": "Block",
+      "name_ja": "とおせんぼう",
+      "game_label": "WAZANAME_335",
+      "pokeapi_move_id": 335,
+      "pokeapi_name_ja": "とおせんぼう"
+    },
+    {
+      "move_id": "bodypress",
+      "pcbd_name_en": "Body Press",
+      "game_name_en": "Body Press",
+      "name_ja": "ボディプレス",
+      "game_label": "WAZANAME_776",
+      "pokeapi_move_id": 776,
+      "pokeapi_name_ja": "ボディプレス"
+    },
+    {
+      "move_id": "bodyslam",
+      "pcbd_name_en": "Body Slam",
+      "game_name_en": "Body Slam",
+      "name_ja": "のしかかり",
+      "game_label": "WAZANAME_034",
+      "pokeapi_move_id": 34,
+      "pokeapi_name_ja": "のしかかり"
+    },
+    {
+      "move_id": "bonerush",
+      "pcbd_name_en": "Bone Rush",
+      "game_name_en": "Bone Rush",
+      "name_ja": "ボーンラッシュ",
+      "game_label": "WAZANAME_198",
+      "pokeapi_move_id": 198,
+      "pokeapi_name_ja": "ボーンラッシュ"
+    },
+    {
+      "move_id": "boomburst",
+      "pcbd_name_en": "Boomburst",
+      "game_name_en": "Boomburst",
+      "name_ja": "ばくおんぱ",
+      "game_label": "WAZANAME_586",
+      "pokeapi_move_id": 586,
+      "pokeapi_name_ja": "ばくおんぱ"
+    },
+    {
+      "move_id": "bounce",
+      "pcbd_name_en": "Bounce",
+      "game_name_en": "Bounce",
+      "name_ja": "とびはねる",
+      "game_label": "WAZANAME_340",
+      "pokeapi_move_id": 340,
+      "pokeapi_name_ja": "とびはねる"
+    },
+    {
+      "move_id": "bravebird",
+      "pcbd_name_en": "Brave Bird",
+      "game_name_en": "Brave Bird",
+      "name_ja": "ブレイブバード",
+      "game_label": "WAZANAME_413",
+      "pokeapi_move_id": 413,
+      "pokeapi_name_ja": "ブレイブバード"
+    },
+    {
+      "move_id": "breakingswipe",
+      "pcbd_name_en": "Breaking Swipe",
+      "game_name_en": "Breaking Swipe",
+      "name_ja": "ワイドブレイカー",
+      "game_label": "WAZANAME_784",
+      "pokeapi_move_id": 784,
+      "pokeapi_name_ja": "ワイドブレイカー"
+    },
+    {
+      "move_id": "brickbreak",
+      "pcbd_name_en": "Brick Break",
+      "game_name_en": "Brick Break",
+      "name_ja": "かわらわり",
+      "game_label": "WAZANAME_280",
+      "pokeapi_move_id": 280,
+      "pokeapi_name_ja": "かわらわり"
+    },
+    {
+      "move_id": "brutalswing",
+      "pcbd_name_en": "Brutal Swing",
+      "game_name_en": "Brutal Swing",
+      "name_ja": "ぶんまわす",
+      "game_label": "WAZANAME_693",
+      "pokeapi_move_id": 693,
+      "pokeapi_name_ja": "ぶんまわす"
+    },
+    {
+      "move_id": "bugbite",
+      "pcbd_name_en": "Bug Bite",
+      "game_name_en": "Bug Bite",
+      "name_ja": "むしくい",
+      "game_label": "WAZANAME_450",
+      "pokeapi_move_id": 450,
+      "pokeapi_name_ja": "むしくい"
+    },
+    {
+      "move_id": "bugbuzz",
+      "pcbd_name_en": "Bug Buzz",
+      "game_name_en": "Bug Buzz",
+      "name_ja": "むしのさざめき",
+      "game_label": "WAZANAME_405",
+      "pokeapi_move_id": 405,
+      "pokeapi_name_ja": "むしのさざめき"
+    },
+    {
+      "move_id": "bulkup",
+      "pcbd_name_en": "Bulk Up",
+      "game_name_en": "Bulk Up",
+      "name_ja": "ビルドアップ",
+      "game_label": "WAZANAME_339",
+      "pokeapi_move_id": 339,
+      "pokeapi_name_ja": "ビルドアップ"
+    },
+    {
+      "move_id": "bulldoze",
+      "pcbd_name_en": "Bulldoze",
+      "game_name_en": "Bulldoze",
+      "name_ja": "じならし",
+      "game_label": "WAZANAME_523",
+      "pokeapi_move_id": 523,
+      "pokeapi_name_ja": "じならし"
+    },
+    {
+      "move_id": "bulletpunch",
+      "pcbd_name_en": "Bullet Punch",
+      "game_name_en": "Bullet Punch",
+      "name_ja": "バレットパンチ",
+      "game_label": "WAZANAME_418",
+      "pokeapi_move_id": 418,
+      "pokeapi_name_ja": "バレットパンチ"
+    },
+    {
+      "move_id": "bulletseed",
+      "pcbd_name_en": "Bullet Seed",
+      "game_name_en": "Bullet Seed",
+      "name_ja": "タネマシンガン",
+      "game_label": "WAZANAME_331",
+      "pokeapi_move_id": 331,
+      "pokeapi_name_ja": "タネマシンガン"
+    },
+    {
+      "move_id": "burningjealousy",
+      "pcbd_name_en": "Burning Jealousy",
+      "game_name_en": "Burning Jealousy",
+      "name_ja": "しっとのほのお",
+      "game_label": "WAZANAME_807",
+      "pokeapi_move_id": 807,
+      "pokeapi_name_ja": "しっとのほのお"
+    },
+    {
+      "move_id": "burnup",
+      "pcbd_name_en": "Burn Up",
+      "game_name_en": "Burn Up",
+      "name_ja": "もえつきる",
+      "game_label": "WAZANAME_682",
+      "pokeapi_move_id": 682,
+      "pokeapi_name_ja": "もえつきる"
+    },
+    {
+      "move_id": "calmmind",
+      "pcbd_name_en": "Calm Mind",
+      "game_name_en": "Calm Mind",
+      "name_ja": "めいそう",
+      "game_label": "WAZANAME_347",
+      "pokeapi_move_id": 347,
+      "pokeapi_name_ja": "めいそう"
+    },
+    {
+      "move_id": "ceaselessedge",
+      "pcbd_name_en": "Ceaseless Edge",
+      "game_name_en": "Ceaseless Edge",
+      "name_ja": "ひけん・ちえなみ",
+      "game_label": "WAZANAME_845",
+      "pokeapi_move_id": 845,
+      "pokeapi_name_ja": "ひけん・ちえなみ"
+    },
+    {
+      "move_id": "charge",
+      "pcbd_name_en": "Charge",
+      "game_name_en": "Charge",
+      "name_ja": "じゅうでん",
+      "game_label": "WAZANAME_268",
+      "pokeapi_move_id": 268,
+      "pokeapi_name_ja": "じゅうでん"
+    },
+    {
+      "move_id": "chargebeam",
+      "pcbd_name_en": "Charge Beam",
+      "game_name_en": "Charge Beam",
+      "name_ja": "チャージビーム",
+      "game_label": "WAZANAME_451",
+      "pokeapi_move_id": 451,
+      "pokeapi_name_ja": "チャージビーム"
+    },
+    {
+      "move_id": "charm",
+      "pcbd_name_en": "Charm",
+      "game_name_en": "Charm",
+      "name_ja": "あまえる",
+      "game_label": "WAZANAME_204",
+      "pokeapi_move_id": 204,
+      "pokeapi_name_ja": "あまえる"
+    },
+    {
+      "move_id": "chillingwater",
+      "pcbd_name_en": "Chilling Water",
+      "game_name_en": "Chilling Water",
+      "name_ja": "ひやみず",
+      "game_label": "WAZANAME_886",
+      "pokeapi_move_id": 886,
+      "pokeapi_name_ja": "ひやみず"
+    },
+    {
+      "move_id": "chillyreception",
+      "pcbd_name_en": "Chilly Reception",
+      "game_name_en": "Chilly Reception",
+      "name_ja": "さむいギャグ",
+      "game_label": "WAZANAME_881",
+      "pokeapi_move_id": 881,
+      "pokeapi_name_ja": "さむいギャグ"
+    },
+    {
+      "move_id": "circlethrow",
+      "pcbd_name_en": "Circle Throw",
+      "game_name_en": "Circle Throw",
+      "name_ja": "ともえなげ",
+      "game_label": "WAZANAME_509",
+      "pokeapi_move_id": 509,
+      "pokeapi_name_ja": "ともえなげ"
+    },
+    {
+      "move_id": "clangingscales",
+      "pcbd_name_en": "Clanging Scales",
+      "game_name_en": "Clanging Scales",
+      "name_ja": "スケイルノイズ",
+      "game_label": "WAZANAME_691",
+      "pokeapi_move_id": 691,
+      "pokeapi_name_ja": "スケイルノイズ"
+    },
+    {
+      "move_id": "clangoroussoul",
+      "pcbd_name_en": "Clangorous Soul",
+      "game_name_en": "Clangorous Soul",
+      "name_ja": "ソウルビート",
+      "game_label": "WAZANAME_775",
+      "pokeapi_move_id": 775,
+      "pokeapi_name_ja": "ソウルビート"
+    },
+    {
+      "move_id": "clearsmog",
+      "pcbd_name_en": "Clear Smog",
+      "game_name_en": "Clear Smog",
+      "name_ja": "クリアスモッグ",
+      "game_label": "WAZANAME_499",
+      "pokeapi_move_id": 499,
+      "pokeapi_name_ja": "クリアスモッグ"
+    },
+    {
+      "move_id": "closecombat",
+      "pcbd_name_en": "Close Combat",
+      "game_name_en": "Close Combat",
+      "name_ja": "インファイト",
+      "game_label": "WAZANAME_370",
+      "pokeapi_move_id": 370,
+      "pokeapi_name_ja": "インファイト"
+    },
+    {
+      "move_id": "coaching",
+      "pcbd_name_en": "Coaching",
+      "game_name_en": "Coaching",
+      "name_ja": "コーチング",
+      "game_label": "WAZANAME_811",
+      "pokeapi_move_id": 811,
+      "pokeapi_name_ja": "コーチング"
+    },
+    {
+      "move_id": "coil",
+      "pcbd_name_en": "Coil",
+      "game_name_en": "Coil",
+      "name_ja": "とぐろをまく",
+      "game_label": "WAZANAME_489",
+      "pokeapi_move_id": 489,
+      "pokeapi_name_ja": "とぐろをまく"
+    },
+    {
+      "move_id": "comeuppance",
+      "pcbd_name_en": "Comeuppance",
+      "game_name_en": "Comeuppance",
+      "name_ja": "ほうふく",
+      "game_label": "WAZANAME_894",
+      "pokeapi_move_id": 894,
+      "pokeapi_name_ja": "ほうふく"
+    },
+    {
+      "move_id": "confuseray",
+      "pcbd_name_en": "Confuse Ray",
+      "game_name_en": "Confuse Ray",
+      "name_ja": "あやしいひかり",
+      "game_label": "WAZANAME_109",
+      "pokeapi_move_id": 109,
+      "pokeapi_name_ja": "あやしいひかり"
+    },
+    {
+      "move_id": "copycat",
+      "pcbd_name_en": "Copycat",
+      "game_name_en": "Copycat",
+      "name_ja": "まねっこ",
+      "game_label": "WAZANAME_383",
+      "pokeapi_move_id": 383,
+      "pokeapi_name_ja": "まねっこ"
+    },
+    {
+      "move_id": "corrosivegas",
+      "pcbd_name_en": "Corrosive Gas",
+      "game_name_en": "Corrosive Gas",
+      "name_ja": "ふしょくガス",
+      "game_label": "WAZANAME_810",
+      "pokeapi_move_id": 810,
+      "pokeapi_name_ja": "ふしょくガス"
+    },
+    {
+      "move_id": "cosmicpower",
+      "pcbd_name_en": "Cosmic Power",
+      "game_name_en": "Cosmic Power",
+      "name_ja": "コスモパワー",
+      "game_label": "WAZANAME_322",
+      "pokeapi_move_id": 322,
+      "pokeapi_name_ja": "コスモパワー"
+    },
+    {
+      "move_id": "cottonguard",
+      "pcbd_name_en": "Cotton Guard",
+      "game_name_en": "Cotton Guard",
+      "name_ja": "コットンガード",
+      "game_label": "WAZANAME_538",
+      "pokeapi_move_id": 538,
+      "pokeapi_name_ja": "コットンガード"
+    },
+    {
+      "move_id": "cottonspore",
+      "pcbd_name_en": "Cotton Spore",
+      "game_name_en": "Cotton Spore",
+      "name_ja": "わたほうし",
+      "game_label": "WAZANAME_178",
+      "pokeapi_move_id": 178,
+      "pokeapi_name_ja": "わたほうし"
+    },
+    {
+      "move_id": "counter",
+      "pcbd_name_en": "Counter",
+      "game_name_en": "Counter",
+      "name_ja": "カウンター",
+      "game_label": "WAZANAME_068",
+      "pokeapi_move_id": 68,
+      "pokeapi_name_ja": "カウンター"
+    },
+    {
+      "move_id": "courtchange",
+      "pcbd_name_en": "Court Change",
+      "game_name_en": "Court Change",
+      "name_ja": "コートチェンジ",
+      "game_label": "WAZANAME_756",
+      "pokeapi_move_id": 756,
+      "pokeapi_name_ja": "コートチェンジ"
+    },
+    {
+      "move_id": "covet",
+      "pcbd_name_en": "Covet",
+      "game_name_en": "Covet",
+      "name_ja": "ほしがる",
+      "game_label": "WAZANAME_343",
+      "pokeapi_move_id": 343,
+      "pokeapi_name_ja": "ほしがる"
+    },
+    {
+      "move_id": "crabhammer",
+      "pcbd_name_en": "Crabhammer",
+      "game_name_en": "Crabhammer",
+      "name_ja": "クラブハンマー",
+      "game_label": "WAZANAME_152",
+      "pokeapi_move_id": 152,
+      "pokeapi_name_ja": "クラブハンマー"
+    },
+    {
+      "move_id": "crosschop",
+      "pcbd_name_en": "Cross Chop",
+      "game_name_en": "Cross Chop",
+      "name_ja": "クロスチョップ",
+      "game_label": "WAZANAME_238",
+      "pokeapi_move_id": 238,
+      "pokeapi_name_ja": "クロスチョップ"
+    },
+    {
+      "move_id": "crosspoison",
+      "pcbd_name_en": "Cross Poison",
+      "game_name_en": "Cross Poison",
+      "name_ja": "クロスポイズン",
+      "game_label": "WAZANAME_440",
+      "pokeapi_move_id": 440,
+      "pokeapi_name_ja": "クロスポイズン"
+    },
+    {
+      "move_id": "crunch",
+      "pcbd_name_en": "Crunch",
+      "game_name_en": "Crunch",
+      "name_ja": "かみくだく",
+      "game_label": "WAZANAME_242",
+      "pokeapi_move_id": 242,
+      "pokeapi_name_ja": "かみくだく"
+    },
+    {
+      "move_id": "crushclaw",
+      "pcbd_name_en": "Crush Claw",
+      "game_name_en": "Crush Claw",
+      "name_ja": "ブレイククロー",
+      "game_label": "WAZANAME_306",
+      "pokeapi_move_id": 306,
+      "pokeapi_name_ja": "ブレイククロー"
+    },
+    {
+      "move_id": "curse",
+      "pcbd_name_en": "Curse",
+      "game_name_en": "Curse",
+      "name_ja": "のろい",
+      "game_label": "WAZANAME_174",
+      "pokeapi_move_id": 174,
+      "pokeapi_name_ja": "のろい"
+    },
+    {
+      "move_id": "darkestlariat",
+      "pcbd_name_en": "Darkest Lariat",
+      "game_name_en": "Darkest Lariat",
+      "name_ja": "ＤＤラリアット",
+      "game_label": "WAZANAME_663",
+      "pokeapi_move_id": 663,
+      "pokeapi_name_ja": "ＤＤラリアット"
+    },
+    {
+      "move_id": "darkpulse",
+      "pcbd_name_en": "Dark Pulse",
+      "game_name_en": "Dark Pulse",
+      "name_ja": "あくのはどう",
+      "game_label": "WAZANAME_399",
+      "pokeapi_move_id": 399,
+      "pokeapi_name_ja": "あくのはどう"
+    },
+    {
+      "move_id": "dazzlinggleam",
+      "pcbd_name_en": "Dazzling Gleam",
+      "game_name_en": "Dazzling Gleam",
+      "name_ja": "マジカルシャイン",
+      "game_label": "WAZANAME_605",
+      "pokeapi_move_id": 605,
+      "pokeapi_name_ja": "マジカルシャイン"
+    },
+    {
+      "move_id": "decorate",
+      "pcbd_name_en": "Decorate",
+      "game_name_en": "Decorate",
+      "name_ja": "デコレーション",
+      "game_label": "WAZANAME_777",
+      "pokeapi_move_id": 777,
+      "pokeapi_name_ja": "デコレーション"
+    },
+    {
+      "move_id": "defog",
+      "pcbd_name_en": "Defog",
+      "game_name_en": "Defog",
+      "name_ja": "きりばらい",
+      "game_label": "WAZANAME_432",
+      "pokeapi_move_id": 432,
+      "pokeapi_name_ja": "きりばらい"
+    },
+    {
+      "move_id": "destinybond",
+      "pcbd_name_en": "Destiny Bond",
+      "game_name_en": "Destiny Bond",
+      "name_ja": "みちづれ",
+      "game_label": "WAZANAME_194",
+      "pokeapi_move_id": 194,
+      "pokeapi_name_ja": "みちづれ"
+    },
+    {
+      "move_id": "detect",
+      "pcbd_name_en": "Detect",
+      "game_name_en": "Detect",
+      "name_ja": "みきり",
+      "game_label": "WAZANAME_197",
+      "pokeapi_move_id": 197,
+      "pokeapi_name_ja": "みきり"
+    },
+    {
+      "move_id": "dig",
+      "pcbd_name_en": "Dig",
+      "game_name_en": "Dig",
+      "name_ja": "あなをほる",
+      "game_label": "WAZANAME_091",
+      "pokeapi_move_id": 91,
+      "pokeapi_name_ja": "あなをほる"
+    },
+    {
+      "move_id": "direclaw",
+      "pcbd_name_en": "Dire Claw",
+      "game_name_en": "Dire Claw",
+      "name_ja": "フェイタルクロー",
+      "game_label": "WAZANAME_827",
+      "pokeapi_move_id": 827,
+      "pokeapi_name_ja": "フェイタルクロー"
+    },
+    {
+      "move_id": "disable",
+      "pcbd_name_en": "Disable",
+      "game_name_en": "Disable",
+      "name_ja": "かなしばり",
+      "game_label": "WAZANAME_050",
+      "pokeapi_move_id": 50,
+      "pokeapi_name_ja": "かなしばり"
+    },
+    {
+      "move_id": "disarmingvoice",
+      "pcbd_name_en": "Disarming Voice",
+      "game_name_en": "Disarming Voice",
+      "name_ja": "チャームボイス",
+      "game_label": "WAZANAME_574",
+      "pokeapi_move_id": 574,
+      "pokeapi_name_ja": "チャームボイス"
+    },
+    {
+      "move_id": "discharge",
+      "pcbd_name_en": "Discharge",
+      "game_name_en": "Discharge",
+      "name_ja": "ほうでん",
+      "game_label": "WAZANAME_435",
+      "pokeapi_move_id": 435,
+      "pokeapi_name_ja": "ほうでん"
+    },
+    {
+      "move_id": "dive",
+      "pcbd_name_en": "Dive",
+      "game_name_en": "Dive",
+      "name_ja": "ダイビング",
+      "game_label": "WAZANAME_291",
+      "pokeapi_move_id": 291,
+      "pokeapi_name_ja": "ダイビング"
+    },
+    {
+      "move_id": "doubleedge",
+      "pcbd_name_en": "Double-Edge",
+      "game_name_en": "Double-Edge",
+      "name_ja": "すてみタックル",
+      "game_label": "WAZANAME_038",
+      "pokeapi_move_id": 38,
+      "pokeapi_name_ja": "すてみタックル"
+    },
+    {
+      "move_id": "doublehit",
+      "pcbd_name_en": "Double Hit",
+      "game_name_en": "Double Hit",
+      "name_ja": "ダブルアタック",
+      "game_label": "WAZANAME_458",
+      "pokeapi_move_id": 458,
+      "pokeapi_name_ja": "ダブルアタック"
+    },
+    {
+      "move_id": "doubleshock",
+      "pcbd_name_en": "Double Shock",
+      "game_name_en": "Double Shock",
+      "name_ja": "でんこうそうげき",
+      "game_label": "WAZANAME_892",
+      "pokeapi_move_id": 892,
+      "pokeapi_name_ja": "でんこうそうげき"
+    },
+    {
+      "move_id": "doubleteam",
+      "pcbd_name_en": "Double Team",
+      "game_name_en": "Double Team",
+      "name_ja": "かげぶんしん",
+      "game_label": "WAZANAME_104",
+      "pokeapi_move_id": 104,
+      "pokeapi_name_ja": "かげぶんしん"
+    },
+    {
+      "move_id": "dracometeor",
+      "pcbd_name_en": "Draco Meteor",
+      "game_name_en": "Draco Meteor",
+      "name_ja": "りゅうせいぐん",
+      "game_label": "WAZANAME_434",
+      "pokeapi_move_id": 434,
+      "pokeapi_name_ja": "りゅうせいぐん"
+    },
+    {
+      "move_id": "dragoncheer",
+      "pcbd_name_en": "Dragon Cheer",
+      "game_name_en": "Dragon Cheer",
+      "name_ja": "ドラゴンエール",
+      "game_label": "WAZANAME_913",
+      "pokeapi_move_id": 913,
+      "pokeapi_name_ja": "ドラゴンエール"
+    },
+    {
+      "move_id": "dragonclaw",
+      "pcbd_name_en": "Dragon Claw",
+      "game_name_en": "Dragon Claw",
+      "name_ja": "ドラゴンクロー",
+      "game_label": "WAZANAME_337",
+      "pokeapi_move_id": 337,
+      "pokeapi_name_ja": "ドラゴンクロー"
+    },
+    {
+      "move_id": "dragondance",
+      "pcbd_name_en": "Dragon Dance",
+      "game_name_en": "Dragon Dance",
+      "name_ja": "りゅうのまい",
+      "game_label": "WAZANAME_349",
+      "pokeapi_move_id": 349,
+      "pokeapi_name_ja": "りゅうのまい"
+    },
+    {
+      "move_id": "dragondarts",
+      "pcbd_name_en": "Dragon Darts",
+      "game_name_en": "Dragon Darts",
+      "name_ja": "ドラゴンアロー",
+      "game_label": "WAZANAME_751",
+      "pokeapi_move_id": 751,
+      "pokeapi_name_ja": "ドラゴンアロー"
+    },
+    {
+      "move_id": "dragonpulse",
+      "pcbd_name_en": "Dragon Pulse",
+      "game_name_en": "Dragon Pulse",
+      "name_ja": "りゅうのはどう",
+      "game_label": "WAZANAME_406",
+      "pokeapi_move_id": 406,
+      "pokeapi_name_ja": "りゅうのはどう"
+    },
+    {
+      "move_id": "dragonrush",
+      "pcbd_name_en": "Dragon Rush",
+      "game_name_en": "Dragon Rush",
+      "name_ja": "ドラゴンダイブ",
+      "game_label": "WAZANAME_407",
+      "pokeapi_move_id": 407,
+      "pokeapi_name_ja": "ドラゴンダイブ"
+    },
+    {
+      "move_id": "dragontail",
+      "pcbd_name_en": "Dragon Tail",
+      "game_name_en": "Dragon Tail",
+      "name_ja": "ドラゴンテール",
+      "game_label": "WAZANAME_525",
+      "pokeapi_move_id": 525,
+      "pokeapi_name_ja": "ドラゴンテール"
+    },
+    {
+      "move_id": "drainingkiss",
+      "pcbd_name_en": "Draining Kiss",
+      "game_name_en": "Draining Kiss",
+      "name_ja": "ドレインキッス",
+      "game_label": "WAZANAME_577",
+      "pokeapi_move_id": 577,
+      "pokeapi_name_ja": "ドレインキッス"
+    },
+    {
+      "move_id": "drainpunch",
+      "pcbd_name_en": "Drain Punch",
+      "game_name_en": "Drain Punch",
+      "name_ja": "ドレインパンチ",
+      "game_label": "WAZANAME_409",
+      "pokeapi_move_id": 409,
+      "pokeapi_name_ja": "ドレインパンチ"
+    },
+    {
+      "move_id": "drillpeck",
+      "pcbd_name_en": "Drill Peck",
+      "game_name_en": "Drill Peck",
+      "name_ja": "ドリルくちばし",
+      "game_label": "WAZANAME_065",
+      "pokeapi_move_id": 65,
+      "pokeapi_name_ja": "ドリルくちばし"
+    },
+    {
+      "move_id": "drillrun",
+      "pcbd_name_en": "Drill Run",
+      "game_name_en": "Drill Run",
+      "name_ja": "ドリルライナー",
+      "game_label": "WAZANAME_529",
+      "pokeapi_move_id": 529,
+      "pokeapi_name_ja": "ドリルライナー"
+    },
+    {
+      "move_id": "drumbeating",
+      "pcbd_name_en": "Drum Beating",
+      "game_name_en": "Drum Beating",
+      "name_ja": "ドラムアタック",
+      "game_label": "WAZANAME_778",
+      "pokeapi_move_id": 778,
+      "pokeapi_name_ja": "ドラムアタック"
+    },
+    {
+      "move_id": "dualwingbeat",
+      "pcbd_name_en": "Dual Wingbeat",
+      "game_name_en": "Dual Wingbeat",
+      "name_ja": "ダブルウイング",
+      "game_label": "WAZANAME_814",
+      "pokeapi_move_id": 814,
+      "pokeapi_name_ja": "ダブルウイング"
+    },
+    {
+      "move_id": "dynamicpunch",
+      "pcbd_name_en": "Dynamic Punch",
+      "game_name_en": "Dynamic Punch",
+      "name_ja": "ばくれつパンチ",
+      "game_label": "WAZANAME_223",
+      "pokeapi_move_id": 223,
+      "pokeapi_name_ja": "ばくれつパンチ"
+    },
+    {
+      "move_id": "earthpower",
+      "pcbd_name_en": "Earth Power",
+      "game_name_en": "Earth Power",
+      "name_ja": "だいちのちから",
+      "game_label": "WAZANAME_414",
+      "pokeapi_move_id": 414,
+      "pokeapi_name_ja": "だいちのちから"
+    },
+    {
+      "move_id": "earthquake",
+      "pcbd_name_en": "Earthquake",
+      "game_name_en": "Earthquake",
+      "name_ja": "じしん",
+      "game_label": "WAZANAME_089",
+      "pokeapi_move_id": 89,
+      "pokeapi_name_ja": "じしん"
+    },
+    {
+      "move_id": "eerieimpulse",
+      "pcbd_name_en": "Eerie Impulse",
+      "game_name_en": "Eerie Impulse",
+      "name_ja": "かいでんぱ",
+      "game_label": "WAZANAME_598",
+      "pokeapi_move_id": 598,
+      "pokeapi_name_ja": "かいでんぱ"
+    },
+    {
+      "move_id": "eeriespell",
+      "pcbd_name_en": "Eerie Spell",
+      "game_name_en": "Eerie Spell",
+      "name_ja": "ぶきみなじゅもん",
+      "game_label": "WAZANAME_826",
+      "pokeapi_move_id": 826,
+      "pokeapi_name_ja": "ぶきみなじゅもん"
+    },
+    {
+      "move_id": "electricterrain",
+      "pcbd_name_en": "Electric Terrain",
+      "game_name_en": "Electric Terrain",
+      "name_ja": "エレキフィールド",
+      "game_label": "WAZANAME_604",
+      "pokeapi_move_id": 604,
+      "pokeapi_name_ja": "エレキフィールド"
+    },
+    {
+      "move_id": "electrify",
+      "pcbd_name_en": "Electrify",
+      "game_name_en": "Electrify",
+      "name_ja": "そうでん",
+      "game_label": "WAZANAME_582",
+      "pokeapi_move_id": 582,
+      "pokeapi_name_ja": "そうでん"
+    },
+    {
+      "move_id": "electroball",
+      "pcbd_name_en": "Electro Ball",
+      "game_name_en": "Electro Ball",
+      "name_ja": "エレキボール",
+      "game_label": "WAZANAME_486",
+      "pokeapi_move_id": 486,
+      "pokeapi_name_ja": "エレキボール"
+    },
+    {
+      "move_id": "electroshot",
+      "pcbd_name_en": "Electro Shot",
+      "game_name_en": "Electro Shot",
+      "name_ja": "エレクトロビーム",
+      "game_label": "WAZANAME_905",
+      "pokeapi_move_id": 905,
+      "pokeapi_name_ja": "エレクトロビーム"
+    },
+    {
+      "move_id": "electroweb",
+      "pcbd_name_en": "Electroweb",
+      "game_name_en": "Electroweb",
+      "name_ja": "エレキネット",
+      "game_label": "WAZANAME_527",
+      "pokeapi_move_id": 527,
+      "pokeapi_name_ja": "エレキネット"
+    },
+    {
+      "move_id": "encore",
+      "pcbd_name_en": "Encore",
+      "game_name_en": "Encore",
+      "name_ja": "アンコール",
+      "game_label": "WAZANAME_227",
+      "pokeapi_move_id": 227,
+      "pokeapi_name_ja": "アンコール"
+    },
+    {
+      "move_id": "endeavor",
+      "pcbd_name_en": "Endeavor",
+      "game_name_en": "Endeavor",
+      "name_ja": "がむしゃら",
+      "game_label": "WAZANAME_283",
+      "pokeapi_move_id": 283,
+      "pokeapi_name_ja": "がむしゃら"
+    },
+    {
+      "move_id": "endure",
+      "pcbd_name_en": "Endure",
+      "game_name_en": "Endure",
+      "name_ja": "こらえる",
+      "game_label": "WAZANAME_203",
+      "pokeapi_move_id": 203,
+      "pokeapi_name_ja": "こらえる"
+    },
+    {
+      "move_id": "energyball",
+      "pcbd_name_en": "Energy Ball",
+      "game_name_en": "Energy Ball",
+      "name_ja": "エナジーボール",
+      "game_label": "WAZANAME_412",
+      "pokeapi_move_id": 412,
+      "pokeapi_name_ja": "エナジーボール"
+    },
+    {
+      "move_id": "entrainment",
+      "pcbd_name_en": "Entrainment",
+      "game_name_en": "Entrainment",
+      "name_ja": "なかまづくり",
+      "game_label": "WAZANAME_494",
+      "pokeapi_move_id": 494,
+      "pokeapi_name_ja": "なかまづくり"
+    },
+    {
+      "move_id": "eruption",
+      "pcbd_name_en": "Eruption",
+      "game_name_en": "Eruption",
+      "name_ja": "ふんか",
+      "game_label": "WAZANAME_284",
+      "pokeapi_move_id": 284,
+      "pokeapi_name_ja": "ふんか"
+    },
+    {
+      "move_id": "expandingforce",
+      "pcbd_name_en": "Expanding Force",
+      "game_name_en": "Expanding Force",
+      "name_ja": "ワイドフォース",
+      "game_label": "WAZANAME_797",
+      "pokeapi_move_id": 797,
+      "pokeapi_name_ja": "ワイドフォース"
+    },
+    {
+      "move_id": "explosion",
+      "pcbd_name_en": "Explosion",
+      "game_name_en": "Explosion",
+      "name_ja": "だいばくはつ",
+      "game_label": "WAZANAME_153",
+      "pokeapi_move_id": 153,
+      "pokeapi_name_ja": "だいばくはつ"
+    },
+    {
+      "move_id": "extrasensory",
+      "pcbd_name_en": "Extrasensory",
+      "game_name_en": "Extrasensory",
+      "name_ja": "じんつうりき",
+      "game_label": "WAZANAME_326",
+      "pokeapi_move_id": 326,
+      "pokeapi_name_ja": "じんつうりき"
+    },
+    {
+      "move_id": "extremespeed",
+      "pcbd_name_en": "Extreme Speed",
+      "game_name_en": "Extreme Speed",
+      "name_ja": "しんそく",
+      "game_label": "WAZANAME_245",
+      "pokeapi_move_id": 245,
+      "pokeapi_name_ja": "しんそく"
+    },
+    {
+      "move_id": "facade",
+      "pcbd_name_en": "Facade",
+      "game_name_en": "Facade",
+      "name_ja": "からげんき",
+      "game_label": "WAZANAME_263",
+      "pokeapi_move_id": 263,
+      "pokeapi_name_ja": "からげんき"
+    },
+    {
+      "move_id": "fairylock",
+      "pcbd_name_en": "Fairy Lock",
+      "game_name_en": "Fairy Lock",
+      "name_ja": "フェアリーロック",
+      "game_label": "WAZANAME_587",
+      "pokeapi_move_id": 587,
+      "pokeapi_name_ja": "フェアリーロック"
+    },
+    {
+      "move_id": "fakeout",
+      "pcbd_name_en": "Fake Out",
+      "game_name_en": "Fake Out",
+      "name_ja": "ねこだまし",
+      "game_label": "WAZANAME_252",
+      "pokeapi_move_id": 252,
+      "pokeapi_name_ja": "ねこだまし"
+    },
+    {
+      "move_id": "faketears",
+      "pcbd_name_en": "Fake Tears",
+      "game_name_en": "Fake Tears",
+      "name_ja": "うそなき",
+      "game_label": "WAZANAME_313",
+      "pokeapi_move_id": 313,
+      "pokeapi_name_ja": "うそなき"
+    },
+    {
+      "move_id": "featherdance",
+      "pcbd_name_en": "Feather Dance",
+      "game_name_en": "Feather Dance",
+      "name_ja": "フェザーダンス",
+      "game_label": "WAZANAME_297",
+      "pokeapi_move_id": 297,
+      "pokeapi_name_ja": "フェザーダンス"
+    },
+    {
+      "move_id": "feint",
+      "pcbd_name_en": "Feint",
+      "game_name_en": "Feint",
+      "name_ja": "フェイント",
+      "game_label": "WAZANAME_364",
+      "pokeapi_move_id": 364,
+      "pokeapi_name_ja": "フェイント"
+    },
+    {
+      "move_id": "fellstinger",
+      "pcbd_name_en": "Fell Stinger",
+      "game_name_en": "Fell Stinger",
+      "name_ja": "とどめばり",
+      "game_label": "WAZANAME_565",
+      "pokeapi_move_id": 565,
+      "pokeapi_name_ja": "とどめばり"
+    },
+    {
+      "move_id": "ficklebeam",
+      "pcbd_name_en": "Fickle Beam",
+      "game_name_en": "Fickle Beam",
+      "name_ja": "きまぐレーザー",
+      "game_label": "WAZANAME_907",
+      "pokeapi_move_id": 907,
+      "pokeapi_name_ja": "きまぐレーザー"
+    },
+    {
+      "move_id": "fierydance",
+      "pcbd_name_en": "Fiery Dance",
+      "game_name_en": "Fiery Dance",
+      "name_ja": "ほのおのまい",
+      "game_label": "WAZANAME_552",
+      "pokeapi_move_id": 552,
+      "pokeapi_name_ja": "ほのおのまい"
+    },
+    {
+      "move_id": "finalgambit",
+      "pcbd_name_en": "Final Gambit",
+      "game_name_en": "Final Gambit",
+      "name_ja": "いのちがけ",
+      "game_label": "WAZANAME_515",
+      "pokeapi_move_id": 515,
+      "pokeapi_name_ja": "いのちがけ"
+    },
+    {
+      "move_id": "fireblast",
+      "pcbd_name_en": "Fire Blast",
+      "game_name_en": "Fire Blast",
+      "name_ja": "だいもんじ",
+      "game_label": "WAZANAME_126",
+      "pokeapi_move_id": 126,
+      "pokeapi_name_ja": "だいもんじ"
+    },
+    {
+      "move_id": "firefang",
+      "pcbd_name_en": "Fire Fang",
+      "game_name_en": "Fire Fang",
+      "name_ja": "ほのおのキバ",
+      "game_label": "WAZANAME_424",
+      "pokeapi_move_id": 424,
+      "pokeapi_name_ja": "ほのおのキバ"
+    },
+    {
+      "move_id": "firelash",
+      "pcbd_name_en": "Fire Lash",
+      "game_name_en": "Fire Lash",
+      "name_ja": "ほのおのムチ",
+      "game_label": "WAZANAME_680",
+      "pokeapi_move_id": 680,
+      "pokeapi_name_ja": "ほのおのムチ"
+    },
+    {
+      "move_id": "firepunch",
+      "pcbd_name_en": "Fire Punch",
+      "game_name_en": "Fire Punch",
+      "name_ja": "ほのおのパンチ",
+      "game_label": "WAZANAME_007",
+      "pokeapi_move_id": 7,
+      "pokeapi_name_ja": "ほのおのパンチ"
+    },
+    {
+      "move_id": "firespin",
+      "pcbd_name_en": "Fire Spin",
+      "game_name_en": "Fire Spin",
+      "name_ja": "ほのおのうず",
+      "game_label": "WAZANAME_083",
+      "pokeapi_move_id": 83,
+      "pokeapi_name_ja": "ほのおのうず"
+    },
+    {
+      "move_id": "firstimpression",
+      "pcbd_name_en": "First Impression",
+      "game_name_en": "First Impression",
+      "name_ja": "であいがしら",
+      "game_label": "WAZANAME_660",
+      "pokeapi_move_id": 660,
+      "pokeapi_name_ja": "であいがしら"
+    },
+    {
+      "move_id": "fissure",
+      "pcbd_name_en": "Fissure",
+      "game_name_en": "Fissure",
+      "name_ja": "じわれ",
+      "game_label": "WAZANAME_090",
+      "pokeapi_move_id": 90,
+      "pokeapi_name_ja": "じわれ"
+    },
+    {
+      "move_id": "flail",
+      "pcbd_name_en": "Flail",
+      "game_name_en": "Flail",
+      "name_ja": "じたばた",
+      "game_label": "WAZANAME_175",
+      "pokeapi_move_id": 175,
+      "pokeapi_name_ja": "じたばた"
+    },
+    {
+      "move_id": "flamecharge",
+      "pcbd_name_en": "Flame Charge",
+      "game_name_en": "Flame Charge",
+      "name_ja": "ニトロチャージ",
+      "game_label": "WAZANAME_488",
+      "pokeapi_move_id": 488,
+      "pokeapi_name_ja": "ニトロチャージ"
+    },
+    {
+      "move_id": "flamethrower",
+      "pcbd_name_en": "Flamethrower",
+      "game_name_en": "Flamethrower",
+      "name_ja": "かえんほうしゃ",
+      "game_label": "WAZANAME_053",
+      "pokeapi_move_id": 53,
+      "pokeapi_name_ja": "かえんほうしゃ"
+    },
+    {
+      "move_id": "flareblitz",
+      "pcbd_name_en": "Flare Blitz",
+      "game_name_en": "Flare Blitz",
+      "name_ja": "フレアドライブ",
+      "game_label": "WAZANAME_394",
+      "pokeapi_move_id": 394,
+      "pokeapi_name_ja": "フレアドライブ"
+    },
+    {
+      "move_id": "flashcannon",
+      "pcbd_name_en": "Flash Cannon",
+      "game_name_en": "Flash Cannon",
+      "name_ja": "ラスターカノン",
+      "game_label": "WAZANAME_430",
+      "pokeapi_move_id": 430,
+      "pokeapi_name_ja": "ラスターカノン"
+    },
+    {
+      "move_id": "flatter",
+      "pcbd_name_en": "Flatter",
+      "game_name_en": "Flatter",
+      "name_ja": "おだてる",
+      "game_label": "WAZANAME_260",
+      "pokeapi_move_id": 260,
+      "pokeapi_name_ja": "おだてる"
+    },
+    {
+      "move_id": "fling",
+      "pcbd_name_en": "Fling",
+      "game_name_en": "Fling",
+      "name_ja": "なげつける",
+      "game_label": "WAZANAME_374",
+      "pokeapi_move_id": 374,
+      "pokeapi_name_ja": "なげつける"
+    },
+    {
+      "move_id": "flipturn",
+      "pcbd_name_en": "Flip Turn",
+      "game_name_en": "Flip Turn",
+      "name_ja": "クイックターン",
+      "game_label": "WAZANAME_812",
+      "pokeapi_move_id": 812,
+      "pokeapi_name_ja": "クイックターン"
+    },
+    {
+      "move_id": "flowertrick",
+      "pcbd_name_en": "Flower Trick",
+      "game_name_en": "Flower Trick",
+      "name_ja": "トリックフラワー",
+      "game_label": "WAZANAME_870",
+      "pokeapi_move_id": 870,
+      "pokeapi_name_ja": "トリックフラワー"
+    },
+    {
+      "move_id": "fly",
+      "pcbd_name_en": "Fly",
+      "game_name_en": "Fly",
+      "name_ja": "そらをとぶ",
+      "game_label": "WAZANAME_019",
+      "pokeapi_move_id": 19,
+      "pokeapi_name_ja": "そらをとぶ"
+    },
+    {
+      "move_id": "flyingpress",
+      "pcbd_name_en": "Flying Press",
+      "game_name_en": "Flying Press",
+      "name_ja": "フライングプレス",
+      "game_label": "WAZANAME_560",
+      "pokeapi_move_id": 560,
+      "pokeapi_name_ja": "フライングプレス"
+    },
+    {
+      "move_id": "focusblast",
+      "pcbd_name_en": "Focus Blast",
+      "game_name_en": "Focus Blast",
+      "name_ja": "きあいだま",
+      "game_label": "WAZANAME_411",
+      "pokeapi_move_id": 411,
+      "pokeapi_name_ja": "きあいだま"
+    },
+    {
+      "move_id": "focusenergy",
+      "pcbd_name_en": "Focus Energy",
+      "game_name_en": "Focus Energy",
+      "name_ja": "きあいだめ",
+      "game_label": "WAZANAME_116",
+      "pokeapi_move_id": 116,
+      "pokeapi_name_ja": "きあいだめ"
+    },
+    {
+      "move_id": "focuspunch",
+      "pcbd_name_en": "Focus Punch",
+      "game_name_en": "Focus Punch",
+      "name_ja": "きあいパンチ",
+      "game_label": "WAZANAME_264",
+      "pokeapi_move_id": 264,
+      "pokeapi_name_ja": "きあいパンチ"
+    },
+    {
+      "move_id": "followme",
+      "pcbd_name_en": "Follow Me",
+      "game_name_en": "Follow Me",
+      "name_ja": "このゆびとまれ",
+      "game_label": "WAZANAME_266",
+      "pokeapi_move_id": 266,
+      "pokeapi_name_ja": "このゆびとまれ"
+    },
+    {
+      "move_id": "forestscurse",
+      "pcbd_name_en": "Forest's Curse",
+      "game_name_en": "Forest’s Curse",
+      "name_ja": "もりののろい",
+      "game_label": "WAZANAME_571",
+      "pokeapi_move_id": 571,
+      "pokeapi_name_ja": "もりののろい"
+    },
+    {
+      "move_id": "foulplay",
+      "pcbd_name_en": "Foul Play",
+      "game_name_en": "Foul Play",
+      "name_ja": "イカサマ",
+      "game_label": "WAZANAME_492",
+      "pokeapi_move_id": 492,
+      "pokeapi_name_ja": "イカサマ"
+    },
+    {
+      "move_id": "freezedry",
+      "pcbd_name_en": "Freeze-Dry",
+      "game_name_en": "Freeze-Dry",
+      "name_ja": "フリーズドライ",
+      "game_label": "WAZANAME_573",
+      "pokeapi_move_id": 573,
+      "pokeapi_name_ja": "フリーズドライ"
+    },
+    {
+      "move_id": "frenzyplant",
+      "pcbd_name_en": "Frenzy Plant",
+      "game_name_en": "Frenzy Plant",
+      "name_ja": "ハードプラント",
+      "game_label": "WAZANAME_338",
+      "pokeapi_move_id": 338,
+      "pokeapi_name_ja": "ハードプラント"
+    },
+    {
+      "move_id": "frostbreath",
+      "pcbd_name_en": "Frost Breath",
+      "game_name_en": "Frost Breath",
+      "name_ja": "こおりのいぶき",
+      "game_label": "WAZANAME_524",
+      "pokeapi_move_id": 524,
+      "pokeapi_name_ja": "こおりのいぶき"
+    },
+    {
+      "move_id": "futuresight",
+      "pcbd_name_en": "Future Sight",
+      "game_name_en": "Future Sight",
+      "name_ja": "みらいよち",
+      "game_label": "WAZANAME_248",
+      "pokeapi_move_id": 248,
+      "pokeapi_name_ja": "みらいよち"
+    },
+    {
+      "move_id": "gastroacid",
+      "pcbd_name_en": "Gastro Acid",
+      "game_name_en": "Gastro Acid",
+      "name_ja": "いえき",
+      "game_label": "WAZANAME_380",
+      "pokeapi_move_id": 380,
+      "pokeapi_name_ja": "いえき"
+    },
+    {
+      "move_id": "gigadrain",
+      "pcbd_name_en": "Giga Drain",
+      "game_name_en": "Giga Drain",
+      "name_ja": "ギガドレイン",
+      "game_label": "WAZANAME_202",
+      "pokeapi_move_id": 202,
+      "pokeapi_name_ja": "ギガドレイン"
+    },
+    {
+      "move_id": "gigaimpact",
+      "pcbd_name_en": "Giga Impact",
+      "game_name_en": "Giga Impact",
+      "name_ja": "ギガインパクト",
+      "game_label": "WAZANAME_416",
+      "pokeapi_move_id": 416,
+      "pokeapi_name_ja": "ギガインパクト"
+    },
+    {
+      "move_id": "gigatonhammer",
+      "pcbd_name_en": "Gigaton Hammer",
+      "game_name_en": "Gigaton Hammer",
+      "name_ja": "デカハンマー",
+      "game_label": "WAZANAME_893",
+      "pokeapi_move_id": 893,
+      "pokeapi_name_ja": "デカハンマー"
+    },
+    {
+      "move_id": "glaiverush",
+      "pcbd_name_en": "Glaive Rush",
+      "game_name_en": "Glaive Rush",
+      "name_ja": "きょけんとつげき",
+      "game_label": "WAZANAME_862",
+      "pokeapi_move_id": 862,
+      "pokeapi_name_ja": "きょけんとつげき"
+    },
+    {
+      "move_id": "glare",
+      "pcbd_name_en": "Glare",
+      "game_name_en": "Glare",
+      "name_ja": "へびにらみ",
+      "game_label": "WAZANAME_137",
+      "pokeapi_move_id": 137,
+      "pokeapi_name_ja": "へびにらみ"
+    },
+    {
+      "move_id": "grassknot",
+      "pcbd_name_en": "Grass Knot",
+      "game_name_en": "Grass Knot",
+      "name_ja": "くさむすび",
+      "game_label": "WAZANAME_447",
+      "pokeapi_move_id": 447,
+      "pokeapi_name_ja": "くさむすび"
+    },
+    {
+      "move_id": "grassyglide",
+      "pcbd_name_en": "Grassy Glide",
+      "game_name_en": "Grassy Glide",
+      "name_ja": "グラススライダー",
+      "game_label": "WAZANAME_803",
+      "pokeapi_move_id": 803,
+      "pokeapi_name_ja": "グラススライダー"
+    },
+    {
+      "move_id": "grassyterrain",
+      "pcbd_name_en": "Grassy Terrain",
+      "game_name_en": "Grassy Terrain",
+      "name_ja": "グラスフィールド",
+      "game_label": "WAZANAME_580",
+      "pokeapi_move_id": 580,
+      "pokeapi_name_ja": "グラスフィールド"
+    },
+    {
+      "move_id": "gravapple",
+      "pcbd_name_en": "Grav Apple",
+      "game_name_en": "Grav Apple",
+      "name_ja": "Ｇのちから",
+      "game_label": "WAZANAME_788",
+      "pokeapi_move_id": 788,
+      "pokeapi_name_ja": "Ｇのちから"
+    },
+    {
+      "move_id": "gravity",
+      "pcbd_name_en": "Gravity",
+      "game_name_en": "Gravity",
+      "name_ja": "じゅうりょく",
+      "game_label": "WAZANAME_356",
+      "pokeapi_move_id": 356,
+      "pokeapi_name_ja": "じゅうりょく"
+    },
+    {
+      "move_id": "growth",
+      "pcbd_name_en": "Growth",
+      "game_name_en": "Growth",
+      "name_ja": "せいちょう",
+      "game_label": "WAZANAME_074",
+      "pokeapi_move_id": 74,
+      "pokeapi_name_ja": "せいちょう"
+    },
+    {
+      "move_id": "guardsplit",
+      "pcbd_name_en": "Guard Split",
+      "game_name_en": "Guard Split",
+      "name_ja": "ガードシェア",
+      "game_label": "WAZANAME_470",
+      "pokeapi_move_id": 470,
+      "pokeapi_name_ja": "ガードシェア"
+    },
+    {
+      "move_id": "guardswap",
+      "pcbd_name_en": "Guard Swap",
+      "game_name_en": "Guard Swap",
+      "name_ja": "ガードスワップ",
+      "game_label": "WAZANAME_385",
+      "pokeapi_move_id": 385,
+      "pokeapi_name_ja": "ガードスワップ"
+    },
+    {
+      "move_id": "guillotine",
+      "pcbd_name_en": "Guillotine",
+      "game_name_en": "Guillotine",
+      "name_ja": "ハサミギロチン",
+      "game_label": "WAZANAME_012",
+      "pokeapi_move_id": 12,
+      "pokeapi_name_ja": "ハサミギロチン"
+    },
+    {
+      "move_id": "gunkshot",
+      "pcbd_name_en": "Gunk Shot",
+      "game_name_en": "Gunk Shot",
+      "name_ja": "ダストシュート",
+      "game_label": "WAZANAME_441",
+      "pokeapi_move_id": 441,
+      "pokeapi_name_ja": "ダストシュート"
+    },
+    {
+      "move_id": "gyroball",
+      "pcbd_name_en": "Gyro Ball",
+      "game_name_en": "Gyro Ball",
+      "name_ja": "ジャイロボール",
+      "game_label": "WAZANAME_360",
+      "pokeapi_move_id": 360,
+      "pokeapi_name_ja": "ジャイロボール"
+    },
+    {
+      "move_id": "hammerarm",
+      "pcbd_name_en": "Hammer Arm",
+      "game_name_en": "Hammer Arm",
+      "name_ja": "アームハンマー",
+      "game_label": "WAZANAME_359",
+      "pokeapi_move_id": 359,
+      "pokeapi_name_ja": "アームハンマー"
+    },
+    {
+      "move_id": "hardpress",
+      "pcbd_name_en": "Hard Press",
+      "game_name_en": "Hard Press",
+      "name_ja": "ハードプレス",
+      "game_label": "WAZANAME_912",
+      "pokeapi_move_id": 912,
+      "pokeapi_name_ja": "ハードプレス"
+    },
+    {
+      "move_id": "haze",
+      "pcbd_name_en": "Haze",
+      "game_name_en": "Haze",
+      "name_ja": "くろいきり",
+      "game_label": "WAZANAME_114",
+      "pokeapi_move_id": 114,
+      "pokeapi_name_ja": "くろいきり"
+    },
+    {
+      "move_id": "headlongrush",
+      "pcbd_name_en": "Headlong Rush",
+      "game_name_en": "Headlong Rush",
+      "name_ja": "ぶちかまし",
+      "game_label": "WAZANAME_838",
+      "pokeapi_move_id": 838,
+      "pokeapi_name_ja": "ぶちかまし"
+    },
+    {
+      "move_id": "headsmash",
+      "pcbd_name_en": "Head Smash",
+      "game_name_en": "Head Smash",
+      "name_ja": "もろはのずつき",
+      "game_label": "WAZANAME_457",
+      "pokeapi_move_id": 457,
+      "pokeapi_name_ja": "もろはのずつき"
+    },
+    {
+      "move_id": "healbell",
+      "pcbd_name_en": "Heal Bell",
+      "game_name_en": "Heal Bell",
+      "name_ja": "いやしのすず",
+      "game_label": "WAZANAME_215",
+      "pokeapi_move_id": 215,
+      "pokeapi_name_ja": "いやしのすず"
+    },
+    {
+      "move_id": "healingwish",
+      "pcbd_name_en": "Healing Wish",
+      "game_name_en": "Healing Wish",
+      "name_ja": "いやしのねがい",
+      "game_label": "WAZANAME_361",
+      "pokeapi_move_id": 361,
+      "pokeapi_name_ja": "いやしのねがい"
+    },
+    {
+      "move_id": "healpulse",
+      "pcbd_name_en": "Heal Pulse",
+      "game_name_en": "Heal Pulse",
+      "name_ja": "いやしのはどう",
+      "game_label": "WAZANAME_505",
+      "pokeapi_move_id": 505,
+      "pokeapi_name_ja": "いやしのはどう"
+    },
+    {
+      "move_id": "heatcrash",
+      "pcbd_name_en": "Heat Crash",
+      "game_name_en": "Heat Crash",
+      "name_ja": "ヒートスタンプ",
+      "game_label": "WAZANAME_535",
+      "pokeapi_move_id": 535,
+      "pokeapi_name_ja": "ヒートスタンプ"
+    },
+    {
+      "move_id": "heatwave",
+      "pcbd_name_en": "Heat Wave",
+      "game_name_en": "Heat Wave",
+      "name_ja": "ねっぷう",
+      "game_label": "WAZANAME_257",
+      "pokeapi_move_id": 257,
+      "pokeapi_name_ja": "ねっぷう"
+    },
+    {
+      "move_id": "heavyslam",
+      "pcbd_name_en": "Heavy Slam",
+      "game_name_en": "Heavy Slam",
+      "name_ja": "ヘビーボンバー",
+      "game_label": "WAZANAME_484",
+      "pokeapi_move_id": 484,
+      "pokeapi_name_ja": "ヘビーボンバー"
+    },
+    {
+      "move_id": "helpinghand",
+      "pcbd_name_en": "Helping Hand",
+      "game_name_en": "Helping Hand",
+      "name_ja": "てだすけ",
+      "game_label": "WAZANAME_270",
+      "pokeapi_move_id": 270,
+      "pokeapi_name_ja": "てだすけ"
+    },
+    {
+      "move_id": "hex",
+      "pcbd_name_en": "Hex",
+      "game_name_en": "Hex",
+      "name_ja": "たたりめ",
+      "game_label": "WAZANAME_506",
+      "pokeapi_move_id": 506,
+      "pokeapi_name_ja": "たたりめ"
+    },
+    {
+      "move_id": "highhorsepower",
+      "pcbd_name_en": "High Horsepower",
+      "game_name_en": "High Horsepower",
+      "name_ja": "１０まんばりき",
+      "game_label": "WAZANAME_667",
+      "pokeapi_move_id": 667,
+      "pokeapi_name_ja": "１０まんばりき"
+    },
+    {
+      "move_id": "highjumpkick",
+      "pcbd_name_en": "High Jump Kick",
+      "game_name_en": "High Jump Kick",
+      "name_ja": "とびひざげり",
+      "game_label": "WAZANAME_136",
+      "pokeapi_move_id": 136,
+      "pokeapi_name_ja": "とびひざげり"
+    },
+    {
+      "move_id": "honeclaws",
+      "pcbd_name_en": "Hone Claws",
+      "game_name_en": "Hone Claws",
+      "name_ja": "つめとぎ",
+      "game_label": "WAZANAME_468",
+      "pokeapi_move_id": 468,
+      "pokeapi_name_ja": "つめとぎ"
+    },
+    {
+      "move_id": "horndrill",
+      "pcbd_name_en": "Horn Drill",
+      "game_name_en": "Horn Drill",
+      "name_ja": "つのドリル",
+      "game_label": "WAZANAME_032",
+      "pokeapi_move_id": 32,
+      "pokeapi_name_ja": "つのドリル"
+    },
+    {
+      "move_id": "hornleech",
+      "pcbd_name_en": "Horn Leech",
+      "game_name_en": "Horn Leech",
+      "name_ja": "ウッドホーン",
+      "game_label": "WAZANAME_532",
+      "pokeapi_move_id": 532,
+      "pokeapi_name_ja": "ウッドホーン"
+    },
+    {
+      "move_id": "howl",
+      "pcbd_name_en": "Howl",
+      "game_name_en": "Howl",
+      "name_ja": "とおぼえ",
+      "game_label": "WAZANAME_336",
+      "pokeapi_move_id": 336,
+      "pokeapi_name_ja": "とおぼえ"
+    },
+    {
+      "move_id": "hurricane",
+      "pcbd_name_en": "Hurricane",
+      "game_name_en": "Hurricane",
+      "name_ja": "ぼうふう",
+      "game_label": "WAZANAME_542",
+      "pokeapi_move_id": 542,
+      "pokeapi_name_ja": "ぼうふう"
+    },
+    {
+      "move_id": "hydrocannon",
+      "pcbd_name_en": "Hydro Cannon",
+      "game_name_en": "Hydro Cannon",
+      "name_ja": "ハイドロカノン",
+      "game_label": "WAZANAME_308",
+      "pokeapi_move_id": 308,
+      "pokeapi_name_ja": "ハイドロカノン"
+    },
+    {
+      "move_id": "hydropump",
+      "pcbd_name_en": "Hydro Pump",
+      "game_name_en": "Hydro Pump",
+      "name_ja": "ハイドロポンプ",
+      "game_label": "WAZANAME_056",
+      "pokeapi_move_id": 56,
+      "pokeapi_name_ja": "ハイドロポンプ"
+    },
+    {
+      "move_id": "hyperbeam",
+      "pcbd_name_en": "Hyper Beam",
+      "game_name_en": "Hyper Beam",
+      "name_ja": "はかいこうせん",
+      "game_label": "WAZANAME_063",
+      "pokeapi_move_id": 63,
+      "pokeapi_name_ja": "はかいこうせん"
+    },
+    {
+      "move_id": "hypervoice",
+      "pcbd_name_en": "Hyper Voice",
+      "game_name_en": "Hyper Voice",
+      "name_ja": "ハイパーボイス",
+      "game_label": "WAZANAME_304",
+      "pokeapi_move_id": 304,
+      "pokeapi_name_ja": "ハイパーボイス"
+    },
+    {
+      "move_id": "hypnosis",
+      "pcbd_name_en": "Hypnosis",
+      "game_name_en": "Hypnosis",
+      "name_ja": "さいみんじゅつ",
+      "game_label": "WAZANAME_095",
+      "pokeapi_move_id": 95,
+      "pokeapi_name_ja": "さいみんじゅつ"
+    },
+    {
+      "move_id": "icebeam",
+      "pcbd_name_en": "Ice Beam",
+      "game_name_en": "Ice Beam",
+      "name_ja": "れいとうビーム",
+      "game_label": "WAZANAME_058",
+      "pokeapi_move_id": 58,
+      "pokeapi_name_ja": "れいとうビーム"
+    },
+    {
+      "move_id": "icefang",
+      "pcbd_name_en": "Ice Fang",
+      "game_name_en": "Ice Fang",
+      "name_ja": "こおりのキバ",
+      "game_label": "WAZANAME_423",
+      "pokeapi_move_id": 423,
+      "pokeapi_name_ja": "こおりのキバ"
+    },
+    {
+      "move_id": "icehammer",
+      "pcbd_name_en": "Ice Hammer",
+      "game_name_en": "Ice Hammer",
+      "name_ja": "アイスハンマー",
+      "game_label": "WAZANAME_665",
+      "pokeapi_move_id": 665,
+      "pokeapi_name_ja": "アイスハンマー"
+    },
+    {
+      "move_id": "icepunch",
+      "pcbd_name_en": "Ice Punch",
+      "game_name_en": "Ice Punch",
+      "name_ja": "れいとうパンチ",
+      "game_label": "WAZANAME_008",
+      "pokeapi_move_id": 8,
+      "pokeapi_name_ja": "れいとうパンチ"
+    },
+    {
+      "move_id": "iceshard",
+      "pcbd_name_en": "Ice Shard",
+      "game_name_en": "Ice Shard",
+      "name_ja": "こおりのつぶて",
+      "game_label": "WAZANAME_420",
+      "pokeapi_move_id": 420,
+      "pokeapi_name_ja": "こおりのつぶて"
+    },
+    {
+      "move_id": "icespinner",
+      "pcbd_name_en": "Ice Spinner",
+      "game_name_en": "Ice Spinner",
+      "name_ja": "アイススピナー",
+      "game_label": "WAZANAME_861",
+      "pokeapi_move_id": 861,
+      "pokeapi_name_ja": "アイススピナー"
+    },
+    {
+      "move_id": "iciclecrash",
+      "pcbd_name_en": "Icicle Crash",
+      "game_name_en": "Icicle Crash",
+      "name_ja": "つららおとし",
+      "game_label": "WAZANAME_556",
+      "pokeapi_move_id": 556,
+      "pokeapi_name_ja": "つららおとし"
+    },
+    {
+      "move_id": "iciclespear",
+      "pcbd_name_en": "Icicle Spear",
+      "game_name_en": "Icicle Spear",
+      "name_ja": "つららばり",
+      "game_label": "WAZANAME_333",
+      "pokeapi_move_id": 333,
+      "pokeapi_name_ja": "つららばり"
+    },
+    {
+      "move_id": "icywind",
+      "pcbd_name_en": "Icy Wind",
+      "game_name_en": "Icy Wind",
+      "name_ja": "こごえるかぜ",
+      "game_label": "WAZANAME_196",
+      "pokeapi_move_id": 196,
+      "pokeapi_name_ja": "こごえるかぜ"
+    },
+    {
+      "move_id": "imprison",
+      "pcbd_name_en": "Imprison",
+      "game_name_en": "Imprison",
+      "name_ja": "ふういん",
+      "game_label": "WAZANAME_286",
+      "pokeapi_move_id": 286,
+      "pokeapi_name_ja": "ふういん"
+    },
+    {
+      "move_id": "infernalparade",
+      "pcbd_name_en": "Infernal Parade",
+      "game_name_en": "Infernal Parade",
+      "name_ja": "ひゃっきやこう",
+      "game_label": "WAZANAME_844",
+      "pokeapi_move_id": 844,
+      "pokeapi_name_ja": "ひゃっきやこう"
+    },
+    {
+      "move_id": "inferno",
+      "pcbd_name_en": "Inferno",
+      "game_name_en": "Inferno",
+      "name_ja": "れんごく",
+      "game_label": "WAZANAME_517",
+      "pokeapi_move_id": 517,
+      "pokeapi_name_ja": "れんごく"
+    },
+    {
+      "move_id": "infestation",
+      "pcbd_name_en": "Infestation",
+      "game_name_en": "Infestation",
+      "name_ja": "まとわりつく",
+      "game_label": "WAZANAME_611",
+      "pokeapi_move_id": 611,
+      "pokeapi_name_ja": "まとわりつく"
+    },
+    {
+      "move_id": "ingrain",
+      "pcbd_name_en": "Ingrain",
+      "game_name_en": "Ingrain",
+      "name_ja": "ねをはる",
+      "game_label": "WAZANAME_275",
+      "pokeapi_move_id": 275,
+      "pokeapi_name_ja": "ねをはる"
+    },
+    {
+      "move_id": "instruct",
+      "pcbd_name_en": "Instruct",
+      "game_name_en": "Instruct",
+      "name_ja": "さいはい",
+      "game_label": "WAZANAME_689",
+      "pokeapi_move_id": 689,
+      "pokeapi_name_ja": "さいはい"
+    },
+    {
+      "move_id": "irondefense",
+      "pcbd_name_en": "Iron Defense",
+      "game_name_en": "Iron Defense",
+      "name_ja": "てっぺき",
+      "game_label": "WAZANAME_334",
+      "pokeapi_move_id": 334,
+      "pokeapi_name_ja": "てっぺき"
+    },
+    {
+      "move_id": "ironhead",
+      "pcbd_name_en": "Iron Head",
+      "game_name_en": "Iron Head",
+      "name_ja": "アイアンヘッド",
+      "game_label": "WAZANAME_442",
+      "pokeapi_move_id": 442,
+      "pokeapi_name_ja": "アイアンヘッド"
+    },
+    {
+      "move_id": "irontail",
+      "pcbd_name_en": "Iron Tail",
+      "game_name_en": "Iron Tail",
+      "name_ja": "アイアンテール",
+      "game_label": "WAZANAME_231",
+      "pokeapi_move_id": 231,
+      "pokeapi_name_ja": "アイアンテール"
+    },
+    {
+      "move_id": "jawlock",
+      "pcbd_name_en": "Jaw Lock",
+      "game_name_en": "Jaw Lock",
+      "name_ja": "くらいつく",
+      "game_label": "WAZANAME_746",
+      "pokeapi_move_id": 746,
+      "pokeapi_name_ja": "くらいつく"
+    },
+    {
+      "move_id": "jetpunch",
+      "pcbd_name_en": "Jet Punch",
+      "game_name_en": "Jet Punch",
+      "name_ja": "ジェットパンチ",
+      "game_label": "WAZANAME_857",
+      "pokeapi_move_id": 857,
+      "pokeapi_name_ja": "ジェットパンチ"
+    },
+    {
+      "move_id": "kingsshield",
+      "pcbd_name_en": "King's Shield",
+      "game_name_en": "King’s Shield",
+      "name_ja": "キングシールド",
+      "game_label": "WAZANAME_588",
+      "pokeapi_move_id": 588,
+      "pokeapi_name_ja": "キングシールド"
+    },
+    {
+      "move_id": "knockoff",
+      "pcbd_name_en": "Knock Off",
+      "game_name_en": "Knock Off",
+      "name_ja": "はたきおとす",
+      "game_label": "WAZANAME_282",
+      "pokeapi_move_id": 282,
+      "pokeapi_name_ja": "はたきおとす"
+    },
+    {
+      "move_id": "kowtowcleave",
+      "pcbd_name_en": "Kowtow Cleave",
+      "game_name_en": "Kowtow Cleave",
+      "name_ja": "ドゲザン",
+      "game_label": "WAZANAME_869",
+      "pokeapi_move_id": 869,
+      "pokeapi_name_ja": "ドゲザン"
+    },
+    {
+      "move_id": "lashout",
+      "pcbd_name_en": "Lash Out",
+      "game_name_en": "Lash Out",
+      "name_ja": "うっぷんばらし",
+      "game_label": "WAZANAME_808",
+      "pokeapi_move_id": 808,
+      "pokeapi_name_ja": "うっぷんばらし"
+    },
+    {
+      "move_id": "lastresort",
+      "pcbd_name_en": "Last Resort",
+      "game_name_en": "Last Resort",
+      "name_ja": "とっておき",
+      "game_label": "WAZANAME_387",
+      "pokeapi_move_id": 387,
+      "pokeapi_name_ja": "とっておき"
+    },
+    {
+      "move_id": "lastrespects",
+      "pcbd_name_en": "Last Respects",
+      "game_name_en": "Last Respects",
+      "name_ja": "おはかまいり",
+      "game_label": "WAZANAME_854",
+      "pokeapi_move_id": 854,
+      "pokeapi_name_ja": "おはかまいり"
+    },
+    {
+      "move_id": "lavaplume",
+      "pcbd_name_en": "Lava Plume",
+      "game_name_en": "Lava Plume",
+      "name_ja": "ふんえん",
+      "game_label": "WAZANAME_436",
+      "pokeapi_move_id": 436,
+      "pokeapi_name_ja": "ふんえん"
+    },
+    {
+      "move_id": "leafblade",
+      "pcbd_name_en": "Leaf Blade",
+      "game_name_en": "Leaf Blade",
+      "name_ja": "リーフブレード",
+      "game_label": "WAZANAME_348",
+      "pokeapi_move_id": 348,
+      "pokeapi_name_ja": "リーフブレード"
+    },
+    {
+      "move_id": "leafstorm",
+      "pcbd_name_en": "Leaf Storm",
+      "game_name_en": "Leaf Storm",
+      "name_ja": "リーフストーム",
+      "game_label": "WAZANAME_437",
+      "pokeapi_move_id": 437,
+      "pokeapi_name_ja": "リーフストーム"
+    },
+    {
+      "move_id": "leechlife",
+      "pcbd_name_en": "Leech Life",
+      "game_name_en": "Leech Life",
+      "name_ja": "きゅうけつ",
+      "game_label": "WAZANAME_141",
+      "pokeapi_move_id": 141,
+      "pokeapi_name_ja": "きゅうけつ"
+    },
+    {
+      "move_id": "leechseed",
+      "pcbd_name_en": "Leech Seed",
+      "game_name_en": "Leech Seed",
+      "name_ja": "やどりぎのタネ",
+      "game_label": "WAZANAME_073",
+      "pokeapi_move_id": 73,
+      "pokeapi_name_ja": "やどりぎのタネ"
+    },
+    {
+      "move_id": "lifedew",
+      "pcbd_name_en": "Life Dew",
+      "game_name_en": "Life Dew",
+      "name_ja": "いのちのしずく",
+      "game_label": "WAZANAME_791",
+      "pokeapi_move_id": 791,
+      "pokeapi_name_ja": "いのちのしずく"
+    },
+    {
+      "move_id": "lightofruin",
+      "pcbd_name_en": "Light of Ruin",
+      "game_name_en": "Light of Ruin",
+      "name_ja": "はめつのひかり",
+      "game_label": "WAZANAME_617",
+      "pokeapi_move_id": 617,
+      "pokeapi_name_ja": "はめつのひかり"
+    },
+    {
+      "move_id": "lightscreen",
+      "pcbd_name_en": "Light Screen",
+      "game_name_en": "Light Screen",
+      "name_ja": "ひかりのかべ",
+      "game_label": "WAZANAME_113",
+      "pokeapi_move_id": 113,
+      "pokeapi_name_ja": "ひかりのかべ"
+    },
+    {
+      "move_id": "liquidation",
+      "pcbd_name_en": "Liquidation",
+      "game_name_en": "Liquidation",
+      "name_ja": "アクアブレイク",
+      "game_label": "WAZANAME_710",
+      "pokeapi_move_id": 710,
+      "pokeapi_name_ja": "アクアブレイク"
+    },
+    {
+      "move_id": "lockon",
+      "pcbd_name_en": "Lock-On",
+      "game_name_en": "Lock-On",
+      "name_ja": "ロックオン",
+      "game_label": "WAZANAME_199",
+      "pokeapi_move_id": 199,
+      "pokeapi_name_ja": "ロックオン"
+    },
+    {
+      "move_id": "lowkick",
+      "pcbd_name_en": "Low Kick",
+      "game_name_en": "Low Kick",
+      "name_ja": "けたぐり",
+      "game_label": "WAZANAME_067",
+      "pokeapi_move_id": 67,
+      "pokeapi_name_ja": "けたぐり"
+    },
+    {
+      "move_id": "lowsweep",
+      "pcbd_name_en": "Low Sweep",
+      "game_name_en": "Low Sweep",
+      "name_ja": "ローキック",
+      "game_label": "WAZANAME_490",
+      "pokeapi_move_id": 490,
+      "pokeapi_name_ja": "ローキック"
+    },
+    {
+      "move_id": "luminacrash",
+      "pcbd_name_en": "Lumina Crash",
+      "game_name_en": "Lumina Crash",
+      "name_ja": "ルミナコリジョン",
+      "game_label": "WAZANAME_855",
+      "pokeapi_move_id": 855,
+      "pokeapi_name_ja": "ルミナコリジョン"
+    },
+    {
+      "move_id": "lunge",
+      "pcbd_name_en": "Lunge",
+      "game_name_en": "Lunge",
+      "name_ja": "とびかかる",
+      "game_label": "WAZANAME_679",
+      "pokeapi_move_id": 679,
+      "pokeapi_name_ja": "とびかかる"
+    },
+    {
+      "move_id": "machpunch",
+      "pcbd_name_en": "Mach Punch",
+      "game_name_en": "Mach Punch",
+      "name_ja": "マッハパンチ",
+      "game_label": "WAZANAME_183",
+      "pokeapi_move_id": 183,
+      "pokeapi_name_ja": "マッハパンチ"
+    },
+    {
+      "move_id": "magicalleaf",
+      "pcbd_name_en": "Magical Leaf",
+      "game_name_en": "Magical Leaf",
+      "name_ja": "マジカルリーフ",
+      "game_label": "WAZANAME_345",
+      "pokeapi_move_id": 345,
+      "pokeapi_name_ja": "マジカルリーフ"
+    },
+    {
+      "move_id": "magicpowder",
+      "pcbd_name_en": "Magic Powder",
+      "game_name_en": "Magic Powder",
+      "name_ja": "まほうのこな",
+      "game_label": "WAZANAME_750",
+      "pokeapi_move_id": 750,
+      "pokeapi_name_ja": "まほうのこな"
+    },
+    {
+      "move_id": "magicroom",
+      "pcbd_name_en": "Magic Room",
+      "game_name_en": "Magic Room",
+      "name_ja": "マジックルーム",
+      "game_label": "WAZANAME_478",
+      "pokeapi_move_id": 478,
+      "pokeapi_name_ja": "マジックルーム"
+    },
+    {
+      "move_id": "magneticflux",
+      "pcbd_name_en": "Magnetic Flux",
+      "game_name_en": "Magnetic Flux",
+      "name_ja": "じばそうさ",
+      "game_label": "WAZANAME_602",
+      "pokeapi_move_id": 602,
+      "pokeapi_name_ja": "じばそうさ"
+    },
+    {
+      "move_id": "magnetrise",
+      "pcbd_name_en": "Magnet Rise",
+      "game_name_en": "Magnet Rise",
+      "name_ja": "でんじふゆう",
+      "game_label": "WAZANAME_393",
+      "pokeapi_move_id": 393,
+      "pokeapi_name_ja": "でんじふゆう"
+    },
+    {
+      "move_id": "makeitrain",
+      "pcbd_name_en": "Make It Rain",
+      "game_name_en": "Make It Rain",
+      "name_ja": "ゴールドラッシュ",
+      "game_label": "WAZANAME_874",
+      "pokeapi_move_id": 874,
+      "pokeapi_name_ja": "ゴールドラッシュ"
+    },
+    {
+      "move_id": "matchagotcha",
+      "pcbd_name_en": "Matcha Gotcha",
+      "game_name_en": "Matcha Gotcha",
+      "name_ja": "シャカシャカほう",
+      "game_label": "WAZANAME_902",
+      "pokeapi_move_id": 902,
+      "pokeapi_name_ja": "シャカシャカほう"
+    },
+    {
+      "move_id": "meanlook",
+      "pcbd_name_en": "Mean Look",
+      "game_name_en": "Mean Look",
+      "name_ja": "くろいまなざし",
+      "game_label": "WAZANAME_212",
+      "pokeapi_move_id": 212,
+      "pokeapi_name_ja": "くろいまなざし"
+    },
+    {
+      "move_id": "megahorn",
+      "pcbd_name_en": "Megahorn",
+      "game_name_en": "Megahorn",
+      "name_ja": "メガホーン",
+      "game_label": "WAZANAME_224",
+      "pokeapi_move_id": 224,
+      "pokeapi_name_ja": "メガホーン"
+    },
+    {
+      "move_id": "megakick",
+      "pcbd_name_en": "Mega Kick",
+      "game_name_en": "Mega Kick",
+      "name_ja": "メガトンキック",
+      "game_label": "WAZANAME_025",
+      "pokeapi_move_id": 25,
+      "pokeapi_name_ja": "メガトンキック"
+    },
+    {
+      "move_id": "memento",
+      "pcbd_name_en": "Memento",
+      "game_name_en": "Memento",
+      "name_ja": "おきみやげ",
+      "game_label": "WAZANAME_262",
+      "pokeapi_move_id": 262,
+      "pokeapi_name_ja": "おきみやげ"
+    },
+    {
+      "move_id": "metalburst",
+      "pcbd_name_en": "Metal Burst",
+      "game_name_en": "Metal Burst",
+      "name_ja": "メタルバースト",
+      "game_label": "WAZANAME_368",
+      "pokeapi_move_id": 368,
+      "pokeapi_name_ja": "メタルバースト"
+    },
+    {
+      "move_id": "metalsound",
+      "pcbd_name_en": "Metal Sound",
+      "game_name_en": "Metal Sound",
+      "name_ja": "きんぞくおん",
+      "game_label": "WAZANAME_319",
+      "pokeapi_move_id": 319,
+      "pokeapi_name_ja": "きんぞくおん"
+    },
+    {
+      "move_id": "meteorassault",
+      "pcbd_name_en": "Meteor Assault",
+      "game_name_en": "Meteor Assault",
+      "name_ja": "スターアサルト",
+      "game_label": "WAZANAME_794",
+      "pokeapi_move_id": 794,
+      "pokeapi_name_ja": "スターアサルト"
+    },
+    {
+      "move_id": "meteorbeam",
+      "pcbd_name_en": "Meteor Beam",
+      "game_name_en": "Meteor Beam",
+      "name_ja": "メテオビーム",
+      "game_label": "WAZANAME_800",
+      "pokeapi_move_id": 800,
+      "pokeapi_name_ja": "メテオビーム"
+    },
+    {
+      "move_id": "meteormash",
+      "pcbd_name_en": "Meteor Mash",
+      "game_name_en": "Meteor Mash",
+      "name_ja": "コメットパンチ",
+      "game_label": "WAZANAME_309",
+      "pokeapi_move_id": 309,
+      "pokeapi_name_ja": "コメットパンチ"
+    },
+    {
+      "move_id": "milkdrink",
+      "pcbd_name_en": "Milk Drink",
+      "game_name_en": "Milk Drink",
+      "name_ja": "ミルクのみ",
+      "game_label": "WAZANAME_208",
+      "pokeapi_move_id": 208,
+      "pokeapi_name_ja": "ミルクのみ"
+    },
+    {
+      "move_id": "minimize",
+      "pcbd_name_en": "Minimize",
+      "game_name_en": "Minimize",
+      "name_ja": "ちいさくなる",
+      "game_label": "WAZANAME_107",
+      "pokeapi_move_id": 107,
+      "pokeapi_name_ja": "ちいさくなる"
+    },
+    {
+      "move_id": "mirrorcoat",
+      "pcbd_name_en": "Mirror Coat",
+      "game_name_en": "Mirror Coat",
+      "name_ja": "ミラーコート",
+      "game_label": "WAZANAME_243",
+      "pokeapi_move_id": 243,
+      "pokeapi_name_ja": "ミラーコート"
+    },
+    {
+      "move_id": "mistyexplosion",
+      "pcbd_name_en": "Misty Explosion",
+      "game_name_en": "Misty Explosion",
+      "name_ja": "ミストバースト",
+      "game_label": "WAZANAME_802",
+      "pokeapi_move_id": 802,
+      "pokeapi_name_ja": "ミストバースト"
+    },
+    {
+      "move_id": "mistyterrain",
+      "pcbd_name_en": "Misty Terrain",
+      "game_name_en": "Misty Terrain",
+      "name_ja": "ミストフィールド",
+      "game_label": "WAZANAME_581",
+      "pokeapi_move_id": 581,
+      "pokeapi_name_ja": "ミストフィールド"
+    },
+    {
+      "move_id": "moonblast",
+      "pcbd_name_en": "Moonblast",
+      "game_name_en": "Moonblast",
+      "name_ja": "ムーンフォース",
+      "game_label": "WAZANAME_585",
+      "pokeapi_move_id": 585,
+      "pokeapi_name_ja": "ムーンフォース"
+    },
+    {
+      "move_id": "moonlight",
+      "pcbd_name_en": "Moonlight",
+      "game_name_en": "Moonlight",
+      "name_ja": "つきのひかり",
+      "game_label": "WAZANAME_236",
+      "pokeapi_move_id": 236,
+      "pokeapi_name_ja": "つきのひかり"
+    },
+    {
+      "move_id": "morningsun",
+      "pcbd_name_en": "Morning Sun",
+      "game_name_en": "Morning Sun",
+      "name_ja": "あさのひざし",
+      "game_label": "WAZANAME_234",
+      "pokeapi_move_id": 234,
+      "pokeapi_name_ja": "あさのひざし"
+    },
+    {
+      "move_id": "mortalspin",
+      "pcbd_name_en": "Mortal Spin",
+      "game_name_en": "Mortal Spin",
+      "name_ja": "キラースピン",
+      "game_label": "WAZANAME_866",
+      "pokeapi_move_id": 866,
+      "pokeapi_name_ja": "キラースピン"
+    },
+    {
+      "move_id": "mountaingale",
+      "pcbd_name_en": "Mountain Gale",
+      "game_name_en": "Mountain Gale",
+      "name_ja": "ひょうざんおろし",
+      "game_label": "WAZANAME_836",
+      "pokeapi_move_id": 836,
+      "pokeapi_name_ja": "ひょうざんおろし"
+    },
+    {
+      "move_id": "muddywater",
+      "pcbd_name_en": "Muddy Water",
+      "game_name_en": "Muddy Water",
+      "name_ja": "だくりゅう",
+      "game_label": "WAZANAME_330",
+      "pokeapi_move_id": 330,
+      "pokeapi_name_ja": "だくりゅう"
+    },
+    {
+      "move_id": "mudshot",
+      "pcbd_name_en": "Mud Shot",
+      "game_name_en": "Mud Shot",
+      "name_ja": "マッドショット",
+      "game_label": "WAZANAME_341",
+      "pokeapi_move_id": 341,
+      "pokeapi_name_ja": "マッドショット"
+    },
+    {
+      "move_id": "mudslap",
+      "pcbd_name_en": "Mud-Slap",
+      "game_name_en": "Mud-Slap",
+      "name_ja": "どろかけ",
+      "game_label": "WAZANAME_189",
+      "pokeapi_move_id": 189,
+      "pokeapi_name_ja": "どろかけ"
+    },
+    {
+      "move_id": "mysticalfire",
+      "pcbd_name_en": "Mystical Fire",
+      "game_name_en": "Mystical Fire",
+      "name_ja": "マジカルフレイム",
+      "game_label": "WAZANAME_595",
+      "pokeapi_move_id": 595,
+      "pokeapi_name_ja": "マジカルフレイム"
+    },
+    {
+      "move_id": "nastyplot",
+      "pcbd_name_en": "Nasty Plot",
+      "game_name_en": "Nasty Plot",
+      "name_ja": "わるだくみ",
+      "game_label": "WAZANAME_417",
+      "pokeapi_move_id": 417,
+      "pokeapi_name_ja": "わるだくみ"
+    },
+    {
+      "move_id": "nightdaze",
+      "pcbd_name_en": "Night Daze",
+      "game_name_en": "Night Daze",
+      "name_ja": "ナイトバースト",
+      "game_label": "WAZANAME_539",
+      "pokeapi_move_id": 539,
+      "pokeapi_name_ja": "ナイトバースト"
+    },
+    {
+      "move_id": "nightshade",
+      "pcbd_name_en": "Night Shade",
+      "game_name_en": "Night Shade",
+      "name_ja": "ナイトヘッド",
+      "game_label": "WAZANAME_101",
+      "pokeapi_move_id": 101,
+      "pokeapi_name_ja": "ナイトヘッド"
+    },
+    {
+      "move_id": "nightslash",
+      "pcbd_name_en": "Night Slash",
+      "game_name_en": "Night Slash",
+      "name_ja": "つじぎり",
+      "game_label": "WAZANAME_400",
+      "pokeapi_move_id": 400,
+      "pokeapi_name_ja": "つじぎり"
+    },
+    {
+      "move_id": "nobleroar",
+      "pcbd_name_en": "Noble Roar",
+      "game_name_en": "Noble Roar",
+      "name_ja": "おたけび",
+      "game_label": "WAZANAME_568",
+      "pokeapi_move_id": 568,
+      "pokeapi_name_ja": "おたけび"
+    },
+    {
+      "move_id": "noretreat",
+      "pcbd_name_en": "No Retreat",
+      "game_name_en": "No Retreat",
+      "name_ja": "はいすいのじん",
+      "game_label": "WAZANAME_748",
+      "pokeapi_move_id": 748,
+      "pokeapi_name_ja": "はいすいのじん"
+    },
+    {
+      "move_id": "nuzzle",
+      "pcbd_name_en": "Nuzzle",
+      "game_name_en": "Nuzzle",
+      "name_ja": "ほっぺすりすり",
+      "game_label": "WAZANAME_609",
+      "pokeapi_move_id": 609,
+      "pokeapi_name_ja": "ほっぺすりすり"
+    },
+    {
+      "move_id": "octolock",
+      "pcbd_name_en": "Octolock",
+      "game_name_en": "Octolock",
+      "name_ja": "たこがため",
+      "game_label": "WAZANAME_753",
+      "pokeapi_move_id": 753,
+      "pokeapi_name_ja": "たこがため"
+    },
+    {
+      "move_id": "outrage",
+      "pcbd_name_en": "Outrage",
+      "game_name_en": "Outrage",
+      "name_ja": "げきりん",
+      "game_label": "WAZANAME_200",
+      "pokeapi_move_id": 200,
+      "pokeapi_name_ja": "げきりん"
+    },
+    {
+      "move_id": "overdrive",
+      "pcbd_name_en": "Overdrive",
+      "game_name_en": "Overdrive",
+      "name_ja": "オーバードライブ",
+      "game_label": "WAZANAME_786",
+      "pokeapi_move_id": 786,
+      "pokeapi_name_ja": "オーバードライブ"
+    },
+    {
+      "move_id": "overheat",
+      "pcbd_name_en": "Overheat",
+      "game_name_en": "Overheat",
+      "name_ja": "オーバーヒート",
+      "game_label": "WAZANAME_315",
+      "pokeapi_move_id": 315,
+      "pokeapi_name_ja": "オーバーヒート"
+    },
+    {
+      "move_id": "painsplit",
+      "pcbd_name_en": "Pain Split",
+      "game_name_en": "Pain Split",
+      "name_ja": "いたみわけ",
+      "game_label": "WAZANAME_220",
+      "pokeapi_move_id": 220,
+      "pokeapi_name_ja": "いたみわけ"
+    },
+    {
+      "move_id": "paraboliccharge",
+      "pcbd_name_en": "Parabolic Charge",
+      "game_name_en": "Parabolic Charge",
+      "name_ja": "パラボラチャージ",
+      "game_label": "WAZANAME_570",
+      "pokeapi_move_id": 570,
+      "pokeapi_name_ja": "パラボラチャージ"
+    },
+    {
+      "move_id": "partingshot",
+      "pcbd_name_en": "Parting Shot",
+      "game_name_en": "Parting Shot",
+      "name_ja": "すてゼリフ",
+      "game_label": "WAZANAME_575",
+      "pokeapi_move_id": 575,
+      "pokeapi_name_ja": "すてゼリフ"
+    },
+    {
+      "move_id": "payback",
+      "pcbd_name_en": "Payback",
+      "game_name_en": "Payback",
+      "name_ja": "しっぺがえし",
+      "game_label": "WAZANAME_371",
+      "pokeapi_move_id": 371,
+      "pokeapi_name_ja": "しっぺがえし"
+    },
+    {
+      "move_id": "perishsong",
+      "pcbd_name_en": "Perish Song",
+      "game_name_en": "Perish Song",
+      "name_ja": "ほろびのうた",
+      "game_label": "WAZANAME_195",
+      "pokeapi_move_id": 195,
+      "pokeapi_name_ja": "ほろびのうた"
+    },
+    {
+      "move_id": "petalblizzard",
+      "pcbd_name_en": "Petal Blizzard",
+      "game_name_en": "Petal Blizzard",
+      "name_ja": "はなふぶき",
+      "game_label": "WAZANAME_572",
+      "pokeapi_move_id": 572,
+      "pokeapi_name_ja": "はなふぶき"
+    },
+    {
+      "move_id": "petaldance",
+      "pcbd_name_en": "Petal Dance",
+      "game_name_en": "Petal Dance",
+      "name_ja": "はなびらのまい",
+      "game_label": "WAZANAME_080",
+      "pokeapi_move_id": 80,
+      "pokeapi_name_ja": "はなびらのまい"
+    },
+    {
+      "move_id": "phantomforce",
+      "pcbd_name_en": "Phantom Force",
+      "game_name_en": "Phantom Force",
+      "name_ja": "ゴーストダイブ",
+      "game_label": "WAZANAME_566",
+      "pokeapi_move_id": 566,
+      "pokeapi_name_ja": "ゴーストダイブ"
+    },
+    {
+      "move_id": "pinmissile",
+      "pcbd_name_en": "Pin Missile",
+      "game_name_en": "Pin Missile",
+      "name_ja": "ミサイルばり",
+      "game_label": "WAZANAME_042",
+      "pokeapi_move_id": 42,
+      "pokeapi_name_ja": "ミサイルばり"
+    },
+    {
+      "move_id": "playrough",
+      "pcbd_name_en": "Play Rough",
+      "game_name_en": "Play Rough",
+      "name_ja": "じゃれつく",
+      "game_label": "WAZANAME_583",
+      "pokeapi_move_id": 583,
+      "pokeapi_name_ja": "じゃれつく"
+    },
+    {
+      "move_id": "pluck",
+      "pcbd_name_en": "Pluck",
+      "game_name_en": "Pluck",
+      "name_ja": "ついばむ",
+      "game_label": "WAZANAME_365",
+      "pokeapi_move_id": 365,
+      "pokeapi_name_ja": "ついばむ"
+    },
+    {
+      "move_id": "poisonfang",
+      "pcbd_name_en": "Poison Fang",
+      "game_name_en": "Poison Fang",
+      "name_ja": "どくどくのキバ",
+      "game_label": "WAZANAME_305",
+      "pokeapi_move_id": 305,
+      "pokeapi_name_ja": "どくどくのキバ"
+    },
+    {
+      "move_id": "poisonjab",
+      "pcbd_name_en": "Poison Jab",
+      "game_name_en": "Poison Jab",
+      "name_ja": "どくづき",
+      "game_label": "WAZANAME_398",
+      "pokeapi_move_id": 398,
+      "pokeapi_name_ja": "どくづき"
+    },
+    {
+      "move_id": "poisonpowder",
+      "pcbd_name_en": "Poison Powder",
+      "game_name_en": "Poison Powder",
+      "name_ja": "どくのこな",
+      "game_label": "WAZANAME_077",
+      "pokeapi_move_id": 77,
+      "pokeapi_name_ja": "どくのこな"
+    },
+    {
+      "move_id": "pollenpuff",
+      "pcbd_name_en": "Pollen Puff",
+      "game_name_en": "Pollen Puff",
+      "name_ja": "かふんだんご",
+      "game_label": "WAZANAME_676",
+      "pokeapi_move_id": 676,
+      "pokeapi_name_ja": "かふんだんご"
+    },
+    {
+      "move_id": "poltergeist",
+      "pcbd_name_en": "Poltergeist",
+      "game_name_en": "Poltergeist",
+      "name_ja": "ポルターガイスト",
+      "game_label": "WAZANAME_809",
+      "pokeapi_move_id": 809,
+      "pokeapi_name_ja": "ポルターガイスト"
+    },
+    {
+      "move_id": "populationbomb",
+      "pcbd_name_en": "Population Bomb",
+      "game_name_en": "Population Bomb",
+      "name_ja": "ネズミざん",
+      "game_label": "WAZANAME_860",
+      "pokeapi_move_id": 860,
+      "pokeapi_name_ja": "ネズミざん"
+    },
+    {
+      "move_id": "pounce",
+      "pcbd_name_en": "Pounce",
+      "game_name_en": "Pounce",
+      "name_ja": "とびつく",
+      "game_label": "WAZANAME_884",
+      "pokeapi_move_id": 884,
+      "pokeapi_name_ja": "とびつく"
+    },
+    {
+      "move_id": "powergem",
+      "pcbd_name_en": "Power Gem",
+      "game_name_en": "Power Gem",
+      "name_ja": "パワージェム",
+      "game_label": "WAZANAME_408",
+      "pokeapi_move_id": 408,
+      "pokeapi_name_ja": "パワージェム"
+    },
+    {
+      "move_id": "powersplit",
+      "pcbd_name_en": "Power Split",
+      "game_name_en": "Power Split",
+      "name_ja": "パワーシェア",
+      "game_label": "WAZANAME_471",
+      "pokeapi_move_id": 471,
+      "pokeapi_name_ja": "パワーシェア"
+    },
+    {
+      "move_id": "powerswap",
+      "pcbd_name_en": "Power Swap",
+      "game_name_en": "Power Swap",
+      "name_ja": "パワースワップ",
+      "game_label": "WAZANAME_384",
+      "pokeapi_move_id": 384,
+      "pokeapi_name_ja": "パワースワップ"
+    },
+    {
+      "move_id": "powertrick",
+      "pcbd_name_en": "Power Trick",
+      "game_name_en": "Power Trick",
+      "name_ja": "パワートリック",
+      "game_label": "WAZANAME_379",
+      "pokeapi_move_id": 379,
+      "pokeapi_name_ja": "パワートリック"
+    },
+    {
+      "move_id": "powertrip",
+      "pcbd_name_en": "Power Trip",
+      "game_name_en": "Power Trip",
+      "name_ja": "つけあがる",
+      "game_label": "WAZANAME_681",
+      "pokeapi_move_id": 681,
+      "pokeapi_name_ja": "つけあがる"
+    },
+    {
+      "move_id": "powerwhip",
+      "pcbd_name_en": "Power Whip",
+      "game_name_en": "Power Whip",
+      "name_ja": "パワーウィップ",
+      "game_label": "WAZANAME_438",
+      "pokeapi_move_id": 438,
+      "pokeapi_name_ja": "パワーウィップ"
+    },
+    {
+      "move_id": "protect",
+      "pcbd_name_en": "Protect",
+      "game_name_en": "Protect",
+      "name_ja": "まもる",
+      "game_label": "WAZANAME_182",
+      "pokeapi_move_id": 182,
+      "pokeapi_name_ja": "まもる"
+    },
+    {
+      "move_id": "psychic",
+      "pcbd_name_en": "Psychic",
+      "game_name_en": "Psychic",
+      "name_ja": "サイコキネシス",
+      "game_label": "WAZANAME_094",
+      "pokeapi_move_id": 94,
+      "pokeapi_name_ja": "サイコキネシス"
+    },
+    {
+      "move_id": "psychicfangs",
+      "pcbd_name_en": "Psychic Fangs",
+      "game_name_en": "Psychic Fangs",
+      "name_ja": "サイコファング",
+      "game_label": "WAZANAME_706",
+      "pokeapi_move_id": 706,
+      "pokeapi_name_ja": "サイコファング"
+    },
+    {
+      "move_id": "psychicnoise",
+      "pcbd_name_en": "Psychic Noise",
+      "game_name_en": "Psychic Noise",
+      "name_ja": "サイコノイズ",
+      "game_label": "WAZANAME_917",
+      "pokeapi_move_id": 917,
+      "pokeapi_name_ja": "サイコノイズ"
+    },
+    {
+      "move_id": "psychicterrain",
+      "pcbd_name_en": "Psychic Terrain",
+      "game_name_en": "Psychic Terrain",
+      "name_ja": "サイコフィールド",
+      "game_label": "WAZANAME_678",
+      "pokeapi_move_id": 678,
+      "pokeapi_name_ja": "サイコフィールド"
+    },
+    {
+      "move_id": "psychocut",
+      "pcbd_name_en": "Psycho Cut",
+      "game_name_en": "Psycho Cut",
+      "name_ja": "サイコカッター",
+      "game_label": "WAZANAME_427",
+      "pokeapi_move_id": 427,
+      "pokeapi_name_ja": "サイコカッター"
+    },
+    {
+      "move_id": "psychup",
+      "pcbd_name_en": "Psych Up",
+      "game_name_en": "Psych Up",
+      "name_ja": "じこあんじ",
+      "game_label": "WAZANAME_244",
+      "pokeapi_move_id": 244,
+      "pokeapi_name_ja": "じこあんじ"
+    },
+    {
+      "move_id": "psyshieldbash",
+      "pcbd_name_en": "Psyshield Bash",
+      "game_name_en": "Psyshield Bash",
+      "name_ja": "バリアーラッシュ",
+      "game_label": "WAZANAME_828",
+      "pokeapi_move_id": 828,
+      "pokeapi_name_ja": "バリアーラッシュ"
+    },
+    {
+      "move_id": "psyshock",
+      "pcbd_name_en": "Psyshock",
+      "game_name_en": "Psyshock",
+      "name_ja": "サイコショック",
+      "game_label": "WAZANAME_473",
+      "pokeapi_move_id": 473,
+      "pokeapi_name_ja": "サイコショック"
+    },
+    {
+      "move_id": "pyroball",
+      "pcbd_name_en": "Pyro Ball",
+      "game_name_en": "Pyro Ball",
+      "name_ja": "かえんボール",
+      "game_label": "WAZANAME_780",
+      "pokeapi_move_id": 780,
+      "pokeapi_name_ja": "かえんボール"
+    },
+    {
+      "move_id": "quash",
+      "pcbd_name_en": "Quash",
+      "game_name_en": "Quash",
+      "name_ja": "さきおくり",
+      "game_label": "WAZANAME_511",
+      "pokeapi_move_id": 511,
+      "pokeapi_name_ja": "さきおくり"
+    },
+    {
+      "move_id": "quickattack",
+      "pcbd_name_en": "Quick Attack",
+      "game_name_en": "Quick Attack",
+      "name_ja": "でんこうせっか",
+      "game_label": "WAZANAME_098",
+      "pokeapi_move_id": 98,
+      "pokeapi_name_ja": "でんこうせっか"
+    },
+    {
+      "move_id": "quickguard",
+      "pcbd_name_en": "Quick Guard",
+      "game_name_en": "Quick Guard",
+      "name_ja": "ファストガード",
+      "game_label": "WAZANAME_501",
+      "pokeapi_move_id": 501,
+      "pokeapi_name_ja": "ファストガード"
+    },
+    {
+      "move_id": "quiverdance",
+      "pcbd_name_en": "Quiver Dance",
+      "game_name_en": "Quiver Dance",
+      "name_ja": "ちょうのまい",
+      "game_label": "WAZANAME_483",
+      "pokeapi_move_id": 483,
+      "pokeapi_name_ja": "ちょうのまい"
+    },
+    {
+      "move_id": "ragefist",
+      "pcbd_name_en": "Rage Fist",
+      "game_name_en": "Rage Fist",
+      "name_ja": "ふんどのこぶし",
+      "game_label": "WAZANAME_889",
+      "pokeapi_move_id": 889,
+      "pokeapi_name_ja": "ふんどのこぶし"
+    },
+    {
+      "move_id": "ragepowder",
+      "pcbd_name_en": "Rage Powder",
+      "game_name_en": "Rage Powder",
+      "name_ja": "いかりのこな",
+      "game_label": "WAZANAME_476",
+      "pokeapi_move_id": 476,
+      "pokeapi_name_ja": "いかりのこな"
+    },
+    {
+      "move_id": "ragingbull",
+      "pcbd_name_en": "Raging Bull",
+      "game_name_en": "Raging Bull",
+      "name_ja": "レイジングブル",
+      "game_label": "WAZANAME_873",
+      "pokeapi_move_id": 873,
+      "pokeapi_name_ja": "レイジングブル"
+    },
+    {
+      "move_id": "ragingfury",
+      "pcbd_name_en": "Raging Fury",
+      "game_name_en": "Raging Fury",
+      "name_ja": "だいふんげき",
+      "game_label": "WAZANAME_833",
+      "pokeapi_move_id": 833,
+      "pokeapi_name_ja": "だいふんげき"
+    },
+    {
+      "move_id": "raindance",
+      "pcbd_name_en": "Rain Dance",
+      "game_name_en": "Rain Dance",
+      "name_ja": "あまごい",
+      "game_label": "WAZANAME_240",
+      "pokeapi_move_id": 240,
+      "pokeapi_name_ja": "あまごい"
+    },
+    {
+      "move_id": "rapidspin",
+      "pcbd_name_en": "Rapid Spin",
+      "game_name_en": "Rapid Spin",
+      "name_ja": "こうそくスピン",
+      "game_label": "WAZANAME_229",
+      "pokeapi_move_id": 229,
+      "pokeapi_name_ja": "こうそくスピン"
+    },
+    {
+      "move_id": "razorshell",
+      "pcbd_name_en": "Razor Shell",
+      "game_name_en": "Razor Shell",
+      "name_ja": "シェルブレード",
+      "game_label": "WAZANAME_534",
+      "pokeapi_move_id": 534,
+      "pokeapi_name_ja": "シェルブレード"
+    },
+    {
+      "move_id": "recover",
+      "pcbd_name_en": "Recover",
+      "game_name_en": "Recover",
+      "name_ja": "じこさいせい",
+      "game_label": "WAZANAME_105",
+      "pokeapi_move_id": 105,
+      "pokeapi_name_ja": "じこさいせい"
+    },
+    {
+      "move_id": "recycle",
+      "pcbd_name_en": "Recycle",
+      "game_name_en": "Recycle",
+      "name_ja": "リサイクル",
+      "game_label": "WAZANAME_278",
+      "pokeapi_move_id": 278,
+      "pokeapi_name_ja": "リサイクル"
+    },
+    {
+      "move_id": "reflect",
+      "pcbd_name_en": "Reflect",
+      "game_name_en": "Reflect",
+      "name_ja": "リフレクター",
+      "game_label": "WAZANAME_115",
+      "pokeapi_move_id": 115,
+      "pokeapi_name_ja": "リフレクター"
+    },
+    {
+      "move_id": "reflecttype",
+      "pcbd_name_en": "Reflect Type",
+      "game_name_en": "Reflect Type",
+      "name_ja": "ミラータイプ",
+      "game_label": "WAZANAME_513",
+      "pokeapi_move_id": 513,
+      "pokeapi_name_ja": "ミラータイプ"
+    },
+    {
+      "move_id": "rest",
+      "pcbd_name_en": "Rest",
+      "game_name_en": "Rest",
+      "name_ja": "ねむる",
+      "game_label": "WAZANAME_156",
+      "pokeapi_move_id": 156,
+      "pokeapi_name_ja": "ねむる"
+    },
+    {
+      "move_id": "reversal",
+      "pcbd_name_en": "Reversal",
+      "game_name_en": "Reversal",
+      "name_ja": "きしかいせい",
+      "game_label": "WAZANAME_179",
+      "pokeapi_move_id": 179,
+      "pokeapi_name_ja": "きしかいせい"
+    },
+    {
+      "move_id": "revivalblessing",
+      "pcbd_name_en": "Revival Blessing",
+      "game_name_en": "Revival Blessing",
+      "name_ja": "さいきのいのり",
+      "game_label": "WAZANAME_863",
+      "pokeapi_move_id": 863,
+      "pokeapi_name_ja": "さいきのいのり"
+    },
+    {
+      "move_id": "risingvoltage",
+      "pcbd_name_en": "Rising Voltage",
+      "game_name_en": "Rising Voltage",
+      "name_ja": "ライジングボルト",
+      "game_label": "WAZANAME_804",
+      "pokeapi_move_id": 804,
+      "pokeapi_name_ja": "ライジングボルト"
+    },
+    {
+      "move_id": "roar",
+      "pcbd_name_en": "Roar",
+      "game_name_en": "Roar",
+      "name_ja": "ほえる",
+      "game_label": "WAZANAME_046",
+      "pokeapi_move_id": 46,
+      "pokeapi_name_ja": "ほえる"
+    },
+    {
+      "move_id": "rockblast",
+      "pcbd_name_en": "Rock Blast",
+      "game_name_en": "Rock Blast",
+      "name_ja": "ロックブラスト",
+      "game_label": "WAZANAME_350",
+      "pokeapi_move_id": 350,
+      "pokeapi_name_ja": "ロックブラスト"
+    },
+    {
+      "move_id": "rockpolish",
+      "pcbd_name_en": "Rock Polish",
+      "game_name_en": "Rock Polish",
+      "name_ja": "ロックカット",
+      "game_label": "WAZANAME_397",
+      "pokeapi_move_id": 397,
+      "pokeapi_name_ja": "ロックカット"
+    },
+    {
+      "move_id": "rockslide",
+      "pcbd_name_en": "Rock Slide",
+      "game_name_en": "Rock Slide",
+      "name_ja": "いわなだれ",
+      "game_label": "WAZANAME_157",
+      "pokeapi_move_id": 157,
+      "pokeapi_name_ja": "いわなだれ"
+    },
+    {
+      "move_id": "rocktomb",
+      "pcbd_name_en": "Rock Tomb",
+      "game_name_en": "Rock Tomb",
+      "name_ja": "がんせきふうじ",
+      "game_label": "WAZANAME_317",
+      "pokeapi_move_id": 317,
+      "pokeapi_name_ja": "がんせきふうじ"
+    },
+    {
+      "move_id": "rockwrecker",
+      "pcbd_name_en": "Rock Wrecker",
+      "game_name_en": "Rock Wrecker",
+      "name_ja": "がんせきほう",
+      "game_label": "WAZANAME_439",
+      "pokeapi_move_id": 439,
+      "pokeapi_name_ja": "がんせきほう"
+    },
+    {
+      "move_id": "roleplay",
+      "pcbd_name_en": "Role Play",
+      "game_name_en": "Role Play",
+      "name_ja": "なりきり",
+      "game_label": "WAZANAME_272",
+      "pokeapi_move_id": 272,
+      "pokeapi_name_ja": "なりきり"
+    },
+    {
+      "move_id": "roost",
+      "pcbd_name_en": "Roost",
+      "game_name_en": "Roost",
+      "name_ja": "はねやすめ",
+      "game_label": "WAZANAME_355",
+      "pokeapi_move_id": 355,
+      "pokeapi_name_ja": "はねやすめ"
+    },
+    {
+      "move_id": "round",
+      "pcbd_name_en": "Round",
+      "game_name_en": "Round",
+      "name_ja": "りんしょう",
+      "game_label": "WAZANAME_496",
+      "pokeapi_move_id": 496,
+      "pokeapi_name_ja": "りんしょう"
+    },
+    {
+      "move_id": "sacredsword",
+      "pcbd_name_en": "Sacred Sword",
+      "game_name_en": "Sacred Sword",
+      "name_ja": "せいなるつるぎ",
+      "game_label": "WAZANAME_533",
+      "pokeapi_move_id": 533,
+      "pokeapi_name_ja": "せいなるつるぎ"
+    },
+    {
+      "move_id": "safeguard",
+      "pcbd_name_en": "Safeguard",
+      "game_name_en": "Safeguard",
+      "name_ja": "しんぴのまもり",
+      "game_label": "WAZANAME_219",
+      "pokeapi_move_id": 219,
+      "pokeapi_name_ja": "しんぴのまもり"
+    },
+    {
+      "move_id": "saltcure",
+      "pcbd_name_en": "Salt Cure",
+      "game_name_en": "Salt Cure",
+      "name_ja": "しおづけ",
+      "game_label": "WAZANAME_864",
+      "pokeapi_move_id": 864,
+      "pokeapi_name_ja": "しおづけ"
+    },
+    {
+      "move_id": "sandstorm",
+      "pcbd_name_en": "Sandstorm",
+      "game_name_en": "Sandstorm",
+      "name_ja": "すなあらし",
+      "game_label": "WAZANAME_201",
+      "pokeapi_move_id": 201,
+      "pokeapi_name_ja": "すなあらし"
+    },
+    {
+      "move_id": "sandtomb",
+      "pcbd_name_en": "Sand Tomb",
+      "game_name_en": "Sand Tomb",
+      "name_ja": "すなじごく",
+      "game_label": "WAZANAME_328",
+      "pokeapi_move_id": 328,
+      "pokeapi_name_ja": "すなじごく"
+    },
+    {
+      "move_id": "scald",
+      "pcbd_name_en": "Scald",
+      "game_name_en": "Scald",
+      "name_ja": "ねっとう",
+      "game_label": "WAZANAME_503",
+      "pokeapi_move_id": 503,
+      "pokeapi_name_ja": "ねっとう"
+    },
+    {
+      "move_id": "scaleshot",
+      "pcbd_name_en": "Scale Shot",
+      "game_name_en": "Scale Shot",
+      "name_ja": "スケイルショット",
+      "game_label": "WAZANAME_799",
+      "pokeapi_move_id": 799,
+      "pokeapi_name_ja": "スケイルショット"
+    },
+    {
+      "move_id": "scaryface",
+      "pcbd_name_en": "Scary Face",
+      "game_name_en": "Scary Face",
+      "name_ja": "こわいかお",
+      "game_label": "WAZANAME_184",
+      "pokeapi_move_id": 184,
+      "pokeapi_name_ja": "こわいかお"
+    },
+    {
+      "move_id": "scorchingsands",
+      "pcbd_name_en": "Scorching Sands",
+      "game_name_en": "Scorching Sands",
+      "name_ja": "ねっさのだいち",
+      "game_label": "WAZANAME_815",
+      "pokeapi_move_id": 815,
+      "pokeapi_name_ja": "ねっさのだいち"
+    },
+    {
+      "move_id": "screech",
+      "pcbd_name_en": "Screech",
+      "game_name_en": "Screech",
+      "name_ja": "いやなおと",
+      "game_label": "WAZANAME_103",
+      "pokeapi_move_id": 103,
+      "pokeapi_name_ja": "いやなおと"
+    },
+    {
+      "move_id": "seedbomb",
+      "pcbd_name_en": "Seed Bomb",
+      "game_name_en": "Seed Bomb",
+      "name_ja": "タネばくだん",
+      "game_label": "WAZANAME_402",
+      "pokeapi_move_id": 402,
+      "pokeapi_name_ja": "タネばくだん"
+    },
+    {
+      "move_id": "seismictoss",
+      "pcbd_name_en": "Seismic Toss",
+      "game_name_en": "Seismic Toss",
+      "name_ja": "ちきゅうなげ",
+      "game_label": "WAZANAME_069",
+      "pokeapi_move_id": 69,
+      "pokeapi_name_ja": "ちきゅうなげ"
+    },
+    {
+      "move_id": "selfdestruct",
+      "pcbd_name_en": "Self-Destruct",
+      "game_name_en": "Self-Destruct",
+      "name_ja": "じばく",
+      "game_label": "WAZANAME_120",
+      "pokeapi_move_id": 120,
+      "pokeapi_name_ja": "じばく"
+    },
+    {
+      "move_id": "shadowball",
+      "pcbd_name_en": "Shadow Ball",
+      "game_name_en": "Shadow Ball",
+      "name_ja": "シャドーボール",
+      "game_label": "WAZANAME_247",
+      "pokeapi_move_id": 247,
+      "pokeapi_name_ja": "シャドーボール"
+    },
+    {
+      "move_id": "shadowclaw",
+      "pcbd_name_en": "Shadow Claw",
+      "game_name_en": "Shadow Claw",
+      "name_ja": "シャドークロー",
+      "game_label": "WAZANAME_421",
+      "pokeapi_move_id": 421,
+      "pokeapi_name_ja": "シャドークロー"
+    },
+    {
+      "move_id": "shadowpunch",
+      "pcbd_name_en": "Shadow Punch",
+      "game_name_en": "Shadow Punch",
+      "name_ja": "シャドーパンチ",
+      "game_label": "WAZANAME_325",
+      "pokeapi_move_id": 325,
+      "pokeapi_name_ja": "シャドーパンチ"
+    },
+    {
+      "move_id": "shadowsneak",
+      "pcbd_name_en": "Shadow Sneak",
+      "game_name_en": "Shadow Sneak",
+      "name_ja": "かげうち",
+      "game_label": "WAZANAME_425",
+      "pokeapi_move_id": 425,
+      "pokeapi_name_ja": "かげうち"
+    },
+    {
+      "move_id": "shedtail",
+      "pcbd_name_en": "Shed Tail",
+      "game_name_en": "Shed Tail",
+      "name_ja": "しっぽきり",
+      "game_label": "WAZANAME_880",
+      "pokeapi_move_id": 880,
+      "pokeapi_name_ja": "しっぽきり"
+    },
+    {
+      "move_id": "sheercold",
+      "pcbd_name_en": "Sheer Cold",
+      "game_name_en": "Sheer Cold",
+      "name_ja": "ぜったいれいど",
+      "game_label": "WAZANAME_329",
+      "pokeapi_move_id": 329,
+      "pokeapi_name_ja": "ぜったいれいど"
+    },
+    {
+      "move_id": "shellsidearm",
+      "pcbd_name_en": "Shell Side Arm",
+      "game_name_en": "Shell Side Arm",
+      "name_ja": "シェルアームズ",
+      "game_label": "WAZANAME_801",
+      "pokeapi_move_id": 801,
+      "pokeapi_name_ja": "シェルアームズ"
+    },
+    {
+      "move_id": "shellsmash",
+      "pcbd_name_en": "Shell Smash",
+      "game_name_en": "Shell Smash",
+      "name_ja": "からをやぶる",
+      "game_label": "WAZANAME_504",
+      "pokeapi_move_id": 504,
+      "pokeapi_name_ja": "からをやぶる"
+    },
+    {
+      "move_id": "shelter",
+      "pcbd_name_en": "Shelter",
+      "game_name_en": "Shelter",
+      "name_ja": "たてこもる",
+      "game_label": "WAZANAME_842",
+      "pokeapi_move_id": 842,
+      "pokeapi_name_ja": "たてこもる"
+    },
+    {
+      "move_id": "shiftgear",
+      "pcbd_name_en": "Shift Gear",
+      "game_name_en": "Shift Gear",
+      "name_ja": "ギアチェンジ",
+      "game_label": "WAZANAME_508",
+      "pokeapi_move_id": 508,
+      "pokeapi_name_ja": "ギアチェンジ"
+    },
+    {
+      "move_id": "simplebeam",
+      "pcbd_name_en": "Simple Beam",
+      "game_name_en": "Simple Beam",
+      "name_ja": "シンプルビーム",
+      "game_label": "WAZANAME_493",
+      "pokeapi_move_id": 493,
+      "pokeapi_name_ja": "シンプルビーム"
+    },
+    {
+      "move_id": "sing",
+      "pcbd_name_en": "Sing",
+      "game_name_en": "Sing",
+      "name_ja": "うたう",
+      "game_label": "WAZANAME_047",
+      "pokeapi_move_id": 47,
+      "pokeapi_name_ja": "うたう"
+    },
+    {
+      "move_id": "skillswap",
+      "pcbd_name_en": "Skill Swap",
+      "game_name_en": "Skill Swap",
+      "name_ja": "スキルスワップ",
+      "game_label": "WAZANAME_285",
+      "pokeapi_move_id": 285,
+      "pokeapi_name_ja": "スキルスワップ"
+    },
+    {
+      "move_id": "skittersmack",
+      "pcbd_name_en": "Skitter Smack",
+      "game_name_en": "Skitter Smack",
+      "name_ja": "はいよるいちげき",
+      "game_label": "WAZANAME_806",
+      "pokeapi_move_id": 806,
+      "pokeapi_name_ja": "はいよるいちげき"
+    },
+    {
+      "move_id": "skyattack",
+      "pcbd_name_en": "Sky Attack",
+      "game_name_en": "Sky Attack",
+      "name_ja": "ゴッドバード",
+      "game_label": "WAZANAME_143",
+      "pokeapi_move_id": 143,
+      "pokeapi_name_ja": "ゴッドバード"
+    },
+    {
+      "move_id": "slackoff",
+      "pcbd_name_en": "Slack Off",
+      "game_name_en": "Slack Off",
+      "name_ja": "なまける",
+      "game_label": "WAZANAME_303",
+      "pokeapi_move_id": 303,
+      "pokeapi_name_ja": "なまける"
+    },
+    {
+      "move_id": "slash",
+      "pcbd_name_en": "Slash",
+      "game_name_en": "Slash",
+      "name_ja": "きりさく",
+      "game_label": "WAZANAME_163",
+      "pokeapi_move_id": 163,
+      "pokeapi_name_ja": "きりさく"
+    },
+    {
+      "move_id": "sleeppowder",
+      "pcbd_name_en": "Sleep Powder",
+      "game_name_en": "Sleep Powder",
+      "name_ja": "ねむりごな",
+      "game_label": "WAZANAME_079",
+      "pokeapi_move_id": 79,
+      "pokeapi_name_ja": "ねむりごな"
+    },
+    {
+      "move_id": "sleeptalk",
+      "pcbd_name_en": "Sleep Talk",
+      "game_name_en": "Sleep Talk",
+      "name_ja": "ねごと",
+      "game_label": "WAZANAME_214",
+      "pokeapi_move_id": 214,
+      "pokeapi_name_ja": "ねごと"
+    },
+    {
+      "move_id": "sludgebomb",
+      "pcbd_name_en": "Sludge Bomb",
+      "game_name_en": "Sludge Bomb",
+      "name_ja": "ヘドロばくだん",
+      "game_label": "WAZANAME_188",
+      "pokeapi_move_id": 188,
+      "pokeapi_name_ja": "ヘドロばくだん"
+    },
+    {
+      "move_id": "sludgewave",
+      "pcbd_name_en": "Sludge Wave",
+      "game_name_en": "Sludge Wave",
+      "name_ja": "ヘドロウェーブ",
+      "game_label": "WAZANAME_482",
+      "pokeapi_move_id": 482,
+      "pokeapi_name_ja": "ヘドロウェーブ"
+    },
+    {
+      "move_id": "smackdown",
+      "pcbd_name_en": "Smack Down",
+      "game_name_en": "Smack Down",
+      "name_ja": "うちおとす",
+      "game_label": "WAZANAME_479",
+      "pokeapi_move_id": 479,
+      "pokeapi_name_ja": "うちおとす"
+    },
+    {
+      "move_id": "smartstrike",
+      "pcbd_name_en": "Smart Strike",
+      "game_name_en": "Smart Strike",
+      "name_ja": "スマートホーン",
+      "game_label": "WAZANAME_684",
+      "pokeapi_move_id": 684,
+      "pokeapi_name_ja": "スマートホーン"
+    },
+    {
+      "move_id": "snaptrap",
+      "pcbd_name_en": "Snap Trap",
+      "game_name_en": "Snap Trap",
+      "name_ja": "トラバサミ",
+      "game_label": "WAZANAME_779",
+      "pokeapi_move_id": 779,
+      "pokeapi_name_ja": "トラバサミ"
+    },
+    {
+      "move_id": "snarl",
+      "pcbd_name_en": "Snarl",
+      "game_name_en": "Snarl",
+      "name_ja": "バークアウト",
+      "game_label": "WAZANAME_555",
+      "pokeapi_move_id": 555,
+      "pokeapi_name_ja": "バークアウト"
+    },
+    {
+      "move_id": "snipeshot",
+      "pcbd_name_en": "Snipe Shot",
+      "game_name_en": "Snipe Shot",
+      "name_ja": "ねらいうち",
+      "game_label": "WAZANAME_745",
+      "pokeapi_move_id": 745,
+      "pokeapi_name_ja": "ねらいうち"
+    },
+    {
+      "move_id": "snore",
+      "pcbd_name_en": "Snore",
+      "game_name_en": "Snore",
+      "name_ja": "いびき",
+      "game_label": "WAZANAME_173",
+      "pokeapi_move_id": 173,
+      "pokeapi_name_ja": "いびき"
+    },
+    {
+      "move_id": "snowscape",
+      "pcbd_name_en": "Snowscape",
+      "game_name_en": "Snowscape",
+      "name_ja": "ゆきげしき",
+      "game_label": "WAZANAME_883",
+      "pokeapi_move_id": 883,
+      "pokeapi_name_ja": "ゆきげしき"
+    },
+    {
+      "move_id": "soak",
+      "pcbd_name_en": "Soak",
+      "game_name_en": "Soak",
+      "name_ja": "みずびたし",
+      "game_label": "WAZANAME_487",
+      "pokeapi_move_id": 487,
+      "pokeapi_name_ja": "みずびたし"
+    },
+    {
+      "move_id": "solarbeam",
+      "pcbd_name_en": "Solar Beam",
+      "game_name_en": "Solar Beam",
+      "name_ja": "ソーラービーム",
+      "game_label": "WAZANAME_076",
+      "pokeapi_move_id": 76,
+      "pokeapi_name_ja": "ソーラービーム"
+    },
+    {
+      "move_id": "solarblade",
+      "pcbd_name_en": "Solar Blade",
+      "game_name_en": "Solar Blade",
+      "name_ja": "ソーラーブレード",
+      "game_label": "WAZANAME_669",
+      "pokeapi_move_id": 669,
+      "pokeapi_name_ja": "ソーラーブレード"
+    },
+    {
+      "move_id": "sparklingaria",
+      "pcbd_name_en": "Sparkling Aria",
+      "game_name_en": "Sparkling Aria",
+      "name_ja": "うたかたのアリア",
+      "game_label": "WAZANAME_664",
+      "pokeapi_move_id": 664,
+      "pokeapi_name_ja": "うたかたのアリア"
+    },
+    {
+      "move_id": "speedswap",
+      "pcbd_name_en": "Speed Swap",
+      "game_name_en": "Speed Swap",
+      "name_ja": "スピードスワップ",
+      "game_label": "WAZANAME_683",
+      "pokeapi_move_id": 683,
+      "pokeapi_name_ja": "スピードスワップ"
+    },
+    {
+      "move_id": "spicyextract",
+      "pcbd_name_en": "Spicy Extract",
+      "game_name_en": "Spicy Extract",
+      "name_ja": "ハバネロエキス",
+      "game_label": "WAZANAME_858",
+      "pokeapi_move_id": 858,
+      "pokeapi_name_ja": "ハバネロエキス"
+    },
+    {
+      "move_id": "spikes",
+      "pcbd_name_en": "Spikes",
+      "game_name_en": "Spikes",
+      "name_ja": "まきびし",
+      "game_label": "WAZANAME_191",
+      "pokeapi_move_id": 191,
+      "pokeapi_name_ja": "まきびし"
+    },
+    {
+      "move_id": "spikyshield",
+      "pcbd_name_en": "Spiky Shield",
+      "game_name_en": "Spiky Shield",
+      "name_ja": "ニードルガード",
+      "game_label": "WAZANAME_596",
+      "pokeapi_move_id": 596,
+      "pokeapi_name_ja": "ニードルガード"
+    },
+    {
+      "move_id": "spiritbreak",
+      "pcbd_name_en": "Spirit Break",
+      "game_name_en": "Spirit Break",
+      "name_ja": "ソウルクラッシュ",
+      "game_label": "WAZANAME_789",
+      "pokeapi_move_id": 789,
+      "pokeapi_name_ja": "ソウルクラッシュ"
+    },
+    {
+      "move_id": "spiritshackle",
+      "pcbd_name_en": "Spirit Shackle",
+      "game_name_en": "Spirit Shackle",
+      "name_ja": "かげぬい",
+      "game_label": "WAZANAME_662",
+      "pokeapi_move_id": 662,
+      "pokeapi_name_ja": "かげぬい"
+    },
+    {
+      "move_id": "spite",
+      "pcbd_name_en": "Spite",
+      "game_name_en": "Spite",
+      "name_ja": "うらみ",
+      "game_label": "WAZANAME_180",
+      "pokeapi_move_id": 180,
+      "pokeapi_name_ja": "うらみ"
+    },
+    {
+      "move_id": "spitup",
+      "pcbd_name_en": "Spit Up",
+      "game_name_en": "Spit Up",
+      "name_ja": "はきだす",
+      "game_label": "WAZANAME_255",
+      "pokeapi_move_id": 255,
+      "pokeapi_name_ja": "はきだす"
+    },
+    {
+      "move_id": "splash",
+      "pcbd_name_en": "Splash",
+      "game_name_en": "Splash",
+      "name_ja": "はねる",
+      "game_label": "WAZANAME_150",
+      "pokeapi_move_id": 150,
+      "pokeapi_name_ja": "はねる"
+    },
+    {
+      "move_id": "stealthrock",
+      "pcbd_name_en": "Stealth Rock",
+      "game_name_en": "Stealth Rock",
+      "name_ja": "ステルスロック",
+      "game_label": "WAZANAME_446",
+      "pokeapi_move_id": 446,
+      "pokeapi_name_ja": "ステルスロック"
+    },
+    {
+      "move_id": "steelbeam",
+      "pcbd_name_en": "Steel Beam",
+      "game_name_en": "Steel Beam",
+      "name_ja": "てっていこうせん",
+      "game_label": "WAZANAME_796",
+      "pokeapi_move_id": 796,
+      "pokeapi_name_ja": "てっていこうせん"
+    },
+    {
+      "move_id": "steelroller",
+      "pcbd_name_en": "Steel Roller",
+      "game_name_en": "Steel Roller",
+      "name_ja": "アイアンローラー",
+      "game_label": "WAZANAME_798",
+      "pokeapi_move_id": 798,
+      "pokeapi_name_ja": "アイアンローラー"
+    },
+    {
+      "move_id": "steelwing",
+      "pcbd_name_en": "Steel Wing",
+      "game_name_en": "Steel Wing",
+      "name_ja": "はがねのつばさ",
+      "game_label": "WAZANAME_211",
+      "pokeapi_move_id": 211,
+      "pokeapi_name_ja": "はがねのつばさ"
+    },
+    {
+      "move_id": "stickyweb",
+      "pcbd_name_en": "Sticky Web",
+      "game_name_en": "Sticky Web",
+      "name_ja": "ねばねばネット",
+      "game_label": "WAZANAME_564",
+      "pokeapi_move_id": 564,
+      "pokeapi_name_ja": "ねばねばネット"
+    },
+    {
+      "move_id": "stockpile",
+      "pcbd_name_en": "Stockpile",
+      "game_name_en": "Stockpile",
+      "name_ja": "たくわえる",
+      "game_label": "WAZANAME_254",
+      "pokeapi_move_id": 254,
+      "pokeapi_name_ja": "たくわえる"
+    },
+    {
+      "move_id": "stompingtantrum",
+      "pcbd_name_en": "Stomping Tantrum",
+      "game_name_en": "Stomping Tantrum",
+      "name_ja": "じだんだ",
+      "game_label": "WAZANAME_707",
+      "pokeapi_move_id": 707,
+      "pokeapi_name_ja": "じだんだ"
+    },
+    {
+      "move_id": "stoneaxe",
+      "pcbd_name_en": "Stone Axe",
+      "game_name_en": "Stone Axe",
+      "name_ja": "がんせきアックス",
+      "game_label": "WAZANAME_830",
+      "pokeapi_move_id": 830,
+      "pokeapi_name_ja": "がんせきアックス"
+    },
+    {
+      "move_id": "stoneedge",
+      "pcbd_name_en": "Stone Edge",
+      "game_name_en": "Stone Edge",
+      "name_ja": "ストーンエッジ",
+      "game_label": "WAZANAME_444",
+      "pokeapi_move_id": 444,
+      "pokeapi_name_ja": "ストーンエッジ"
+    },
+    {
+      "move_id": "storedpower",
+      "pcbd_name_en": "Stored Power",
+      "game_name_en": "Stored Power",
+      "name_ja": "アシストパワー",
+      "game_label": "WAZANAME_500",
+      "pokeapi_move_id": 500,
+      "pokeapi_name_ja": "アシストパワー"
+    },
+    {
+      "move_id": "stormthrow",
+      "pcbd_name_en": "Storm Throw",
+      "game_name_en": "Storm Throw",
+      "name_ja": "やまあらし",
+      "game_label": "WAZANAME_480",
+      "pokeapi_move_id": 480,
+      "pokeapi_name_ja": "やまあらし"
+    },
+    {
+      "move_id": "strengthsap",
+      "pcbd_name_en": "Strength Sap",
+      "game_name_en": "Strength Sap",
+      "name_ja": "ちからをすいとる",
+      "game_label": "WAZANAME_668",
+      "pokeapi_move_id": 668,
+      "pokeapi_name_ja": "ちからをすいとる"
+    },
+    {
+      "move_id": "stringshot",
+      "pcbd_name_en": "String Shot",
+      "game_name_en": "String Shot",
+      "name_ja": "いとをはく",
+      "game_label": "WAZANAME_081",
+      "pokeapi_move_id": 81,
+      "pokeapi_name_ja": "いとをはく"
+    },
+    {
+      "move_id": "strugglebug",
+      "pcbd_name_en": "Struggle Bug",
+      "game_name_en": "Struggle Bug",
+      "name_ja": "むしのていこう",
+      "game_label": "WAZANAME_522",
+      "pokeapi_move_id": 522,
+      "pokeapi_name_ja": "むしのていこう"
+    },
+    {
+      "move_id": "stuffcheeks",
+      "pcbd_name_en": "Stuff Cheeks",
+      "game_name_en": "Stuff Cheeks",
+      "name_ja": "ほおばる",
+      "game_label": "WAZANAME_747",
+      "pokeapi_move_id": 747,
+      "pokeapi_name_ja": "ほおばる"
+    },
+    {
+      "move_id": "stunspore",
+      "pcbd_name_en": "Stun Spore",
+      "game_name_en": "Stun Spore",
+      "name_ja": "しびれごな",
+      "game_label": "WAZANAME_078",
+      "pokeapi_move_id": 78,
+      "pokeapi_name_ja": "しびれごな"
+    },
+    {
+      "move_id": "substitute",
+      "pcbd_name_en": "Substitute",
+      "game_name_en": "Substitute",
+      "name_ja": "みがわり",
+      "game_label": "WAZANAME_164",
+      "pokeapi_move_id": 164,
+      "pokeapi_name_ja": "みがわり"
+    },
+    {
+      "move_id": "suckerpunch",
+      "pcbd_name_en": "Sucker Punch",
+      "game_name_en": "Sucker Punch",
+      "name_ja": "ふいうち",
+      "game_label": "WAZANAME_389",
+      "pokeapi_move_id": 389,
+      "pokeapi_name_ja": "ふいうち"
+    },
+    {
+      "move_id": "sunnyday",
+      "pcbd_name_en": "Sunny Day",
+      "game_name_en": "Sunny Day",
+      "name_ja": "にほんばれ",
+      "game_label": "WAZANAME_241",
+      "pokeapi_move_id": 241,
+      "pokeapi_name_ja": "にほんばれ"
+    },
+    {
+      "move_id": "supercellslam",
+      "pcbd_name_en": "Supercell Slam",
+      "game_name_en": "Supercell Slam",
+      "name_ja": "サンダーダイブ",
+      "game_label": "WAZANAME_916",
+      "pokeapi_move_id": 916,
+      "pokeapi_name_ja": "サンダーダイブ"
+    },
+    {
+      "move_id": "superfang",
+      "pcbd_name_en": "Super Fang",
+      "game_name_en": "Super Fang",
+      "name_ja": "いかりのまえば",
+      "game_label": "WAZANAME_162",
+      "pokeapi_move_id": 162,
+      "pokeapi_name_ja": "いかりのまえば"
+    },
+    {
+      "move_id": "superpower",
+      "pcbd_name_en": "Superpower",
+      "game_name_en": "Superpower",
+      "name_ja": "ばかぢから",
+      "game_label": "WAZANAME_276",
+      "pokeapi_move_id": 276,
+      "pokeapi_name_ja": "ばかぢから"
+    },
+    {
+      "move_id": "surf",
+      "pcbd_name_en": "Surf",
+      "game_name_en": "Surf",
+      "name_ja": "なみのり",
+      "game_label": "WAZANAME_057",
+      "pokeapi_move_id": 57,
+      "pokeapi_name_ja": "なみのり"
+    },
+    {
+      "move_id": "swagger",
+      "pcbd_name_en": "Swagger",
+      "game_name_en": "Swagger",
+      "name_ja": "いばる",
+      "game_label": "WAZANAME_207",
+      "pokeapi_move_id": 207,
+      "pokeapi_name_ja": "いばる"
+    },
+    {
+      "move_id": "swallow",
+      "pcbd_name_en": "Swallow",
+      "game_name_en": "Swallow",
+      "name_ja": "のみこむ",
+      "game_label": "WAZANAME_256",
+      "pokeapi_move_id": 256,
+      "pokeapi_name_ja": "のみこむ"
+    },
+    {
+      "move_id": "sweetkiss",
+      "pcbd_name_en": "Sweet Kiss",
+      "game_name_en": "Sweet Kiss",
+      "name_ja": "てんしのキッス",
+      "game_label": "WAZANAME_186",
+      "pokeapi_move_id": 186,
+      "pokeapi_name_ja": "てんしのキッス"
+    },
+    {
+      "move_id": "sweetscent",
+      "pcbd_name_en": "Sweet Scent",
+      "game_name_en": "Sweet Scent",
+      "name_ja": "あまいかおり",
+      "game_label": "WAZANAME_230",
+      "pokeapi_move_id": 230,
+      "pokeapi_name_ja": "あまいかおり"
+    },
+    {
+      "move_id": "switcheroo",
+      "pcbd_name_en": "Switcheroo",
+      "game_name_en": "Switcheroo",
+      "name_ja": "すりかえ",
+      "game_label": "WAZANAME_415",
+      "pokeapi_move_id": 415,
+      "pokeapi_name_ja": "すりかえ"
+    },
+    {
+      "move_id": "swordsdance",
+      "pcbd_name_en": "Swords Dance",
+      "game_name_en": "Swords Dance",
+      "name_ja": "つるぎのまい",
+      "game_label": "WAZANAME_014",
+      "pokeapi_move_id": 14,
+      "pokeapi_name_ja": "つるぎのまい"
+    },
+    {
+      "move_id": "synthesis",
+      "pcbd_name_en": "Synthesis",
+      "game_name_en": "Synthesis",
+      "name_ja": "こうごうせい",
+      "game_label": "WAZANAME_235",
+      "pokeapi_move_id": 235,
+      "pokeapi_name_ja": "こうごうせい"
+    },
+    {
+      "move_id": "syrupbomb",
+      "pcbd_name_en": "Syrup Bomb",
+      "game_name_en": "Syrup Bomb",
+      "name_ja": "みずあめボム",
+      "game_label": "WAZANAME_903",
+      "pokeapi_move_id": 903,
+      "pokeapi_name_ja": "みずあめボム"
+    },
+    {
+      "move_id": "tailslap",
+      "pcbd_name_en": "Tail Slap",
+      "game_name_en": "Tail Slap",
+      "name_ja": "スイープビンタ",
+      "game_label": "WAZANAME_541",
+      "pokeapi_move_id": 541,
+      "pokeapi_name_ja": "スイープビンタ"
+    },
+    {
+      "move_id": "tailwind",
+      "pcbd_name_en": "Tailwind",
+      "game_name_en": "Tailwind",
+      "name_ja": "おいかぜ",
+      "game_label": "WAZANAME_366",
+      "pokeapi_move_id": 366,
+      "pokeapi_name_ja": "おいかぜ"
+    },
+    {
+      "move_id": "taunt",
+      "pcbd_name_en": "Taunt",
+      "game_name_en": "Taunt",
+      "name_ja": "ちょうはつ",
+      "game_label": "WAZANAME_269",
+      "pokeapi_move_id": 269,
+      "pokeapi_name_ja": "ちょうはつ"
+    },
+    {
+      "move_id": "tearfullook",
+      "pcbd_name_en": "Tearful Look",
+      "game_name_en": "Tearful Look",
+      "name_ja": "なみだめ",
+      "game_label": "WAZANAME_715",
+      "pokeapi_move_id": 715,
+      "pokeapi_name_ja": "なみだめ"
+    },
+    {
+      "move_id": "teatime",
+      "pcbd_name_en": "Teatime",
+      "game_name_en": "Teatime",
+      "name_ja": "おちゃかい",
+      "game_label": "WAZANAME_752",
+      "pokeapi_move_id": 752,
+      "pokeapi_name_ja": "おちゃかい"
+    },
+    {
+      "move_id": "teeterdance",
+      "pcbd_name_en": "Teeter Dance",
+      "game_name_en": "Teeter Dance",
+      "name_ja": "フラフラダンス",
+      "game_label": "WAZANAME_298",
+      "pokeapi_move_id": 298,
+      "pokeapi_name_ja": "フラフラダンス"
+    },
+    {
+      "move_id": "temperflare",
+      "pcbd_name_en": "Temper Flare",
+      "game_name_en": "Temper Flare",
+      "name_ja": "やけっぱち",
+      "game_label": "WAZANAME_915",
+      "pokeapi_move_id": 915,
+      "pokeapi_name_ja": "やけっぱち"
+    },
+    {
+      "move_id": "terrainpulse",
+      "pcbd_name_en": "Terrain Pulse",
+      "game_name_en": "Terrain Pulse",
+      "name_ja": "だいちのはどう",
+      "game_label": "WAZANAME_805",
+      "pokeapi_move_id": 805,
+      "pokeapi_name_ja": "だいちのはどう"
+    },
+    {
+      "move_id": "thief",
+      "pcbd_name_en": "Thief",
+      "game_name_en": "Thief",
+      "name_ja": "どろぼう",
+      "game_label": "WAZANAME_168",
+      "pokeapi_move_id": 168,
+      "pokeapi_name_ja": "どろぼう"
+    },
+    {
+      "move_id": "thrash",
+      "pcbd_name_en": "Thrash",
+      "game_name_en": "Thrash",
+      "name_ja": "あばれる",
+      "game_label": "WAZANAME_037",
+      "pokeapi_move_id": 37,
+      "pokeapi_name_ja": "あばれる"
+    },
+    {
+      "move_id": "throatchop",
+      "pcbd_name_en": "Throat Chop",
+      "game_name_en": "Throat Chop",
+      "name_ja": "じごくづき",
+      "game_label": "WAZANAME_675",
+      "pokeapi_move_id": 675,
+      "pokeapi_name_ja": "じごくづき"
+    },
+    {
+      "move_id": "thunder",
+      "pcbd_name_en": "Thunder",
+      "game_name_en": "Thunder",
+      "name_ja": "かみなり",
+      "game_label": "WAZANAME_087",
+      "pokeapi_move_id": 87,
+      "pokeapi_name_ja": "かみなり"
+    },
+    {
+      "move_id": "thunderbolt",
+      "pcbd_name_en": "Thunderbolt",
+      "game_name_en": "Thunderbolt",
+      "name_ja": "１０まんボルト",
+      "game_label": "WAZANAME_085",
+      "pokeapi_move_id": 85,
+      "pokeapi_name_ja": "１０まんボルト"
+    },
+    {
+      "move_id": "thunderfang",
+      "pcbd_name_en": "Thunder Fang",
+      "game_name_en": "Thunder Fang",
+      "name_ja": "かみなりのキバ",
+      "game_label": "WAZANAME_422",
+      "pokeapi_move_id": 422,
+      "pokeapi_name_ja": "かみなりのキバ"
+    },
+    {
+      "move_id": "thunderpunch",
+      "pcbd_name_en": "Thunder Punch",
+      "game_name_en": "Thunder Punch",
+      "name_ja": "かみなりパンチ",
+      "game_label": "WAZANAME_009",
+      "pokeapi_move_id": 9,
+      "pokeapi_name_ja": "かみなりパンチ"
+    },
+    {
+      "move_id": "thundershock",
+      "pcbd_name_en": "Thunder Shock",
+      "game_name_en": "Thunder Shock",
+      "name_ja": "でんきショック",
+      "game_label": "WAZANAME_084",
+      "pokeapi_move_id": 84,
+      "pokeapi_name_ja": "でんきショック"
+    },
+    {
+      "move_id": "thunderwave",
+      "pcbd_name_en": "Thunder Wave",
+      "game_name_en": "Thunder Wave",
+      "name_ja": "でんじは",
+      "game_label": "WAZANAME_086",
+      "pokeapi_move_id": 86,
+      "pokeapi_name_ja": "でんじは"
+    },
+    {
+      "move_id": "tickle",
+      "pcbd_name_en": "Tickle",
+      "game_name_en": "Tickle",
+      "name_ja": "くすぐる",
+      "game_label": "WAZANAME_321",
+      "pokeapi_move_id": 321,
+      "pokeapi_name_ja": "くすぐる"
+    },
+    {
+      "move_id": "tidyup",
+      "pcbd_name_en": "Tidy Up",
+      "game_name_en": "Tidy Up",
+      "name_ja": "おかたづけ",
+      "game_label": "WAZANAME_882",
+      "pokeapi_move_id": 882,
+      "pokeapi_name_ja": "おかたづけ"
+    },
+    {
+      "move_id": "topsyturvy",
+      "pcbd_name_en": "Topsy-Turvy",
+      "game_name_en": "Topsy-Turvy",
+      "name_ja": "ひっくりかえす",
+      "game_label": "WAZANAME_576",
+      "pokeapi_move_id": 576,
+      "pokeapi_name_ja": "ひっくりかえす"
+    },
+    {
+      "move_id": "torchsong",
+      "pcbd_name_en": "Torch Song",
+      "game_name_en": "Torch Song",
+      "name_ja": "フレアソング",
+      "game_label": "WAZANAME_871",
+      "pokeapi_move_id": 871,
+      "pokeapi_name_ja": "フレアソング"
+    },
+    {
+      "move_id": "torment",
+      "pcbd_name_en": "Torment",
+      "game_name_en": "Torment",
+      "name_ja": "いちゃもん",
+      "game_label": "WAZANAME_259",
+      "pokeapi_move_id": 259,
+      "pokeapi_name_ja": "いちゃもん"
+    },
+    {
+      "move_id": "toxic",
+      "pcbd_name_en": "Toxic",
+      "game_name_en": "Toxic",
+      "name_ja": "どくどく",
+      "game_label": "WAZANAME_092",
+      "pokeapi_move_id": 92,
+      "pokeapi_name_ja": "どくどく"
+    },
+    {
+      "move_id": "toxicspikes",
+      "pcbd_name_en": "Toxic Spikes",
+      "game_name_en": "Toxic Spikes",
+      "name_ja": "どくびし",
+      "game_label": "WAZANAME_390",
+      "pokeapi_move_id": 390,
+      "pokeapi_name_ja": "どくびし"
+    },
+    {
+      "move_id": "toxicthread",
+      "pcbd_name_en": "Toxic Thread",
+      "game_name_en": "Toxic Thread",
+      "name_ja": "どくのいと",
+      "game_label": "WAZANAME_672",
+      "pokeapi_move_id": 672,
+      "pokeapi_name_ja": "どくのいと"
+    },
+    {
+      "move_id": "trailblaze",
+      "pcbd_name_en": "Trailblaze",
+      "game_name_en": "Trailblaze",
+      "name_ja": "くさわけ",
+      "game_label": "WAZANAME_885",
+      "pokeapi_move_id": 885,
+      "pokeapi_name_ja": "くさわけ"
+    },
+    {
+      "move_id": "transform",
+      "pcbd_name_en": "Transform",
+      "game_name_en": "Transform",
+      "name_ja": "へんしん",
+      "game_label": "WAZANAME_144",
+      "pokeapi_move_id": 144,
+      "pokeapi_name_ja": "へんしん"
+    },
+    {
+      "move_id": "triattack",
+      "pcbd_name_en": "Tri Attack",
+      "game_name_en": "Tri Attack",
+      "name_ja": "トライアタック",
+      "game_label": "WAZANAME_161",
+      "pokeapi_move_id": 161,
+      "pokeapi_name_ja": "トライアタック"
+    },
+    {
+      "move_id": "trick",
+      "pcbd_name_en": "Trick",
+      "game_name_en": "Trick",
+      "name_ja": "トリック",
+      "game_label": "WAZANAME_271",
+      "pokeapi_move_id": 271,
+      "pokeapi_name_ja": "トリック"
+    },
+    {
+      "move_id": "trickortreat",
+      "pcbd_name_en": "Trick-or-Treat",
+      "game_name_en": "Trick-or-Treat",
+      "name_ja": "ハロウィン",
+      "game_label": "WAZANAME_567",
+      "pokeapi_move_id": 567,
+      "pokeapi_name_ja": "ハロウィン"
+    },
+    {
+      "move_id": "trickroom",
+      "pcbd_name_en": "Trick Room",
+      "game_name_en": "Trick Room",
+      "name_ja": "トリックルーム",
+      "game_label": "WAZANAME_433",
+      "pokeapi_move_id": 433,
+      "pokeapi_name_ja": "トリックルーム"
+    },
+    {
+      "move_id": "triplearrows",
+      "pcbd_name_en": "Triple Arrows",
+      "game_name_en": "Triple Arrows",
+      "name_ja": "３ぼんのや",
+      "game_label": "WAZANAME_843",
+      "pokeapi_move_id": 843,
+      "pokeapi_name_ja": "３ぼんのや"
+    },
+    {
+      "move_id": "tripleaxel",
+      "pcbd_name_en": "Triple Axel",
+      "game_name_en": "Triple Axel",
+      "name_ja": "トリプルアクセル",
+      "game_label": "WAZANAME_813",
+      "pokeapi_move_id": 813,
+      "pokeapi_name_ja": "トリプルアクセル"
+    },
+    {
+      "move_id": "tropkick",
+      "pcbd_name_en": "Trop Kick",
+      "game_name_en": "Trop Kick",
+      "name_ja": "トロピカルキック",
+      "game_label": "WAZANAME_688",
+      "pokeapi_move_id": 688,
+      "pokeapi_name_ja": "トロピカルキック"
+    },
+    {
+      "move_id": "twinbeam",
+      "pcbd_name_en": "Twin Beam",
+      "game_name_en": "Twin Beam",
+      "name_ja": "ツインビーム",
+      "game_label": "WAZANAME_888",
+      "pokeapi_move_id": 888,
+      "pokeapi_name_ja": "ツインビーム"
+    },
+    {
+      "move_id": "upperhand",
+      "pcbd_name_en": "Upper Hand",
+      "game_name_en": "Upper Hand",
+      "name_ja": "はやてがえし",
+      "game_label": "WAZANAME_918",
+      "pokeapi_move_id": 918,
+      "pokeapi_name_ja": "はやてがえし"
+    },
+    {
+      "move_id": "uproar",
+      "pcbd_name_en": "Uproar",
+      "game_name_en": "Uproar",
+      "name_ja": "さわぐ",
+      "game_label": "WAZANAME_253",
+      "pokeapi_move_id": 253,
+      "pokeapi_name_ja": "さわぐ"
+    },
+    {
+      "move_id": "uturn",
+      "pcbd_name_en": "U-turn",
+      "game_name_en": "U-turn",
+      "name_ja": "とんぼがえり",
+      "game_label": "WAZANAME_369",
+      "pokeapi_move_id": 369,
+      "pokeapi_name_ja": "とんぼがえり"
+    },
+    {
+      "move_id": "vacuumwave",
+      "pcbd_name_en": "Vacuum Wave",
+      "game_name_en": "Vacuum Wave",
+      "name_ja": "しんくうは",
+      "game_label": "WAZANAME_410",
+      "pokeapi_move_id": 410,
+      "pokeapi_name_ja": "しんくうは"
+    },
+    {
+      "move_id": "venoshock",
+      "pcbd_name_en": "Venoshock",
+      "game_name_en": "Venoshock",
+      "name_ja": "ベノムショック",
+      "game_label": "WAZANAME_474",
+      "pokeapi_move_id": 474,
+      "pokeapi_name_ja": "ベノムショック"
+    },
+    {
+      "move_id": "voltswitch",
+      "pcbd_name_en": "Volt Switch",
+      "game_name_en": "Volt Switch",
+      "name_ja": "ボルトチェンジ",
+      "game_label": "WAZANAME_521",
+      "pokeapi_move_id": 521,
+      "pokeapi_name_ja": "ボルトチェンジ"
+    },
+    {
+      "move_id": "volttackle",
+      "pcbd_name_en": "Volt Tackle",
+      "game_name_en": "Volt Tackle",
+      "name_ja": "ボルテッカー",
+      "game_label": "WAZANAME_344",
+      "pokeapi_move_id": 344,
+      "pokeapi_name_ja": "ボルテッカー"
+    },
+    {
+      "move_id": "waterfall",
+      "pcbd_name_en": "Waterfall",
+      "game_name_en": "Waterfall",
+      "name_ja": "たきのぼり",
+      "game_label": "WAZANAME_127",
+      "pokeapi_move_id": 127,
+      "pokeapi_name_ja": "たきのぼり"
+    },
+    {
+      "move_id": "waterpulse",
+      "pcbd_name_en": "Water Pulse",
+      "game_name_en": "Water Pulse",
+      "name_ja": "みずのはどう",
+      "game_label": "WAZANAME_352",
+      "pokeapi_move_id": 352,
+      "pokeapi_name_ja": "みずのはどう"
+    },
+    {
+      "move_id": "watershuriken",
+      "pcbd_name_en": "Water Shuriken",
+      "game_name_en": "Water Shuriken",
+      "name_ja": "みずしゅりけん",
+      "game_label": "WAZANAME_594",
+      "pokeapi_move_id": 594,
+      "pokeapi_name_ja": "みずしゅりけん"
+    },
+    {
+      "move_id": "waterspout",
+      "pcbd_name_en": "Water Spout",
+      "game_name_en": "Water Spout",
+      "name_ja": "しおふき",
+      "game_label": "WAZANAME_323",
+      "pokeapi_move_id": 323,
+      "pokeapi_name_ja": "しおふき"
+    },
+    {
+      "move_id": "wavecrash",
+      "pcbd_name_en": "Wave Crash",
+      "game_name_en": "Wave Crash",
+      "name_ja": "ウェーブタックル",
+      "game_label": "WAZANAME_834",
+      "pokeapi_move_id": 834,
+      "pokeapi_name_ja": "ウェーブタックル"
+    },
+    {
+      "move_id": "weatherball",
+      "pcbd_name_en": "Weather Ball",
+      "game_name_en": "Weather Ball",
+      "name_ja": "ウェザーボール",
+      "game_label": "WAZANAME_311",
+      "pokeapi_move_id": 311,
+      "pokeapi_name_ja": "ウェザーボール"
+    },
+    {
+      "move_id": "whirlpool",
+      "pcbd_name_en": "Whirlpool",
+      "game_name_en": "Whirlpool",
+      "name_ja": "うずしお",
+      "game_label": "WAZANAME_250",
+      "pokeapi_move_id": 250,
+      "pokeapi_name_ja": "うずしお"
+    },
+    {
+      "move_id": "whirlwind",
+      "pcbd_name_en": "Whirlwind",
+      "game_name_en": "Whirlwind",
+      "name_ja": "ふきとばし",
+      "game_label": "WAZANAME_018",
+      "pokeapi_move_id": 18,
+      "pokeapi_name_ja": "ふきとばし"
+    },
+    {
+      "move_id": "wideguard",
+      "pcbd_name_en": "Wide Guard",
+      "game_name_en": "Wide Guard",
+      "name_ja": "ワイドガード",
+      "game_label": "WAZANAME_469",
+      "pokeapi_move_id": 469,
+      "pokeapi_name_ja": "ワイドガード"
+    },
+    {
+      "move_id": "wildcharge",
+      "pcbd_name_en": "Wild Charge",
+      "game_name_en": "Wild Charge",
+      "name_ja": "ワイルドボルト",
+      "game_label": "WAZANAME_528",
+      "pokeapi_move_id": 528,
+      "pokeapi_name_ja": "ワイルドボルト"
+    },
+    {
+      "move_id": "willowisp",
+      "pcbd_name_en": "Will-O-Wisp",
+      "game_name_en": "Will-O-Wisp",
+      "name_ja": "おにび",
+      "game_label": "WAZANAME_261",
+      "pokeapi_move_id": 261,
+      "pokeapi_name_ja": "おにび"
+    },
+    {
+      "move_id": "wish",
+      "pcbd_name_en": "Wish",
+      "game_name_en": "Wish",
+      "name_ja": "ねがいごと",
+      "game_label": "WAZANAME_273",
+      "pokeapi_move_id": 273,
+      "pokeapi_name_ja": "ねがいごと"
+    },
+    {
+      "move_id": "wonderroom",
+      "pcbd_name_en": "Wonder Room",
+      "game_name_en": "Wonder Room",
+      "name_ja": "ワンダールーム",
+      "game_label": "WAZANAME_472",
+      "pokeapi_move_id": 472,
+      "pokeapi_name_ja": "ワンダールーム"
+    },
+    {
+      "move_id": "woodhammer",
+      "pcbd_name_en": "Wood Hammer",
+      "game_name_en": "Wood Hammer",
+      "name_ja": "ウッドハンマー",
+      "game_label": "WAZANAME_452",
+      "pokeapi_move_id": 452,
+      "pokeapi_name_ja": "ウッドハンマー"
+    },
+    {
+      "move_id": "worryseed",
+      "pcbd_name_en": "Worry Seed",
+      "game_name_en": "Worry Seed",
+      "name_ja": "なやみのタネ",
+      "game_label": "WAZANAME_388",
+      "pokeapi_move_id": 388,
+      "pokeapi_name_ja": "なやみのタネ"
+    },
+    {
+      "move_id": "wrap",
+      "pcbd_name_en": "Wrap",
+      "game_name_en": "Wrap",
+      "name_ja": "まきつく",
+      "game_label": "WAZANAME_035",
+      "pokeapi_move_id": 35,
+      "pokeapi_name_ja": "まきつく"
+    },
+    {
+      "move_id": "xscissor",
+      "pcbd_name_en": "X-Scissor",
+      "game_name_en": "X-Scissor",
+      "name_ja": "シザークロス",
+      "game_label": "WAZANAME_404",
+      "pokeapi_move_id": 404,
+      "pokeapi_name_ja": "シザークロス"
+    },
+    {
+      "move_id": "yawn",
+      "pcbd_name_en": "Yawn",
+      "game_name_en": "Yawn",
+      "name_ja": "あくび",
+      "game_label": "WAZANAME_281",
+      "pokeapi_move_id": 281,
+      "pokeapi_name_ja": "あくび"
+    },
+    {
+      "move_id": "zapcannon",
+      "pcbd_name_en": "Zap Cannon",
+      "game_name_en": "Zap Cannon",
+      "name_ja": "でんじほう",
+      "game_label": "WAZANAME_192",
+      "pokeapi_move_id": 192,
+      "pokeapi_name_ja": "でんじほう"
+    },
+    {
+      "move_id": "zenheadbutt",
+      "pcbd_name_en": "Zen Headbutt",
+      "game_name_en": "Zen Headbutt",
+      "name_ja": "しねんのずつき",
+      "game_label": "WAZANAME_428",
+      "pokeapi_move_id": 428,
+      "pokeapi_name_ja": "しねんのずつき"
+    },
+    {
+      "move_id": "zingzap",
+      "pcbd_name_en": "Zing Zap",
+      "game_name_en": "Zing Zap",
+      "name_ja": "びりびりちくちく",
+      "game_label": "WAZANAME_716",
+      "pokeapi_move_id": 716,
+      "pokeapi_name_ja": "びりびりちくちく"
+    }
+  ],
+  "output_sha256": "d538f79a10396c483abf04f8df342c6927e0ba50c00d27742c801a5b92f8f270"
+}
