@@ -4,6 +4,7 @@ import streamlit as st
 
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import append_message, create_conversation, get_conversation
+from back.groq_chat import ChatError, generate_reply
 from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
 from ui.history import render_history
 from ui.layout import configure_page
@@ -169,8 +170,8 @@ def render() -> None:
 
         st.markdown(
             '<div class="chat-intro"><span class="chat-intro-mark">✦</span>'
-            '<div><b>pokecham</b><p>選んだ相棒と育成メモを確認できます。<br>'
-            '送信したメッセージはこの会話の履歴に保存されます。</p></div></div>',
+            '<div><b>pokecham</b><p>ポケモンの育成や対戦について AI と相談できます。<br>'
+            'メッセージと AI の回答はこの会話の履歴に保存されます。</p></div></div>',
             unsafe_allow_html=True,
         )
 
@@ -190,10 +191,36 @@ def render() -> None:
                 unsafe_allow_html=True,
             )
 
-        if prompt := st.chat_input("相棒のこと、気になることを聞いてみよう"):
-            saved = append_message(conversation["id"], "user", prompt)
-            if saved:
+        reply_requested = st.session_state.pop("chat_reply_request", None) == conversation["id"]
+        awaiting_reply = bool(messages and messages[-1].get("role") == "user")
+        if awaiting_reply:
+            if reply_requested:
+                try:
+                    with st.spinner("回答を考えています…"):
+                        answer = generate_reply(messages)
+                    if append_message(conversation["id"], "assistant", answer) is None:
+                        raise ChatError("会話が見つかりません。履歴から会話を開き直してください。")
+                except ChatError as error:
+                    st.error(str(error))
+                except OSError:
+                    st.error("回答を保存できませんでした。保存先を確認して再試行してください。")
+                else:
+                    st.rerun()
+            if st.button("回答を再試行する", key="retry_chat_reply"):
+                st.session_state.chat_reply_request = conversation["id"]
                 st.rerun()
+
+        if prompt := st.chat_input("相棒のこと、気になることを聞いてみよう", disabled=awaiting_reply):
+            try:
+                saved = append_message(conversation["id"], "user", prompt)
+            except OSError:
+                st.error("メッセージを保存できませんでした。保存先を確認してください。")
+            else:
+                if saved:
+                    st.session_state.chat_reply_request = conversation["id"]
+                    st.rerun()
+                else:
+                    st.error("メッセージを保存できませんでした。会話を開き直してください。")
 
 
 render()
