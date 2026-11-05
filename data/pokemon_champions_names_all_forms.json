@@ -20,12 +20,8 @@
     "name_en": "Absol-Mega-Z"
   },
   "aegislash": {
-    "name_ja": "ギルガルド（シールドフォルム）",
+    "name_ja": "ギルガルド",
     "name_en": "Aegislash"
-  },
-  "aegislashblade": {
-    "name_ja": "ギルガルド（ブレードフォルム）",
-    "name_en": "Aegislash-Blade"
   },
   "aerodactyl": {
     "name_ja": "プテラ",
@@ -52,40 +48,8 @@
     "name_en": "Alakazam-Mega"
   },
   "alcremie": {
-    "name_ja": "マホイップ（ミルキィバニラ）",
+    "name_ja": "マホイップ",
     "name_en": "Alcremie"
-  },
-  "alcremiecaramelswirl": {
-    "name_ja": "マホイップ（キャラメルミックス）",
-    "name_en": "Alcremie-Caramel-Swirl"
-  },
-  "alcremielemoncream": {
-    "name_ja": "マホイップ（ミルキィレモン）",
-    "name_en": "Alcremie-Lemon-Cream"
-  },
-  "alcremiematchacream": {
-    "name_ja": "マホイップ（ミルキィまっちゃ）",
-    "name_en": "Alcremie-Matcha-Cream"
-  },
-  "alcremiemintcream": {
-    "name_ja": "マホイップ（ミルキィミント）",
-    "name_en": "Alcremie-Mint-Cream"
-  },
-  "alcremierainbowswirl": {
-    "name_ja": "マホイップ（トリプルミックス）",
-    "name_en": "Alcremie-Rainbow-Swirl"
-  },
-  "alcremierubycream": {
-    "name_ja": "マホイップ（ミルキィルビー）",
-    "name_en": "Alcremie-Ruby-Cream"
-  },
-  "alcremierubyswirl": {
-    "name_ja": "マホイップ（ルビーミックス）",
-    "name_en": "Alcremie-Ruby-Swirl"
-  },
-  "alcremiesaltedcream": {
-    "name_ja": "マホイップ（ミルキィソルト）",
-    "name_en": "Alcremie-Salted-Cream"
   },
   "altaria": {
     "name_ja": "チルタリス",
@@ -476,24 +440,8 @@
     "name_en": "Floette-Mega"
   },
   "florges": {
-    "name_ja": "フラージェス（あかいはな）",
+    "name_ja": "フラージェス",
     "name_en": "Florges"
-  },
-  "florgesblue": {
-    "name_ja": "フラージェス（あおいはな）",
-    "name_en": "Florges-Blue"
-  },
-  "florgesorange": {
-    "name_ja": "フラージェス（オレンジいろのはな）",
-    "name_en": "Florges-Orange"
-  },
-  "florgeswhite": {
-    "name_ja": "フラージェス（しろいはな）",
-    "name_en": "Florges-White"
-  },
-  "florgesyellow": {
-    "name_ja": "フラージェス（きいろのはな）",
-    "name_en": "Florges-Yellow"
   },
   "forretress": {
     "name_ja": "フォレトス",
@@ -508,7 +456,7 @@
     "name_en": "Froslass-Mega"
   },
   "furfrou": {
-    "name_ja": "トリミアン（やせいのすがた）",
+    "name_ja": "トリミアン",
     "name_en": "Furfrou"
   },
   "gallade": {
@@ -824,12 +772,8 @@
     "name_en": "Manectric-Mega"
   },
   "maushold": {
-    "name_ja": "イッカネズミ（３びきかぞく）",
+    "name_ja": "イッカネズミ",
     "name_en": "Maushold"
-  },
-  "mausholdfour": {
-    "name_ja": "イッカネズミ（４ひきかぞく）",
-    "name_en": "Maushold-Four"
   },
   "mawile": {
     "name_ja": "クチート",
@@ -884,20 +828,12 @@
     "name_en": "Milotic"
   },
   "mimikyu": {
-    "name_ja": "ミミッキュ（ばけたすがた）",
+    "name_ja": "ミミッキュ",
     "name_en": "Mimikyu"
   },
-  "mimikyubusted": {
-    "name_ja": "ミミッキュ（ばれたすがた）",
-    "name_en": "Mimikyu-Busted"
-  },
   "morpeko": {
-    "name_ja": "モルペコ（まんぷくもよう）",
+    "name_ja": "モルペコ",
     "name_en": "Morpeko"
-  },
-  "morpekohangry": {
-    "name_ja": "モルペコ（はらぺこもよう）",
-    "name_en": "Morpeko-Hangry"
   },
   "mrmime": {
     "name_ja": "バリヤード",
@@ -1004,12 +940,8 @@
     "name_en": "Politoed"
   },
   "polteageist": {
-    "name_ja": "ポットデス（がんさくフォルム）",
+    "name_ja": "ポットデス",
     "name_en": "Polteageist"
-  },
-  "polteageistantique": {
-    "name_ja": "ポットデス（しんさくフォルム）",
-    "name_en": "Polteageist-Antique"
   },
   "primarina": {
     "name_ja": "アシレーヌ",
@@ -1192,12 +1124,8 @@
     "name_en": "Simisear"
   },
   "sinistcha": {
-    "name_ja": "ヤバソチャ（ボンサクのすがた）",
+    "name_ja": "ヤバソチャ",
     "name_en": "Sinistcha"
-  },
-  "sinistchamasterpiece": {
-    "name_ja": "ヤバソチャ（ケッサクのすがた）",
-    "name_en": "Sinistcha-Masterpiece"
   },
   "sirfetchd": {
     "name_ja": "ネギガナイト",
@@ -1252,20 +1180,8 @@
     "name_en": "Spiritomb"
   },
   "squawkabilly": {
-    "name_ja": "イキリンコ（グリーンフェザー）",
+    "name_ja": "イキリンコ",
     "name_en": "Squawkabilly"
-  },
-  "squawkabillyblue": {
-    "name_ja": "イキリンコ（ブルーフェザー）",
-    "name_en": "Squawkabilly-Blue"
-  },
-  "squawkabillywhite": {
-    "name_ja": "イキリンコ（ホワイトフェザー）",
-    "name_en": "Squawkabilly-White"
-  },
-  "squawkabillyyellow": {
-    "name_ja": "イキリンコ（イエローフェザー）",
-    "name_en": "Squawkabilly-Yellow"
   },
   "staraptor": {
     "name_ja": "ムクホーク",
@@ -1432,84 +1348,8 @@
     "name_en": "Vileplume"
   },
   "vivillon": {
-    "name_ja": "ビビヨン（はなぞののもよう）",
+    "name_ja": "ビビヨン",
     "name_en": "Vivillon"
-  },
-  "vivillonarchipelago": {
-    "name_ja": "ビビヨン（ぐんとうのもよう）",
-    "name_en": "Vivillon-Archipelago"
-  },
-  "vivilloncontinental": {
-    "name_ja": "ビビヨン（たいりくのもよう）",
-    "name_en": "Vivillon-Continental"
-  },
-  "vivillonelegant": {
-    "name_ja": "ビビヨン（みやびなもよう）",
-    "name_en": "Vivillon-Elegant"
-  },
-  "vivillonfancy": {
-    "name_ja": "ビビヨン（ファンシーなもよう）",
-    "name_en": "Vivillon-Fancy"
-  },
-  "vivillongarden": {
-    "name_ja": "ビビヨン（ていえんのもよう）",
-    "name_en": "Vivillon-Garden"
-  },
-  "vivillonhighplains": {
-    "name_ja": "ビビヨン（こうやのもよう）",
-    "name_en": "Vivillon-High Plains"
-  },
-  "vivillonicysnow": {
-    "name_ja": "ビビヨン（ひょうせつのもよう）",
-    "name_en": "Vivillon-Icy Snow"
-  },
-  "vivillonjungle": {
-    "name_ja": "ビビヨン（ジャングルのもよう）",
-    "name_en": "Vivillon-Jungle"
-  },
-  "vivillonmarine": {
-    "name_ja": "ビビヨン（マリンのもよう）",
-    "name_en": "Vivillon-Marine"
-  },
-  "vivillonmodern": {
-    "name_ja": "ビビヨン（モダンなもよう）",
-    "name_en": "Vivillon-Modern"
-  },
-  "vivillonmonsoon": {
-    "name_ja": "ビビヨン（スコールのもよう）",
-    "name_en": "Vivillon-Monsoon"
-  },
-  "vivillonocean": {
-    "name_ja": "ビビヨン（オーシャンのもよう）",
-    "name_en": "Vivillon-Ocean"
-  },
-  "vivillonpokeball": {
-    "name_ja": "ビビヨン（ボールのもよう）",
-    "name_en": "Vivillon-Pokeball"
-  },
-  "vivillonpolar": {
-    "name_ja": "ビビヨン（ゆきぐにのもよう）",
-    "name_en": "Vivillon-Polar"
-  },
-  "vivillonriver": {
-    "name_ja": "ビビヨン（たいがのもよう）",
-    "name_en": "Vivillon-River"
-  },
-  "vivillonsandstorm": {
-    "name_ja": "ビビヨン（さじんのもよう）",
-    "name_en": "Vivillon-Sandstorm"
-  },
-  "vivillonsavanna": {
-    "name_ja": "ビビヨン（サバンナのもよう）",
-    "name_en": "Vivillon-Savanna"
-  },
-  "vivillonsun": {
-    "name_ja": "ビビヨン（たいようのもよう）",
-    "name_en": "Vivillon-Sun"
-  },
-  "vivillontundra": {
-    "name_ja": "ビビヨン（せつげんのもよう）",
-    "name_en": "Vivillon-Tundra"
   },
   "volcarona": {
     "name_ja": "ウルガモス",

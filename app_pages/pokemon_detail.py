@@ -38,6 +38,14 @@ PCBD_FORMS = _read_json("pcbd_forms.json")
 POKEMON_MOVES = _read_json("pokemon_moves.json")
 MOVE_NAMES = _read_json("move_names_ja_en.json")
 ABILITY_NAMES_JA = _read_json("pcbd_ability_names_ja.json")
+POKEMON_ID_BY_NAME = {
+    names.get("name_ja"): pokemon_id
+    for pokemon_id, names in POKEMON_NAMES.items()
+    if isinstance(names, dict)
+    and isinstance(names.get("name_ja"), str)
+    and isinstance(PCBD_FORMS.get(pokemon_id), dict)
+    and PCBD_FORMS[pokemon_id].get("metadata_row_available")
+}
 
 
 SPECIES: dict[str, PokemonSpecies] = {
@@ -121,10 +129,7 @@ def _load_local_options(filename: str, key: str) -> list[str]:
 
 
 def _showdown_id_for_name(pokemon_name: str) -> str | None:
-    for showdown_id, names in POKEMON_NAMES.items():
-        if isinstance(names, dict) and names.get("name_ja") == pokemon_name:
-            return showdown_id
-    return None
+    return POKEMON_ID_BY_NAME.get(pokemon_name)
 
 
 @st.cache_data(ttl=24 * 60 * 60, show_spinner=False)
@@ -307,7 +312,10 @@ def render() -> None:
             return
         pokemon = cast(PokemonProfile, raw_pokemon)
 
-        species: PokemonSpecies = SPECIES.get(pokemon_name, SPECIES["ピカチュウ"])
+        species: PokemonSpecies = SPECIES.get(
+            pokemon_name,
+            {"base_stats": [0, 0, 0, 0, 0, 0], "abilities": [], "moves": []},
+        )
         metadata = _fetch_species_metadata(pokemon_name)
         species = {
             **species,
@@ -329,6 +337,8 @@ def render() -> None:
 
         move_rows = _category_rows(battle_data, "move")
         abilities = species["abilities"]
+        if not abilities:
+            abilities = ["特性データを取得できません"]
         move_names = species["moves"]
         item_names = _load_local_options("items.json", "items") or ITEMS
         nature_names = _load_local_options("natures.json", "natures") or NATURES
