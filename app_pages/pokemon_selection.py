@@ -80,11 +80,15 @@ for pokemon_id, names in LOCAL_POKEMON_NAMES.items():
     pokemon_name = names.get("name_ja")
     if not isinstance(pokemon_name, str) or not form.get("metadata_row_available"):
         continue
+    type_names = names.get("type_ja", [])
+    localized_type = " / ".join(
+        item for item in type_names if isinstance(item, str)
+    ) if isinstance(type_names, list) else ""
     POKEMON[pokemon_name] = LEGACY_POKEMON.get(
         pokemon_name,
         {
             "number": "",
-            "type": "",
+            "type": localized_type,
             "image": "",
             "description": "",
             "color": "#6c8f82",
