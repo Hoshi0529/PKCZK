@@ -90,6 +90,19 @@ def _options_from_api(rows: list[BattleRow]) -> list[str]:
     return list(dict.fromkeys(row["name"] for row in rows if row.get("name")))
 
 
+def _ability_options(rows: list[BattleRow], fallback: list[str]) -> list[str]:
+    """Use the species' Japanese ability names while preserving API usage order."""
+    api_names = _options_from_api(rows)
+    if not api_names:
+        return fallback
+
+    # Battle data may return English identifiers while this screen is Japanese.
+    # Map by order, which the API ranks by usage, to the known Japanese names.
+    if fallback and all(name.isascii() for name in api_names):
+        return [fallback[index] for index in range(min(len(api_names), len(fallback)))]
+    return api_names
+
+
 def _format_options(rows: list[BattleRow]):
     usage = {
         row["name"]: row.get("percentage", "")
@@ -218,7 +231,7 @@ def render() -> None:
         move_rows = _category_rows(battle_data, "move")
         item_rows = _category_rows(battle_data, "item")
         nature_rows = _category_rows(battle_data, "nature")
-        abilities = _options_from_api(ability_rows) or species["abilities"]
+        abilities = _ability_options(ability_rows, species["abilities"])
         move_names = _options_from_api(move_rows) or species["moves"]
         item_names = _options_from_api(item_rows) or ITEMS
         nature_names = _options_from_api(nature_rows) or NATURES
@@ -296,7 +309,7 @@ def render() -> None:
 
             build_left, build_right = st.columns([1.02, 0.98], gap="large")
             with build_left:
-                st.markdown('<div class="build-section-title">能力ポイント <span class="count-pill">Stat Points</span></div>', unsafe_allow_html=True)
+                st.markdown('<div class="build-section-title">能力ポイント <span class="count-pill">Stat Points (SP)</span></div>', unsafe_allow_html=True)
                 st.caption("実数値はLv.50基準・個体値は最高相当で固定して計算します。")
                 stat_header_cols = st.columns([0.20, 0.27, 0.20, 0.33], vertical_alignment="center")
                 for column, title in zip(stat_header_cols, ("能力", "SP", "種族値", "実数値")):
@@ -319,7 +332,7 @@ def render() -> None:
                             unsafe_allow_html=True,
                         )
                     with points_col:
-                        stat_points[stat_name] = st.number_input(
+                        stat_points[stat_name] = st.slider(
                             f"{stat_name}能力ポイント",
                             min_value=0,
                             max_value=32,
