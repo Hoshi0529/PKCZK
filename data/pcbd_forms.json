@@ -1,0 +1,2704 @@
+{
+  "abomasnow": {
+    "metadata_id": "abomasnow",
+    "metadata_url": "https://championsbattledata.com/api/metadata/abomasnow",
+    "saved_name": "Abomasnow",
+    "showdown_name": "Abomasnow",
+    "metadata_row_available": true
+  },
+  "abomasnowmega": {
+    "metadata_id": "abomasnow",
+    "metadata_url": "https://championsbattledata.com/api/metadata/abomasnow",
+    "saved_name": "Mega Abomasnow",
+    "showdown_name": "Abomasnow-Mega",
+    "metadata_row_available": true
+  },
+  "absol": {
+    "metadata_id": "absol",
+    "metadata_url": "https://championsbattledata.com/api/metadata/absol",
+    "saved_name": "Absol",
+    "showdown_name": "Absol",
+    "metadata_row_available": true
+  },
+  "absolmega": {
+    "metadata_id": "absol",
+    "metadata_url": "https://championsbattledata.com/api/metadata/absol",
+    "saved_name": "Mega Absol",
+    "showdown_name": "Absol-Mega",
+    "metadata_row_available": true
+  },
+  "absolmegaz": {
+    "metadata_id": "absol",
+    "metadata_url": "https://championsbattledata.com/api/metadata/absol",
+    "saved_name": "Mega Absol Z",
+    "showdown_name": "Absol-Mega-Z",
+    "metadata_row_available": true
+  },
+  "aegislash": {
+    "metadata_id": "aegislash",
+    "metadata_url": "https://championsbattledata.com/api/metadata/aegislash",
+    "saved_name": "Aegislash Shield Forme",
+    "showdown_name": "Aegislash",
+    "metadata_row_available": true
+  },
+  "aegislashblade": {
+    "metadata_id": "aegislash",
+    "metadata_url": "https://championsbattledata.com/api/metadata/aegislash",
+    "saved_name": "Aegislash Blade Forme",
+    "showdown_name": "Aegislash-Blade",
+    "metadata_row_available": true
+  },
+  "aerodactyl": {
+    "metadata_id": "aerodactyl",
+    "metadata_url": "https://championsbattledata.com/api/metadata/aerodactyl",
+    "saved_name": "Aerodactyl",
+    "showdown_name": "Aerodactyl",
+    "metadata_row_available": true
+  },
+  "aerodactylmega": {
+    "metadata_id": "aerodactyl",
+    "metadata_url": "https://championsbattledata.com/api/metadata/aerodactyl",
+    "saved_name": "Mega Aerodactyl",
+    "showdown_name": "Aerodactyl-Mega",
+    "metadata_row_available": true
+  },
+  "aggron": {
+    "metadata_id": "aggron",
+    "metadata_url": "https://championsbattledata.com/api/metadata/aggron",
+    "saved_name": "Aggron",
+    "showdown_name": "Aggron",
+    "metadata_row_available": true
+  },
+  "aggronmega": {
+    "metadata_id": "aggron",
+    "metadata_url": "https://championsbattledata.com/api/metadata/aggron",
+    "saved_name": "Mega Aggron",
+    "showdown_name": "Aggron-Mega",
+    "metadata_row_available": true
+  },
+  "alakazam": {
+    "metadata_id": "alakazam",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alakazam",
+    "saved_name": "Alakazam",
+    "showdown_name": "Alakazam",
+    "metadata_row_available": true
+  },
+  "alakazammega": {
+    "metadata_id": "alakazam",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alakazam",
+    "saved_name": "Mega Alakazam",
+    "showdown_name": "Alakazam-Mega",
+    "metadata_row_available": true
+  },
+  "alcremie": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": "Alcremie",
+    "showdown_name": "Alcremie",
+    "metadata_row_available": true
+  },
+  "alcremiecaramelswirl": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": null,
+    "showdown_name": "Alcremie-Caramel-Swirl",
+    "metadata_row_available": false
+  },
+  "alcremielemoncream": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": null,
+    "showdown_name": "Alcremie-Lemon-Cream",
+    "metadata_row_available": false
+  },
+  "alcremiematchacream": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": null,
+    "showdown_name": "Alcremie-Matcha-Cream",
+    "metadata_row_available": false
+  },
+  "alcremiemintcream": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": null,
+    "showdown_name": "Alcremie-Mint-Cream",
+    "metadata_row_available": false
+  },
+  "alcremierainbowswirl": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": null,
+    "showdown_name": "Alcremie-Rainbow-Swirl",
+    "metadata_row_available": false
+  },
+  "alcremierubycream": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": null,
+    "showdown_name": "Alcremie-Ruby-Cream",
+    "metadata_row_available": false
+  },
+  "alcremierubyswirl": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": null,
+    "showdown_name": "Alcremie-Ruby-Swirl",
+    "metadata_row_available": false
+  },
+  "alcremiesaltedcream": {
+    "metadata_id": "alcremie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/alcremie",
+    "saved_name": null,
+    "showdown_name": "Alcremie-Salted-Cream",
+    "metadata_row_available": false
+  },
+  "altaria": {
+    "metadata_id": "altaria",
+    "metadata_url": "https://championsbattledata.com/api/metadata/altaria",
+    "saved_name": "Altaria",
+    "showdown_name": "Altaria",
+    "metadata_row_available": true
+  },
+  "altariamega": {
+    "metadata_id": "altaria",
+    "metadata_url": "https://championsbattledata.com/api/metadata/altaria",
+    "saved_name": "Mega Altaria",
+    "showdown_name": "Altaria-Mega",
+    "metadata_row_available": true
+  },
+  "ampharos": {
+    "metadata_id": "ampharos",
+    "metadata_url": "https://championsbattledata.com/api/metadata/ampharos",
+    "saved_name": "Ampharos",
+    "showdown_name": "Ampharos",
+    "metadata_row_available": true
+  },
+  "ampharosmega": {
+    "metadata_id": "ampharos",
+    "metadata_url": "https://championsbattledata.com/api/metadata/ampharos",
+    "saved_name": "Mega Ampharos",
+    "showdown_name": "Ampharos-Mega",
+    "metadata_row_available": true
+  },
+  "annihilape": {
+    "metadata_id": "annihilape",
+    "metadata_url": "https://championsbattledata.com/api/metadata/annihilape",
+    "saved_name": "Annihilape",
+    "showdown_name": "Annihilape",
+    "metadata_row_available": true
+  },
+  "appletun": {
+    "metadata_id": "appletun",
+    "metadata_url": "https://championsbattledata.com/api/metadata/appletun",
+    "saved_name": "Appletun",
+    "showdown_name": "Appletun",
+    "metadata_row_available": true
+  },
+  "araquanid": {
+    "metadata_id": "araquanid",
+    "metadata_url": "https://championsbattledata.com/api/metadata/araquanid",
+    "saved_name": "Araquanid",
+    "showdown_name": "Araquanid",
+    "metadata_row_available": true
+  },
+  "arbok": {
+    "metadata_id": "arbok",
+    "metadata_url": "https://championsbattledata.com/api/metadata/arbok",
+    "saved_name": "Arbok",
+    "showdown_name": "Arbok",
+    "metadata_row_available": true
+  },
+  "arboliva": {
+    "metadata_id": "arboliva",
+    "metadata_url": "https://championsbattledata.com/api/metadata/arboliva",
+    "saved_name": "Arboliva",
+    "showdown_name": "Arboliva",
+    "metadata_row_available": true
+  },
+  "arcanine": {
+    "metadata_id": "arcanine",
+    "metadata_url": "https://championsbattledata.com/api/metadata/arcanine",
+    "saved_name": "Arcanine",
+    "showdown_name": "Arcanine",
+    "metadata_row_available": true
+  },
+  "arcaninehisui": {
+    "metadata_id": "arcanine",
+    "metadata_url": "https://championsbattledata.com/api/metadata/arcanine",
+    "saved_name": "Hisuian Arcanine",
+    "showdown_name": "Arcanine-Hisui",
+    "metadata_row_available": true
+  },
+  "archaludon": {
+    "metadata_id": "archaludon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/archaludon",
+    "saved_name": "Archaludon",
+    "showdown_name": "Archaludon",
+    "metadata_row_available": true
+  },
+  "ariados": {
+    "metadata_id": "ariados",
+    "metadata_url": "https://championsbattledata.com/api/metadata/ariados",
+    "saved_name": "Ariados",
+    "showdown_name": "Ariados",
+    "metadata_row_available": true
+  },
+  "armarouge": {
+    "metadata_id": "armarouge",
+    "metadata_url": "https://championsbattledata.com/api/metadata/armarouge",
+    "saved_name": "Armarouge",
+    "showdown_name": "Armarouge",
+    "metadata_row_available": true
+  },
+  "aromatisse": {
+    "metadata_id": "aromatisse",
+    "metadata_url": "https://championsbattledata.com/api/metadata/aromatisse",
+    "saved_name": "Aromatisse",
+    "showdown_name": "Aromatisse",
+    "metadata_row_available": true
+  },
+  "audino": {
+    "metadata_id": "audino",
+    "metadata_url": "https://championsbattledata.com/api/metadata/audino",
+    "saved_name": "Audino",
+    "showdown_name": "Audino",
+    "metadata_row_available": true
+  },
+  "audinomega": {
+    "metadata_id": "audino",
+    "metadata_url": "https://championsbattledata.com/api/metadata/audino",
+    "saved_name": "Mega Audino",
+    "showdown_name": "Audino-Mega",
+    "metadata_row_available": true
+  },
+  "aurorus": {
+    "metadata_id": "aurorus",
+    "metadata_url": "https://championsbattledata.com/api/metadata/aurorus",
+    "saved_name": "Aurorus",
+    "showdown_name": "Aurorus",
+    "metadata_row_available": true
+  },
+  "avalugg": {
+    "metadata_id": "avalugg",
+    "metadata_url": "https://championsbattledata.com/api/metadata/avalugg",
+    "saved_name": "Avalugg",
+    "showdown_name": "Avalugg",
+    "metadata_row_available": true
+  },
+  "avalugghisui": {
+    "metadata_id": "avalugg",
+    "metadata_url": "https://championsbattledata.com/api/metadata/avalugg",
+    "saved_name": "Hisuian Avalugg",
+    "showdown_name": "Avalugg-Hisui",
+    "metadata_row_available": true
+  },
+  "azumarill": {
+    "metadata_id": "azumarill",
+    "metadata_url": "https://championsbattledata.com/api/metadata/azumarill",
+    "saved_name": "Azumarill",
+    "showdown_name": "Azumarill",
+    "metadata_row_available": true
+  },
+  "banette": {
+    "metadata_id": "banette",
+    "metadata_url": "https://championsbattledata.com/api/metadata/banette",
+    "saved_name": "Banette",
+    "showdown_name": "Banette",
+    "metadata_row_available": true
+  },
+  "banettemega": {
+    "metadata_id": "banette",
+    "metadata_url": "https://championsbattledata.com/api/metadata/banette",
+    "saved_name": "Mega Banette",
+    "showdown_name": "Banette-Mega",
+    "metadata_row_available": true
+  },
+  "barbaracle": {
+    "metadata_id": "barbaracle",
+    "metadata_url": "https://championsbattledata.com/api/metadata/barbaracle",
+    "saved_name": "Barbaracle",
+    "showdown_name": "Barbaracle",
+    "metadata_row_available": true
+  },
+  "barbaraclemega": {
+    "metadata_id": "barbaracle",
+    "metadata_url": "https://championsbattledata.com/api/metadata/barbaracle",
+    "saved_name": "Mega Barbaracle",
+    "showdown_name": "Barbaracle-Mega",
+    "metadata_row_available": true
+  },
+  "basculegion": {
+    "metadata_id": "basculegion",
+    "metadata_url": "https://championsbattledata.com/api/metadata/basculegion",
+    "saved_name": "Basculegion Male",
+    "showdown_name": "Basculegion",
+    "metadata_row_available": true
+  },
+  "basculegionf": {
+    "metadata_id": "basculegion",
+    "metadata_url": "https://championsbattledata.com/api/metadata/basculegion",
+    "saved_name": "Basculegion Female",
+    "showdown_name": "Basculegion-F",
+    "metadata_row_available": true
+  },
+  "bastiodon": {
+    "metadata_id": "bastiodon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/bastiodon",
+    "saved_name": "Bastiodon",
+    "showdown_name": "Bastiodon",
+    "metadata_row_available": true
+  },
+  "baxcalibur": {
+    "metadata_id": "baxcalibur",
+    "metadata_url": "https://championsbattledata.com/api/metadata/baxcalibur",
+    "saved_name": "Baxcalibur",
+    "showdown_name": "Baxcalibur",
+    "metadata_row_available": true
+  },
+  "baxcaliburmega": {
+    "metadata_id": "baxcalibur",
+    "metadata_url": "https://championsbattledata.com/api/metadata/baxcalibur",
+    "saved_name": "Mega Baxcalibur",
+    "showdown_name": "Baxcalibur-Mega",
+    "metadata_row_available": true
+  },
+  "beartic": {
+    "metadata_id": "beartic",
+    "metadata_url": "https://championsbattledata.com/api/metadata/beartic",
+    "saved_name": "Beartic",
+    "showdown_name": "Beartic",
+    "metadata_row_available": true
+  },
+  "beedrill": {
+    "metadata_id": "beedrill",
+    "metadata_url": "https://championsbattledata.com/api/metadata/beedrill",
+    "saved_name": "Beedrill",
+    "showdown_name": "Beedrill",
+    "metadata_row_available": true
+  },
+  "beedrillmega": {
+    "metadata_id": "beedrill",
+    "metadata_url": "https://championsbattledata.com/api/metadata/beedrill",
+    "saved_name": "Mega Beedrill",
+    "showdown_name": "Beedrill-Mega",
+    "metadata_row_available": true
+  },
+  "bellibolt": {
+    "metadata_id": "bellibolt",
+    "metadata_url": "https://championsbattledata.com/api/metadata/bellibolt",
+    "saved_name": "Bellibolt",
+    "showdown_name": "Bellibolt",
+    "metadata_row_available": true
+  },
+  "blastoise": {
+    "metadata_id": "blastoise",
+    "metadata_url": "https://championsbattledata.com/api/metadata/blastoise",
+    "saved_name": "Blastoise",
+    "showdown_name": "Blastoise",
+    "metadata_row_available": true
+  },
+  "blastoisemega": {
+    "metadata_id": "blastoise",
+    "metadata_url": "https://championsbattledata.com/api/metadata/blastoise",
+    "saved_name": "Mega Blastoise",
+    "showdown_name": "Blastoise-Mega",
+    "metadata_row_available": true
+  },
+  "blaziken": {
+    "metadata_id": "blaziken",
+    "metadata_url": "https://championsbattledata.com/api/metadata/blaziken",
+    "saved_name": "Blaziken",
+    "showdown_name": "Blaziken",
+    "metadata_row_available": true
+  },
+  "blazikenmega": {
+    "metadata_id": "blaziken",
+    "metadata_url": "https://championsbattledata.com/api/metadata/blaziken",
+    "saved_name": "Mega Blaziken",
+    "showdown_name": "Blaziken-Mega",
+    "metadata_row_available": true
+  },
+  "camerupt": {
+    "metadata_id": "camerupt",
+    "metadata_url": "https://championsbattledata.com/api/metadata/camerupt",
+    "saved_name": "Camerupt",
+    "showdown_name": "Camerupt",
+    "metadata_row_available": true
+  },
+  "cameruptmega": {
+    "metadata_id": "camerupt",
+    "metadata_url": "https://championsbattledata.com/api/metadata/camerupt",
+    "saved_name": "Mega Camerupt",
+    "showdown_name": "Camerupt-Mega",
+    "metadata_row_available": true
+  },
+  "castform": {
+    "metadata_id": "castform",
+    "metadata_url": "https://championsbattledata.com/api/metadata/castform",
+    "saved_name": "Castform",
+    "showdown_name": "Castform",
+    "metadata_row_available": true
+  },
+  "castformrainy": {
+    "metadata_id": "castform",
+    "metadata_url": "https://championsbattledata.com/api/metadata/castform",
+    "saved_name": "Castform Rainy Form",
+    "showdown_name": "Castform-Rainy",
+    "metadata_row_available": true
+  },
+  "castformsnowy": {
+    "metadata_id": "castform",
+    "metadata_url": "https://championsbattledata.com/api/metadata/castform",
+    "saved_name": "Castform Snowy Form",
+    "showdown_name": "Castform-Snowy",
+    "metadata_row_available": true
+  },
+  "castformsunny": {
+    "metadata_id": "castform",
+    "metadata_url": "https://championsbattledata.com/api/metadata/castform",
+    "saved_name": "Castform Sunny Form",
+    "showdown_name": "Castform-Sunny",
+    "metadata_row_available": true
+  },
+  "ceruledge": {
+    "metadata_id": "ceruledge",
+    "metadata_url": "https://championsbattledata.com/api/metadata/ceruledge",
+    "saved_name": "Ceruledge",
+    "showdown_name": "Ceruledge",
+    "metadata_row_available": true
+  },
+  "chandelure": {
+    "metadata_id": "chandelure",
+    "metadata_url": "https://championsbattledata.com/api/metadata/chandelure",
+    "saved_name": "Chandelure",
+    "showdown_name": "Chandelure",
+    "metadata_row_available": true
+  },
+  "chandeluremega": {
+    "metadata_id": "chandelure",
+    "metadata_url": "https://championsbattledata.com/api/metadata/chandelure",
+    "saved_name": "Mega Chandelure",
+    "showdown_name": "Chandelure-Mega",
+    "metadata_row_available": true
+  },
+  "charizard": {
+    "metadata_id": "charizard",
+    "metadata_url": "https://championsbattledata.com/api/metadata/charizard",
+    "saved_name": "Charizard",
+    "showdown_name": "Charizard",
+    "metadata_row_available": true
+  },
+  "charizardmegax": {
+    "metadata_id": "charizard",
+    "metadata_url": "https://championsbattledata.com/api/metadata/charizard",
+    "saved_name": "Mega Charizard X",
+    "showdown_name": "Charizard-Mega-X",
+    "metadata_row_available": true
+  },
+  "charizardmegay": {
+    "metadata_id": "charizard",
+    "metadata_url": "https://championsbattledata.com/api/metadata/charizard",
+    "saved_name": "Mega Charizard Y",
+    "showdown_name": "Charizard-Mega-Y",
+    "metadata_row_available": true
+  },
+  "chesnaught": {
+    "metadata_id": "chesnaught",
+    "metadata_url": "https://championsbattledata.com/api/metadata/chesnaught",
+    "saved_name": "Chesnaught",
+    "showdown_name": "Chesnaught",
+    "metadata_row_available": true
+  },
+  "chesnaughtmega": {
+    "metadata_id": "chesnaught",
+    "metadata_url": "https://championsbattledata.com/api/metadata/chesnaught",
+    "saved_name": "Mega Chesnaught",
+    "showdown_name": "Chesnaught-Mega",
+    "metadata_row_available": true
+  },
+  "chimecho": {
+    "metadata_id": "chimecho",
+    "metadata_url": "https://championsbattledata.com/api/metadata/chimecho",
+    "saved_name": "Chimecho",
+    "showdown_name": "Chimecho",
+    "metadata_row_available": true
+  },
+  "chimechomega": {
+    "metadata_id": "chimecho",
+    "metadata_url": "https://championsbattledata.com/api/metadata/chimecho",
+    "saved_name": "Mega Chimecho",
+    "showdown_name": "Chimecho-Mega",
+    "metadata_row_available": true
+  },
+  "cinderace": {
+    "metadata_id": "cinderace",
+    "metadata_url": "https://championsbattledata.com/api/metadata/cinderace",
+    "saved_name": "Cinderace",
+    "showdown_name": "Cinderace",
+    "metadata_row_available": true
+  },
+  "clawitzer": {
+    "metadata_id": "clawitzer",
+    "metadata_url": "https://championsbattledata.com/api/metadata/clawitzer",
+    "saved_name": "Clawitzer",
+    "showdown_name": "Clawitzer",
+    "metadata_row_available": true
+  },
+  "clefable": {
+    "metadata_id": "clefable",
+    "metadata_url": "https://championsbattledata.com/api/metadata/clefable",
+    "saved_name": "Clefable",
+    "showdown_name": "Clefable",
+    "metadata_row_available": true
+  },
+  "clefablemega": {
+    "metadata_id": "clefable",
+    "metadata_url": "https://championsbattledata.com/api/metadata/clefable",
+    "saved_name": "Mega Clefable",
+    "showdown_name": "Clefable-Mega",
+    "metadata_row_available": true
+  },
+  "cofagrigus": {
+    "metadata_id": "cofagrigus",
+    "metadata_url": "https://championsbattledata.com/api/metadata/cofagrigus",
+    "saved_name": "Cofagrigus",
+    "showdown_name": "Cofagrigus",
+    "metadata_row_available": true
+  },
+  "conkeldurr": {
+    "metadata_id": "conkeldurr",
+    "metadata_url": "https://championsbattledata.com/api/metadata/conkeldurr",
+    "saved_name": "Conkeldurr",
+    "showdown_name": "Conkeldurr",
+    "metadata_row_available": true
+  },
+  "corviknight": {
+    "metadata_id": "corviknight",
+    "metadata_url": "https://championsbattledata.com/api/metadata/corviknight",
+    "saved_name": "Corviknight",
+    "showdown_name": "Corviknight",
+    "metadata_row_available": true
+  },
+  "crabominable": {
+    "metadata_id": "crabominable",
+    "metadata_url": "https://championsbattledata.com/api/metadata/crabominable",
+    "saved_name": "Crabominable",
+    "showdown_name": "Crabominable",
+    "metadata_row_available": true
+  },
+  "crabominablemega": {
+    "metadata_id": "crabominable",
+    "metadata_url": "https://championsbattledata.com/api/metadata/crabominable",
+    "saved_name": "Mega Crabominable",
+    "showdown_name": "Crabominable-Mega",
+    "metadata_row_available": true
+  },
+  "decidueye": {
+    "metadata_id": "decidueye",
+    "metadata_url": "https://championsbattledata.com/api/metadata/decidueye",
+    "saved_name": "Decidueye",
+    "showdown_name": "Decidueye",
+    "metadata_row_available": true
+  },
+  "decidueyehisui": {
+    "metadata_id": "decidueye",
+    "metadata_url": "https://championsbattledata.com/api/metadata/decidueye",
+    "saved_name": "Hisuian Decidueye",
+    "showdown_name": "Decidueye-Hisui",
+    "metadata_row_available": true
+  },
+  "dedenne": {
+    "metadata_id": "dedenne",
+    "metadata_url": "https://championsbattledata.com/api/metadata/dedenne",
+    "saved_name": "Dedenne",
+    "showdown_name": "Dedenne",
+    "metadata_row_available": true
+  },
+  "delphox": {
+    "metadata_id": "delphox",
+    "metadata_url": "https://championsbattledata.com/api/metadata/delphox",
+    "saved_name": "Delphox",
+    "showdown_name": "Delphox",
+    "metadata_row_available": true
+  },
+  "delphoxmega": {
+    "metadata_id": "delphox",
+    "metadata_url": "https://championsbattledata.com/api/metadata/delphox",
+    "saved_name": "Mega Delphox",
+    "showdown_name": "Delphox-Mega",
+    "metadata_row_available": true
+  },
+  "diggersby": {
+    "metadata_id": "diggersby",
+    "metadata_url": "https://championsbattledata.com/api/metadata/diggersby",
+    "saved_name": "Diggersby",
+    "showdown_name": "Diggersby",
+    "metadata_row_available": true
+  },
+  "ditto": {
+    "metadata_id": "ditto",
+    "metadata_url": "https://championsbattledata.com/api/metadata/ditto",
+    "saved_name": "Ditto",
+    "showdown_name": "Ditto",
+    "metadata_row_available": true
+  },
+  "dragalge": {
+    "metadata_id": "dragalge",
+    "metadata_url": "https://championsbattledata.com/api/metadata/dragalge",
+    "saved_name": "Dragalge",
+    "showdown_name": "Dragalge",
+    "metadata_row_available": true
+  },
+  "dragalgemega": {
+    "metadata_id": "dragalge",
+    "metadata_url": "https://championsbattledata.com/api/metadata/dragalge",
+    "saved_name": "Mega Dragalge",
+    "showdown_name": "Dragalge-Mega",
+    "metadata_row_available": true
+  },
+  "dragapult": {
+    "metadata_id": "dragapult",
+    "metadata_url": "https://championsbattledata.com/api/metadata/dragapult",
+    "saved_name": "Dragapult",
+    "showdown_name": "Dragapult",
+    "metadata_row_available": true
+  },
+  "dragonite": {
+    "metadata_id": "dragonite",
+    "metadata_url": "https://championsbattledata.com/api/metadata/dragonite",
+    "saved_name": "Dragonite",
+    "showdown_name": "Dragonite",
+    "metadata_row_available": true
+  },
+  "dragonitemega": {
+    "metadata_id": "dragonite",
+    "metadata_url": "https://championsbattledata.com/api/metadata/dragonite",
+    "saved_name": "Mega Dragonite",
+    "showdown_name": "Dragonite-Mega",
+    "metadata_row_available": true
+  },
+  "drampa": {
+    "metadata_id": "drampa",
+    "metadata_url": "https://championsbattledata.com/api/metadata/drampa",
+    "saved_name": "Drampa",
+    "showdown_name": "Drampa",
+    "metadata_row_available": true
+  },
+  "drampamega": {
+    "metadata_id": "drampa",
+    "metadata_url": "https://championsbattledata.com/api/metadata/drampa",
+    "saved_name": "Mega Drampa",
+    "showdown_name": "Drampa-Mega",
+    "metadata_row_available": true
+  },
+  "eelektross": {
+    "metadata_id": "eelektross",
+    "metadata_url": "https://championsbattledata.com/api/metadata/eelektross",
+    "saved_name": "Eelektross",
+    "showdown_name": "Eelektross",
+    "metadata_row_available": true
+  },
+  "eelektrossmega": {
+    "metadata_id": "eelektross",
+    "metadata_url": "https://championsbattledata.com/api/metadata/eelektross",
+    "saved_name": "Mega Eelektross",
+    "showdown_name": "Eelektross-Mega",
+    "metadata_row_available": true
+  },
+  "emboar": {
+    "metadata_id": "emboar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/emboar",
+    "saved_name": "Emboar",
+    "showdown_name": "Emboar",
+    "metadata_row_available": true
+  },
+  "emboarmega": {
+    "metadata_id": "emboar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/emboar",
+    "saved_name": "Mega Emboar",
+    "showdown_name": "Emboar-Mega",
+    "metadata_row_available": true
+  },
+  "emolga": {
+    "metadata_id": "emolga",
+    "metadata_url": "https://championsbattledata.com/api/metadata/emolga",
+    "saved_name": "Emolga",
+    "showdown_name": "Emolga",
+    "metadata_row_available": true
+  },
+  "empoleon": {
+    "metadata_id": "empoleon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/empoleon",
+    "saved_name": "Empoleon",
+    "showdown_name": "Empoleon",
+    "metadata_row_available": true
+  },
+  "espathra": {
+    "metadata_id": "espathra",
+    "metadata_url": "https://championsbattledata.com/api/metadata/espathra",
+    "saved_name": "Espathra",
+    "showdown_name": "Espathra",
+    "metadata_row_available": true
+  },
+  "espeon": {
+    "metadata_id": "espeon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/espeon",
+    "saved_name": "Espeon",
+    "showdown_name": "Espeon",
+    "metadata_row_available": true
+  },
+  "excadrill": {
+    "metadata_id": "excadrill",
+    "metadata_url": "https://championsbattledata.com/api/metadata/excadrill",
+    "saved_name": "Excadrill",
+    "showdown_name": "Excadrill",
+    "metadata_row_available": true
+  },
+  "excadrillmega": {
+    "metadata_id": "excadrill",
+    "metadata_url": "https://championsbattledata.com/api/metadata/excadrill",
+    "saved_name": "Mega Excadrill",
+    "showdown_name": "Excadrill-Mega",
+    "metadata_row_available": true
+  },
+  "falinks": {
+    "metadata_id": "falinks",
+    "metadata_url": "https://championsbattledata.com/api/metadata/falinks",
+    "saved_name": "Falinks",
+    "showdown_name": "Falinks",
+    "metadata_row_available": true
+  },
+  "falinksmega": {
+    "metadata_id": "falinks",
+    "metadata_url": "https://championsbattledata.com/api/metadata/falinks",
+    "saved_name": "Mega Falinks",
+    "showdown_name": "Falinks-Mega",
+    "metadata_row_available": true
+  },
+  "farfetchd": {
+    "metadata_id": "farfetchd",
+    "metadata_url": "https://championsbattledata.com/api/metadata/farfetchd",
+    "saved_name": "Farfetch'd",
+    "showdown_name": "Farfetch’d",
+    "metadata_row_available": true
+  },
+  "farigiraf": {
+    "metadata_id": "farigiraf",
+    "metadata_url": "https://championsbattledata.com/api/metadata/farigiraf",
+    "saved_name": "Farigiraf",
+    "showdown_name": "Farigiraf",
+    "metadata_row_available": true
+  },
+  "feraligatr": {
+    "metadata_id": "feraligatr",
+    "metadata_url": "https://championsbattledata.com/api/metadata/feraligatr",
+    "saved_name": "Feraligatr",
+    "showdown_name": "Feraligatr",
+    "metadata_row_available": true
+  },
+  "feraligatrmega": {
+    "metadata_id": "feraligatr",
+    "metadata_url": "https://championsbattledata.com/api/metadata/feraligatr",
+    "saved_name": "Mega Feraligatr",
+    "showdown_name": "Feraligatr-Mega",
+    "metadata_row_available": true
+  },
+  "flapple": {
+    "metadata_id": "flapple",
+    "metadata_url": "https://championsbattledata.com/api/metadata/flapple",
+    "saved_name": "Flapple",
+    "showdown_name": "Flapple",
+    "metadata_row_available": true
+  },
+  "flareon": {
+    "metadata_id": "flareon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/flareon",
+    "saved_name": "Flareon",
+    "showdown_name": "Flareon",
+    "metadata_row_available": true
+  },
+  "floetteeternal": {
+    "metadata_id": "floette",
+    "metadata_url": "https://championsbattledata.com/api/metadata/floette",
+    "saved_name": "Floette",
+    "showdown_name": "Floette-Eternal",
+    "metadata_row_available": true
+  },
+  "floettemega": {
+    "metadata_id": "floette",
+    "metadata_url": "https://championsbattledata.com/api/metadata/floette",
+    "saved_name": "Mega Floette",
+    "showdown_name": "Floette-Mega",
+    "metadata_row_available": true
+  },
+  "florges": {
+    "metadata_id": "florges",
+    "metadata_url": "https://championsbattledata.com/api/metadata/florges",
+    "saved_name": "Florges Red Flower",
+    "showdown_name": "Florges",
+    "metadata_row_available": true
+  },
+  "florgesblue": {
+    "metadata_id": "florges",
+    "metadata_url": "https://championsbattledata.com/api/metadata/florges",
+    "saved_name": null,
+    "showdown_name": "Florges-Blue",
+    "metadata_row_available": false
+  },
+  "florgesorange": {
+    "metadata_id": "florges",
+    "metadata_url": "https://championsbattledata.com/api/metadata/florges",
+    "saved_name": null,
+    "showdown_name": "Florges-Orange",
+    "metadata_row_available": false
+  },
+  "florgeswhite": {
+    "metadata_id": "florges",
+    "metadata_url": "https://championsbattledata.com/api/metadata/florges",
+    "saved_name": null,
+    "showdown_name": "Florges-White",
+    "metadata_row_available": false
+  },
+  "florgesyellow": {
+    "metadata_id": "florges",
+    "metadata_url": "https://championsbattledata.com/api/metadata/florges",
+    "saved_name": null,
+    "showdown_name": "Florges-Yellow",
+    "metadata_row_available": false
+  },
+  "forretress": {
+    "metadata_id": "forretress",
+    "metadata_url": "https://championsbattledata.com/api/metadata/forretress",
+    "saved_name": "Forretress",
+    "showdown_name": "Forretress",
+    "metadata_row_available": true
+  },
+  "froslass": {
+    "metadata_id": "froslass",
+    "metadata_url": "https://championsbattledata.com/api/metadata/froslass",
+    "saved_name": "Froslass",
+    "showdown_name": "Froslass",
+    "metadata_row_available": true
+  },
+  "froslassmega": {
+    "metadata_id": "froslass",
+    "metadata_url": "https://championsbattledata.com/api/metadata/froslass",
+    "saved_name": "Mega Froslass",
+    "showdown_name": "Froslass-Mega",
+    "metadata_row_available": true
+  },
+  "furfrou": {
+    "metadata_id": "furfrou",
+    "metadata_url": "https://championsbattledata.com/api/metadata/furfrou",
+    "saved_name": "Furfrou Natural Form",
+    "showdown_name": "Furfrou",
+    "metadata_row_available": true
+  },
+  "gallade": {
+    "metadata_id": "gallade",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gallade",
+    "saved_name": "Gallade",
+    "showdown_name": "Gallade",
+    "metadata_row_available": true
+  },
+  "gallademega": {
+    "metadata_id": "gallade",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gallade",
+    "saved_name": "Mega Gallade",
+    "showdown_name": "Gallade-Mega",
+    "metadata_row_available": true
+  },
+  "garbodor": {
+    "metadata_id": "garbodor",
+    "metadata_url": "https://championsbattledata.com/api/metadata/garbodor",
+    "saved_name": "Garbodor",
+    "showdown_name": "Garbodor",
+    "metadata_row_available": true
+  },
+  "garchomp": {
+    "metadata_id": "garchomp",
+    "metadata_url": "https://championsbattledata.com/api/metadata/garchomp",
+    "saved_name": "Garchomp",
+    "showdown_name": "Garchomp",
+    "metadata_row_available": true
+  },
+  "garchompmega": {
+    "metadata_id": "garchomp",
+    "metadata_url": "https://championsbattledata.com/api/metadata/garchomp",
+    "saved_name": "Mega Garchomp",
+    "showdown_name": "Garchomp-Mega",
+    "metadata_row_available": true
+  },
+  "garchompmegaz": {
+    "metadata_id": "garchomp",
+    "metadata_url": "https://championsbattledata.com/api/metadata/garchomp",
+    "saved_name": "Mega Garchomp Z",
+    "showdown_name": "Garchomp-Mega-Z",
+    "metadata_row_available": true
+  },
+  "gardevoir": {
+    "metadata_id": "gardevoir",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gardevoir",
+    "saved_name": "Gardevoir",
+    "showdown_name": "Gardevoir",
+    "metadata_row_available": true
+  },
+  "gardevoirmega": {
+    "metadata_id": "gardevoir",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gardevoir",
+    "saved_name": "Mega Gardevoir",
+    "showdown_name": "Gardevoir-Mega",
+    "metadata_row_available": true
+  },
+  "garganacl": {
+    "metadata_id": "garganacl",
+    "metadata_url": "https://championsbattledata.com/api/metadata/garganacl",
+    "saved_name": "Garganacl",
+    "showdown_name": "Garganacl",
+    "metadata_row_available": true
+  },
+  "gengar": {
+    "metadata_id": "gengar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gengar",
+    "saved_name": "Gengar",
+    "showdown_name": "Gengar",
+    "metadata_row_available": true
+  },
+  "gengarmega": {
+    "metadata_id": "gengar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gengar",
+    "saved_name": "Mega Gengar",
+    "showdown_name": "Gengar-Mega",
+    "metadata_row_available": true
+  },
+  "gholdengo": {
+    "metadata_id": "gholdengo",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gholdengo",
+    "saved_name": "Gholdengo",
+    "showdown_name": "Gholdengo",
+    "metadata_row_available": true
+  },
+  "glaceon": {
+    "metadata_id": "glaceon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/glaceon",
+    "saved_name": "Glaceon",
+    "showdown_name": "Glaceon",
+    "metadata_row_available": true
+  },
+  "glalie": {
+    "metadata_id": "glalie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/glalie",
+    "saved_name": "Glalie",
+    "showdown_name": "Glalie",
+    "metadata_row_available": true
+  },
+  "glaliemega": {
+    "metadata_id": "glalie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/glalie",
+    "saved_name": "Mega Glalie",
+    "showdown_name": "Glalie-Mega",
+    "metadata_row_available": true
+  },
+  "glimmora": {
+    "metadata_id": "glimmora",
+    "metadata_url": "https://championsbattledata.com/api/metadata/glimmora",
+    "saved_name": "Glimmora",
+    "showdown_name": "Glimmora",
+    "metadata_row_available": true
+  },
+  "glimmoramega": {
+    "metadata_id": "glimmora",
+    "metadata_url": "https://championsbattledata.com/api/metadata/glimmora",
+    "saved_name": "Mega Glimmora",
+    "showdown_name": "Glimmora-Mega",
+    "metadata_row_available": true
+  },
+  "gliscor": {
+    "metadata_id": "gliscor",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gliscor",
+    "saved_name": "Gliscor",
+    "showdown_name": "Gliscor",
+    "metadata_row_available": true
+  },
+  "gogoat": {
+    "metadata_id": "gogoat",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gogoat",
+    "saved_name": "Gogoat",
+    "showdown_name": "Gogoat",
+    "metadata_row_available": true
+  },
+  "golisopod": {
+    "metadata_id": "golisopod",
+    "metadata_url": "https://championsbattledata.com/api/metadata/golisopod",
+    "saved_name": "Golisopod",
+    "showdown_name": "Golisopod",
+    "metadata_row_available": true
+  },
+  "golisopodmega": {
+    "metadata_id": "golisopod",
+    "metadata_url": "https://championsbattledata.com/api/metadata/golisopod",
+    "saved_name": "Mega Golisopod",
+    "showdown_name": "Golisopod-Mega",
+    "metadata_row_available": true
+  },
+  "golurk": {
+    "metadata_id": "golurk",
+    "metadata_url": "https://championsbattledata.com/api/metadata/golurk",
+    "saved_name": "Golurk",
+    "showdown_name": "Golurk",
+    "metadata_row_available": true
+  },
+  "golurkmega": {
+    "metadata_id": "golurk",
+    "metadata_url": "https://championsbattledata.com/api/metadata/golurk",
+    "saved_name": "Mega Golurk",
+    "showdown_name": "Golurk-Mega",
+    "metadata_row_available": true
+  },
+  "goodra": {
+    "metadata_id": "goodra",
+    "metadata_url": "https://championsbattledata.com/api/metadata/goodra",
+    "saved_name": "Goodra",
+    "showdown_name": "Goodra",
+    "metadata_row_available": true
+  },
+  "goodrahisui": {
+    "metadata_id": "goodra",
+    "metadata_url": "https://championsbattledata.com/api/metadata/goodra",
+    "saved_name": "Hisuian Goodra",
+    "showdown_name": "Goodra-Hisui",
+    "metadata_row_available": true
+  },
+  "gourgeist": {
+    "metadata_id": "gourgeist",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gourgeist",
+    "saved_name": "Gourgeist",
+    "showdown_name": "Gourgeist",
+    "metadata_row_available": true
+  },
+  "gourgeistlarge": {
+    "metadata_id": "gourgeist",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gourgeist",
+    "saved_name": "Gourgeist Large Variety",
+    "showdown_name": "Gourgeist-Large",
+    "metadata_row_available": true
+  },
+  "gourgeistsmall": {
+    "metadata_id": "gourgeist",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gourgeist",
+    "saved_name": "Gourgeist Small Variety",
+    "showdown_name": "Gourgeist-Small",
+    "metadata_row_available": true
+  },
+  "gourgeistsuper": {
+    "metadata_id": "gourgeist",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gourgeist",
+    "saved_name": "Gourgeist Jumbo Variety",
+    "showdown_name": "Gourgeist-Super",
+    "metadata_row_available": true
+  },
+  "grapploct": {
+    "metadata_id": "grapploct",
+    "metadata_url": "https://championsbattledata.com/api/metadata/grapploct",
+    "saved_name": "Grapploct",
+    "showdown_name": "Grapploct",
+    "metadata_row_available": true
+  },
+  "greninja": {
+    "metadata_id": "greninja",
+    "metadata_url": "https://championsbattledata.com/api/metadata/greninja",
+    "saved_name": "Greninja",
+    "showdown_name": "Greninja",
+    "metadata_row_available": true
+  },
+  "greninjamega": {
+    "metadata_id": "greninja",
+    "metadata_url": "https://championsbattledata.com/api/metadata/greninja",
+    "saved_name": "Mega Greninja",
+    "showdown_name": "Greninja-Mega",
+    "metadata_row_available": true
+  },
+  "grimmsnarl": {
+    "metadata_id": "grimmsnarl",
+    "metadata_url": "https://championsbattledata.com/api/metadata/grimmsnarl",
+    "saved_name": "Grimmsnarl",
+    "showdown_name": "Grimmsnarl",
+    "metadata_row_available": true
+  },
+  "gyarados": {
+    "metadata_id": "gyarados",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gyarados",
+    "saved_name": "Gyarados",
+    "showdown_name": "Gyarados",
+    "metadata_row_available": true
+  },
+  "gyaradosmega": {
+    "metadata_id": "gyarados",
+    "metadata_url": "https://championsbattledata.com/api/metadata/gyarados",
+    "saved_name": "Mega Gyarados",
+    "showdown_name": "Gyarados-Mega",
+    "metadata_row_available": true
+  },
+  "hatterene": {
+    "metadata_id": "hatterene",
+    "metadata_url": "https://championsbattledata.com/api/metadata/hatterene",
+    "saved_name": "Hatterene",
+    "showdown_name": "Hatterene",
+    "metadata_row_available": true
+  },
+  "hawlucha": {
+    "metadata_id": "hawlucha",
+    "metadata_url": "https://championsbattledata.com/api/metadata/hawlucha",
+    "saved_name": "Hawlucha",
+    "showdown_name": "Hawlucha",
+    "metadata_row_available": true
+  },
+  "hawluchamega": {
+    "metadata_id": "hawlucha",
+    "metadata_url": "https://championsbattledata.com/api/metadata/hawlucha",
+    "saved_name": "Mega Hawlucha",
+    "showdown_name": "Hawlucha-Mega",
+    "metadata_row_available": true
+  },
+  "heliolisk": {
+    "metadata_id": "heliolisk",
+    "metadata_url": "https://championsbattledata.com/api/metadata/heliolisk",
+    "saved_name": "Heliolisk",
+    "showdown_name": "Heliolisk",
+    "metadata_row_available": true
+  },
+  "heracross": {
+    "metadata_id": "heracross",
+    "metadata_url": "https://championsbattledata.com/api/metadata/heracross",
+    "saved_name": "Heracross",
+    "showdown_name": "Heracross",
+    "metadata_row_available": true
+  },
+  "heracrossmega": {
+    "metadata_id": "heracross",
+    "metadata_url": "https://championsbattledata.com/api/metadata/heracross",
+    "saved_name": "Mega Heracross",
+    "showdown_name": "Heracross-Mega",
+    "metadata_row_available": true
+  },
+  "hippowdon": {
+    "metadata_id": "hippowdon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/hippowdon",
+    "saved_name": "Hippowdon",
+    "showdown_name": "Hippowdon",
+    "metadata_row_available": true
+  },
+  "houndoom": {
+    "metadata_id": "houndoom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/houndoom",
+    "saved_name": "Houndoom",
+    "showdown_name": "Houndoom",
+    "metadata_row_available": true
+  },
+  "houndoommega": {
+    "metadata_id": "houndoom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/houndoom",
+    "saved_name": "Mega Houndoom",
+    "showdown_name": "Houndoom-Mega",
+    "metadata_row_available": true
+  },
+  "houndstone": {
+    "metadata_id": "houndstone",
+    "metadata_url": "https://championsbattledata.com/api/metadata/houndstone",
+    "saved_name": "Houndstone",
+    "showdown_name": "Houndstone",
+    "metadata_row_available": true
+  },
+  "hydrapple": {
+    "metadata_id": "hydrapple",
+    "metadata_url": "https://championsbattledata.com/api/metadata/hydrapple",
+    "saved_name": "Hydrapple",
+    "showdown_name": "Hydrapple",
+    "metadata_row_available": true
+  },
+  "hydreigon": {
+    "metadata_id": "hydreigon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/hydreigon",
+    "saved_name": "Hydreigon",
+    "showdown_name": "Hydreigon",
+    "metadata_row_available": true
+  },
+  "incineroar": {
+    "metadata_id": "incineroar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/incineroar",
+    "saved_name": "Incineroar",
+    "showdown_name": "Incineroar",
+    "metadata_row_available": true
+  },
+  "indeedee": {
+    "metadata_id": "indeedee",
+    "metadata_url": "https://championsbattledata.com/api/metadata/indeedee",
+    "saved_name": "Indeedee",
+    "showdown_name": "Indeedee",
+    "metadata_row_available": true
+  },
+  "indeedeef": {
+    "metadata_id": "indeedee",
+    "metadata_url": "https://championsbattledata.com/api/metadata/indeedee",
+    "saved_name": "Indeedee Female",
+    "showdown_name": "Indeedee-F",
+    "metadata_row_available": true
+  },
+  "infernape": {
+    "metadata_id": "infernape",
+    "metadata_url": "https://championsbattledata.com/api/metadata/infernape",
+    "saved_name": "Infernape",
+    "showdown_name": "Infernape",
+    "metadata_row_available": true
+  },
+  "inteleon": {
+    "metadata_id": "inteleon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/inteleon",
+    "saved_name": "Inteleon",
+    "showdown_name": "Inteleon",
+    "metadata_row_available": true
+  },
+  "jolteon": {
+    "metadata_id": "jolteon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/jolteon",
+    "saved_name": "Jolteon",
+    "showdown_name": "Jolteon",
+    "metadata_row_available": true
+  },
+  "kangaskhan": {
+    "metadata_id": "kangaskhan",
+    "metadata_url": "https://championsbattledata.com/api/metadata/kangaskhan",
+    "saved_name": "Kangaskhan",
+    "showdown_name": "Kangaskhan",
+    "metadata_row_available": true
+  },
+  "kangaskhanmega": {
+    "metadata_id": "kangaskhan",
+    "metadata_url": "https://championsbattledata.com/api/metadata/kangaskhan",
+    "saved_name": "Mega Kangaskhan",
+    "showdown_name": "Kangaskhan-Mega",
+    "metadata_row_available": true
+  },
+  "kingambit": {
+    "metadata_id": "kingambit",
+    "metadata_url": "https://championsbattledata.com/api/metadata/kingambit",
+    "saved_name": "Kingambit",
+    "showdown_name": "Kingambit",
+    "metadata_row_available": true
+  },
+  "kleavor": {
+    "metadata_id": "kleavor",
+    "metadata_url": "https://championsbattledata.com/api/metadata/kleavor",
+    "saved_name": "Kleavor",
+    "showdown_name": "Kleavor",
+    "metadata_row_available": true
+  },
+  "klefki": {
+    "metadata_id": "klefki",
+    "metadata_url": "https://championsbattledata.com/api/metadata/klefki",
+    "saved_name": "Klefki",
+    "showdown_name": "Klefki",
+    "metadata_row_available": true
+  },
+  "kommoo": {
+    "metadata_id": "kommoo",
+    "metadata_url": "https://championsbattledata.com/api/metadata/kommoo",
+    "saved_name": "Kommo-o",
+    "showdown_name": "Kommo-o",
+    "metadata_row_available": true
+  },
+  "krookodile": {
+    "metadata_id": "krookodile",
+    "metadata_url": "https://championsbattledata.com/api/metadata/krookodile",
+    "saved_name": "Krookodile",
+    "showdown_name": "Krookodile",
+    "metadata_row_available": true
+  },
+  "leafeon": {
+    "metadata_id": "leafeon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/leafeon",
+    "saved_name": "Leafeon",
+    "showdown_name": "Leafeon",
+    "metadata_row_available": true
+  },
+  "liepard": {
+    "metadata_id": "liepard",
+    "metadata_url": "https://championsbattledata.com/api/metadata/liepard",
+    "saved_name": "Liepard",
+    "showdown_name": "Liepard",
+    "metadata_row_available": true
+  },
+  "lopunny": {
+    "metadata_id": "lopunny",
+    "metadata_url": "https://championsbattledata.com/api/metadata/lopunny",
+    "saved_name": "Lopunny",
+    "showdown_name": "Lopunny",
+    "metadata_row_available": true
+  },
+  "lopunnymega": {
+    "metadata_id": "lopunny",
+    "metadata_url": "https://championsbattledata.com/api/metadata/lopunny",
+    "saved_name": "Mega Lopunny",
+    "showdown_name": "Lopunny-Mega",
+    "metadata_row_available": true
+  },
+  "lucario": {
+    "metadata_id": "lucario",
+    "metadata_url": "https://championsbattledata.com/api/metadata/lucario",
+    "saved_name": "Lucario",
+    "showdown_name": "Lucario",
+    "metadata_row_available": true
+  },
+  "lucariomega": {
+    "metadata_id": "lucario",
+    "metadata_url": "https://championsbattledata.com/api/metadata/lucario",
+    "saved_name": "Mega Lucario",
+    "showdown_name": "Lucario-Mega",
+    "metadata_row_available": true
+  },
+  "lucariomegaz": {
+    "metadata_id": "lucario",
+    "metadata_url": "https://championsbattledata.com/api/metadata/lucario",
+    "saved_name": "Mega Lucario Z",
+    "showdown_name": "Lucario-Mega-Z",
+    "metadata_row_available": true
+  },
+  "luxray": {
+    "metadata_id": "luxray",
+    "metadata_url": "https://championsbattledata.com/api/metadata/luxray",
+    "saved_name": "Luxray",
+    "showdown_name": "Luxray",
+    "metadata_row_available": true
+  },
+  "lycanroc": {
+    "metadata_id": "lycanroc",
+    "metadata_url": "https://championsbattledata.com/api/metadata/lycanroc",
+    "saved_name": "Lycanroc",
+    "showdown_name": "Lycanroc",
+    "metadata_row_available": true
+  },
+  "lycanrocdusk": {
+    "metadata_id": "lycanroc",
+    "metadata_url": "https://championsbattledata.com/api/metadata/lycanroc",
+    "saved_name": "Lycanroc Dusk Form",
+    "showdown_name": "Lycanroc-Dusk",
+    "metadata_row_available": true
+  },
+  "lycanrocmidnight": {
+    "metadata_id": "lycanroc",
+    "metadata_url": "https://championsbattledata.com/api/metadata/lycanroc",
+    "saved_name": "Lycanroc Midnight Form",
+    "showdown_name": "Lycanroc-Midnight",
+    "metadata_row_available": true
+  },
+  "mabosstiff": {
+    "metadata_id": "mabosstiff",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mabosstiff",
+    "saved_name": "Mabosstiff",
+    "showdown_name": "Mabosstiff",
+    "metadata_row_available": true
+  },
+  "machamp": {
+    "metadata_id": "machamp",
+    "metadata_url": "https://championsbattledata.com/api/metadata/machamp",
+    "saved_name": "Machamp",
+    "showdown_name": "Machamp",
+    "metadata_row_available": true
+  },
+  "malamar": {
+    "metadata_id": "malamar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/malamar",
+    "saved_name": "Malamar",
+    "showdown_name": "Malamar",
+    "metadata_row_available": true
+  },
+  "malamarmega": {
+    "metadata_id": "malamar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/malamar",
+    "saved_name": "Mega Malamar",
+    "showdown_name": "Malamar-Mega",
+    "metadata_row_available": true
+  },
+  "mamoswine": {
+    "metadata_id": "mamoswine",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mamoswine",
+    "saved_name": "Mamoswine",
+    "showdown_name": "Mamoswine",
+    "metadata_row_available": true
+  },
+  "manectric": {
+    "metadata_id": "manectric",
+    "metadata_url": "https://championsbattledata.com/api/metadata/manectric",
+    "saved_name": "Manectric",
+    "showdown_name": "Manectric",
+    "metadata_row_available": true
+  },
+  "manectricmega": {
+    "metadata_id": "manectric",
+    "metadata_url": "https://championsbattledata.com/api/metadata/manectric",
+    "saved_name": "Mega Manectric",
+    "showdown_name": "Manectric-Mega",
+    "metadata_row_available": true
+  },
+  "maushold": {
+    "metadata_id": "maushold",
+    "metadata_url": "https://championsbattledata.com/api/metadata/maushold",
+    "saved_name": "Maushold",
+    "showdown_name": "Maushold",
+    "metadata_row_available": false
+  },
+  "mausholdfour": {
+    "metadata_id": "maushold",
+    "metadata_url": "https://championsbattledata.com/api/metadata/maushold",
+    "saved_name": "Maushold",
+    "showdown_name": "Maushold-Four",
+    "metadata_row_available": true
+  },
+  "mawile": {
+    "metadata_id": "mawile",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mawile",
+    "saved_name": "Mawile",
+    "showdown_name": "Mawile",
+    "metadata_row_available": true
+  },
+  "mawilemega": {
+    "metadata_id": "mawile",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mawile",
+    "saved_name": "Mega Mawile",
+    "showdown_name": "Mawile-Mega",
+    "metadata_row_available": true
+  },
+  "medicham": {
+    "metadata_id": "medicham",
+    "metadata_url": "https://championsbattledata.com/api/metadata/medicham",
+    "saved_name": "Medicham",
+    "showdown_name": "Medicham",
+    "metadata_row_available": true
+  },
+  "medichammega": {
+    "metadata_id": "medicham",
+    "metadata_url": "https://championsbattledata.com/api/metadata/medicham",
+    "saved_name": "Mega Medicham",
+    "showdown_name": "Medicham-Mega",
+    "metadata_row_available": true
+  },
+  "meganium": {
+    "metadata_id": "meganium",
+    "metadata_url": "https://championsbattledata.com/api/metadata/meganium",
+    "saved_name": "Meganium",
+    "showdown_name": "Meganium",
+    "metadata_row_available": true
+  },
+  "meganiummega": {
+    "metadata_id": "meganium",
+    "metadata_url": "https://championsbattledata.com/api/metadata/meganium",
+    "saved_name": "Mega Meganium",
+    "showdown_name": "Meganium-Mega",
+    "metadata_row_available": true
+  },
+  "meowscarada": {
+    "metadata_id": "meowscarada",
+    "metadata_url": "https://championsbattledata.com/api/metadata/meowscarada",
+    "saved_name": "Meowscarada",
+    "showdown_name": "Meowscarada",
+    "metadata_row_available": true
+  },
+  "meowstic": {
+    "metadata_id": "meowstic",
+    "metadata_url": "https://championsbattledata.com/api/metadata/meowstic",
+    "saved_name": "Meowstic",
+    "showdown_name": "Meowstic",
+    "metadata_row_available": true
+  },
+  "meowsticf": {
+    "metadata_id": "meowstic",
+    "metadata_url": "https://championsbattledata.com/api/metadata/meowstic",
+    "saved_name": "Meowstic Female",
+    "showdown_name": "Meowstic-F",
+    "metadata_row_available": true
+  },
+  "meowsticmmega": {
+    "metadata_id": "meowstic",
+    "metadata_url": "https://championsbattledata.com/api/metadata/meowstic",
+    "saved_name": "Mega Meowstic",
+    "showdown_name": "Meowstic-M-Mega",
+    "metadata_row_available": true
+  },
+  "metagross": {
+    "metadata_id": "metagross",
+    "metadata_url": "https://championsbattledata.com/api/metadata/metagross",
+    "saved_name": "Metagross",
+    "showdown_name": "Metagross",
+    "metadata_row_available": true
+  },
+  "metagrossmega": {
+    "metadata_id": "metagross",
+    "metadata_url": "https://championsbattledata.com/api/metadata/metagross",
+    "saved_name": "Mega Metagross",
+    "showdown_name": "Metagross-Mega",
+    "metadata_row_available": true
+  },
+  "milotic": {
+    "metadata_id": "milotic",
+    "metadata_url": "https://championsbattledata.com/api/metadata/milotic",
+    "saved_name": "Milotic",
+    "showdown_name": "Milotic",
+    "metadata_row_available": true
+  },
+  "mimikyu": {
+    "metadata_id": "mimikyu",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mimikyu",
+    "saved_name": "Mimikyu",
+    "showdown_name": "Mimikyu",
+    "metadata_row_available": true
+  },
+  "mimikyubusted": {
+    "metadata_id": "mimikyu",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mimikyu",
+    "saved_name": null,
+    "showdown_name": "Mimikyu-Busted",
+    "metadata_row_available": false
+  },
+  "morpeko": {
+    "metadata_id": "morpeko",
+    "metadata_url": "https://championsbattledata.com/api/metadata/morpeko",
+    "saved_name": "Morpeko",
+    "showdown_name": "Morpeko",
+    "metadata_row_available": true
+  },
+  "morpekohangry": {
+    "metadata_id": "morpeko",
+    "metadata_url": "https://championsbattledata.com/api/metadata/morpeko",
+    "saved_name": null,
+    "showdown_name": "Morpeko-Hangry",
+    "metadata_row_available": false
+  },
+  "mrmime": {
+    "metadata_id": "mrmime",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mrmime",
+    "saved_name": "Mr. Mime",
+    "showdown_name": "Mr. Mime",
+    "metadata_row_available": true
+  },
+  "mrrime": {
+    "metadata_id": "mrrime",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mrrime",
+    "saved_name": "Mr. Rime",
+    "showdown_name": "Mr. Rime",
+    "metadata_row_available": true
+  },
+  "mudsdale": {
+    "metadata_id": "mudsdale",
+    "metadata_url": "https://championsbattledata.com/api/metadata/mudsdale",
+    "saved_name": "Mudsdale",
+    "showdown_name": "Mudsdale",
+    "metadata_row_available": true
+  },
+  "musharna": {
+    "metadata_id": "musharna",
+    "metadata_url": "https://championsbattledata.com/api/metadata/musharna",
+    "saved_name": "Musharna",
+    "showdown_name": "Musharna",
+    "metadata_row_available": true
+  },
+  "ninetales": {
+    "metadata_id": "ninetales",
+    "metadata_url": "https://championsbattledata.com/api/metadata/ninetales",
+    "saved_name": "Ninetales",
+    "showdown_name": "Ninetales",
+    "metadata_row_available": true
+  },
+  "ninetalesalola": {
+    "metadata_id": "ninetales",
+    "metadata_url": "https://championsbattledata.com/api/metadata/ninetales",
+    "saved_name": "Alolan Ninetales",
+    "showdown_name": "Ninetales-Alola",
+    "metadata_row_available": true
+  },
+  "noivern": {
+    "metadata_id": "noivern",
+    "metadata_url": "https://championsbattledata.com/api/metadata/noivern",
+    "saved_name": "Noivern",
+    "showdown_name": "Noivern",
+    "metadata_row_available": true
+  },
+  "oranguru": {
+    "metadata_id": "oranguru",
+    "metadata_url": "https://championsbattledata.com/api/metadata/oranguru",
+    "saved_name": "Oranguru",
+    "showdown_name": "Oranguru",
+    "metadata_row_available": true
+  },
+  "orthworm": {
+    "metadata_id": "orthworm",
+    "metadata_url": "https://championsbattledata.com/api/metadata/orthworm",
+    "saved_name": "Orthworm",
+    "showdown_name": "Orthworm",
+    "metadata_row_available": true
+  },
+  "overqwil": {
+    "metadata_id": "overqwil",
+    "metadata_url": "https://championsbattledata.com/api/metadata/overqwil",
+    "saved_name": "Overqwil",
+    "showdown_name": "Overqwil",
+    "metadata_row_available": true
+  },
+  "palafin": {
+    "metadata_id": "palafin",
+    "metadata_url": "https://championsbattledata.com/api/metadata/palafin",
+    "saved_name": "Palafin Zero Form",
+    "showdown_name": "Palafin",
+    "metadata_row_available": true
+  },
+  "palafinhero": {
+    "metadata_id": "palafin",
+    "metadata_url": "https://championsbattledata.com/api/metadata/palafin",
+    "saved_name": "Palafin Hero Form",
+    "showdown_name": "Palafin-Hero",
+    "metadata_row_available": true
+  },
+  "pangoro": {
+    "metadata_id": "pangoro",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pangoro",
+    "saved_name": "Pangoro",
+    "showdown_name": "Pangoro",
+    "metadata_row_available": true
+  },
+  "passimian": {
+    "metadata_id": "passimian",
+    "metadata_url": "https://championsbattledata.com/api/metadata/passimian",
+    "saved_name": "Passimian",
+    "showdown_name": "Passimian",
+    "metadata_row_available": true
+  },
+  "pawmot": {
+    "metadata_id": "pawmot",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pawmot",
+    "saved_name": "Pawmot",
+    "showdown_name": "Pawmot",
+    "metadata_row_available": true
+  },
+  "pelipper": {
+    "metadata_id": "pelipper",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pelipper",
+    "saved_name": "Pelipper",
+    "showdown_name": "Pelipper",
+    "metadata_row_available": true
+  },
+  "perrserker": {
+    "metadata_id": "perrserker",
+    "metadata_url": "https://championsbattledata.com/api/metadata/perrserker",
+    "saved_name": "Perrserker",
+    "showdown_name": "Perrserker",
+    "metadata_row_available": true
+  },
+  "persian": {
+    "metadata_id": "persian",
+    "metadata_url": "https://championsbattledata.com/api/metadata/persian",
+    "saved_name": "Persian",
+    "showdown_name": "Persian",
+    "metadata_row_available": true
+  },
+  "persianalola": {
+    "metadata_id": "persian",
+    "metadata_url": "https://championsbattledata.com/api/metadata/persian",
+    "saved_name": "Alolan Persian",
+    "showdown_name": "Persian-Alola",
+    "metadata_row_available": true
+  },
+  "pidgeot": {
+    "metadata_id": "pidgeot",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pidgeot",
+    "saved_name": "Pidgeot",
+    "showdown_name": "Pidgeot",
+    "metadata_row_available": true
+  },
+  "pidgeotmega": {
+    "metadata_id": "pidgeot",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pidgeot",
+    "saved_name": "Mega Pidgeot",
+    "showdown_name": "Pidgeot-Mega",
+    "metadata_row_available": true
+  },
+  "pikachu": {
+    "metadata_id": "pikachu",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pikachu",
+    "saved_name": "Pikachu",
+    "showdown_name": "Pikachu",
+    "metadata_row_available": true
+  },
+  "pincurchin": {
+    "metadata_id": "pincurchin",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pincurchin",
+    "saved_name": "Pincurchin",
+    "showdown_name": "Pincurchin",
+    "metadata_row_available": true
+  },
+  "pinsir": {
+    "metadata_id": "pinsir",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pinsir",
+    "saved_name": "Pinsir",
+    "showdown_name": "Pinsir",
+    "metadata_row_available": true
+  },
+  "pinsirmega": {
+    "metadata_id": "pinsir",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pinsir",
+    "saved_name": "Mega Pinsir",
+    "showdown_name": "Pinsir-Mega",
+    "metadata_row_available": true
+  },
+  "politoed": {
+    "metadata_id": "politoed",
+    "metadata_url": "https://championsbattledata.com/api/metadata/politoed",
+    "saved_name": "Politoed",
+    "showdown_name": "Politoed",
+    "metadata_row_available": true
+  },
+  "polteageist": {
+    "metadata_id": "polteageist",
+    "metadata_url": "https://championsbattledata.com/api/metadata/polteageist",
+    "saved_name": "Polteageist",
+    "showdown_name": "Polteageist",
+    "metadata_row_available": true
+  },
+  "polteageistantique": {
+    "metadata_id": "polteageist",
+    "metadata_url": "https://championsbattledata.com/api/metadata/polteageist",
+    "saved_name": null,
+    "showdown_name": "Polteageist-Antique",
+    "metadata_row_available": false
+  },
+  "primarina": {
+    "metadata_id": "primarina",
+    "metadata_url": "https://championsbattledata.com/api/metadata/primarina",
+    "saved_name": "Primarina",
+    "showdown_name": "Primarina",
+    "metadata_row_available": true
+  },
+  "pyroar": {
+    "metadata_id": "pyroar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pyroar",
+    "saved_name": "Pyroar",
+    "showdown_name": "Pyroar",
+    "metadata_row_available": true
+  },
+  "pyroarmega": {
+    "metadata_id": "pyroar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/pyroar",
+    "saved_name": "Mega Pyroar",
+    "showdown_name": "Pyroar-Mega",
+    "metadata_row_available": true
+  },
+  "quaquaval": {
+    "metadata_id": "quaquaval",
+    "metadata_url": "https://championsbattledata.com/api/metadata/quaquaval",
+    "saved_name": "Quaquaval",
+    "showdown_name": "Quaquaval",
+    "metadata_row_available": true
+  },
+  "qwilfish": {
+    "metadata_id": "qwilfish",
+    "metadata_url": "https://championsbattledata.com/api/metadata/qwilfish",
+    "saved_name": "Qwilfish",
+    "showdown_name": "Qwilfish",
+    "metadata_row_available": true
+  },
+  "raichu": {
+    "metadata_id": "raichu",
+    "metadata_url": "https://championsbattledata.com/api/metadata/raichu",
+    "saved_name": "Raichu",
+    "showdown_name": "Raichu",
+    "metadata_row_available": true
+  },
+  "raichualola": {
+    "metadata_id": "raichu",
+    "metadata_url": "https://championsbattledata.com/api/metadata/raichu",
+    "saved_name": "Alolan Raichu",
+    "showdown_name": "Raichu-Alola",
+    "metadata_row_available": true
+  },
+  "raichumegax": {
+    "metadata_id": "raichu",
+    "metadata_url": "https://championsbattledata.com/api/metadata/raichu",
+    "saved_name": "Mega Raichu X",
+    "showdown_name": "Raichu-Mega-X",
+    "metadata_row_available": true
+  },
+  "raichumegay": {
+    "metadata_id": "raichu",
+    "metadata_url": "https://championsbattledata.com/api/metadata/raichu",
+    "saved_name": "Mega Raichu Y",
+    "showdown_name": "Raichu-Mega-Y",
+    "metadata_row_available": true
+  },
+  "rampardos": {
+    "metadata_id": "rampardos",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rampardos",
+    "saved_name": "Rampardos",
+    "showdown_name": "Rampardos",
+    "metadata_row_available": true
+  },
+  "reuniclus": {
+    "metadata_id": "reuniclus",
+    "metadata_url": "https://championsbattledata.com/api/metadata/reuniclus",
+    "saved_name": "Reuniclus",
+    "showdown_name": "Reuniclus",
+    "metadata_row_available": true
+  },
+  "rhyperior": {
+    "metadata_id": "rhyperior",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rhyperior",
+    "saved_name": "Rhyperior",
+    "showdown_name": "Rhyperior",
+    "metadata_row_available": true
+  },
+  "rillaboom": {
+    "metadata_id": "rillaboom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rillaboom",
+    "saved_name": "Rillaboom",
+    "showdown_name": "Rillaboom",
+    "metadata_row_available": true
+  },
+  "roserade": {
+    "metadata_id": "roserade",
+    "metadata_url": "https://championsbattledata.com/api/metadata/roserade",
+    "saved_name": "Roserade",
+    "showdown_name": "Roserade",
+    "metadata_row_available": true
+  },
+  "rotom": {
+    "metadata_id": "rotom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rotom",
+    "saved_name": "Rotom",
+    "showdown_name": "Rotom",
+    "metadata_row_available": true
+  },
+  "rotomfan": {
+    "metadata_id": "rotom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rotom",
+    "saved_name": "Rotom Fan",
+    "showdown_name": "Rotom-Fan",
+    "metadata_row_available": true
+  },
+  "rotomfrost": {
+    "metadata_id": "rotom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rotom",
+    "saved_name": "Rotom Frost",
+    "showdown_name": "Rotom-Frost",
+    "metadata_row_available": true
+  },
+  "rotomheat": {
+    "metadata_id": "rotom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rotom",
+    "saved_name": "Rotom Heat",
+    "showdown_name": "Rotom-Heat",
+    "metadata_row_available": true
+  },
+  "rotommow": {
+    "metadata_id": "rotom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rotom",
+    "saved_name": "Rotom Mow",
+    "showdown_name": "Rotom-Mow",
+    "metadata_row_available": true
+  },
+  "rotomwash": {
+    "metadata_id": "rotom",
+    "metadata_url": "https://championsbattledata.com/api/metadata/rotom",
+    "saved_name": "Rotom Wash",
+    "showdown_name": "Rotom-Wash",
+    "metadata_row_available": true
+  },
+  "runerigus": {
+    "metadata_id": "runerigus",
+    "metadata_url": "https://championsbattledata.com/api/metadata/runerigus",
+    "saved_name": "Runerigus",
+    "showdown_name": "Runerigus",
+    "metadata_row_available": true
+  },
+  "sableye": {
+    "metadata_id": "sableye",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sableye",
+    "saved_name": "Sableye",
+    "showdown_name": "Sableye",
+    "metadata_row_available": true
+  },
+  "sableyemega": {
+    "metadata_id": "sableye",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sableye",
+    "saved_name": "Mega Sableye",
+    "showdown_name": "Sableye-Mega",
+    "metadata_row_available": true
+  },
+  "salamence": {
+    "metadata_id": "salamence",
+    "metadata_url": "https://championsbattledata.com/api/metadata/salamence",
+    "saved_name": "Salamence",
+    "showdown_name": "Salamence",
+    "metadata_row_available": true
+  },
+  "salamencemega": {
+    "metadata_id": "salamence",
+    "metadata_url": "https://championsbattledata.com/api/metadata/salamence",
+    "saved_name": "Mega Salamence",
+    "showdown_name": "Salamence-Mega",
+    "metadata_row_available": true
+  },
+  "salazzle": {
+    "metadata_id": "salazzle",
+    "metadata_url": "https://championsbattledata.com/api/metadata/salazzle",
+    "saved_name": "Salazzle",
+    "showdown_name": "Salazzle",
+    "metadata_row_available": true
+  },
+  "samurott": {
+    "metadata_id": "samurott",
+    "metadata_url": "https://championsbattledata.com/api/metadata/samurott",
+    "saved_name": "Samurott",
+    "showdown_name": "Samurott",
+    "metadata_row_available": true
+  },
+  "samurotthisui": {
+    "metadata_id": "samurott",
+    "metadata_url": "https://championsbattledata.com/api/metadata/samurott",
+    "saved_name": "Hisuian Samurott",
+    "showdown_name": "Samurott-Hisui",
+    "metadata_row_available": true
+  },
+  "sandaconda": {
+    "metadata_id": "sandaconda",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sandaconda",
+    "saved_name": "Sandaconda",
+    "showdown_name": "Sandaconda",
+    "metadata_row_available": true
+  },
+  "sceptile": {
+    "metadata_id": "sceptile",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sceptile",
+    "saved_name": "Sceptile",
+    "showdown_name": "Sceptile",
+    "metadata_row_available": true
+  },
+  "sceptilemega": {
+    "metadata_id": "sceptile",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sceptile",
+    "saved_name": "Mega Sceptile",
+    "showdown_name": "Sceptile-Mega",
+    "metadata_row_available": true
+  },
+  "scizor": {
+    "metadata_id": "scizor",
+    "metadata_url": "https://championsbattledata.com/api/metadata/scizor",
+    "saved_name": "Scizor",
+    "showdown_name": "Scizor",
+    "metadata_row_available": true
+  },
+  "scizormega": {
+    "metadata_id": "scizor",
+    "metadata_url": "https://championsbattledata.com/api/metadata/scizor",
+    "saved_name": "Mega Scizor",
+    "showdown_name": "Scizor-Mega",
+    "metadata_row_available": true
+  },
+  "scolipede": {
+    "metadata_id": "scolipede",
+    "metadata_url": "https://championsbattledata.com/api/metadata/scolipede",
+    "saved_name": "Scolipede",
+    "showdown_name": "Scolipede",
+    "metadata_row_available": true
+  },
+  "scolipedemega": {
+    "metadata_id": "scolipede",
+    "metadata_url": "https://championsbattledata.com/api/metadata/scolipede",
+    "saved_name": "Mega Scolipede",
+    "showdown_name": "Scolipede-Mega",
+    "metadata_row_available": true
+  },
+  "scovillain": {
+    "metadata_id": "scovillain",
+    "metadata_url": "https://championsbattledata.com/api/metadata/scovillain",
+    "saved_name": "Scovillain",
+    "showdown_name": "Scovillain",
+    "metadata_row_available": true
+  },
+  "scovillainmega": {
+    "metadata_id": "scovillain",
+    "metadata_url": "https://championsbattledata.com/api/metadata/scovillain",
+    "saved_name": "Mega Scovillain",
+    "showdown_name": "Scovillain-Mega",
+    "metadata_row_available": true
+  },
+  "scrafty": {
+    "metadata_id": "scrafty",
+    "metadata_url": "https://championsbattledata.com/api/metadata/scrafty",
+    "saved_name": "Scrafty",
+    "showdown_name": "Scrafty",
+    "metadata_row_available": true
+  },
+  "scraftymega": {
+    "metadata_id": "scrafty",
+    "metadata_url": "https://championsbattledata.com/api/metadata/scrafty",
+    "saved_name": "Mega Scrafty",
+    "showdown_name": "Scrafty-Mega",
+    "metadata_row_available": true
+  },
+  "serperior": {
+    "metadata_id": "serperior",
+    "metadata_url": "https://championsbattledata.com/api/metadata/serperior",
+    "saved_name": "Serperior",
+    "showdown_name": "Serperior",
+    "metadata_row_available": true
+  },
+  "sharpedo": {
+    "metadata_id": "sharpedo",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sharpedo",
+    "saved_name": "Sharpedo",
+    "showdown_name": "Sharpedo",
+    "metadata_row_available": true
+  },
+  "sharpedomega": {
+    "metadata_id": "sharpedo",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sharpedo",
+    "saved_name": "Mega Sharpedo",
+    "showdown_name": "Sharpedo-Mega",
+    "metadata_row_available": true
+  },
+  "simipour": {
+    "metadata_id": "simipour",
+    "metadata_url": "https://championsbattledata.com/api/metadata/simipour",
+    "saved_name": "Simipour",
+    "showdown_name": "Simipour",
+    "metadata_row_available": true
+  },
+  "simisage": {
+    "metadata_id": "simisage",
+    "metadata_url": "https://championsbattledata.com/api/metadata/simisage",
+    "saved_name": "Simisage",
+    "showdown_name": "Simisage",
+    "metadata_row_available": true
+  },
+  "simisear": {
+    "metadata_id": "simisear",
+    "metadata_url": "https://championsbattledata.com/api/metadata/simisear",
+    "saved_name": "Simisear",
+    "showdown_name": "Simisear",
+    "metadata_row_available": true
+  },
+  "sinistcha": {
+    "metadata_id": "sinistcha",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sinistcha",
+    "saved_name": "Sinistcha",
+    "showdown_name": "Sinistcha",
+    "metadata_row_available": true
+  },
+  "sinistchamasterpiece": {
+    "metadata_id": "sinistcha",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sinistcha",
+    "saved_name": null,
+    "showdown_name": "Sinistcha-Masterpiece",
+    "metadata_row_available": false
+  },
+  "sirfetchd": {
+    "metadata_id": "sirfetchd",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sirfetchd",
+    "saved_name": "Sirfetch'd",
+    "showdown_name": "Sirfetch’d",
+    "metadata_row_available": true
+  },
+  "skarmory": {
+    "metadata_id": "skarmory",
+    "metadata_url": "https://championsbattledata.com/api/metadata/skarmory",
+    "saved_name": "Skarmory",
+    "showdown_name": "Skarmory",
+    "metadata_row_available": true
+  },
+  "skarmorymega": {
+    "metadata_id": "skarmory",
+    "metadata_url": "https://championsbattledata.com/api/metadata/skarmory",
+    "saved_name": "Mega Skarmory",
+    "showdown_name": "Skarmory-Mega",
+    "metadata_row_available": true
+  },
+  "skeledirge": {
+    "metadata_id": "skeledirge",
+    "metadata_url": "https://championsbattledata.com/api/metadata/skeledirge",
+    "saved_name": "Skeledirge",
+    "showdown_name": "Skeledirge",
+    "metadata_row_available": true
+  },
+  "slowbro": {
+    "metadata_id": "slowbro",
+    "metadata_url": "https://championsbattledata.com/api/metadata/slowbro",
+    "saved_name": "Slowbro",
+    "showdown_name": "Slowbro",
+    "metadata_row_available": true
+  },
+  "slowbrogalar": {
+    "metadata_id": "slowbro",
+    "metadata_url": "https://championsbattledata.com/api/metadata/slowbro",
+    "saved_name": "Galarian Slowbro",
+    "showdown_name": "Slowbro-Galar",
+    "metadata_row_available": true
+  },
+  "slowbromega": {
+    "metadata_id": "slowbro",
+    "metadata_url": "https://championsbattledata.com/api/metadata/slowbro",
+    "saved_name": "Mega Slowbro",
+    "showdown_name": "Slowbro-Mega",
+    "metadata_row_available": true
+  },
+  "slowking": {
+    "metadata_id": "slowking",
+    "metadata_url": "https://championsbattledata.com/api/metadata/slowking",
+    "saved_name": "Slowking",
+    "showdown_name": "Slowking",
+    "metadata_row_available": true
+  },
+  "slowkinggalar": {
+    "metadata_id": "slowking",
+    "metadata_url": "https://championsbattledata.com/api/metadata/slowking",
+    "saved_name": "Galarian Slowking",
+    "showdown_name": "Slowking-Galar",
+    "metadata_row_available": true
+  },
+  "slurpuff": {
+    "metadata_id": "slurpuff",
+    "metadata_url": "https://championsbattledata.com/api/metadata/slurpuff",
+    "saved_name": "Slurpuff",
+    "showdown_name": "Slurpuff",
+    "metadata_row_available": true
+  },
+  "sneasler": {
+    "metadata_id": "sneasler",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sneasler",
+    "saved_name": "Sneasler",
+    "showdown_name": "Sneasler",
+    "metadata_row_available": true
+  },
+  "snorlax": {
+    "metadata_id": "snorlax",
+    "metadata_url": "https://championsbattledata.com/api/metadata/snorlax",
+    "saved_name": "Snorlax",
+    "showdown_name": "Snorlax",
+    "metadata_row_available": true
+  },
+  "spiritomb": {
+    "metadata_id": "spiritomb",
+    "metadata_url": "https://championsbattledata.com/api/metadata/spiritomb",
+    "saved_name": "Spiritomb",
+    "showdown_name": "Spiritomb",
+    "metadata_row_available": true
+  },
+  "squawkabilly": {
+    "metadata_id": "squawkabilly",
+    "metadata_url": "https://championsbattledata.com/api/metadata/squawkabilly",
+    "saved_name": "Squawkabilly",
+    "showdown_name": "Squawkabilly",
+    "metadata_row_available": true
+  },
+  "squawkabillyblue": {
+    "metadata_id": "squawkabilly",
+    "metadata_url": "https://championsbattledata.com/api/metadata/squawkabilly",
+    "saved_name": null,
+    "showdown_name": "Squawkabilly-Blue",
+    "metadata_row_available": false
+  },
+  "squawkabillywhite": {
+    "metadata_id": "squawkabilly",
+    "metadata_url": "https://championsbattledata.com/api/metadata/squawkabilly",
+    "saved_name": null,
+    "showdown_name": "Squawkabilly-White",
+    "metadata_row_available": false
+  },
+  "squawkabillyyellow": {
+    "metadata_id": "squawkabilly",
+    "metadata_url": "https://championsbattledata.com/api/metadata/squawkabilly",
+    "saved_name": null,
+    "showdown_name": "Squawkabilly-Yellow",
+    "metadata_row_available": false
+  },
+  "staraptor": {
+    "metadata_id": "staraptor",
+    "metadata_url": "https://championsbattledata.com/api/metadata/staraptor",
+    "saved_name": "Staraptor",
+    "showdown_name": "Staraptor",
+    "metadata_row_available": true
+  },
+  "staraptormega": {
+    "metadata_id": "staraptor",
+    "metadata_url": "https://championsbattledata.com/api/metadata/staraptor",
+    "saved_name": "Mega Staraptor",
+    "showdown_name": "Staraptor-Mega",
+    "metadata_row_available": true
+  },
+  "starmie": {
+    "metadata_id": "starmie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/starmie",
+    "saved_name": "Starmie",
+    "showdown_name": "Starmie",
+    "metadata_row_available": true
+  },
+  "starmiemega": {
+    "metadata_id": "starmie",
+    "metadata_url": "https://championsbattledata.com/api/metadata/starmie",
+    "saved_name": "Mega Starmie",
+    "showdown_name": "Starmie-Mega",
+    "metadata_row_available": true
+  },
+  "steelix": {
+    "metadata_id": "steelix",
+    "metadata_url": "https://championsbattledata.com/api/metadata/steelix",
+    "saved_name": "Steelix",
+    "showdown_name": "Steelix",
+    "metadata_row_available": true
+  },
+  "steelixmega": {
+    "metadata_id": "steelix",
+    "metadata_url": "https://championsbattledata.com/api/metadata/steelix",
+    "saved_name": "Mega Steelix",
+    "showdown_name": "Steelix-Mega",
+    "metadata_row_available": true
+  },
+  "stunfisk": {
+    "metadata_id": "stunfisk",
+    "metadata_url": "https://championsbattledata.com/api/metadata/stunfisk",
+    "saved_name": "Stunfisk",
+    "showdown_name": "Stunfisk",
+    "metadata_row_available": true
+  },
+  "stunfiskgalar": {
+    "metadata_id": "stunfisk",
+    "metadata_url": "https://championsbattledata.com/api/metadata/stunfisk",
+    "saved_name": "Galarian Stunfisk",
+    "showdown_name": "Stunfisk-Galar",
+    "metadata_row_available": true
+  },
+  "swalot": {
+    "metadata_id": "swalot",
+    "metadata_url": "https://championsbattledata.com/api/metadata/swalot",
+    "saved_name": "Swalot",
+    "showdown_name": "Swalot",
+    "metadata_row_available": true
+  },
+  "swampert": {
+    "metadata_id": "swampert",
+    "metadata_url": "https://championsbattledata.com/api/metadata/swampert",
+    "saved_name": "Swampert",
+    "showdown_name": "Swampert",
+    "metadata_row_available": true
+  },
+  "swampertmega": {
+    "metadata_id": "swampert",
+    "metadata_url": "https://championsbattledata.com/api/metadata/swampert",
+    "saved_name": "Mega Swampert",
+    "showdown_name": "Swampert-Mega",
+    "metadata_row_available": true
+  },
+  "sylveon": {
+    "metadata_id": "sylveon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/sylveon",
+    "saved_name": "Sylveon",
+    "showdown_name": "Sylveon",
+    "metadata_row_available": true
+  },
+  "talonflame": {
+    "metadata_id": "talonflame",
+    "metadata_url": "https://championsbattledata.com/api/metadata/talonflame",
+    "saved_name": "Talonflame",
+    "showdown_name": "Talonflame",
+    "metadata_row_available": true
+  },
+  "tauros": {
+    "metadata_id": "tauros",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tauros",
+    "saved_name": "Tauros",
+    "showdown_name": "Tauros",
+    "metadata_row_available": true
+  },
+  "taurospaldeaaqua": {
+    "metadata_id": "tauros",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tauros",
+    "saved_name": "Paldean Tauros Aqua Breed",
+    "showdown_name": "Tauros-Paldea-Aqua",
+    "metadata_row_available": true
+  },
+  "taurospaldeablaze": {
+    "metadata_id": "tauros",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tauros",
+    "saved_name": "Paldean Tauros Blaze Breed",
+    "showdown_name": "Tauros-Paldea-Blaze",
+    "metadata_row_available": true
+  },
+  "taurospaldeacombat": {
+    "metadata_id": "tauros",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tauros",
+    "saved_name": "Paldean Tauros Combat Breed",
+    "showdown_name": "Tauros-Paldea-Combat",
+    "metadata_row_available": true
+  },
+  "thievul": {
+    "metadata_id": "thievul",
+    "metadata_url": "https://championsbattledata.com/api/metadata/thievul",
+    "saved_name": "Thievul",
+    "showdown_name": "Thievul",
+    "metadata_row_available": true
+  },
+  "tinkaton": {
+    "metadata_id": "tinkaton",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tinkaton",
+    "saved_name": "Tinkaton",
+    "showdown_name": "Tinkaton",
+    "metadata_row_available": true
+  },
+  "torkoal": {
+    "metadata_id": "torkoal",
+    "metadata_url": "https://championsbattledata.com/api/metadata/torkoal",
+    "saved_name": "Torkoal",
+    "showdown_name": "Torkoal",
+    "metadata_row_available": true
+  },
+  "torterra": {
+    "metadata_id": "torterra",
+    "metadata_url": "https://championsbattledata.com/api/metadata/torterra",
+    "saved_name": "Torterra",
+    "showdown_name": "Torterra",
+    "metadata_row_available": true
+  },
+  "toucannon": {
+    "metadata_id": "toucannon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/toucannon",
+    "saved_name": "Toucannon",
+    "showdown_name": "Toucannon",
+    "metadata_row_available": true
+  },
+  "toxapex": {
+    "metadata_id": "toxapex",
+    "metadata_url": "https://championsbattledata.com/api/metadata/toxapex",
+    "saved_name": "Toxapex",
+    "showdown_name": "Toxapex",
+    "metadata_row_available": true
+  },
+  "toxicroak": {
+    "metadata_id": "toxicroak",
+    "metadata_url": "https://championsbattledata.com/api/metadata/toxicroak",
+    "saved_name": "Toxicroak",
+    "showdown_name": "Toxicroak",
+    "metadata_row_available": true
+  },
+  "toxtricity": {
+    "metadata_id": "toxtricity",
+    "metadata_url": "https://championsbattledata.com/api/metadata/toxtricity",
+    "saved_name": "Toxtricity",
+    "showdown_name": "Toxtricity",
+    "metadata_row_available": true
+  },
+  "toxtricitylowkey": {
+    "metadata_id": "toxtricity",
+    "metadata_url": "https://championsbattledata.com/api/metadata/toxtricity",
+    "saved_name": "Toxtricity Low Key Form",
+    "showdown_name": "Toxtricity-Low-Key",
+    "metadata_row_available": true
+  },
+  "trevenant": {
+    "metadata_id": "trevenant",
+    "metadata_url": "https://championsbattledata.com/api/metadata/trevenant",
+    "saved_name": "Trevenant",
+    "showdown_name": "Trevenant",
+    "metadata_row_available": true
+  },
+  "tsareena": {
+    "metadata_id": "tsareena",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tsareena",
+    "saved_name": "Tsareena",
+    "showdown_name": "Tsareena",
+    "metadata_row_available": true
+  },
+  "typhlosion": {
+    "metadata_id": "typhlosion",
+    "metadata_url": "https://championsbattledata.com/api/metadata/typhlosion",
+    "saved_name": "Typhlosion",
+    "showdown_name": "Typhlosion",
+    "metadata_row_available": true
+  },
+  "typhlosionhisui": {
+    "metadata_id": "typhlosion",
+    "metadata_url": "https://championsbattledata.com/api/metadata/typhlosion",
+    "saved_name": "Hisuian Typhlosion",
+    "showdown_name": "Typhlosion-Hisui",
+    "metadata_row_available": true
+  },
+  "tyranitar": {
+    "metadata_id": "tyranitar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tyranitar",
+    "saved_name": "Tyranitar",
+    "showdown_name": "Tyranitar",
+    "metadata_row_available": true
+  },
+  "tyranitarmega": {
+    "metadata_id": "tyranitar",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tyranitar",
+    "saved_name": "Mega Tyranitar",
+    "showdown_name": "Tyranitar-Mega",
+    "metadata_row_available": true
+  },
+  "tyrantrum": {
+    "metadata_id": "tyrantrum",
+    "metadata_url": "https://championsbattledata.com/api/metadata/tyrantrum",
+    "saved_name": "Tyrantrum",
+    "showdown_name": "Tyrantrum",
+    "metadata_row_available": true
+  },
+  "umbreon": {
+    "metadata_id": "umbreon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/umbreon",
+    "saved_name": "Umbreon",
+    "showdown_name": "Umbreon",
+    "metadata_row_available": true
+  },
+  "vanilluxe": {
+    "metadata_id": "vanilluxe",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vanilluxe",
+    "saved_name": "Vanilluxe",
+    "showdown_name": "Vanilluxe",
+    "metadata_row_available": true
+  },
+  "vaporeon": {
+    "metadata_id": "vaporeon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vaporeon",
+    "saved_name": "Vaporeon",
+    "showdown_name": "Vaporeon",
+    "metadata_row_available": true
+  },
+  "venusaur": {
+    "metadata_id": "venusaur",
+    "metadata_url": "https://championsbattledata.com/api/metadata/venusaur",
+    "saved_name": "Venusaur",
+    "showdown_name": "Venusaur",
+    "metadata_row_available": true
+  },
+  "venusaurmega": {
+    "metadata_id": "venusaur",
+    "metadata_url": "https://championsbattledata.com/api/metadata/venusaur",
+    "saved_name": "Mega Venusaur",
+    "showdown_name": "Venusaur-Mega",
+    "metadata_row_available": true
+  },
+  "victreebel": {
+    "metadata_id": "victreebel",
+    "metadata_url": "https://championsbattledata.com/api/metadata/victreebel",
+    "saved_name": "Victreebel",
+    "showdown_name": "Victreebel",
+    "metadata_row_available": true
+  },
+  "victreebelmega": {
+    "metadata_id": "victreebel",
+    "metadata_url": "https://championsbattledata.com/api/metadata/victreebel",
+    "saved_name": "Mega Victreebel",
+    "showdown_name": "Victreebel-Mega",
+    "metadata_row_available": true
+  },
+  "vileplume": {
+    "metadata_id": "vileplume",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vileplume",
+    "saved_name": "Vileplume",
+    "showdown_name": "Vileplume",
+    "metadata_row_available": true
+  },
+  "vivillon": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon",
+    "metadata_row_available": false
+  },
+  "vivillonarchipelago": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Archipelago",
+    "metadata_row_available": false
+  },
+  "vivilloncontinental": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Continental",
+    "metadata_row_available": false
+  },
+  "vivillonelegant": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Elegant",
+    "metadata_row_available": false
+  },
+  "vivillonfancy": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Fancy",
+    "metadata_row_available": false
+  },
+  "vivillongarden": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Garden",
+    "metadata_row_available": false
+  },
+  "vivillonhighplains": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-High Plains",
+    "metadata_row_available": false
+  },
+  "vivillonicysnow": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": "Vivillon Icy Snow Pattern",
+    "showdown_name": "Vivillon-Icy Snow",
+    "metadata_row_available": true
+  },
+  "vivillonjungle": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Jungle",
+    "metadata_row_available": false
+  },
+  "vivillonmarine": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Marine",
+    "metadata_row_available": false
+  },
+  "vivillonmodern": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Modern",
+    "metadata_row_available": false
+  },
+  "vivillonmonsoon": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Monsoon",
+    "metadata_row_available": false
+  },
+  "vivillonocean": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Ocean",
+    "metadata_row_available": false
+  },
+  "vivillonpokeball": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Pokeball",
+    "metadata_row_available": false
+  },
+  "vivillonpolar": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Polar",
+    "metadata_row_available": false
+  },
+  "vivillonriver": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-River",
+    "metadata_row_available": false
+  },
+  "vivillonsandstorm": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Sandstorm",
+    "metadata_row_available": false
+  },
+  "vivillonsavanna": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Savanna",
+    "metadata_row_available": false
+  },
+  "vivillonsun": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Sun",
+    "metadata_row_available": false
+  },
+  "vivillontundra": {
+    "metadata_id": "vivillon",
+    "metadata_url": "https://championsbattledata.com/api/metadata/vivillon",
+    "saved_name": null,
+    "showdown_name": "Vivillon-Tundra",
+    "metadata_row_available": false
+  },
+  "volcarona": {
+    "metadata_id": "volcarona",
+    "metadata_url": "https://championsbattledata.com/api/metadata/volcarona",
+    "saved_name": "Volcarona",
+    "showdown_name": "Volcarona",
+    "metadata_row_available": true
+  },
+  "watchog": {
+    "metadata_id": "watchog",
+    "metadata_url": "https://championsbattledata.com/api/metadata/watchog",
+    "saved_name": "Watchog",
+    "showdown_name": "Watchog",
+    "metadata_row_available": true
+  },
+  "weavile": {
+    "metadata_id": "weavile",
+    "metadata_url": "https://championsbattledata.com/api/metadata/weavile",
+    "saved_name": "Weavile",
+    "showdown_name": "Weavile",
+    "metadata_row_available": true
+  },
+  "whimsicott": {
+    "metadata_id": "whimsicott",
+    "metadata_url": "https://championsbattledata.com/api/metadata/whimsicott",
+    "saved_name": "Whimsicott",
+    "showdown_name": "Whimsicott",
+    "metadata_row_available": true
+  },
+  "wigglytuff": {
+    "metadata_id": "wigglytuff",
+    "metadata_url": "https://championsbattledata.com/api/metadata/wigglytuff",
+    "saved_name": "Wigglytuff",
+    "showdown_name": "Wigglytuff",
+    "metadata_row_available": true
+  },
+  "wyrdeer": {
+    "metadata_id": "wyrdeer",
+    "metadata_url": "https://championsbattledata.com/api/metadata/wyrdeer",
+    "saved_name": "Wyrdeer",
+    "showdown_name": "Wyrdeer",
+    "metadata_row_available": true
+  },
+  "zoroark": {
+    "metadata_id": "zoroark",
+    "metadata_url": "https://championsbattledata.com/api/metadata/zoroark",
+    "saved_name": "Zoroark",
+    "showdown_name": "Zoroark",
+    "metadata_row_available": true
+  },
+  "zoroarkhisui": {
+    "metadata_id": "zoroark",
+    "metadata_url": "https://championsbattledata.com/api/metadata/zoroark",
+    "saved_name": "Hisuian Zoroark",
+    "showdown_name": "Zoroark-Hisui",
+    "metadata_row_available": true
+  }
+}
