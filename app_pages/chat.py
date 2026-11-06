@@ -197,7 +197,7 @@ def render() -> None:
             if reply_requested:
                 try:
                     with st.spinner("回答を考えています…"):
-                        answer = generate_reply(messages)
+                        answer = generate_reply(messages, conversation_id=conversation["id"])
                     if append_message(conversation["id"], "assistant", answer) is None:
                         raise ChatError("会話が見つかりません。履歴から会話を開き直してください。")
                 except ChatError as error:

@@ -12,9 +12,12 @@ from groq import (
     Groq,
     RateLimitError,
 )
-from groq.types.chat import ChatCompletionMessageParam
+from groq.types.chat import ChatCompletion, ChatCompletionMessageParam
 from langgraph.graph import END, START, StateGraph
+from langsmith import traceable
 from typing_extensions import TypedDict
+
+from back.observability import workflow_tracing
 
 
 ENV_PATH = Path(__file__).resolve().parent / ".env"
@@ -35,7 +38,31 @@ class ChatState(TypedDict):
     answer: str
 
 
-def _generate_answer(state: ChatState) -> dict[str, str]:
+def _trace_completion(completion: ChatCompletion | None) -> dict:
+    if completion is None:
+        return {}
+    outputs = {
+        "choices": [
+            {"message": {"role": "assistant", "content": choice.message.content}}
+            for choice in completion.choices
+        ]
+    }
+    if usage := completion.usage:
+        outputs["usage_metadata"] = {
+            "input_tokens": usage.prompt_tokens,
+            "output_tokens": usage.completion_tokens,
+            "total_tokens": usage.total_tokens,
+        }
+    return outputs
+
+
+@traceable(
+    name="Groq Chat Completion",
+    run_type="llm",
+    metadata={"ls_provider": "groq", "ls_model_name": MODEL},
+    process_outputs=_trace_completion,
+)
+def _request_completion(messages: list[ChatCompletionMessageParam]) -> ChatCompletion:
     settings = dotenv_values(ENV_PATH, encoding="utf-8-sig", interpolate=False)
     api_key = (
         os.getenv("GROQ_API_KEY")
@@ -51,7 +78,7 @@ def _generate_answer(state: ChatState) -> dict[str, str]:
         with Groq(api_key=api_key, timeout=30.0, max_retries=0) as client:
             completion = client.chat.completions.create(
                 model=MODEL,
-                messages=state["messages"],
+                messages=messages,
                 max_completion_tokens=4096,
             )
     except AuthenticationError:
@@ -68,10 +95,15 @@ def _generate_answer(state: ChatState) -> dict[str, str]:
     answer = completion.choices[0].message.content if completion.choices else None
     if not answer or not answer.strip():
         raise ChatError("Groq から回答を取得できませんでした。再試行してください。")
-    return {"answer": answer.strip()}
+    return completion
 
 
-def generate_reply(messages: list[dict]) -> str:
+def _generate_answer(state: ChatState) -> dict[str, str]:
+    completion = _request_completion(state["messages"])
+    return {"answer": (completion.choices[0].message.content or "").strip()}
+
+
+def generate_reply(messages: list[dict], *, conversation_id: str | None = None) -> str:
     """Reply to this conversation's history without persisting graph state."""
     chat_messages: list[ChatCompletionMessageParam] = [
         {"role": "system", "content": SYSTEM_PROMPT}
@@ -92,5 +124,9 @@ def generate_reply(messages: list[dict]) -> str:
     workflow.add_node("generate_answer", _generate_answer)
     workflow.add_edge(START, "generate_answer")
     workflow.add_edge("generate_answer", END)
-    result = workflow.compile().invoke({"messages": chat_messages, "answer": ""})
+    with workflow_tracing(conversation_id):
+        result = workflow.compile().invoke(
+            {"messages": chat_messages, "answer": ""},
+            config={"run_name": "pokecham_chat"},
+        )
     return result["answer"]
