@@ -181,7 +181,14 @@ def _metadata_stats(metadata: dict[str, object] | None, fallback: list[int]) -> 
         return fallback
     keys = ("hp", "atk", "def", "spa", "spd", "spe")
     values = [metadata.get(key) for key in keys]
-    return [int(value) for value in values] if all(isinstance(value, (int, float)) for value in values) else fallback
+    if not all(isinstance(value, (int, float)) for value in values):
+        return fallback
+
+    # PCBD metadata stores level-50 stats with max-equivalent IVs and zero SP,
+    # while this screen displays species base stats and calculates actual stats
+    # separately. Undo the level-50 offsets before using metadata as base stats.
+    level_50_offsets = (75, 20, 20, 20, 20, 20)
+    return [int(value) - offset for value, offset in zip(values, level_50_offsets)]
 
 
 def _local_moves(pokemon_name: str, fallback: list[str]) -> list[str]:
@@ -260,6 +267,102 @@ def _calculate_champions_stats(
 def _key(pokemon_name: str, field: str) -> str:
     slug = re.sub(r"\W+", "_", pokemon_name)
     return f"pokemon_build_{slug}_{field}"
+
+
+def _adjust_stat_point(key: str, amount: int) -> None:
+    current = int(st.session_state.get(key, 0))
+    st.session_state[key] = min(32, max(0, current + amount))
+
+
+@st.fragment
+def _render_stat_points_editor(
+    pokemon_name: str,
+    base_stats: list[int],
+    nature: str,
+    saved_stats: StatPointValues,
+) -> tuple[StatPointValues, int]:
+    st.markdown(
+        '<div class="build-section-title">能力ポイント '
+        '<span class="count-pill">Stat Points (SP)</span></div>',
+        unsafe_allow_html=True,
+    )
+    st.caption("実数値はLv.50基準・個体値は最高相当で固定して計算します。")
+    column_widths = [0.17, 0.43, 0.17, 0.23]
+    stat_header_cols = st.columns(column_widths, vertical_alignment="center")
+    for column, title in zip(stat_header_cols, ("能力", "SP", "種族値", "実数値")):
+        with column:
+            st.markdown(f'<div class="stat-table-header">{title}</div>', unsafe_allow_html=True)
+
+    for stat_name in STAT_NAMES:
+        slider_key = _key(pokemon_name, f"stat_points_{stat_name}")
+        st.session_state.setdefault(slider_key, int(saved_stats.get(stat_name, 0)))
+
+    stat_points: StatPointValues = {
+        stat_name: int(st.session_state[_key(pokemon_name, f"stat_points_{stat_name}")])
+        for stat_name in STAT_NAMES
+    }
+    actual_stats = _calculate_champions_stats(base_stats, stat_points, nature)
+    nature_modifier = NATURE_MODIFIERS.get(nature)
+
+    for stat_name, base_value in zip(STAT_NAMES, base_stats):
+        nature_marker = ""
+        if nature_modifier and stat_name == nature_modifier[0]:
+            nature_marker = '<span class="nature-mark nature-up">↑</span>'
+        elif nature_modifier and stat_name == nature_modifier[1]:
+            nature_marker = '<span class="nature-mark nature-down">↓</span>'
+        stat_col, points_col, base_col, actual_col = st.columns(
+            column_widths, vertical_alignment="center"
+        )
+        with stat_col:
+            st.markdown(
+                f'<div class="stat-name">{stat_name}{nature_marker}</div>',
+                unsafe_allow_html=True,
+            )
+        with points_col:
+            slider_key = _key(pokemon_name, f"stat_points_{stat_name}")
+            minus_col, slider_col, plus_col = st.columns(
+                [0.22, 0.56, 0.22], vertical_alignment="center", gap="small"
+            )
+            with minus_col:
+                st.button(
+                    "−",
+                    key=_key(pokemon_name, f"stat_points_minus_{stat_name}"),
+                    on_click=_adjust_stat_point,
+                    args=(slider_key, -1),
+                    disabled=stat_points[stat_name] <= 0,
+                    use_container_width=True,
+                )
+            with slider_col:
+                stat_points[stat_name] = st.slider(
+                    f"{stat_name}能力ポイント",
+                    min_value=0,
+                    max_value=32,
+                    step=1,
+                    key=slider_key,
+                    label_visibility="collapsed",
+                )
+            with plus_col:
+                st.button(
+                    "+",
+                    key=_key(pokemon_name, f"stat_points_plus_{stat_name}"),
+                    on_click=_adjust_stat_point,
+                    args=(slider_key, 1),
+                    disabled=stat_points[stat_name] >= 32,
+                    use_container_width=True,
+                )
+        with base_col:
+            st.markdown(f'<div class="base-stat">{base_value}</div>', unsafe_allow_html=True)
+        with actual_col:
+            st.markdown(
+                f'<div class="actual-stat">{actual_stats[stat_name]}</div>',
+                unsafe_allow_html=True,
+            )
+
+    total_stat_points = sum(stat_points.values())
+    st.caption(f"能力ポイント合計: {total_stat_points} / 66　・　各能力は最大32")
+    if total_stat_points > 66:
+        st.error("能力ポイントの合計は66以下にしてください。")
+    return stat_points, total_stat_points
 
 
 def _render_sidebar() -> None:
@@ -413,52 +516,9 @@ def render() -> None:
 
             build_left, build_right = st.columns([1.02, 0.98], gap="large")
             with build_left:
-                st.markdown('<div class="build-section-title">能力ポイント <span class="count-pill">Stat Points (SP)</span></div>', unsafe_allow_html=True)
-                st.caption("実数値はLv.50基準・個体値は最高相当で固定して計算します。")
-                stat_header_cols = st.columns([0.20, 0.27, 0.20, 0.33], vertical_alignment="center")
-                for column, title in zip(stat_header_cols, ("能力", "SP", "種族値", "実数値")):
-                    with column:
-                        st.markdown(f'<div class="stat-table-header">{title}</div>', unsafe_allow_html=True)
-
-                stat_points: StatPointValues = {}
-                for stat_name, base_value in zip(STAT_NAMES, species["base_stats"]):
-                    nature_marker = ""
-                    if nature_modifier and stat_name == nature_modifier[0]:
-                        nature_marker = '<span class="nature-mark nature-up">↑</span>'
-                    elif nature_modifier and stat_name == nature_modifier[1]:
-                        nature_marker = '<span class="nature-mark nature-down">↓</span>'
-                    stat_col, points_col, base_col, actual_col = st.columns(
-                        [0.20, 0.27, 0.20, 0.33], vertical_alignment="center"
-                    )
-                    with stat_col:
-                        st.markdown(
-                            f'<div class="stat-name">{stat_name}{nature_marker}</div>',
-                            unsafe_allow_html=True,
-                        )
-                    with points_col:
-                        stat_points[stat_name] = st.slider(
-                            f"{stat_name}能力ポイント",
-                            min_value=0,
-                            max_value=32,
-                            step=1,
-                            value=int(saved_stats.get(stat_name, 0)),
-                            key=_key(pokemon_name, f"stat_points_{stat_name}"),
-                            label_visibility="collapsed",
-                        )
-                    with base_col:
-                        st.markdown(f'<div class="base-stat">{base_value}</div>', unsafe_allow_html=True)
-                    with actual_col:
-                        actual_stats = _calculate_champions_stats(
-                            species["base_stats"], stat_points, nature
-                        )
-                        st.markdown(
-                            f'<div class="actual-stat">{actual_stats[stat_name]}</div>',
-                            unsafe_allow_html=True,
-                        )
-                total_stat_points = sum(stat_points.values())
-                st.caption(f"能力ポイント合計: {total_stat_points} / 66　・　各能力は最大32")
-                if total_stat_points > 66:
-                    st.error("能力ポイントの合計は66以下にしてください。")
+                stat_points, total_stat_points = _render_stat_points_editor(
+                    pokemon_name, species["base_stats"], nature, saved_stats
+                )
 
             with build_right:
                 st.markdown('<div class="build-section-title">決めてもらう技</div>', unsafe_allow_html=True)

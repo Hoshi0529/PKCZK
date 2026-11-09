@@ -71,6 +71,23 @@
     font-weight: 650;
 }
 
+[class*="_stat_points_minus_"],
+[class*="_stat_points_plus_"] {
+    min-width: 0;
+}
+
+[class*="_stat_points_minus_"] [data-testid="stButton"] > button,
+[class*="_stat_points_plus_"] [data-testid="stButton"] > button {
+    min-height: 28px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: #f7f9f7;
+    color: var(--green);
+    font-size: 14px;
+    line-height: 1;
+}
+
 [data-testid="stColumn"]:first-child [data-testid="stButton"] > button[kind="primary"],
 [data-testid="stColumn"]:first-child [data-testid="stButton"] > button {
     background: var(--green);
@@ -622,7 +639,7 @@
 }
 
 .st-key-build_editor_card [data-testid="stHorizontalBlock"] {
-    align-items: flex-start;
+    align-items: center;
 }
 
 @media (max-width: 900px) {
