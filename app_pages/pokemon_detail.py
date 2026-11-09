@@ -9,7 +9,9 @@ from urllib.request import Request, urlopen
 import streamlit as st
 
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
-from back.conversations import create_conversation, list_conversations
+from back.conversations import ConversationStore
+from ui.chat_session import open_conversation, remember_selected_pokemon, require_conversation_store
+from ui.history import render_history
 from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
 from ui.layout import configure_page
 from ui.pokemon_types import (
@@ -365,7 +367,7 @@ def _render_stat_points_editor(
     return stat_points, total_stat_points
 
 
-def _render_sidebar() -> None:
+def _render_sidebar(store: ConversationStore) -> None:
     with st.container(key="build_sidebar"):
         st.markdown(
             '<div class="brand"><span class="brand-mark">✦</span><span>pokecham</span></div>',
@@ -376,19 +378,7 @@ def _render_sidebar() -> None:
                 st.session_state.pop(key, None)
             st.switch_page("app_pages/pokemon_selection.py")
 
-        st.markdown('<div class="history-heading">これまでの会話</div>', unsafe_allow_html=True)
-        conversations = list_conversations()
-        if not conversations:
-            st.caption("会話履歴はまだありません")
-        for conversation in conversations:
-            names = "・".join(conversation.get("pokemon", [])) or "ポケモン相談"
-            if st.button(
-                f'{conversation.get("title", names)[:22]}\n{names}',
-                key=f'build_history_{conversation["id"]}',
-                use_container_width=True,
-            ):
-                st.session_state.active_conversation_id = conversation["id"]
-                st.switch_page("app_pages/chat.py")
+        render_history(store)
 
         st.markdown(
             '<div class="sidebar-bottom"><div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div></div>',
@@ -401,9 +391,10 @@ def _render_sidebar() -> None:
 
 def render() -> None:
     configure_page("pokecham | 個体の詳細設定", "pokemon.css")
+    store = require_conversation_store()
     sidebar, content = st.columns([0.19, 0.81], gap="small")
     with sidebar:
-        _render_sidebar()
+        _render_sidebar(store)
 
     with content:
         pokemon_name = cast(str | None, st.session_state.get("pokemon_detail_target"))
@@ -615,10 +606,10 @@ def render() -> None:
                     )
                 st.session_state.chosen_pokemon = first_pokemon
                 st.session_state.partner_pokemon = second_pokemon
-                conversation = create_conversation(first_pokemon, second_pokemon)
-                st.session_state.active_conversation_id = conversation["id"]
+                conversation = store.create(f"{first_pokemon}との相談")
+                remember_selected_pokemon(conversation["id"], first_pokemon, second_pokemon)
                 st.session_state.page = "Chat"
-                st.switch_page("app_pages/chat.py")
+                open_conversation(conversation["id"])
 
         st.markdown(
             f'<div class="api-attribution">{API_ATTRIBUTION}</div>',

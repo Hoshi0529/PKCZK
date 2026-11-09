@@ -5,7 +5,8 @@ from urllib.parse import quote
 
 import streamlit as st
 
-from back.conversations import create_conversation, get_conversation
+from back.conversations import ConversationError, ConversationStore
+from ui.chat_session import open_conversation, remember_selected_pokemon, require_conversation_store
 from ui.layout import configure_page
 from ui.history import render_history
 from ui.pokemon_types import PokemonProfile
@@ -116,7 +117,7 @@ def _pokemon_image_url(pokemon_name: str, fallback: str) -> str:
     )
 
 
-def _start_new_advice() -> None:
+def _start_new_advice(store: ConversationStore) -> None:
     first_pokemon = st.session_state.get("first_pokemon_select", PLACEHOLDER)
     second_pokemon = st.session_state.get("second_pokemon_select", PLACEHOLDER)
     selected_pokemon = [
@@ -126,16 +127,15 @@ def _start_new_advice() -> None:
     ]
 
     active_id = st.session_state.get("active_conversation_id")
-    active_conversation = get_conversation(active_id) if active_id else None
-    if selected_pokemon and (
-        active_conversation is None
-        or active_conversation.get("pokemon", []) != selected_pokemon
-    ):
-        conversation = create_conversation(
-            selected_pokemon[0],
-            selected_pokemon[1] if len(selected_pokemon) > 1 else "",
-        )
+    active_pokemon = st.session_state.get("conversation_pokemon", {}).get(active_id)
+    if selected_pokemon and active_pokemon != selected_pokemon:
+        try:
+            conversation = store.create(f"{selected_pokemon[0]}との相談")
+        except ConversationError as error:
+            st.error(str(error))
+            return
         st.session_state.active_conversation_id = conversation["id"]
+        remember_selected_pokemon(conversation["id"], selected_pokemon[0], selected_pokemon[1] if len(selected_pokemon) > 1 else "")
 
     for key in ("first_pokemon_select", "second_pokemon_select"):
         st.session_state.pop(key, None)
@@ -189,7 +189,7 @@ def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
 
 
 @st.fragment
-def _render_selection_workspace() -> None:
+def _render_selection_workspace(store: ConversationStore) -> None:
     st.markdown(
         '<div class="step-label">03　ポケモン選択 / かんたんに始める</div>'
         '<div class="page-eyebrow">POKEMON CHAMPIONS　 ·　 はじめの一歩</div>'
@@ -259,18 +259,22 @@ def _render_selection_workspace() -> None:
             key="continue_button",
             disabled=first_pokemon == PLACEHOLDER,
         ):
+            partner_pokemon = "" if second_pokemon == PLACEHOLDER else second_pokemon
+            try:
+                conversation = store.create(f"{first_pokemon}との相談")
+            except ConversationError as error:
+                st.error(str(error))
+                return
             st.session_state.chosen_pokemon = first_pokemon
-            st.session_state.partner_pokemon = "" if second_pokemon == PLACEHOLDER else second_pokemon
-            conversation = create_conversation(
-                first_pokemon, st.session_state.partner_pokemon
-            )
-            st.session_state.active_conversation_id = conversation["id"]
+            st.session_state.partner_pokemon = partner_pokemon
+            remember_selected_pokemon(conversation["id"], first_pokemon, partner_pokemon)
             st.session_state.page = "Chat"
-            st.switch_page("app_pages/chat.py")
+            open_conversation(conversation["id"])
 
 
 def render() -> None:
     configure_page("pokecham | ポケモン選択", "pokemon.css")
+    store = require_conversation_store()
 
     sidebar, content = st.columns([0.19, 0.81], gap="small")
 
@@ -284,8 +288,9 @@ def render() -> None:
             use_container_width=True,
             key="advice_button",
             on_click=_start_new_advice,
+            args=(store,),
         )
-        render_history()
+        render_history(store)
         st.markdown(
             '<div class="sidebar-bottom"><div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div></div>',
             unsafe_allow_html=True,
@@ -295,7 +300,7 @@ def render() -> None:
         st.markdown('<div class="sidebar-user">◉　だいき</div>', unsafe_allow_html=True)
 
     with content:
-        _render_selection_workspace()
+        _render_selection_workspace(store)
 
 
 render()
