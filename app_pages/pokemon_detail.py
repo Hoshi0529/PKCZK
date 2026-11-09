@@ -1,6 +1,10 @@
+import json
 import re
 from html import escape
+from pathlib import Path
 from typing import cast
+from urllib.error import URLError
+from urllib.request import Request, urlopen
 
 import streamlit as st
 
@@ -18,6 +22,32 @@ from ui.pokemon_types import (
     StatName,
     StatPointValues,
 )
+
+DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+
+
+def _read_json(filename: str) -> dict:
+    try:
+        with (DATA_DIR / filename).open(encoding="utf-8") as file:
+            result = json.load(file)
+        return result if isinstance(result, dict) else {}
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+POKEMON_NAMES = _read_json("pokemon_champions_names_all_forms.json")
+PCBD_FORMS = _read_json("pcbd_forms.json")
+POKEMON_MOVES = _read_json("pokemon_moves.json")
+MOVE_NAMES = _read_json("move_names_ja_en.json")
+ABILITY_NAMES_JA = _read_json("pcbd_ability_names_ja.json")
+POKEMON_ID_BY_NAME = {
+    names.get("name_ja"): pokemon_id
+    for pokemon_id, names in POKEMON_NAMES.items()
+    if isinstance(names, dict)
+    and isinstance(names.get("name_ja"), str)
+    and isinstance(PCBD_FORMS.get(pokemon_id), dict)
+    and PCBD_FORMS[pokemon_id].get("metadata_row_available")
+}
 
 
 SPECIES: dict[str, PokemonSpecies] = {
@@ -92,6 +122,94 @@ def _options_from_api(rows: list[BattleRow]) -> list[str]:
     return list(dict.fromkeys(row["name"] for row in rows if row.get("name")))
 
 
+def _load_local_options(filename: str, key: str) -> list[str]:
+    try:
+        with (DATA_DIR / filename).open(encoding="utf-8") as file:
+            return cast(list[str], json.load(file)[key])
+    except (OSError, KeyError, json.JSONDecodeError, TypeError):
+        return []
+
+
+def _showdown_id_for_name(pokemon_name: str) -> str | None:
+    return POKEMON_ID_BY_NAME.get(pokemon_name)
+
+
+@st.cache_data(ttl=24 * 60 * 60, show_spinner=False)
+def _fetch_species_metadata(pokemon_name: str) -> dict[str, object] | None:
+    showdown_id = _showdown_id_for_name(pokemon_name)
+    form = PCBD_FORMS.get(showdown_id) if showdown_id else None
+    if not isinstance(form, dict) or not form.get("metadata_row_available"):
+        return None
+    metadata_name = form.get("metadata_id")
+    if not isinstance(metadata_name, str) or not metadata_name:
+        return None
+    request = Request(
+        f"https://championsbattledata.com/api/metadata/{metadata_name}",
+        headers={"Accept": "application/json", "User-Agent": "pokecham/1.0"},
+    )
+    try:
+        with urlopen(request, timeout=8) as response:
+            payload = json.load(response)
+    except (URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError):
+        return None
+    rows = payload.get("rows", []) if isinstance(payload, dict) else []
+    if not isinstance(rows, list):
+        return None
+    row = next(
+        (
+            item
+            for item in rows
+            if isinstance(item, dict)
+            and item.get("saved_name") == form.get("saved_name")
+        ),
+        None,
+    )
+    return row if isinstance(row, dict) else None
+
+
+def _metadata_abilities(metadata: dict[str, object] | None, fallback: list[str]) -> list[str]:
+    raw = metadata.get("abilities") if metadata else None
+    if isinstance(raw, str) and raw:
+        return [
+            ABILITY_NAMES_JA.get(name.strip(), name.strip())
+            for name in raw.split("|")
+            if name.strip()
+        ]
+    return fallback
+
+
+def _metadata_stats(metadata: dict[str, object] | None, fallback: list[int]) -> list[int]:
+    if not metadata:
+        return fallback
+    keys = ("hp", "atk", "def", "spa", "spd", "spe")
+    values = [metadata.get(key) for key in keys]
+    if not all(isinstance(value, (int, float)) for value in values):
+        return fallback
+
+    # PCBD metadata stores level-50 stats with max-equivalent IVs and zero SP,
+    # while this screen displays species base stats and calculates actual stats
+    # separately. Undo the level-50 offsets before using metadata as base stats.
+    level_50_offsets = (75, 20, 20, 20, 20, 20)
+    return [int(value) - offset for value, offset in zip(values, level_50_offsets)]
+
+
+def _local_moves(pokemon_name: str, fallback: list[str]) -> list[str]:
+    showdown_id = _showdown_id_for_name(pokemon_name)
+    moves = POKEMON_MOVES.get(showdown_id, []) if showdown_id else []
+    if not isinstance(moves, list) or not moves:
+        return fallback
+    localized: list[str] = []
+    for move_id in moves:
+        move_info = MOVE_NAMES.get(move_id)
+        if isinstance(move_info, dict):
+            name = move_info.get("name_ja") or move_info.get("name_en")
+        else:
+            name = None
+        if isinstance(name, str) and name and name not in localized:
+            localized.append(name)
+    return localized or fallback
+
+
 def _format_options(rows: list[BattleRow]):
     usage = {
         row["name"]: row.get("percentage", "")
@@ -153,6 +271,102 @@ def _key(pokemon_name: str, field: str) -> str:
     return f"pokemon_build_{slug}_{field}"
 
 
+def _adjust_stat_point(key: str, amount: int) -> None:
+    current = int(st.session_state.get(key, 0))
+    st.session_state[key] = min(32, max(0, current + amount))
+
+
+@st.fragment
+def _render_stat_points_editor(
+    pokemon_name: str,
+    base_stats: list[int],
+    nature: str,
+    saved_stats: StatPointValues,
+) -> tuple[StatPointValues, int]:
+    st.markdown(
+        '<div class="build-section-title">能力ポイント '
+        '<span class="count-pill">Stat Points (SP)</span></div>',
+        unsafe_allow_html=True,
+    )
+    st.caption("実数値はLv.50基準・個体値は最高相当で固定して計算します。")
+    column_widths = [0.17, 0.43, 0.17, 0.23]
+    stat_header_cols = st.columns(column_widths, vertical_alignment="center")
+    for column, title in zip(stat_header_cols, ("能力", "SP", "種族値", "実数値")):
+        with column:
+            st.markdown(f'<div class="stat-table-header">{title}</div>', unsafe_allow_html=True)
+
+    for stat_name in STAT_NAMES:
+        slider_key = _key(pokemon_name, f"stat_points_{stat_name}")
+        st.session_state.setdefault(slider_key, int(saved_stats.get(stat_name, 0)))
+
+    stat_points: StatPointValues = {
+        stat_name: int(st.session_state[_key(pokemon_name, f"stat_points_{stat_name}")])
+        for stat_name in STAT_NAMES
+    }
+    actual_stats = _calculate_champions_stats(base_stats, stat_points, nature)
+    nature_modifier = NATURE_MODIFIERS.get(nature)
+
+    for stat_name, base_value in zip(STAT_NAMES, base_stats):
+        nature_marker = ""
+        if nature_modifier and stat_name == nature_modifier[0]:
+            nature_marker = '<span class="nature-mark nature-up">↑</span>'
+        elif nature_modifier and stat_name == nature_modifier[1]:
+            nature_marker = '<span class="nature-mark nature-down">↓</span>'
+        stat_col, points_col, base_col, actual_col = st.columns(
+            column_widths, vertical_alignment="center"
+        )
+        with stat_col:
+            st.markdown(
+                f'<div class="stat-name">{stat_name}{nature_marker}</div>',
+                unsafe_allow_html=True,
+            )
+        with points_col:
+            slider_key = _key(pokemon_name, f"stat_points_{stat_name}")
+            minus_col, slider_col, plus_col = st.columns(
+                [0.22, 0.56, 0.22], vertical_alignment="center", gap="small"
+            )
+            with minus_col:
+                st.button(
+                    "−",
+                    key=_key(pokemon_name, f"stat_points_minus_{stat_name}"),
+                    on_click=_adjust_stat_point,
+                    args=(slider_key, -1),
+                    disabled=stat_points[stat_name] <= 0,
+                    use_container_width=True,
+                )
+            with slider_col:
+                stat_points[stat_name] = st.slider(
+                    f"{stat_name}能力ポイント",
+                    min_value=0,
+                    max_value=32,
+                    step=1,
+                    key=slider_key,
+                    label_visibility="collapsed",
+                )
+            with plus_col:
+                st.button(
+                    "+",
+                    key=_key(pokemon_name, f"stat_points_plus_{stat_name}"),
+                    on_click=_adjust_stat_point,
+                    args=(slider_key, 1),
+                    disabled=stat_points[stat_name] >= 32,
+                    use_container_width=True,
+                )
+        with base_col:
+            st.markdown(f'<div class="base-stat">{base_value}</div>', unsafe_allow_html=True)
+        with actual_col:
+            st.markdown(
+                f'<div class="actual-stat">{actual_stats[stat_name]}</div>',
+                unsafe_allow_html=True,
+            )
+
+    total_stat_points = sum(stat_points.values())
+    st.caption(f"能力ポイント合計: {total_stat_points} / 66　・　各能力は最大32")
+    if total_stat_points > 66:
+        st.error("能力ポイントの合計は66以下にしてください。")
+    return stat_points, total_stat_points
+
+
 def _render_sidebar(store: ConversationStore) -> None:
     with st.container(key="build_sidebar"):
         st.markdown(
@@ -192,7 +406,17 @@ def render() -> None:
             return
         pokemon = cast(PokemonProfile, raw_pokemon)
 
-        species: PokemonSpecies = SPECIES.get(pokemon_name, SPECIES["ピカチュウ"])
+        species: PokemonSpecies = SPECIES.get(
+            pokemon_name,
+            {"base_stats": [0, 0, 0, 0, 0, 0], "abilities": [], "moves": []},
+        )
+        metadata = _fetch_species_metadata(pokemon_name)
+        species = {
+            **species,
+            "base_stats": _metadata_stats(metadata, species["base_stats"]),
+            "abilities": _metadata_abilities(metadata, species["abilities"]),
+            "moves": _local_moves(pokemon_name, species["moves"]),
+        }
         builds = cast(PokemonBuildMap, st.session_state.setdefault("pokemon_builds", {}))
         saved: PokemonBuild = builds.get(pokemon_name, {})
         saved_moves: list[str] = (saved.get("moves") or []) + [""] * 4
@@ -201,26 +425,25 @@ def render() -> None:
         battle_data: BattleDataResponse | None = None
         if pokemon_name in SHOWDOWN_IDS:
             try:
-                battle_data = get_battle_data(pokemon_name, "Doubles")
+                battle_data = get_battle_data(pokemon_name, "Singles")
             except (RuntimeError, ValueError) as error:
                 st.warning(f"対戦データ API を取得できませんでした。{error}")
 
-        ability_rows = _category_rows(battle_data, "ability")
         move_rows = _category_rows(battle_data, "move")
-        item_rows = _category_rows(battle_data, "item")
-        nature_rows = _category_rows(battle_data, "nature")
-        abilities = _options_from_api(ability_rows) or species["abilities"]
-        move_names = _options_from_api(move_rows) or species["moves"]
-        item_names = _options_from_api(item_rows) or ITEMS
-        nature_names = _options_from_api(nature_rows) or NATURES
+        abilities = species["abilities"]
+        if not abilities:
+            abilities = ["特性データを取得できません"]
+        move_names = species["moves"]
+        item_names = _load_local_options("items.json", "items") or ITEMS
+        nature_names = _load_local_options("natures.json", "natures") or NATURES
 
         if battle_data:
             st.caption(
-                f"バトルデータ: {battle_data.get('format', 'Doubles')} / "
+                f"バトルデータ: {battle_data.get('format', 'Singles')} / "
                 f"{battle_data.get('season', 'Current')}（API取得・6時間キャッシュ）"
             )
-        if any(not rows for rows in (ability_rows, move_rows, item_rows, nature_rows)):
-            st.caption("APIに項目がない場合は、選択肢の不足分に標準候補を表示します。")
+        if not battle_data:
+            st.caption("PCBDのSinglesデータを取得できないため、使用率の表示は利用できません。")
 
         st.markdown(
             '<div class="step-label">04　ポケモン選択 / 個体の詳細設定</div>'
@@ -249,7 +472,6 @@ def render() -> None:
                     nature_names,
                     key=_key(pokemon_name, "nature"),
                     index=nature_names.index(saved_nature) if saved_nature in nature_names else 0,
-                    format_func=_format_options(nature_rows),
                 )
                 nature_modifier = NATURE_MODIFIERS.get(nature)
                 if nature_modifier:
@@ -273,7 +495,6 @@ def render() -> None:
                     abilities,
                     key=_key(pokemon_name, "ability"),
                     index=abilities.index(saved_ability) if saved_ability in abilities else 0,
-                    format_func=_format_options(ability_rows),
                 )
             with item_col:
                 saved_item = saved.get("item", "指定しない")
@@ -282,71 +503,49 @@ def render() -> None:
                     item_names,
                     key=_key(pokemon_name, "item"),
                     index=item_names.index(saved_item) if saved_item in item_names else 0,
-                    format_func=_format_options(item_rows),
                 )
 
             build_left, build_right = st.columns([1.02, 0.98], gap="large")
             with build_left:
-                st.markdown('<div class="build-section-title">能力ポイント <span class="count-pill">Stat Points</span></div>', unsafe_allow_html=True)
-                st.caption("実数値はLv.50基準・個体値は最高相当で固定して計算します。")
-                stat_header_cols = st.columns([0.20, 0.27, 0.20, 0.33], vertical_alignment="center")
-                for column, title in zip(stat_header_cols, ("能力", "SP", "種族値", "実数値")):
-                    with column:
-                        st.markdown(f'<div class="stat-table-header">{title}</div>', unsafe_allow_html=True)
-
-                stat_points: StatPointValues = {}
-                for stat_name, base_value in zip(STAT_NAMES, species["base_stats"]):
-                    nature_marker = ""
-                    if nature_modifier and stat_name == nature_modifier[0]:
-                        nature_marker = '<span class="nature-mark nature-up">↑</span>'
-                    elif nature_modifier and stat_name == nature_modifier[1]:
-                        nature_marker = '<span class="nature-mark nature-down">↓</span>'
-                    stat_col, points_col, base_col, actual_col = st.columns(
-                        [0.20, 0.27, 0.20, 0.33], vertical_alignment="center"
-                    )
-                    with stat_col:
-                        st.markdown(
-                            f'<div class="stat-name">{stat_name}{nature_marker}</div>',
-                            unsafe_allow_html=True,
-                        )
-                    with points_col:
-                        stat_points[stat_name] = st.number_input(
-                            f"{stat_name}能力ポイント",
-                            min_value=0,
-                            max_value=32,
-                            step=1,
-                            value=int(saved_stats.get(stat_name, 0)),
-                            key=_key(pokemon_name, f"stat_points_{stat_name}"),
-                            label_visibility="collapsed",
-                        )
-                    with base_col:
-                        st.markdown(f'<div class="base-stat">{base_value}</div>', unsafe_allow_html=True)
-                    with actual_col:
-                        actual_stats = _calculate_champions_stats(
-                            species["base_stats"], stat_points, nature
-                        )
-                        st.markdown(
-                            f'<div class="actual-stat">{actual_stats[stat_name]}</div>',
-                            unsafe_allow_html=True,
-                        )
-                total_stat_points = sum(stat_points.values())
-                st.caption(f"能力ポイント合計: {total_stat_points} / 66　・　各能力は最大32")
-                if total_stat_points > 66:
-                    st.error("能力ポイントの合計は66以下にしてください。")
+                stat_points, total_stat_points = _render_stat_points_editor(
+                    pokemon_name, species["base_stats"], nature, saved_stats
+                )
 
             with build_right:
                 st.markdown('<div class="build-section-title">決めてもらう技</div>', unsafe_allow_html=True)
                 move_options = ["指定しない", *move_names]
+                move_keys = [
+                    _key(pokemon_name, f"move_{index}") for index in range(4)
+                ]
+                # Repair duplicate values from saved builds or stale widget state.
+                seen_moves: set[str] = set()
+                for index, move_key in enumerate(move_keys):
+                    selected = st.session_state.get(move_key, saved_moves[index])
+                    if selected not in move_options or selected in seen_moves:
+                        selected = "指定しない"
+                    st.session_state[move_key] = selected
+                    if selected != "指定しない":
+                        seen_moves.add(selected)
+
                 moves = []
                 for index in range(4):
-                    saved_move = saved_moves[index]
-                    move_index = move_options.index(saved_move) if saved_move in move_options else 0
+                    move_key = move_keys[index]
+                    selected_elsewhere = {
+                        st.session_state[key]
+                        for other_index, key in enumerate(move_keys)
+                        if other_index != index
+                        and st.session_state[key] != "指定しない"
+                    }
+                    available_moves = [
+                        move
+                        for move in move_options
+                        if move == "指定しない" or move not in selected_elsewhere
+                    ]
                     moves.append(
                         st.selectbox(
                             f"技{index + 1}",
-                            move_options,
-                            index=move_index,
-                            key=_key(pokemon_name, f"move_{index}"),
+                            available_moves,
+                            key=move_key,
                             format_func=_format_options(move_rows),
                         )
                     )
