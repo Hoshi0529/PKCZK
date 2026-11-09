@@ -14,9 +14,11 @@ from groq import (
 )
 from groq.types.chat import ChatCompletion, ChatCompletionMessageParam
 from langgraph.graph import END, START, StateGraph
+from langgraph.runtime import Runtime
 from langsmith import traceable
 from typing_extensions import TypedDict
 
+from back.conversations import ConversationError, ConversationStore
 from back.observability import workflow_tracing
 
 
@@ -34,8 +36,14 @@ class ChatError(RuntimeError):
 
 
 class ChatState(TypedDict):
+    conversation_id: str
+    question_id: str
     messages: list[ChatCompletionMessageParam]
-    answer: str
+    answer: str | None
+
+
+class ReplyContext(TypedDict):
+    store: ConversationStore
 
 
 def _trace_completion(completion: ChatCompletion | None) -> dict:
@@ -103,30 +111,55 @@ def _generate_answer(state: ChatState) -> dict[str, str]:
     return {"answer": (completion.choices[0].message.content or "").strip()}
 
 
-def generate_reply(messages: list[dict], *, conversation_id: str | None = None) -> str:
-    """Reply to this conversation's history without persisting graph state."""
+def _load_history(state: ChatState, runtime: Runtime[ReplyContext]) -> dict:
+    history = runtime.context["store"].messages(state["conversation_id"])
     chat_messages: list[ChatCompletionMessageParam] = [
         {"role": "system", "content": SYSTEM_PROMPT}
     ]
-    for message in messages:
+    for index, message in enumerate(history):
         role = message.get("role")
         content = message.get("content")
-        if not isinstance(content, str) or not content.strip():
-            continue
         if role == "user":
             chat_messages.append({"role": "user", "content": content})
         elif role == "assistant":
             chat_messages.append({"role": "assistant", "content": content})
-    if len(chat_messages) == 1 or chat_messages[-1]["role"] != "user":
-        raise ChatError("回答するユーザーメッセージがありません。")
+        if message["id"] != state["question_id"] or role != "user":
+            continue
+        if index == len(history) - 1:
+            return {"messages": chat_messages}
+        following = history[index + 1]
+        if following["role"] == "assistant":
+            return {"messages": chat_messages, "answer": following["content"]}
+        raise ConversationError("会話が更新されました。履歴を開き直してください。")
+    raise ConversationError("回答する質問が見つかりません。")
 
-    workflow = StateGraph(ChatState)
-    workflow.add_node("generate_answer", _generate_answer)
-    workflow.add_edge(START, "generate_answer")
-    workflow.add_edge("generate_answer", END)
+
+def _save_answer(state: ChatState, runtime: Runtime[ReplyContext]) -> dict[str, str]:
+    answer = runtime.context["store"].save_answer(
+        state["conversation_id"], state["question_id"], state["answer"] or ""
+    )
+    return {"answer": answer}
+
+
+workflow = StateGraph(ChatState, context_schema=ReplyContext)
+workflow.add_node("load_history", _load_history)
+workflow.add_node("generate_answer", _generate_answer)
+workflow.add_node("save_answer", _save_answer)
+workflow.add_edge(START, "load_history")
+workflow.add_conditional_edges(
+    "load_history", lambda state: state["answer"] is None, {True: "generate_answer", False: END}
+)
+workflow.add_edge("generate_answer", "save_answer")
+workflow.add_edge("save_answer", END)
+chat_workflow = workflow.compile()
+
+
+def generate_reply(store: ConversationStore, conversation_id: str, question_id: str) -> str:
+    """Reply to a stored question using its owner's conversation history."""
     with workflow_tracing(conversation_id):
-        result = workflow.compile().invoke(
-            {"messages": chat_messages, "answer": ""},
+        result = chat_workflow.invoke(
+            {"conversation_id": conversation_id, "question_id": question_id, "messages": [], "answer": None},
             config={"run_name": "pokecham_chat"},
+            context={"store": store},
         )
-    return result["answer"]
+    return result["answer"] or ""

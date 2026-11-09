@@ -1,11 +1,13 @@
 import streamlit as st
 
 from ui.history import render_history
+from ui.chat_session import require_conversation_store
 from ui.layout import configure_page
 
 
 def render() -> None:
     configure_page("pokecham | 設定", "setting.css")
+    store = require_conversation_store()
 
     sidebar, content = st.columns([0.17, 0.83], gap=None)
 
@@ -18,7 +20,7 @@ def render() -> None:
             for key in ("first_pokemon_select", "second_pokemon_select"):
                 st.session_state.pop(key, None)
             st.switch_page("app_pages/pokemon_selection.py")
-        render_history()
+        render_history(store)
         st.markdown(
             """
             <div class="sidebar-bottom">

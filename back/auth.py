@@ -119,6 +119,25 @@ def get_account_session(client: Client) -> Session | None:
         raise AuthenticationError("ログイン状態を確認できませんでした。時間をおいて再度お試しください。") from None
 
 
+def get_verified_account(client: Client) -> User | None:
+    """Validate the current access token before using the account for DB access."""
+    session = get_account_session(client)
+    if session is None:
+        return None
+    try:
+        result = client.auth.get_user(session.access_token)
+        user = result.user if result else None
+        if user:
+            client.postgrest.auth(session.access_token)
+        return user
+    except AuthApiError as error:
+        if str(error.status) in {"401", "403"}:
+            return None
+        raise AuthenticationError(_auth_error_message(error)) from None
+    except (AuthError, HTTPError, OSError):
+        raise AuthenticationError("ログイン状態を確認できませんでした。時間をおいて再度お試しください。") from None
+
+
 def validate_account_input(
     email: str,
     password: str,

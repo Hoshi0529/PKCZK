@@ -1,8 +1,12 @@
 import streamlit as st
 
+from back.conversations import ConversationError, conversation_id_from_url
+
 
 def _open_chat() -> None:
-    st.switch_page("app_pages/chat.py")
+    conversation_id = conversation_id_from_url(st.query_params.get("conversation_id"))
+    params = {"conversation_id": conversation_id} if conversation_id else None
+    st.switch_page("app_pages/chat.py", query_params=params)
 
 
 pages = [
@@ -13,4 +17,7 @@ pages = [
     st.Page("app_pages/login.py", title="ログイン", url_path="Login", default=True),
     st.Page("app_pages/pokemon_detail.py", title="個体の型を設定", url_path="PokemonDetail"),
 ]
-st.navigation(pages, position="hidden").run()
+try:
+    st.navigation(pages, position="hidden").run()
+except ConversationError as error:
+    st.error(str(error))

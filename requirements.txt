@@ -4,3 +4,4 @@ python-dotenv==1.2.4
 groq==1.7.0
 langgraph==1.2.20
 langsmith==0.14.17
+psycopg[binary]==3.3.8
