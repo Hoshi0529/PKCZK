@@ -5,7 +5,8 @@ from urllib.parse import quote
 
 import streamlit as st
 
-from back.conversations import create_conversation, get_conversation
+from back.conversations import ConversationError, ConversationStore
+from ui.chat_session import open_conversation, remember_selected_pokemon, require_conversation_store
 from ui.layout import configure_page
 from ui.history import render_history
 from ui.pokemon_types import PokemonProfile
@@ -33,44 +34,7 @@ LOCAL_NAME_TO_ID = {
     and PCBD_FORMS[showdown_id].get("metadata_row_available")
 }
 
-
-LEGACY_POKEMON: dict[str, PokemonProfile] = {
-    "ピカチュウ": {
-        "number": "#025",
-        "type": "でんき",
-        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-        "description": "ほっぺの電気袋に電気をためる。仲間を見つけると電気を鳴らして合図する。",
-        "color": "#f2bd35",
-    },
-    "ガブリアス": {
-        "number": "#445",
-        "type": "ドラゴン / じめん",
-        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/445.png",
-        "description": "音速で空を飛び、獲物を探す。大きな翼で風を切って進む。",
-        "color": "#6c5b9b",
-    },
-    "マリル": {
-        "number": "#183",
-        "type": "みず / フェアリー",
-        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/183.png",
-        "description": "水に浮くしっぽを浮き輪のように使って、楽しく泳ぐ。",
-        "color": "#5299d1",
-    },
-    "ルカリオ": {
-        "number": "#448",
-        "type": "かくとう / はがね",
-        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png",
-        "description": "波導を感じ取り、相手の気持ちや動きを読み取る。",
-        "color": "#6488ad",
-    },
-    "イーブイ": {
-        "number": "#133",
-        "type": "ノーマル",
-        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
-        "description": "環境に合わせて姿を変える、不思議な可能性を秘めたポケモン。",
-        "color": "#af8057",
-    },
-}
+LEGACY_POKEMON = _load_json("legacy_pokemon.json")
 
 POKEMON: dict[str, PokemonProfile] = {}
 for pokemon_id, names in LOCAL_POKEMON_NAMES.items():
@@ -118,7 +82,7 @@ def _pokemon_image_url(pokemon_name: str, fallback: str) -> str:
     )
 
 
-def _start_new_advice() -> None:
+def _start_new_advice(store: ConversationStore) -> None:
     first_pokemon = st.session_state.get("first_pokemon_select", PLACEHOLDER)
     second_pokemon = st.session_state.get("second_pokemon_select", PLACEHOLDER)
     selected_pokemon = [
@@ -128,16 +92,15 @@ def _start_new_advice() -> None:
     ]
 
     active_id = st.session_state.get("active_conversation_id")
-    active_conversation = get_conversation(active_id) if active_id else None
-    if selected_pokemon and (
-        active_conversation is None
-        or active_conversation.get("pokemon", []) != selected_pokemon
-    ):
-        conversation = create_conversation(
-            selected_pokemon[0],
-            selected_pokemon[1] if len(selected_pokemon) > 1 else "",
-        )
+    active_pokemon = st.session_state.get("conversation_pokemon", {}).get(active_id)
+    if selected_pokemon and active_pokemon != selected_pokemon:
+        try:
+            conversation = store.create(f"{selected_pokemon[0]}との相談")
+        except ConversationError as error:
+            st.error(str(error))
+            return
         st.session_state.active_conversation_id = conversation["id"]
+        remember_selected_pokemon(conversation["id"], selected_pokemon[0], selected_pokemon[1] if len(selected_pokemon) > 1 else "")
 
     for key in (
         "first_pokemon_select",
@@ -200,7 +163,7 @@ def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
 
 
 @st.fragment
-def _render_selection_workspace() -> None:
+def _render_selection_workspace(store: ConversationStore) -> None:
     st.markdown(
         '<div class="advice-progress">'
         '<span class="advice-progress-step advice-progress-active"><b>01</b> ポケモンを選ぶ</span>'
@@ -320,6 +283,7 @@ def _render_selection_workspace() -> None:
 
 def render() -> None:
     configure_page("pokecham | ポケモン選択", "pokemon.css")
+    store = require_conversation_store()
 
     sidebar, content = st.columns([0.19, 0.81], gap="small")
 
@@ -333,8 +297,9 @@ def render() -> None:
             use_container_width=True,
             key="advice_button",
             on_click=_start_new_advice,
+            args=(store,),
         )
-        render_history()
+        render_history(store)
         st.markdown(
             '<div class="sidebar-bottom"><div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div></div>',
             unsafe_allow_html=True,
@@ -344,7 +309,7 @@ def render() -> None:
         st.markdown('<div class="sidebar-user">◉　だいき</div>', unsafe_allow_html=True)
 
     with content:
-        _render_selection_workspace()
+        _render_selection_workspace(store)
 
 
 render()

@@ -7,6 +7,7 @@ from back.auth import (
     get_account_session,
     validate_account_input,
 )
+from back.conversations import conversation_id_from_url
 from back.pokemon import fetch_pokemon_artwork
 from ui.layout import configure_page
 
@@ -20,6 +21,12 @@ FALLBACK_ARTWORK = {
 @st.cache_data(ttl=86400, show_spinner=False)
 def get_pokemon_artwork() -> tuple[dict[str, str], list[str]]:
     return fetch_pokemon_artwork()
+
+
+def _open_after_authentication() -> None:
+    conversation_id = conversation_id_from_url(st.query_params.get("conversation_id"))
+    params = {"conversation_id": conversation_id} if conversation_id else None
+    st.switch_page("app_pages/chat.py", query_params=params)
 
 
 def render() -> None:
@@ -84,13 +91,7 @@ def render() -> None:
             session = None
 
         if session and session.user:
-            st.markdown('<h2 class="form-heading">ログイン済み</h2>', unsafe_allow_html=True)
-            st.success(st.session_state.get("account_success", "ログインしています。"))
-            username = (session.user.user_metadata or {}).get("username")
-            if username:
-                st.text(username)
-            st.text(session.user.email or "")
-            return
+            _open_after_authentication()
 
         notice = st.session_state.pop("account_notice", None)
         if notice:
@@ -160,10 +161,7 @@ def render() -> None:
                 else:
                     st.session_state.clear_account_passwords = True
                     if result.user and result.session:
-                        st.session_state.account_success = (
-                            "新規登録が完了しました。ログインしています。"
-                            if is_registering else "ログインしました。"
-                        )
+                        _open_after_authentication()
                     else:
                         st.session_state.account_notice = result.notice
                     st.rerun()

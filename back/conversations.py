@@ -1,77 +1,151 @@
-"""Local persistent storage for chat conversations."""
+"""Supabase storage for authenticated chat conversations."""
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
-import json
-from pathlib import Path
-from uuid import uuid4
+from contextlib import contextmanager
+import os
+from uuid import UUID
+
+from dotenv import dotenv_values
+from httpx import HTTPError
+from postgrest.exceptions import APIError
+import psycopg
+from psycopg.rows import dict_row
+from supabase import Client
+
+from back.auth import ENV_PATH
 
 
-DATA_PATH = Path(__file__).resolve().parents[1] / ".data" / "conversations.json"
+class ConversationError(RuntimeError):
+    """A chat storage error safe to display to the user."""
 
 
-def _read_all() -> list[dict]:
-    if not DATA_PATH.exists():
-        return []
+def conversation_id_from_url(value: str | None) -> str | None:
     try:
-        data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return []
-    return data if isinstance(data, list) else []
-
-
-def _write_all(conversations: list[dict]) -> None:
-    DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
-    temporary_path = DATA_PATH.with_suffix(".tmp")
-    temporary_path.write_text(
-        json.dumps(conversations, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    temporary_path.replace(DATA_PATH)
-
-
-def list_conversations() -> list[dict]:
-    """Return conversations with most recently updated first."""
-    return sorted(_read_all(), key=lambda item: item.get("updated_at", ""), reverse=True)
-
-
-def get_conversation(conversation_id: str) -> dict | None:
-    return next(
-        (item for item in _read_all() if item.get("id") == conversation_id), None
-    )
-
-
-def create_conversation(first_pokemon: str, second_pokemon: str = "") -> dict:
-    now = datetime.now(timezone.utc).isoformat()
-    conversation = {
-        "id": uuid4().hex,
-        "title": f"{first_pokemon}との相談",
-        "pokemon": [name for name in (first_pokemon, second_pokemon) if name],
-        "messages": [],
-        "created_at": now,
-        "updated_at": now,
-    }
-    conversations = _read_all()
-    conversations.append(conversation)
-    _write_all(conversations)
-    return conversation
-
-
-def append_message(conversation_id: str, role: str, content: str) -> dict | None:
-    if role not in {"user", "assistant"} or not content.strip():
+        return str(UUID(value)) if value else None
+    except ValueError:
         return None
-    conversations = _read_all()
-    conversation = next(
-        (item for item in conversations if item.get("id") == conversation_id), None
-    )
-    if conversation is None:
-        return None
-    now = datetime.now(timezone.utc).isoformat()
-    conversation.setdefault("messages", []).append(
-        {"role": role, "content": content.strip(), "created_at": now}
-    )
-    if role == "user" and len(conversation["messages"]) == 1:
-        conversation["title"] = content.strip()[:40]
-    conversation["updated_at"] = now
-    _write_all(conversations)
-    return conversation
+
+
+def _fetch(query) -> list[dict]:
+    try:
+        return query.execute().data
+    except (APIError, HTTPError, OSError):
+        raise ConversationError("会話を取得または作成できませんでした。時間をおいて試してください。") from None
+
+
+def _fetch_all(query) -> list[dict]:
+    rows = []
+    page_size = 100
+    while True:
+        page = _fetch(query.range(len(rows), len(rows) + page_size - 1))
+        rows.extend(page)
+        if len(page) < page_size:
+            return rows
+
+
+class ConversationStore:
+    """Read via the authenticated Data API and serialize writes in PostgreSQL."""
+
+    def __init__(self, client: Client, user_id: str):
+        self.client = client
+        self.user_id = user_id
+
+    def _owned_conversations(self):
+        return self.client.table("conversations").select("*").eq("user_id", self.user_id)
+
+    def list(self) -> list[dict]:
+        return _fetch_all(self._owned_conversations().order("updated_at", desc=True).order("id"))
+
+    def get(self, conversation_id: str) -> dict | None:
+        rows = _fetch(self._owned_conversations().eq("id", conversation_id).limit(1))
+        return rows[0] if rows else None
+
+    def messages(self, conversation_id: str) -> list[dict]:
+        if self.get(conversation_id) is None:
+            raise ConversationError("この会話は開けません。")
+        return _fetch_all(
+            self.client.table("messages").select("*")
+            .eq("conversation_id", conversation_id).order("position")
+        )
+
+    def create(self, title: str = "新しいチャット") -> dict:
+        rows = _fetch(self.client.table("conversations").insert({"title": title}))
+        if not rows:
+            raise ConversationError("会話を作成できませんでした。")
+        return rows[0]
+
+    @contextmanager
+    def _locked_conversation(self, conversation_id: str):
+        settings = dotenv_values(ENV_PATH, encoding="utf-8-sig", interpolate=False)
+        dsn = (os.getenv("SUPABASE_CONNECTION_STRING") or settings.get("SUPABASE_CONNECTION_STRING") or "").strip()
+        if not dsn:
+            raise ConversationError("会話のデータベース接続が設定されていません。")
+        try:
+            with psycopg.connect(
+                dsn, connect_timeout=8, sslmode="require", prepare_threshold=None, row_factory=dict_row
+            ) as conn:
+                owner = conn.execute(
+                    "select id from public.conversations where id = %s and user_id = %s for update",
+                    (conversation_id, self.user_id),
+                ).fetchone()
+                if owner is None:
+                    raise ConversationError("この会話は開けません。")
+                yield conn
+        except (psycopg.Error, OSError):
+            raise ConversationError("発言を保存できませんでした。時間をおいて試してください。") from None
+
+    def save_question(self, conversation_id: str, question_id: str, content: str) -> dict:
+        content = content.strip()
+        if not content:
+            raise ConversationError("質問を入力してください。")
+        with self._locked_conversation(conversation_id) as conn:
+            existing = conn.execute(
+                "select * from public.messages where conversation_id = %s and id = %s",
+                (conversation_id, question_id),
+            ).fetchone()
+            if existing:
+                if existing["role"] == "user" and existing["content"] == content:
+                    return existing
+                raise ConversationError("この質問を保存できませんでした。")
+            last = conn.execute(
+                "select role, position from public.messages where conversation_id = %s order by position desc limit 1",
+                (conversation_id,),
+            ).fetchone()
+            if last and last["role"] == "user":
+                raise ConversationError("未回答の質問があります。先に回答を再試行してください。")
+            question = conn.execute(
+                "insert into public.messages (id, conversation_id, role, content, position) "
+                "values (%s, %s, 'user', %s, %s) returning *",
+                (question_id, conversation_id, content, last["position"] + 1 if last else 0),
+            ).fetchone()
+            if last is None:
+                conn.execute(
+                    "update public.conversations set title = %s where id = %s",
+                    (content[:40], conversation_id),
+                )
+            return question
+
+    def save_answer(self, conversation_id: str, question_id: str, answer: str) -> str:
+        with self._locked_conversation(conversation_id) as conn:
+            question = conn.execute(
+                "select position from public.messages where conversation_id = %s and id = %s and role = 'user'",
+                (conversation_id, question_id),
+            ).fetchone()
+            if question is None:
+                raise ConversationError("回答する質問が見つかりません。")
+            position = question["position"] + 1
+            next_message = conn.execute(
+                "select role, content from public.messages where conversation_id = %s and position >= %s "
+                "order by position limit 1",
+                (conversation_id, position),
+            ).fetchone()
+            if next_message:
+                if next_message["role"] == "assistant":
+                    return next_message["content"]
+                raise ConversationError("会話が更新されました。履歴を開き直してください。")
+            conn.execute(
+                "insert into public.messages (conversation_id, role, content, position) values (%s, 'assistant', %s, %s)",
+                (conversation_id, answer, position),
+            )
+            return answer
