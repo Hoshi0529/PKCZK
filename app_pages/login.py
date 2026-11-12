@@ -7,7 +7,6 @@ from back.auth import (
     get_account_session,
     validate_account_input,
 )
-from back.conversations import conversation_id_from_url
 from back.pokemon import fetch_pokemon_artwork
 from ui.layout import configure_page
 
@@ -24,9 +23,7 @@ def get_pokemon_artwork() -> tuple[dict[str, str], list[str]]:
 
 
 def _open_after_authentication() -> None:
-    conversation_id = conversation_id_from_url(st.query_params.get("conversation_id"))
-    params = {"conversation_id": conversation_id} if conversation_id else None
-    st.switch_page("app_pages/chat.py", query_params=params)
+    st.switch_page("app_pages/pokemon_selection.py")
 
 
 def render() -> None:

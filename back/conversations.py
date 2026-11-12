@@ -61,16 +61,25 @@ class ConversationStore:
         rows = _fetch(self._owned_conversations().eq("id", conversation_id).limit(1))
         return rows[0] if rows else None
 
-    def messages(self, conversation_id: str) -> list[dict]:
+    def find_messages(self, conversation_id: str) -> list[dict] | None:
         if self.get(conversation_id) is None:
-            raise ConversationError("この会話は開けません。")
+            return None
         return _fetch_all(
             self.client.table("messages").select("*")
             .eq("conversation_id", conversation_id).order("position")
         )
 
-    def create(self, title: str = "新しいチャット") -> dict:
-        rows = _fetch(self.client.table("conversations").insert({"title": title}))
+    def messages(self, conversation_id: str) -> list[dict]:
+        messages = self.find_messages(conversation_id)
+        if messages is None:
+            raise ConversationError("この会話は開けません。")
+        return messages
+
+    def create(self, title: str = "新しいチャット", *, conversation_id: str | None = None) -> dict:
+        values = {"title": title}
+        if conversation_id is not None:
+            values["id"] = conversation_id
+        rows = _fetch(self.client.table("conversations").insert(values))
         if not rows:
             raise ConversationError("会話を作成できませんでした。")
         return rows[0]

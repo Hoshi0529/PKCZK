@@ -129,7 +129,7 @@ def render() -> None:
     configure_page("推しポケラボ | 相談", "pokemon.css")
     raw_id = st.query_params.get("conversation_id")
     conversation_id = conversation_id_from_url(raw_id)
-    store = require_conversation_store(conversation_id)
+    store = require_conversation_store()
     conversation = store.get(conversation_id) if conversation_id else None
     pokemon_names = st.session_state.get("conversation_pokemon", {}).get(conversation_id, [])
     pokemon_name = pokemon_names[0] if pokemon_names else ""
