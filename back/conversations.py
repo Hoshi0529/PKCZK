@@ -16,6 +16,9 @@ from supabase import Client
 from back.auth import ENV_PATH
 
 
+DEFAULT_CONVERSATION_TITLE = "新しいチャット"
+
+
 class ConversationError(RuntimeError):
     """A chat storage error safe to display to the user."""
 
@@ -75,7 +78,7 @@ class ConversationStore:
             raise ConversationError("この会話は開けません。")
         return messages
 
-    def create(self, title: str = "新しいチャット", *, conversation_id: str | None = None) -> dict:
+    def create(self, title: str = DEFAULT_CONVERSATION_TITLE, *, conversation_id: str | None = None) -> dict:
         values = {"title": title}
         if conversation_id is not None:
             values["id"] = conversation_id
@@ -131,8 +134,8 @@ class ConversationStore:
             # A conversation can begin with an assistant opening at position zero.
             if last is None or last["position"] == 0:
                 conn.execute(
-                    "update public.conversations set title = %s where id = %s",
-                    (content[:40], conversation_id),
+                    "update public.conversations set title = %s where id = %s and title = %s",
+                    (content[:40], conversation_id, DEFAULT_CONVERSATION_TITLE),
                 )
             return question
 

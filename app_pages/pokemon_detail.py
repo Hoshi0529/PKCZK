@@ -11,6 +11,7 @@ import streamlit as st
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import ConversationError, ConversationStore
 from ui.chat_session import (
+    create_pokemon_conversation,
     open_conversation,
     remember_conversation_builds,
     remember_selected_pokemon,
@@ -604,7 +605,7 @@ def render() -> None:
                             else ""
                         )
                     try:
-                        conversation = store.create(f"{first_pokemon}との相談")
+                        conversation = create_pokemon_conversation(store, (first_pokemon, second_pokemon))
                     except ConversationError as error:
                         st.error(str(error))
                     else:

@@ -9,7 +9,8 @@ from back.conversations import ConversationError, ConversationStore, conversatio
 from back.groq_chat import ChatError, ReplyPokemon, stream_reply
 from ui.chat_session import conversation_builds, require_conversation_store
 from ui.layout import configure_page
-from ui.pokemon_types import STAT_NAMES, PokemonBuild, PokemonBuildMap
+from ui.pokemon_catalog import POKEMON, pokemon_image_url
+from ui.pokemon_types import STAT_NAMES, PokemonBuild, PokemonBuildMap, PokemonProfile
 from ui.sidebar import render_sidebar
 
 
@@ -22,32 +23,24 @@ POKEMON_ART = {
 }
 
 
-def _render_pokemon_banner(pokemon_name: str, partner_name: str) -> None:
-    pokemon_type, image_url = POKEMON_ART.get(pokemon_name, ("", ""))
-    image = f'<img src="{image_url}" alt="">' if image_url else ""
-    safe_name = escape(pokemon_name)
-    safe_type = escape(pokemon_type)
-    partner_text = f'<span class="chat-partner-tag">相棒: {escape(partner_name)}</span>' if partner_name else ""
-    st.markdown(
-        f'<div class="chat-pokemon-banner"><div class="chat-banner-art">{image}</div>'
-        f'<div><div class="chat-pokemon-name">{safe_name}</div>'
-        f'<span class="type-pill">{safe_type}</span> {partner_text}</div>'
-        '<span class="chat-banner-step">相談中　›</span></div>',
-        unsafe_allow_html=True,
-    )
+def _pokemon_profile(pokemon_name: str) -> PokemonProfile:
+    pokemon_type, fallback_image = POKEMON_ART.get(pokemon_name, ("", ""))
+    profile = POKEMON.get(pokemon_name) or {
+        "number": "", "type": pokemon_type, "image": "", "description": "", "color": "#237b61",
+    }
+    return {**profile, "image": pokemon_image_url(pokemon_name, profile["image"] or fallback_image)}
 
 
 def _render_build_card(pokemon_name: str, build: PokemonBuild | None) -> None:
-    info = POKEMON_ART.get(pokemon_name, ("", ""))
-    _, image_url = info
-    details = "<p>未設定</p>"
+    profile = _pokemon_profile(pokemon_name)
+    details = '<p class="chat-build-unset">未設定</p>'
     if build is not None:
-        build_summary = "　・　".join(
-            f"{label} {value}"
+        build_summary = "".join(
+            f"<div><dt>{label}</dt><dd>{escape(value)}</dd></div>"
             for label, value in (
                 ("性格", build.get("nature") or "未設定"),
-                ("特性", build.get("ability") or "未設定"),
                 ("持ち物", build.get("item") or "未設定"),
+                ("特性", build.get("ability") or "未設定"),
             )
         )
         move_summary = " / ".join(build.get("moves", [])) or "未設定"
@@ -56,30 +49,64 @@ def _render_build_card(pokemon_name: str, build: PokemonBuild | None) -> None:
             f"{stat} {actual_stats[stat]}" for stat in STAT_NAMES if stat in actual_stats
         ) or "未取得"
         details = (
-            f'<p>{escape(build_summary)}</p>'
-            f'<div class="chat-build-moves">技 {escape(move_summary)}</div>'
-            f'<p>実数値（Lv.50） {escape(stat_summary)}</p>'
+            f'<dl class="chat-build-fields">{build_summary}'
+            f'<div class="chat-build-moves"><dt>技</dt><dd>{escape(move_summary)}</dd></div>'
+            f'<div class="chat-build-stats"><dt>実数値（Lv.50）</dt><dd>{escape(stat_summary)}</dd></div>'
+            '</dl>'
         )
-    image = f'<img src="{image_url}" alt="">' if image_url else ""
-    escaped_name = escape(pokemon_name)
+    image_url = profile["image"]
+    art = (
+        f'<div class="chat-build-art"><img src="{escape(image_url, quote=True)}" alt=""></div>'
+        if image_url else ""
+    )
+    pokemon_type = profile["type"]
+    type_badge = f'<span class="type-pill">{escape(pokemon_type)}</span>' if pokemon_type else ""
     st.markdown(
         '<div class="chat-build-card">'
-        f'<div class="chat-build-art">{image}</div>'
-        '<div class="chat-build-content">'
-        f'<div><b>{escaped_name}の育成メモ</b><span class="count-pill">自分の設定</span></div>'
-        f'{details}'
-        '</div></div>',
+        f'<div class="chat-build-title"><h2>{escape(pokemon_name)}の育成メモ</h2>{type_badge}</div>'
+        f'<div class="chat-build-body">{art}<div class="chat-build-content">{details}</div></div>'
+        '</div>',
         unsafe_allow_html=True,
     )
 
 
+def _select_build_card(user_id: str, conversation_id: str | None, index: int) -> None:
+    st.session_state["chat_build_card_indexes"][(user_id, conversation_id)] = index
+
+
+@st.fragment
+def _render_build_carousel(
+    user_id: str, conversation_id: str | None, pokemon_names: list[str], builds: PokemonBuildMap
+) -> None:
+    if len(pokemon_names) == 1:
+        name = pokemon_names[0]
+        _render_build_card(name, builds.get(name))
+        return
+
+    indexes = st.session_state.setdefault("chat_build_card_indexes", {})
+    last = len(pokemon_names) - 1
+    index = max(0, min(indexes.get((user_id, conversation_id), 0), last))
+    name = pokemon_names[index]
+    with st.container(key="chat_build_carousel"):
+        previous, card, following = st.columns([1, 10, 1], vertical_alignment="center")
+        with previous:
+            st.button(
+                "← 前へ", key="previous_build_card", width="stretch", disabled=index == 0,
+                on_click=_select_build_card, args=(user_id, conversation_id, index - 1),
+            )
+        with card:
+            _render_build_card(name, builds.get(name))
+        with following:
+            st.button(
+                "次へ →", key="next_build_card", width="stretch", disabled=index == last,
+                on_click=_select_build_card, args=(user_id, conversation_id, index + 1),
+            )
+
+
 def _render_edit_build_button(pokemon_name: str) -> None:
-    if st.button("個体の型を編集する", key="edit_build_from_chat"):
-        pokemon_type, image_url = POKEMON_ART.get(pokemon_name, ("", ""))
+    if st.button(f"{pokemon_name}の型を編集する", key="edit_build_from_chat"):
         st.session_state.pokemon_detail_target = pokemon_name
-        st.session_state.pokemon_detail_profile = {
-            "number": "", "type": pokemon_type, "image": image_url, "description": "", "color": "#237b61"
-        }
+        st.session_state.pokemon_detail_profile = _pokemon_profile(pokemon_name)
         st.session_state.pokemon_detail_slot = "first"
         st.switch_page("app_pages/pokemon_detail.py")
 
@@ -192,7 +219,9 @@ def _save_question(
     return store.save_question(conversation_id, draft.id, draft.content)
 
 
-def _render_chat_header(pokemon_names: list[str], builds: PokemonBuildMap) -> None:
+def _render_chat_header(
+    user_id: str, conversation_id: str | None, pokemon_names: list[str], builds: PokemonBuildMap
+) -> None:
 
     st.markdown(
         '<div class="step-label">05　チャット / 相棒の勝ち筋を探す</div>'
@@ -200,8 +229,7 @@ def _render_chat_header(pokemon_names: list[str], builds: PokemonBuildMap) -> No
         unsafe_allow_html=True,
     )
     if pokemon_names:
-        partner_name = pokemon_names[1] if len(pokemon_names) > 1 else ""
-        _render_pokemon_banner(pokemon_names[0], partner_name)
+        _render_build_carousel(user_id, conversation_id, pokemon_names, builds)
 
     st.markdown(
         '<div class="chat-intro"><span class="chat-intro-mark">✦</span>'
@@ -211,8 +239,6 @@ def _render_chat_header(pokemon_names: list[str], builds: PokemonBuildMap) -> No
     )
 
     if pokemon_names:
-        for pokemon_name in pokemon_names:
-            _render_build_card(pokemon_name, builds.get(pokemon_name))
         _render_edit_build_button(pokemon_names[0])
 
 
@@ -273,7 +299,7 @@ def render() -> None:
     builds = conversation_builds(store.user_id, conversation_id)
     reply_pokemon = _reply_pokemon(pokemon_names, builds)
     with header:
-        _render_chat_header(pokemon_names, builds)
+        _render_chat_header(store.user_id, conversation_id, pokemon_names, builds)
     with history:
         if messages or draft or start_opening:
             st.markdown('<div class="chat-section-heading">会話</div>', unsafe_allow_html=True)

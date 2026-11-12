@@ -1,5 +1,6 @@
 """Bind conversation access to the authenticated Streamlit session."""
 
+from collections.abc import Iterable
 from copy import deepcopy
 
 import streamlit as st
@@ -34,6 +35,13 @@ def open_conversation(conversation_id: str, *, opening_for: str | None = None) -
         st.session_state.setdefault("chat_openings", {})[(opening_for, conversation_id)] = "queued"
         params["opening"] = "1"
     st.switch_page("app_pages/chat.py", query_params=params)
+
+
+def create_pokemon_conversation(store: ConversationStore, pokemon_names: Iterable[str]) -> dict:
+    names = "、".join(name for name in pokemon_names if name)
+    conversation = store.create(f"{names}の相談")
+    st.session_state.pop(f"conversation_history:{store.user_id}", None)
+    return conversation
 
 
 def remember_selected_pokemon(conversation_id: str, first: str, second: str) -> None:
