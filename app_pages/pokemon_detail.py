@@ -216,7 +216,20 @@ def _format_options(rows: list[BattleRow]):
         for row in rows
         if row.get("name")
     }
-    return lambda name: f"{name}　{usage[name]}" if usage.get(name) else name
+    return lambda name: (
+        f"{_localized_move_name(name)}?{usage[name]}"
+        if usage.get(name)
+        else _localized_move_name(name)
+    )
+
+
+def _localized_move_name(name: str) -> str:
+    """Translate API move names when a local translation is available."""
+    for move_info in MOVE_NAMES.values():
+        if isinstance(move_info, dict) and move_info.get("name_en") == name:
+            localized = move_info.get("name_ja")
+            return localized if isinstance(localized, str) and localized else name
+    return name
 
 
 def _load_stat_points(saved: PokemonBuild) -> StatPointValues:
@@ -404,14 +417,6 @@ def render() -> None:
     saved_moves: list[str] = (saved.get("moves") or []) + [""] * 4
     saved_stats = _load_stat_points(saved)
 
-    battle_data: BattleDataResponse | None = None
-    if pokemon_name in SHOWDOWN_IDS:
-        try:
-            battle_data = get_battle_data(pokemon_name, "Singles")
-        except (RuntimeError, ValueError) as error:
-            st.warning(f"対戦データ API を取得できませんでした。{error}")
-
-    move_rows = _category_rows(battle_data, "move")
     abilities = species["abilities"]
     if not abilities:
         abilities = ["特性データを取得できません"]
@@ -499,13 +504,6 @@ def render() -> None:
                     '<div class="build-section-title move-section-title">技を選ぶ</div>',
                     unsafe_allow_html=True,
                 )
-                if battle_data:
-                    st.caption(
-                        f"使用率データ · {battle_data.get('format', 'Singles')} / "
-                        f"{battle_data.get('season', 'Current')}"
-                    )
-                else:
-                    st.caption("使用率データは現在利用できません。")
                 move_options = ["指定しない", *move_names]
                 move_keys = [
                     _key(pokemon_name, f"move_{index}") for index in range(4)
@@ -539,27 +537,17 @@ def render() -> None:
                             f"技{index + 1}",
                             available_moves,
                             key=move_key,
-                            format_func=_format_options(move_rows),
                         )
                     )
 
                 selected_moves = [move for move in moves if move != "指定しない"]
                 move_summary = "、".join(selected_moves) if selected_moves else "技はまだ選択されていません。"
-                popular_move_rows = _category_rows(battle_data, "move")[:4]
-                if popular_move_rows:
-                    popular_moves = "　/　".join(
-                        f"{escape(row['name'])} {escape(str(row.get('percentage') or ''))}".strip()
-                        for row in popular_move_rows
-                    )
-                else:
-                    popular_moves = "この形式の技データはまだありません。"
                 st.caption(
                     f"設定中: 性格 {nature}　/　特性 {ability}　/　持ち物 {item}"
                 )
                 st.markdown(
-                    f'<div class="build-summary"><b>よく使われる技</b><br>'
-                    f'<span>{popular_moves}</span><br><br>'
-                    f'<span>選択した技: {escape(move_summary)}</span></div>',
+                    f'<div class="build-summary"><b>選択した技</b><br>'
+                    f'<span>{escape(move_summary)}</span></div>',
                     unsafe_allow_html=True,
                 )
 
@@ -577,6 +565,12 @@ def render() -> None:
                 if total_stat_points > 66:
                     st.error("能力ポイントの合計を66以下にしてください。")
                 else:
+                    if pokemon_name in SHOWDOWN_IDS:
+                        try:
+                            get_battle_data(pokemon_name, "Singles")
+                        except (RuntimeError, ValueError) as error:
+                            st.error(f"対戦データ API を取得できませんでした。{error}")
+                            return
                     builds[pokemon_name] = {
                         "nature": nature,
                         "ability": ability,
