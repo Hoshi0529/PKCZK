@@ -1,11 +1,13 @@
+from contextlib import closing
+from dataclasses import dataclass
 from html import escape
 from uuid import uuid4
 
 import streamlit as st
 
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
-from back.conversations import ConversationError, conversation_id_from_url
-from back.groq_chat import ChatError, generate_reply
+from back.conversations import ConversationError, ConversationStore, conversation_id_from_url
+from back.groq_chat import ChatError, stream_reply
 from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
 from ui.chat_session import require_conversation_store
 from ui.layout import configure_page
@@ -125,25 +127,91 @@ def _render_battle_data(pokemon_name: str) -> None:
     )
 
 
-def render() -> None:
-    configure_page("推しポケラボ | 相談", "pokemon.css")
-    raw_id = st.query_params.get("conversation_id")
-    conversation_id = conversation_id_from_url(raw_id)
-    store = require_conversation_store(conversation_id)
-    conversation = store.get(conversation_id) if conversation_id else None
-    pokemon_names = st.session_state.get("conversation_pokemon", {}).get(conversation_id, [])
-    pokemon_name = pokemon_names[0] if pokemon_names else ""
-    partner_name = pokemon_names[1] if len(pokemon_names) > 1 else ""
+@dataclass
+class QuestionDraft:
+    id: str
+    content: str
+    conversation_id: str
+    creation_attempted: bool = False
+    error: str | None = None
 
-    render_sidebar(store)
+
+def _queue_question(user_id: str, conversation_id: str | None) -> None:
+    prompt = (st.session_state.get("chat_prompt") or "").strip()
+    if prompt:
+        drafts = st.session_state.setdefault("chat_question_drafts", {})
+        drafts.setdefault(
+            (user_id, conversation_id),
+            QuestionDraft(str(uuid4()), prompt, conversation_id or str(uuid4())),
+        )
+
+
+def _retry_question(draft: QuestionDraft) -> None:
+    draft.error = None
+
+
+def _render_question_retry(draft: QuestionDraft) -> None:
+    st.button("保存を再試行する", key="retry_save_question", on_click=_retry_question, args=(draft,))
+
+
+def _retry_reply(conversation_id: str, question_id: str) -> None:
+    st.session_state.chat_reply_request = (conversation_id, question_id)
+
+
+def _render_reply(store: ConversationStore, conversation_id: str, question_id: str) -> None:
+    saved_answer = None
+
+    def chunks():
+        nonlocal saved_answer
+        saved_answer = yield from stream_reply(store, conversation_id, question_id)
+
+    reply = st.empty()
+    try:
+        with reply.container(), st.chat_message("assistant"):
+            text = st.empty()
+            with text.container(), st.spinner("回答を考えています…"), closing(chunks()) as stream:
+                displayed = st.write_stream(stream)
+            if displayed != saved_answer:
+                text.markdown(saved_answer)
+    except (ChatError, ConversationError):
+        reply.empty()
+        raise
+
+
+def _show_question(slot, draft: QuestionDraft):
+    with slot.container(), st.chat_message("user"):
+        st.write(draft.content)
+        status = st.empty()
+        if draft.error:
+            status.error(draft.error)
+        else:
+            status.caption("保存中…")
+        return status
+
+
+def _save_question(
+    store: ConversationStore, conversation_id: str | None, draft: QuestionDraft, drafts: dict,
+) -> dict:
+    if conversation_id is None:
+        conversation_id = draft.conversation_id
+        # A retry can recover a conversation whose insert committed before the response was lost.
+        existing = store.get(conversation_id) if draft.creation_attempted else None
+        if existing is None:
+            draft.creation_attempted = True
+            store.create(conversation_id=conversation_id)
+        drafts[(store.user_id, conversation_id)] = drafts.pop((store.user_id, None))
+        st.query_params["conversation_id"] = conversation_id
+        st.session_state.active_conversation_id = conversation_id
+    return store.save_question(conversation_id, draft.id, draft.content)
+
+
+def _render_chat_header(pokemon_name: str, partner_name: str, pokemon_names: list[str]) -> None:
+
     st.markdown(
         '<div class="step-label">05　チャット / 相棒の勝ち筋を探す</div>'
         '<div class="page-eyebrow">POKEMON CHAMPIONS　 ·　 相談</div>',
         unsafe_allow_html=True,
     )
-    if raw_id and conversation is None:
-        st.warning("この会話は開けません。履歴から選ぶか、新しい相談を始めてください。")
-        return
     if pokemon_name:
         _render_pokemon_banner(pokemon_name, partner_name)
 
@@ -157,59 +225,119 @@ def render() -> None:
     if pokemon_name:
         _render_build_card(pokemon_name)
         _render_team_cards(pokemon_names)
-        _render_battle_data(pokemon_name)
 
-    messages = store.messages(conversation_id) if conversation else []
-    if messages:
-        st.markdown('<div class="chat-section-heading">会話</div>', unsafe_allow_html=True)
-        for message in messages:
-            with st.chat_message(message.get("role", "user")):
-                st.write(message.get("content", ""))
-    else:
-        st.markdown(
-            '<div class="chat-empty-note">相談したいことを入力してください。過去の発言がある場合は、この下に表示されます。</div>',
-            unsafe_allow_html=True,
-        )
 
-    awaiting_reply = bool(messages and messages[-1].get("role") == "user")
+def render() -> None:
+    configure_page("推しポケラボ | 相談", "pokemon.css")
+    raw_id = st.query_params.get("conversation_id")
+    conversation_id = conversation_id_from_url(raw_id)
+    header = st.container()
+    battle = st.container()
+    history = st.container()
+    pending = st.empty()
+    controls = st.container()
+
+    drafts = st.session_state.get("chat_question_drafts", {})
+    account = st.session_state.get("current_account")
+    draft = None
+    if account and st.session_state.get("auth_client") is not None:
+        draft = drafts.get((str(account.id), conversation_id))
+    # Only this session's own draft is shown before checking the account and reading stored messages.
+    draft_status = _show_question(pending, draft) if draft else None
+
+    store = require_conversation_store()
+    verified_draft = drafts.get((store.user_id, conversation_id))
+    if draft is not verified_draft:
+        pending.empty()
+        draft = verified_draft
+        draft_status = _show_question(pending, draft) if draft else None
+
+    try:
+        messages = store.find_messages(conversation_id) if conversation_id else []
+    except ConversationError as error:
+        if draft is None:
+            raise
+        draft.error = str(error)
+        draft_status.error(draft.error)
+        with controls:
+            _render_question_retry(draft)
+        return
+    if raw_id and (conversation_id is None or messages is None):
+        pending.empty()
+        st.warning("この会話は開けません。履歴から選ぶか、新しい相談を始めてください。")
+        render_sidebar(store)
+        return
+
+    pokemon_names = st.session_state.get("conversation_pokemon", {}).get(conversation_id, [])
+    pokemon_name = pokemon_names[0] if pokemon_names else ""
+    partner_name = pokemon_names[1] if len(pokemon_names) > 1 else ""
+    with header:
+        _render_chat_header(pokemon_name, partner_name, pokemon_names)
+    with history:
+        if messages or draft:
+            st.markdown('<div class="chat-section-heading">会話</div>', unsafe_allow_html=True)
+            for message in messages:
+                with st.chat_message(message["role"]):
+                    st.write(message["content"])
+        else:
+            st.markdown(
+                '<div class="chat-empty-note">相談したいことを入力してください。過去の発言がある場合は、この下に表示されます。</div>',
+                unsafe_allow_html=True,
+            )
+
+    awaiting_reply = bool(messages and messages[-1]["role"] == "user")
+    question_id = str(messages[-1]["id"]) if awaiting_reply else None
     reply_request = st.session_state.pop("chat_reply_request", None)
-    submission = st.session_state.get("chat_question_submission")
-    if submission and submission[0] == conversation_id and any(m["id"] == submission[2] for m in messages):
-        st.session_state.pop("chat_question_submission", None)
-    if awaiting_reply:
-        question_id = messages[-1]["id"]
-        if reply_request == (conversation_id, question_id):
+    start_reply = reply_request == (conversation_id, question_id)
+    if draft and any(str(message["id"]) == draft.id for message in messages):
+        pending.empty()
+        drafts.pop((store.user_id, conversation_id))
+        start_reply = start_reply or (question_id == draft.id and draft.error is None)
+        draft = None
+    elif draft and draft.error is None:
+        try:
+            question = _save_question(store, conversation_id, draft, drafts)
+        except ConversationError as error:
+            conversation_id = conversation_id_from_url(st.query_params.get("conversation_id"))
+            draft.error = str(error)
+            draft_status.error(draft.error)
+        else:
+            conversation_id = draft.conversation_id
+            drafts.pop((store.user_id, conversation_id))
+            draft_status.empty()
+            draft = None
+            question_id = str(question["id"])
+            awaiting_reply = start_reply = True
+            st.session_state.pop(f"conversation_history:{store.user_id}", None)
+
+    with controls:
+        if awaiting_reply and start_reply:
             try:
-                with st.spinner("回答を考えています…"):
-                    generate_reply(store, conversation_id, question_id)
+                _render_reply(store, conversation_id, question_id)
             except (ChatError, ConversationError) as error:
                 st.error(str(error))
             else:
-                st.rerun()
-        if st.button("回答を再試行する", key="retry_chat_reply"):
-            st.session_state.chat_reply_request = (conversation_id, question_id)
-            st.rerun()
+                awaiting_reply = False
+                st.session_state.pop(f"conversation_history:{store.user_id}", None)
+        if awaiting_reply:
+            st.button(
+                "回答を再試行する", key="retry_chat_reply",
+                on_click=_retry_reply, args=(conversation_id, question_id),
+            )
+        if draft:
+            _render_question_retry(draft)
 
-    if prompt := st.chat_input("相棒のこと、気になることを聞いてみよう", disabled=awaiting_reply):
-        prompt = prompt.strip()
-        if not prompt:
-            return
-        try:
-            if conversation_id is None:
-                conversation_id = store.create()["id"]
-                st.query_params["conversation_id"] = conversation_id
-                st.session_state.active_conversation_id = conversation_id
-            submission = st.session_state.get("chat_question_submission")
-            if not submission or submission[:2] != (conversation_id, prompt):
-                submission = (conversation_id, prompt, str(uuid4()))
-                st.session_state.chat_question_submission = submission
-            question = store.save_question(conversation_id, submission[2], prompt)
-        except ConversationError as error:
-            st.error(str(error))
-        else:
-            st.session_state.pop("chat_question_submission", None)
-            st.session_state.chat_reply_request = (conversation_id, str(question["id"]))
-            st.rerun()
+    st.chat_input(
+        "相棒のこと、気になることを聞いてみよう",
+        key="chat_prompt",
+        disabled=awaiting_reply or draft is not None,
+        on_submit=_queue_question,
+        args=(store.user_id, conversation_id),
+    )
+    if pokemon_name:
+        with battle:
+            _render_battle_data(pokemon_name)
+    render_sidebar(store)
 
 
 render()
