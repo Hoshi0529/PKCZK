@@ -11,9 +11,9 @@ import streamlit as st
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import ConversationError, ConversationStore
 from ui.chat_session import open_conversation, remember_selected_pokemon, require_conversation_store
-from ui.history import render_history
 from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
 from ui.layout import configure_page
+from ui.sidebar import render_sidebar
 from ui.pokemon_types import (
     PokemonBuild,
     PokemonBuildMap,
@@ -375,279 +375,255 @@ def _render_stat_points_editor(
     return stat_points, total_stat_points
 
 
-def _render_sidebar(store: ConversationStore) -> None:
-    with st.container(key="build_sidebar"):
-        st.markdown(
-            '<div class="brand"><span class="brand-mark">✦</span><span>pokecham</span></div>',
-            unsafe_allow_html=True,
-        )
-        if st.button("← ポケモン選択に戻る", use_container_width=True, key="build_new_advice"):
-            st.switch_page("app_pages/pokemon_selection.py")
-
-        render_history(store)
-
-        st.markdown(
-            '<div class="sidebar-bottom"><div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div></div>',
-            unsafe_allow_html=True,
-        )
-        if st.button("⚙　設定", use_container_width=True, key="build_settings"):
-            st.switch_page("app_pages/settings.py")
-        st.markdown('<div class="sidebar-user">◉　だいき</div>', unsafe_allow_html=True)
-
-
 def render() -> None:
-    configure_page("pokecham | 個体の詳細設定", "pokemon.css")
+    configure_page("推しポケラボ | 個体の詳細設定", "pokemon.css")
     store = require_conversation_store()
-    sidebar, content = st.columns([0.19, 0.81], gap="small")
-    with sidebar:
-        _render_sidebar(store)
+    render_sidebar(store, back_to_selection=True)
+    pokemon_name = cast(str | None, st.session_state.get("pokemon_detail_target"))
+    raw_pokemon = st.session_state.get("pokemon_detail_profile")
+    if not pokemon_name or not raw_pokemon:
+        st.warning("ポケモン選択画面から設定する相棒を選んでください。")
+        if st.button("ポケモン選択へ戻る", type="primary"):
+            st.switch_page("app_pages/pokemon_selection.py")
+        return
+    pokemon = cast(PokemonProfile, raw_pokemon)
 
-    with content:
-        pokemon_name = cast(str | None, st.session_state.get("pokemon_detail_target"))
-        raw_pokemon = st.session_state.get("pokemon_detail_profile")
-        if not pokemon_name or not raw_pokemon:
-            st.warning("ポケモン選択画面から設定する相棒を選んでください。")
-            if st.button("ポケモン選択へ戻る", type="primary"):
-                st.switch_page("app_pages/pokemon_selection.py")
-            return
-        pokemon = cast(PokemonProfile, raw_pokemon)
+    species: PokemonSpecies = SPECIES.get(
+        pokemon_name,
+        {"base_stats": [0, 0, 0, 0, 0, 0], "abilities": [], "moves": []},
+    )
+    metadata = _fetch_species_metadata(pokemon_name)
+    species = {
+        **species,
+        "base_stats": _metadata_stats(metadata, species["base_stats"]),
+        "abilities": _metadata_abilities(metadata, species["abilities"]),
+        "moves": _local_moves(pokemon_name, species["moves"]),
+    }
+    builds = cast(PokemonBuildMap, st.session_state.setdefault("pokemon_builds", {}))
+    saved: PokemonBuild = builds.get(pokemon_name, {})
+    saved_moves: list[str] = (saved.get("moves") or []) + [""] * 4
+    saved_stats = _load_stat_points(saved)
 
-        species: PokemonSpecies = SPECIES.get(
-            pokemon_name,
-            {"base_stats": [0, 0, 0, 0, 0, 0], "abilities": [], "moves": []},
-        )
-        metadata = _fetch_species_metadata(pokemon_name)
-        species = {
-            **species,
-            "base_stats": _metadata_stats(metadata, species["base_stats"]),
-            "abilities": _metadata_abilities(metadata, species["abilities"]),
-            "moves": _local_moves(pokemon_name, species["moves"]),
-        }
-        builds = cast(PokemonBuildMap, st.session_state.setdefault("pokemon_builds", {}))
-        saved: PokemonBuild = builds.get(pokemon_name, {})
-        saved_moves: list[str] = (saved.get("moves") or []) + [""] * 4
-        saved_stats = _load_stat_points(saved)
+    battle_data: BattleDataResponse | None = None
+    if pokemon_name in SHOWDOWN_IDS:
+        try:
+            battle_data = get_battle_data(pokemon_name, "Singles")
+        except (RuntimeError, ValueError) as error:
+            st.warning(f"対戦データ API を取得できませんでした。{error}")
 
-        battle_data: BattleDataResponse | None = None
-        if pokemon_name in SHOWDOWN_IDS:
-            try:
-                battle_data = get_battle_data(pokemon_name, "Singles")
-            except (RuntimeError, ValueError) as error:
-                st.warning(f"対戦データ API を取得できませんでした。{error}")
+    move_rows = _category_rows(battle_data, "move")
+    abilities = species["abilities"]
+    if not abilities:
+        abilities = ["特性データを取得できません"]
+    move_names = species["moves"]
+    item_names = _load_local_options("items.json", "items") or ITEMS
+    nature_names = _load_local_options("natures.json", "natures") or NATURES
 
-        move_rows = _category_rows(battle_data, "move")
-        abilities = species["abilities"]
-        if not abilities:
-            abilities = ["特性データを取得できません"]
-        move_names = species["moves"]
-        item_names = _load_local_options("items.json", "items") or ITEMS
-        nature_names = _load_local_options("natures.json", "natures") or NATURES
+    st.markdown(
+        '<div class="advice-progress">'
+        '<span class="advice-progress-step advice-progress-complete"><b>01</b> ポケモンを選ぶ</span>'
+        '<span class="advice-progress-line advice-progress-line-complete"></span>'
+        '<span class="advice-progress-step advice-progress-active"><b>02</b> 個体の型を決める</span>'
+        '</div>'
+        '<div class="page-eyebrow">POKEMON CHAMPIONS　 ·　 BUILD</div>'
+        '<h1 class="page-title">相棒の型を組み立てよう。</h1>'
+        '<p class="page-description">能力ポイントを調整し、性格や技を選んで相談内容を整えます。</p>',
+        unsafe_allow_html=True,
+    )
 
-        st.markdown(
-            '<div class="advice-progress">'
-            '<span class="advice-progress-step advice-progress-complete"><b>01</b> ポケモンを選ぶ</span>'
-            '<span class="advice-progress-line advice-progress-line-complete"></span>'
-            '<span class="advice-progress-step advice-progress-active"><b>02</b> 個体の型を決める</span>'
-            '</div>'
-            '<div class="page-eyebrow">POKEMON CHAMPIONS　 ·　 BUILD</div>'
-            '<h1 class="page-title">相棒の型を組み立てよう。</h1>'
-            '<p class="page-description">能力ポイントを調整し、性格や技を選んで相談内容を整えます。</p>',
-            unsafe_allow_html=True,
-        )
-
-        with st.container(key="build_editor_card"):
-            with st.container(key="build_identity_card"):
-                header_image, header_text = st.columns([0.14, 0.86], vertical_alignment="center")
-                with header_image:
-                    st.image(pokemon["image"], width=72)
-                with header_text:
-                    st.markdown(
-                        '<div class="build-identity-eyebrow">設定するポケモン</div>'
-                        f'<div class="detail-number">{pokemon["number"]}　 ·　{pokemon["type"]}</div>'
-                        f'<div class="build-pokemon-name">{pokemon_name}</div>',
-                        unsafe_allow_html=True,
-                    )
-
-            st.markdown('<div class="build-section-title build-options-title">基本設定</div>', unsafe_allow_html=True)
-            nature_col, ability_col, item_col = st.columns(3, gap="medium")
-            with nature_col:
-                saved_nature = saved.get("nature", "指定なし")
-                nature = st.selectbox(
-                    "性格",
-                    nature_names,
-                    key=_key(pokemon_name, "nature"),
-                    index=nature_names.index(saved_nature) if saved_nature in nature_names else 0,
+    with st.container(key="build_editor_card"):
+        with st.container(key="build_identity_card"):
+            header_image, header_text = st.columns([0.14, 0.86], vertical_alignment="center")
+            with header_image:
+                st.image(pokemon["image"], width=72)
+            with header_text:
+                st.markdown(
+                    '<div class="build-identity-eyebrow">設定するポケモン</div>'
+                    f'<div class="detail-number">{pokemon["number"]}　 ·　{pokemon["type"]}</div>'
+                    f'<div class="build-pokemon-name">{pokemon_name}</div>',
+                    unsafe_allow_html=True,
                 )
-                nature_modifier = NATURE_MODIFIERS.get(nature)
-                if nature_modifier:
-                    st.markdown(
-                        '<div class="nature-effect">'
-                        f'<span class="nature-up">↑ {nature_modifier[0]} ×1.1</span>'
-                        '<span class="nature-down">↓ '
-                        f'{nature_modifier[1]} ×0.9</span>'
-                        '</div>',
-                        unsafe_allow_html=True,
+
+        st.markdown('<div class="build-section-title build-options-title">基本設定</div>', unsafe_allow_html=True)
+        nature_col, ability_col, item_col = st.columns(3, gap="medium")
+        with nature_col:
+            saved_nature = saved.get("nature", "指定なし")
+            nature = st.selectbox(
+                "性格",
+                nature_names,
+                key=_key(pokemon_name, "nature"),
+                index=nature_names.index(saved_nature) if saved_nature in nature_names else 0,
+            )
+            nature_modifier = NATURE_MODIFIERS.get(nature)
+            if nature_modifier:
+                st.markdown(
+                    '<div class="nature-effect">'
+                    f'<span class="nature-up">↑ {nature_modifier[0]} ×1.1</span>'
+                    '<span class="nature-down">↓ '
+                    f'{nature_modifier[1]} ×0.9</span>'
+                    '</div>',
+                    unsafe_allow_html=True,
+                )
+            else:
+                st.markdown(
+                    '<div class="nature-effect nature-neutral">この性格は能力値を補正しません</div>',
+                    unsafe_allow_html=True,
+                )
+        with ability_col:
+            saved_ability = saved.get("ability", abilities[0])
+            ability = st.selectbox(
+                "特性",
+                abilities,
+                key=_key(pokemon_name, "ability"),
+                index=abilities.index(saved_ability) if saved_ability in abilities else 0,
+            )
+        with item_col:
+            saved_item = saved.get("item", "指定しない")
+            item = st.selectbox(
+                "持ち物",
+                item_names,
+                key=_key(pokemon_name, "item"),
+                index=item_names.index(saved_item) if saved_item in item_names else 0,
+            )
+
+        build_left, build_right = st.columns([1.2, 0.8], gap="medium")
+        with build_left:
+            with st.container(key="stat_editor_panel"):
+                stat_points, total_stat_points = _render_stat_points_editor(
+                    pokemon_name, species["base_stats"], nature, saved_stats
+                )
+
+        with build_right:
+            with st.container(key="build_move_panel"):
+                st.markdown(
+                    '<div class="build-section-title move-section-title">技を選ぶ</div>',
+                    unsafe_allow_html=True,
+                )
+                if battle_data:
+                    st.caption(
+                        f"使用率データ · {battle_data.get('format', 'Singles')} / "
+                        f"{battle_data.get('season', 'Current')}"
                     )
                 else:
-                    st.markdown(
-                        '<div class="nature-effect nature-neutral">この性格は能力値を補正しません</div>',
-                        unsafe_allow_html=True,
-                    )
-            with ability_col:
-                saved_ability = saved.get("ability", abilities[0])
-                ability = st.selectbox(
-                    "特性",
-                    abilities,
-                    key=_key(pokemon_name, "ability"),
-                    index=abilities.index(saved_ability) if saved_ability in abilities else 0,
-                )
-            with item_col:
-                saved_item = saved.get("item", "指定しない")
-                item = st.selectbox(
-                    "持ち物",
-                    item_names,
-                    key=_key(pokemon_name, "item"),
-                    index=item_names.index(saved_item) if saved_item in item_names else 0,
-                )
+                    st.caption("使用率データは現在利用できません。")
+                move_options = ["指定しない", *move_names]
+                move_keys = [
+                    _key(pokemon_name, f"move_{index}") for index in range(4)
+                ]
+                # Repair duplicate values from saved builds or stale widget state.
+                seen_moves: set[str] = set()
+                for index, move_key in enumerate(move_keys):
+                    selected = st.session_state.get(move_key, saved_moves[index])
+                    if selected not in move_options or selected in seen_moves:
+                        selected = "指定しない"
+                    st.session_state[move_key] = selected
+                    if selected != "指定しない":
+                        seen_moves.add(selected)
 
-            build_left, build_right = st.columns([1.2, 0.8], gap="medium")
-            with build_left:
-                with st.container(key="stat_editor_panel"):
-                    stat_points, total_stat_points = _render_stat_points_editor(
-                        pokemon_name, species["base_stats"], nature, saved_stats
-                    )
-
-            with build_right:
-                with st.container(key="build_move_panel"):
-                    st.markdown(
-                        '<div class="build-section-title move-section-title">技を選ぶ</div>',
-                        unsafe_allow_html=True,
-                    )
-                    if battle_data:
-                        st.caption(
-                            f"使用率データ · {battle_data.get('format', 'Singles')} / "
-                            f"{battle_data.get('season', 'Current')}"
-                        )
-                    else:
-                        st.caption("使用率データは現在利用できません。")
-                    move_options = ["指定しない", *move_names]
-                    move_keys = [
-                        _key(pokemon_name, f"move_{index}") for index in range(4)
+                moves = []
+                for index in range(4):
+                    move_key = move_keys[index]
+                    selected_elsewhere = {
+                        st.session_state[key]
+                        for other_index, key in enumerate(move_keys)
+                        if other_index != index
+                        and st.session_state[key] != "指定しない"
+                    }
+                    available_moves = [
+                        move
+                        for move in move_options
+                        if move == "指定しない" or move not in selected_elsewhere
                     ]
-                    # Repair duplicate values from saved builds or stale widget state.
-                    seen_moves: set[str] = set()
-                    for index, move_key in enumerate(move_keys):
-                        selected = st.session_state.get(move_key, saved_moves[index])
-                        if selected not in move_options or selected in seen_moves:
-                            selected = "指定しない"
-                        st.session_state[move_key] = selected
-                        if selected != "指定しない":
-                            seen_moves.add(selected)
-
-                    moves = []
-                    for index in range(4):
-                        move_key = move_keys[index]
-                        selected_elsewhere = {
-                            st.session_state[key]
-                            for other_index, key in enumerate(move_keys)
-                            if other_index != index
-                            and st.session_state[key] != "指定しない"
-                        }
-                        available_moves = [
-                            move
-                            for move in move_options
-                            if move == "指定しない" or move not in selected_elsewhere
-                        ]
-                        moves.append(
-                            st.selectbox(
-                                f"技{index + 1}",
-                                available_moves,
-                                key=move_key,
-                                format_func=_format_options(move_rows),
-                            )
+                    moves.append(
+                        st.selectbox(
+                            f"技{index + 1}",
+                            available_moves,
+                            key=move_key,
+                            format_func=_format_options(move_rows),
                         )
-
-                    selected_moves = [move for move in moves if move != "指定しない"]
-                    move_summary = "、".join(selected_moves) if selected_moves else "技はまだ選択されていません。"
-                    popular_move_rows = _category_rows(battle_data, "move")[:4]
-                    if popular_move_rows:
-                        popular_moves = "　/　".join(
-                            f"{escape(row['name'])} {escape(str(row.get('percentage') or ''))}".strip()
-                            for row in popular_move_rows
-                        )
-                    else:
-                        popular_moves = "この形式の技データはまだありません。"
-                    st.caption(
-                        f"設定中: 性格 {nature}　/　特性 {ability}　/　持ち物 {item}"
-                    )
-                    st.markdown(
-                        f'<div class="build-summary"><b>よく使われる技</b><br>'
-                        f'<span>{popular_moves}</span><br><br>'
-                        f'<span>選択した技: {escape(move_summary)}</span></div>',
-                        unsafe_allow_html=True,
                     )
 
-        with st.container(key="build_actions"):
-            back_col, save_col = st.columns([0.42, 0.58], gap="small")
-            with back_col:
-                if st.button("← ポケモン選択に戻る", use_container_width=True):
-                    st.switch_page("app_pages/pokemon_selection.py")
-            with save_col:
-                if st.button(
-                    "この内容で相談する　→",
-                    type="primary",
-                    use_container_width=True,
-                ):
-                    if total_stat_points > 66:
-                        st.error("能力ポイントの合計を66以下にしてください。")
-                    else:
-                        builds[pokemon_name] = {
-                            "nature": nature,
-                            "ability": ability,
-                            "item": item,
-                            "stat_points": stat_points,
-                            "moves": moves,
-                        }
-                        st.session_state.pokemon_builds = builds
-                        first_selected = st.session_state.get(
-                            "new_advice_first_pokemon",
-                            st.session_state.get("first_pokemon_select", ""),
-                        )
-                        second_selected = st.session_state.get(
-                            "new_advice_second_pokemon",
-                            st.session_state.get("second_pokemon_select", ""),
-                        )
-                        placeholder = "選択してください"
-                        if (
-                            st.session_state.get("pokemon_detail_slot") == "second"
-                            and first_selected
-                            and first_selected != placeholder
-                        ):
-                            first_pokemon = first_selected
-                            second_pokemon = pokemon_name
-                        else:
-                            first_pokemon = pokemon_name
-                            second_pokemon = (
-                                second_selected
-                                if second_selected not in ("", placeholder, pokemon_name)
-                                else ""
-                            )
-                        st.session_state.chosen_pokemon = first_pokemon
-                        st.session_state.partner_pokemon = second_pokemon
-                        try:
-                            conversation = store.create(f"{first_pokemon}との相談")
-                        except ConversationError as error:
-                            st.error(str(error))
-                        else:
-                            remember_selected_pokemon(
-                                conversation["id"], first_pokemon, second_pokemon
-                            )
-                            open_conversation(conversation["id"])
+                selected_moves = [move for move in moves if move != "指定しない"]
+                move_summary = "、".join(selected_moves) if selected_moves else "技はまだ選択されていません。"
+                popular_move_rows = _category_rows(battle_data, "move")[:4]
+                if popular_move_rows:
+                    popular_moves = "　/　".join(
+                        f"{escape(row['name'])} {escape(str(row.get('percentage') or ''))}".strip()
+                        for row in popular_move_rows
+                    )
+                else:
+                    popular_moves = "この形式の技データはまだありません。"
+                st.caption(
+                    f"設定中: 性格 {nature}　/　特性 {ability}　/　持ち物 {item}"
+                )
+                st.markdown(
+                    f'<div class="build-summary"><b>よく使われる技</b><br>'
+                    f'<span>{popular_moves}</span><br><br>'
+                    f'<span>選択した技: {escape(move_summary)}</span></div>',
+                    unsafe_allow_html=True,
+                )
 
-        st.markdown(
-            f'<div class="api-attribution">{API_ATTRIBUTION}</div>',
-            unsafe_allow_html=True,
-        )
+    with st.container(key="build_actions"):
+        back_col, save_col = st.columns([0.42, 0.58], gap="small")
+        with back_col:
+            if st.button("← ポケモン選択に戻る", use_container_width=True):
+                st.switch_page("app_pages/pokemon_selection.py")
+        with save_col:
+            if st.button(
+                "この内容で相談する　→",
+                type="primary",
+                use_container_width=True,
+            ):
+                if total_stat_points > 66:
+                    st.error("能力ポイントの合計を66以下にしてください。")
+                else:
+                    builds[pokemon_name] = {
+                        "nature": nature,
+                        "ability": ability,
+                        "item": item,
+                        "stat_points": stat_points,
+                        "moves": moves,
+                    }
+                    st.session_state.pokemon_builds = builds
+                    first_selected = st.session_state.get(
+                        "new_advice_first_pokemon",
+                        st.session_state.get("first_pokemon_select", ""),
+                    )
+                    second_selected = st.session_state.get(
+                        "new_advice_second_pokemon",
+                        st.session_state.get("second_pokemon_select", ""),
+                    )
+                    placeholder = "選択してください"
+                    if (
+                        st.session_state.get("pokemon_detail_slot") == "second"
+                        and first_selected
+                        and first_selected != placeholder
+                    ):
+                        first_pokemon = first_selected
+                        second_pokemon = pokemon_name
+                    else:
+                        first_pokemon = pokemon_name
+                        second_pokemon = (
+                            second_selected
+                            if second_selected not in ("", placeholder, pokemon_name)
+                            else ""
+                        )
+                    st.session_state.chosen_pokemon = first_pokemon
+                    st.session_state.partner_pokemon = second_pokemon
+                    try:
+                        conversation = store.create(f"{first_pokemon}との相談")
+                    except ConversationError as error:
+                        st.error(str(error))
+                    else:
+                        remember_selected_pokemon(
+                            conversation["id"], first_pokemon, second_pokemon
+                        )
+                        open_conversation(conversation["id"])
+
+    st.markdown(
+        f'<div class="api-attribution">{API_ATTRIBUTION}</div>',
+        unsafe_allow_html=True,
+    )
 
 
 render()

@@ -8,8 +8,8 @@ from back.conversations import ConversationError, conversation_id_from_url
 from back.groq_chat import ChatError, generate_reply
 from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
 from ui.chat_session import require_conversation_store
-from ui.history import render_history
 from ui.layout import configure_page
+from ui.sidebar import render_sidebar
 
 
 POKEMON_ART = {
@@ -126,7 +126,7 @@ def _render_battle_data(pokemon_name: str) -> None:
 
 
 def render() -> None:
-    configure_page("pokecham | 相談", "pokemon.css")
+    configure_page("推しポケラボ | 相談", "pokemon.css")
     raw_id = st.query_params.get("conversation_id")
     conversation_id = conversation_id_from_url(raw_id)
     store = require_conversation_store(conversation_id)
@@ -135,100 +135,81 @@ def render() -> None:
     pokemon_name = pokemon_names[0] if pokemon_names else ""
     partner_name = pokemon_names[1] if len(pokemon_names) > 1 else ""
 
-    sidebar, content = st.columns([0.19, 0.81], gap="small")
-    with sidebar:
+    render_sidebar(store)
+    st.markdown(
+        '<div class="step-label">05　チャット / 相棒の勝ち筋を探す</div>'
+        '<div class="page-eyebrow">POKEMON CHAMPIONS　 ·　 相談</div>',
+        unsafe_allow_html=True,
+    )
+    if raw_id and conversation is None:
+        st.warning("この会話は開けません。履歴から選ぶか、新しい相談を始めてください。")
+        return
+    if pokemon_name:
+        _render_pokemon_banner(pokemon_name, partner_name)
+
+    st.markdown(
+        '<div class="chat-intro"><span class="chat-intro-mark">✦</span>'
+        '<div><b>推しポケラボ</b><p>ポケモンの育成や対戦について AI と相談できます。<br>'
+        'メッセージと AI の回答はこの会話の履歴に保存されます。</p></div></div>',
+        unsafe_allow_html=True,
+    )
+
+    if pokemon_name:
+        _render_build_card(pokemon_name)
+        _render_team_cards(pokemon_names)
+        _render_battle_data(pokemon_name)
+
+    messages = store.messages(conversation_id) if conversation else []
+    if messages:
+        st.markdown('<div class="chat-section-heading">会話</div>', unsafe_allow_html=True)
+        for message in messages:
+            with st.chat_message(message.get("role", "user")):
+                st.write(message.get("content", ""))
+    else:
         st.markdown(
-            '<div class="brand"><span class="brand-mark">✦</span><span>pokecham</span></div>',
+            '<div class="chat-empty-note">相談したいことを入力してください。過去の発言がある場合は、この下に表示されます。</div>',
             unsafe_allow_html=True,
         )
-        if st.button("＋ アドバイスをもらう", use_container_width=True, key="new_chat_button"):
-            for key in ("first_pokemon_select", "second_pokemon_select"):
-                st.session_state.pop(key, None)
-            st.switch_page("app_pages/pokemon_selection.py")
-        render_history(store)
-        st.markdown(
-            '<div class="sidebar-bottom"><div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div></div>',
-            unsafe_allow_html=True,
-        )
-        if st.button("⚙　設定", use_container_width=True, key="settings_button"):
-            st.switch_page("app_pages/settings.py")
-        st.markdown('<div class="sidebar-user">◉　だいき</div>', unsafe_allow_html=True)
 
-    with content:
-        st.markdown(
-            '<div class="step-label">05　チャット / 相棒の勝ち筋を探す</div>'
-            '<div class="page-eyebrow">POKEMON CHAMPIONS　 ·　 相談</div>',
-            unsafe_allow_html=True,
-        )
-        if raw_id and conversation is None:
-            st.warning("この会話は開けません。履歴から選ぶか、新しい相談を始めてください。")
-            return
-        if pokemon_name:
-            _render_pokemon_banner(pokemon_name, partner_name)
-
-        st.markdown(
-            '<div class="chat-intro"><span class="chat-intro-mark">✦</span>'
-            '<div><b>pokecham</b><p>ポケモンの育成や対戦について AI と相談できます。<br>'
-            'メッセージと AI の回答はこの会話の履歴に保存されます。</p></div></div>',
-            unsafe_allow_html=True,
-        )
-
-        if pokemon_name:
-            _render_build_card(pokemon_name)
-            _render_team_cards(pokemon_names)
-            _render_battle_data(pokemon_name)
-
-        messages = store.messages(conversation_id) if conversation_id else []
-        if messages:
-            st.markdown('<div class="chat-section-heading">会話</div>', unsafe_allow_html=True)
-            for message in messages:
-                with st.chat_message(message.get("role", "user")):
-                    st.write(message.get("content", ""))
-        else:
-            st.markdown(
-                '<div class="chat-empty-note">相談したいことを入力してください。過去の発言がある場合は、この下に表示されます。</div>',
-                unsafe_allow_html=True,
-            )
-
-        awaiting_reply = bool(messages and messages[-1].get("role") == "user")
-        reply_request = st.session_state.pop("chat_reply_request", None)
-        submission = st.session_state.get("chat_question_submission")
-        if submission and submission[0] == conversation_id and any(m["id"] == submission[2] for m in messages):
-            st.session_state.pop("chat_question_submission", None)
-        if awaiting_reply:
-            question_id = messages[-1]["id"]
-            if reply_request == (conversation_id, question_id):
-                try:
-                    with st.spinner("回答を考えています…"):
-                        generate_reply(store, conversation_id, question_id)
-                except (ChatError, ConversationError) as error:
-                    st.error(str(error))
-                else:
-                    st.rerun()
-            if st.button("回答を再試行する", key="retry_chat_reply"):
-                st.session_state.chat_reply_request = (conversation_id, question_id)
-                st.rerun()
-
-        if prompt := st.chat_input("相棒のこと、気になることを聞いてみよう", disabled=awaiting_reply):
-            prompt = prompt.strip()
-            if not prompt:
-                return
+    awaiting_reply = bool(messages and messages[-1].get("role") == "user")
+    reply_request = st.session_state.pop("chat_reply_request", None)
+    submission = st.session_state.get("chat_question_submission")
+    if submission and submission[0] == conversation_id and any(m["id"] == submission[2] for m in messages):
+        st.session_state.pop("chat_question_submission", None)
+    if awaiting_reply:
+        question_id = messages[-1]["id"]
+        if reply_request == (conversation_id, question_id):
             try:
-                if conversation_id is None:
-                    conversation_id = store.create()["id"]
-                    st.query_params["conversation_id"] = conversation_id
-                    st.session_state.active_conversation_id = conversation_id
-                submission = st.session_state.get("chat_question_submission")
-                if not submission or submission[:2] != (conversation_id, prompt):
-                    submission = (conversation_id, prompt, str(uuid4()))
-                    st.session_state.chat_question_submission = submission
-                question = store.save_question(conversation_id, submission[2], prompt)
-            except ConversationError as error:
+                with st.spinner("回答を考えています…"):
+                    generate_reply(store, conversation_id, question_id)
+            except (ChatError, ConversationError) as error:
                 st.error(str(error))
             else:
-                st.session_state.pop("chat_question_submission", None)
-                st.session_state.chat_reply_request = (conversation_id, str(question["id"]))
                 st.rerun()
+        if st.button("回答を再試行する", key="retry_chat_reply"):
+            st.session_state.chat_reply_request = (conversation_id, question_id)
+            st.rerun()
+
+    if prompt := st.chat_input("相棒のこと、気になることを聞いてみよう", disabled=awaiting_reply):
+        prompt = prompt.strip()
+        if not prompt:
+            return
+        try:
+            if conversation_id is None:
+                conversation_id = store.create()["id"]
+                st.query_params["conversation_id"] = conversation_id
+                st.session_state.active_conversation_id = conversation_id
+            submission = st.session_state.get("chat_question_submission")
+            if not submission or submission[:2] != (conversation_id, prompt):
+                submission = (conversation_id, prompt, str(uuid4()))
+                st.session_state.chat_question_submission = submission
+            question = store.save_question(conversation_id, submission[2], prompt)
+        except ConversationError as error:
+            st.error(str(error))
+        else:
+            st.session_state.pop("chat_question_submission", None)
+            st.session_state.chat_reply_request = (conversation_id, str(question["id"]))
+            st.rerun()
 
 
 render()

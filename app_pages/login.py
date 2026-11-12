@@ -30,7 +30,7 @@ def _open_after_authentication() -> None:
 
 
 def render() -> None:
-    configure_page("pokecham | ログイン", "login.css")
+    configure_page("推しポケラボ | ログイン", "login.css")
 
     left, right = st.columns([0.88, 1.12], gap=None)
 
@@ -55,7 +55,7 @@ def render() -> None:
 
         st.markdown(
             f"""
-            <div class="brand"><span class="brand-mark">✦</span><span>pokecham</span></div>
+            <div class="brand"><span class="brand-mark">✦</span><span>推しポケラボ</span></div>
             <div class="eyebrow">YOUR FAVORITE, YOUR TEAM</div>
             <h1 class="hero-title">好きなポケモンと、<br>勝つ方法を見つけよう。</h1>
             <div class="team-art">
@@ -66,7 +66,7 @@ def render() -> None:
                 AIと話しながら、あなただけの作戦を。
             </div>
             <div class="left-note">今日も、相棒と一歩ずつ。</div>
-            <div class="left-footer">pokecham / 好きな一匹からはじまる作戦会議</div>
+            <div class="left-footer">推しポケラボ / 好きな一匹からはじまる作戦会議</div>
             """,
             unsafe_allow_html=True,
         )

@@ -11,7 +11,7 @@ def configure_page(title: str, stylesheet: str) -> None:
         page_title=title,
         page_icon="✦",
         layout="wide",
-        initial_sidebar_state="collapsed",
+        initial_sidebar_state="expanded",
     )
     css = (STYLE_DIR / "base.css").read_text(encoding="utf-8")
     css += (STYLE_DIR / stylesheet).read_text(encoding="utf-8")

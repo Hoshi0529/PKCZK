@@ -8,7 +8,7 @@ import streamlit as st
 from back.conversations import ConversationError, ConversationStore
 from ui.chat_session import open_conversation, remember_selected_pokemon, require_conversation_store
 from ui.layout import configure_page
-from ui.history import render_history
+from ui.sidebar import render_sidebar
 from ui.pokemon_types import PokemonProfile
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
@@ -282,34 +282,11 @@ def _render_selection_workspace(store: ConversationStore) -> None:
 
 
 def render() -> None:
-    configure_page("pokecham | ポケモン選択", "pokemon.css")
+    configure_page("推しポケラボ | ポケモン選択", "pokemon.css")
     store = require_conversation_store()
 
-    sidebar, content = st.columns([0.19, 0.81], gap="small")
-
-    with sidebar:
-        st.markdown(
-            '<div class="brand"><span class="brand-mark">✦</span><span>pokecham</span></div>',
-            unsafe_allow_html=True,
-        )
-        st.button(
-            "＋ アドバイスをもらう",
-            use_container_width=True,
-            key="advice_button",
-            on_click=_start_new_advice,
-            args=(store,),
-        )
-        render_history(store)
-        st.markdown(
-            '<div class="sidebar-bottom"><div class="sidebar-quote">好きな一匹と、<br>勝ち筋を見つけよう。</div></div>',
-            unsafe_allow_html=True,
-        )
-        if st.button("⚙　設定", use_container_width=True, key="settings_button"):
-            st.switch_page("app_pages/settings.py")
-        st.markdown('<div class="sidebar-user">◉　だいき</div>', unsafe_allow_html=True)
-
-    with content:
-        _render_selection_workspace(store)
+    render_sidebar(store)
+    _render_selection_workspace(store)
 
 
 render()

@@ -19,6 +19,7 @@ def require_conversation_store(return_to: str | None = None) -> ConversationStor
         st.session_state.pop("chat_question_submission", None)
         params = {"conversation_id": return_to} if return_to else None
         st.switch_page("app_pages/login.py", query_params=params)
+    st.session_state.current_account = user
     return ConversationStore(client, str(user.id))
 
 
