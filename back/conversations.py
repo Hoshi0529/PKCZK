@@ -128,12 +128,31 @@ class ConversationStore:
                 "values (%s, %s, 'user', %s, %s) returning *",
                 (question_id, conversation_id, content, last["position"] + 1 if last else 0),
             ).fetchone()
-            if last is None:
+            # A conversation can begin with an assistant opening at position zero.
+            if last is None or last["position"] == 0:
                 conn.execute(
                     "update public.conversations set title = %s where id = %s",
                     (content[:40], conversation_id),
                 )
             return question
+
+    def save_opening(self, conversation_id: str, answer: str) -> str:
+        with self._locked_conversation(conversation_id) as conn:
+            first = conn.execute(
+                "select role, content from public.messages where conversation_id = %s "
+                "order by position limit 1",
+                (conversation_id,),
+            ).fetchone()
+            if first:
+                if first["role"] == "assistant":
+                    return first["content"]
+                raise ConversationError("会話が更新されました。履歴を開き直してください。")
+            conn.execute(
+                "insert into public.messages (conversation_id, role, content, position) "
+                "values (%s, 'assistant', %s, 0)",
+                (conversation_id, answer),
+            )
+            return answer
 
     def save_answer(self, conversation_id: str, question_id: str, answer: str) -> str:
         with self._locked_conversation(conversation_id) as conn:

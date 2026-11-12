@@ -2,6 +2,7 @@
 
 from collections.abc import Callable, Generator
 from contextlib import closing
+import json
 import os
 from pathlib import Path
 
@@ -21,7 +22,7 @@ from langgraph.config import get_stream_writer
 from langgraph.graph import END, START, StateGraph
 from langgraph.runtime import Runtime
 from langsmith import traceable
-from typing_extensions import TypedDict
+from typing_extensions import NotRequired, TypedDict
 
 from back.conversations import ConversationError, ConversationStore
 from back.observability import workflow_tracing
@@ -34,6 +35,10 @@ SYSTEM_PROMPT = (
     "日本語で、わかりやすく親しみやすく回答してください。"
     "不明な情報は不明と伝え、確認できていない最新の対戦データや使用率を作らないでください。"
 )
+OPENING_PROMPT = (
+    "渡されたポケモンの型をもとに、相談を始める短い一言を書いてください。"
+    "設定の特徴を1〜2点取り上げ、何を相談したいか質問を1つしてください。"
+)
 
 
 class ChatError(RuntimeError):
@@ -42,13 +47,23 @@ class ChatError(RuntimeError):
 
 class ChatState(TypedDict):
     conversation_id: str
-    question_id: str
+    question_id: str | None
     messages: list[ChatCompletionMessageParam]
     answer: str | None
 
 
+class ReplyPokemon(TypedDict):
+    name: str
+    moves: NotRequired[list[str]]
+    nature: NotRequired[str]
+    ability: NotRequired[str]
+    item: NotRequired[str]
+    actual_stats: NotRequired[dict[str, int]]
+
+
 class ReplyContext(TypedDict):
     store: ConversationStore
+    pokemon: list[ReplyPokemon]
 
 
 def _trace_completion(completion: tuple[str, CompletionUsage | None] | None) -> dict:
@@ -133,9 +148,25 @@ def _generate_answer(state: ChatState) -> dict[str, str]:
 
 def _load_history(state: ChatState, runtime: Runtime[ReplyContext]) -> dict:
     history = runtime.context["store"].messages(state["conversation_id"])
+    system_prompt = SYSTEM_PROMPT
+    if pokemon := runtime.context["pokemon"]:
+        system_prompt += (
+            "\n以下はこの会話で渡されたポケモンの設定データです。"
+            "actual_stats は性格補正を反映した Lv.50 の実数値です。"
+            "質問に関係する設定を根拠に答え、設定されていない項目を推測で補わないでください。\n"
+            + json.dumps(pokemon, ensure_ascii=False)
+        )
     chat_messages: list[ChatCompletionMessageParam] = [
-        {"role": "system", "content": SYSTEM_PROMPT}
+        {"role": "system", "content": system_prompt}
     ]
+    question_id = state["question_id"]
+    if question_id is None:
+        if not history:
+            chat_messages.append({"role": "user", "content": OPENING_PROMPT})
+            return {"messages": chat_messages}
+        if history[0]["role"] == "assistant":
+            return {"answer": history[0]["content"]}
+        raise ConversationError("会話が更新されました。履歴を開き直してください。")
     for index, message in enumerate(history):
         role = message.get("role")
         content = message.get("content")
@@ -143,7 +174,7 @@ def _load_history(state: ChatState, runtime: Runtime[ReplyContext]) -> dict:
             chat_messages.append({"role": "user", "content": content})
         elif role == "assistant":
             chat_messages.append({"role": "assistant", "content": content})
-        if message["id"] != state["question_id"] or role != "user":
+        if str(message["id"]) != question_id or role != "user":
             continue
         if index == len(history) - 1:
             return {"messages": chat_messages}
@@ -155,9 +186,14 @@ def _load_history(state: ChatState, runtime: Runtime[ReplyContext]) -> dict:
 
 
 def _save_answer(state: ChatState, runtime: Runtime[ReplyContext]) -> dict[str, str]:
-    answer = runtime.context["store"].save_answer(
-        state["conversation_id"], state["question_id"], state["answer"] or ""
-    )
+    store = runtime.context["store"]
+    conversation_id = state["conversation_id"]
+    answer = state["answer"] or ""
+    question_id = state["question_id"]
+    if question_id is None:
+        answer = store.save_opening(conversation_id, answer)
+    else:
+        answer = store.save_answer(conversation_id, question_id, answer)
     return {"answer": answer}
 
 
@@ -174,15 +210,21 @@ workflow.add_edge("save_answer", END)
 chat_workflow = workflow.compile()
 
 
-def stream_reply(store: ConversationStore, conversation_id: str, question_id: str) -> Generator[str, None, str]:
-    """Yield text as it arrives and return the answer stored for the question."""
+def stream_reply(
+    store: ConversationStore,
+    conversation_id: str,
+    question_id: str | None,
+    *,
+    pokemon: list[ReplyPokemon] | None = None,
+) -> Generator[str, None, str]:
+    """Stream and save the reply. A missing question ID requests an opening."""
     streamed = False
     answer = None
     with workflow_tracing(conversation_id):
         events = chat_workflow.stream(
             {"conversation_id": conversation_id, "question_id": question_id, "messages": [], "answer": None},
             config={"run_name": "pokecham_chat"},
-            context={"store": store},
+            context={"store": store, "pokemon": pokemon or []},
             stream_mode=["custom", "updates"],
         )
         with closing(events):

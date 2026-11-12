@@ -735,67 +735,10 @@
     font-weight: 700;
 }
 
-.chat-team-card,
-.chat-team-empty {
-    display: flex;
-    min-height: 54px;
-    align-items: center;
-    gap: 9px;
-    padding: 8px 10px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: #fff;
-}
-
-.chat-team-card img {
-    width: 39px;
-    height: 39px;
-    object-fit: contain;
-}
-
-.chat-team-card b {
-    margin-right: 7px;
-    color: var(--ink);
-    font-size: 10px;
-}
-
-.chat-team-card .type-pill { font-size: 8px; }
-
-.chat-team-empty {
-    justify-content: center;
-    color: #87948c;
-    font-size: 9px;
-    text-align: center;
-}
-
 .chat-empty-note {
     margin: 12px 0 20px;
     color: #98a39c;
     font-size: 9px;
-}
-
-.api-battle-stat {
-    min-height: 75px;
-    padding: 10px 11px;
-    border: 1px solid var(--line);
-    border-radius: 11px;
-    background: #fff;
-    color: #64766c;
-    font-size: 9px;
-    line-height: 1.8;
-}
-
-.api-battle-stat b {
-    display: block;
-    margin-bottom: 4px;
-    color: var(--ink);
-    font-size: 10px;
-}
-
-.battle-percentage {
-    margin-left: 5px;
-    color: #89968e;
-    font-size: 8px;
 }
 
 .api-attribution {

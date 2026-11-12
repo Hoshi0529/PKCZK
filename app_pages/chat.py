@@ -5,12 +5,11 @@ from uuid import uuid4
 
 import streamlit as st
 
-from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import ConversationError, ConversationStore, conversation_id_from_url
-from back.groq_chat import ChatError, stream_reply
-from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
-from ui.chat_session import require_conversation_store
+from back.groq_chat import ChatError, ReplyPokemon, stream_reply
+from ui.chat_session import conversation_builds, require_conversation_store
 from ui.layout import configure_page
+from ui.pokemon_types import STAT_NAMES, PokemonBuild, PokemonBuildMap
 from ui.sidebar import render_sidebar
 
 
@@ -38,16 +37,29 @@ def _render_pokemon_banner(pokemon_name: str, partner_name: str) -> None:
     )
 
 
-def _render_build_card(pokemon_name: str) -> None:
-    build = st.session_state.get("pokemon_builds", {}).get(pokemon_name, {})
+def _render_build_card(pokemon_name: str, build: PokemonBuild | None) -> None:
     info = POKEMON_ART.get(pokemon_name, ("", ""))
     _, image_url = info
-    moves = [move for move in build.get("moves", []) if move and move != "指定しない"]
-    build_summary = "　・　".join(
-        value for value in (build.get("nature"), build.get("ability"), build.get("item"))
-        if value and value not in ("指定なし", "指定しない")
-    )
-    move_summary = "　/　".join(moves) if moves else "技はまだ設定されていません"
+    details = "<p>未設定</p>"
+    if build is not None:
+        build_summary = "　・　".join(
+            f"{label} {value}"
+            for label, value in (
+                ("性格", build.get("nature") or "未設定"),
+                ("特性", build.get("ability") or "未設定"),
+                ("持ち物", build.get("item") or "未設定"),
+            )
+        )
+        move_summary = " / ".join(build.get("moves", [])) or "未設定"
+        actual_stats = build.get("actual_stats", {})
+        stat_summary = " / ".join(
+            f"{stat} {actual_stats[stat]}" for stat in STAT_NAMES if stat in actual_stats
+        ) or "未取得"
+        details = (
+            f'<p>{escape(build_summary)}</p>'
+            f'<div class="chat-build-moves">技 {escape(move_summary)}</div>'
+            f'<p>実数値（Lv.50） {escape(stat_summary)}</p>'
+        )
     image = f'<img src="{image_url}" alt="">' if image_url else ""
     escaped_name = escape(pokemon_name)
     st.markdown(
@@ -55,76 +67,21 @@ def _render_build_card(pokemon_name: str) -> None:
         f'<div class="chat-build-art">{image}</div>'
         '<div class="chat-build-content">'
         f'<div><b>{escaped_name}の育成メモ</b><span class="count-pill">自分の設定</span></div>'
-        f'<p>{escape(build_summary) if build_summary else "個体の型を設定すると、ここに表示されます。"}</p>'
-        f'<div class="chat-build-moves">{escape(move_summary)}</div>'
+        f'{details}'
         '</div></div>',
         unsafe_allow_html=True,
     )
+
+
+def _render_edit_build_button(pokemon_name: str) -> None:
     if st.button("個体の型を編集する", key="edit_build_from_chat"):
+        pokemon_type, image_url = POKEMON_ART.get(pokemon_name, ("", ""))
         st.session_state.pokemon_detail_target = pokemon_name
         st.session_state.pokemon_detail_profile = {
-            "number": "", "type": info[0], "image": image_url, "description": "", "color": "#237b61"
+            "number": "", "type": pokemon_type, "image": image_url, "description": "", "color": "#237b61"
         }
         st.session_state.pokemon_detail_slot = "first"
         st.switch_page("app_pages/pokemon_detail.py")
-
-
-def _render_team_cards(pokemon_names: list[str]) -> None:
-    st.markdown('<div class="chat-section-heading">今回のチーム</div>', unsafe_allow_html=True)
-    if len(pokemon_names) < 2:
-        st.markdown(
-            '<div class="chat-team-empty">2匹目の相棒を選ぶと、チーム構成も一緒に相談できます。</div>',
-            unsafe_allow_html=True,
-        )
-        return
-
-    team_cols = st.columns(len(pokemon_names[:2]), gap="medium")
-    for column, pokemon_name in zip(team_cols, pokemon_names[:2]):
-        pokemon_type, image_url = POKEMON_ART.get(pokemon_name, ("", ""))
-        with column:
-            st.markdown(
-                '<div class="chat-team-card">'
-                f'<img src="{image_url}" alt="">'
-                f'<div><b>{escape(pokemon_name)}</b><span class="type-pill">{escape(pokemon_type)}</span></div>'
-                '</div>',
-                unsafe_allow_html=True,
-            )
-
-
-def _render_battle_data(pokemon_name: str) -> None:
-    if pokemon_name not in SHOWDOWN_IDS:
-        return
-    try:
-        data: BattleDataResponse = get_battle_data(pokemon_name, "Singles")
-    except (RuntimeError, ValueError) as error:
-        st.warning(f"対戦データ API を取得できませんでした。{error}")
-        return
-
-    categories = [
-        ("move", "よく使われる技"),
-        ("item", "持ち物"),
-        ("teammate", "よく組まれる相棒"),
-    ]
-    category_cols = st.columns(len(categories), gap="medium")
-    for column, (category, title) in zip(category_cols, categories):
-        rows = rows_for_category(data, category)[:4]
-        with column:
-            if rows:
-                content = "<br>".join(
-                    f'{escape(row["name"])}'
-                    f'<span class="battle-percentage">{escape(str(row.get("percentage") or ""))}</span>'
-                    for row in rows
-                )
-            else:
-                content = "データなし"
-            st.markdown(
-                f'<div class="api-battle-stat"><b>{title}</b><div>{content}</div></div>',
-                unsafe_allow_html=True,
-            )
-    st.markdown(
-        f'<div class="api-attribution">{API_ATTRIBUTION}</div>',
-        unsafe_allow_html=True,
-    )
 
 
 @dataclass
@@ -139,6 +96,7 @@ class QuestionDraft:
 def _queue_question(user_id: str, conversation_id: str | None) -> None:
     prompt = (st.session_state.get("chat_prompt") or "").strip()
     if prompt:
+        st.session_state.get("chat_openings", {}).pop((user_id, conversation_id), None)
         drafts = st.session_state.setdefault("chat_question_drafts", {})
         drafts.setdefault(
             (user_id, conversation_id),
@@ -158,12 +116,41 @@ def _retry_reply(conversation_id: str, question_id: str) -> None:
     st.session_state.chat_reply_request = (conversation_id, question_id)
 
 
-def _render_reply(store: ConversationStore, conversation_id: str, question_id: str) -> None:
+def _retry_opening(user_id: str, conversation_id: str) -> None:
+    st.session_state["chat_openings"][(user_id, conversation_id)] = "retry"
+
+
+def _reply_pokemon(names: list[str], builds: PokemonBuildMap) -> list[ReplyPokemon]:
+    pokemon: list[ReplyPokemon] = []
+    unset = {"", "指定なし", "指定しない", "未設定", "特性データを取得できません"}
+    for name in names:
+        build = builds.get(name, {})
+        info: ReplyPokemon = {"name": name}
+        if moves := [move for move in build.get("moves", []) if move not in unset]:
+            info["moves"] = moves
+        if (nature := build.get("nature", "")) not in unset:
+            info["nature"] = nature
+        if (ability := build.get("ability", "")) not in unset:
+            info["ability"] = ability
+        if (item := build.get("item", "")) not in unset:
+            info["item"] = item
+        if stats := build.get("actual_stats"):
+            info["actual_stats"] = dict(stats)
+        pokemon.append(info)
+    return pokemon
+
+
+def _render_reply(
+    store: ConversationStore,
+    conversation_id: str,
+    question_id: str | None,
+    pokemon: list[ReplyPokemon],
+) -> None:
     saved_answer = None
 
     def chunks():
         nonlocal saved_answer
-        saved_answer = yield from stream_reply(store, conversation_id, question_id)
+        saved_answer = yield from stream_reply(store, conversation_id, question_id, pokemon=pokemon)
 
     reply = st.empty()
     try:
@@ -205,15 +192,16 @@ def _save_question(
     return store.save_question(conversation_id, draft.id, draft.content)
 
 
-def _render_chat_header(pokemon_name: str, partner_name: str, pokemon_names: list[str]) -> None:
+def _render_chat_header(pokemon_names: list[str], builds: PokemonBuildMap) -> None:
 
     st.markdown(
         '<div class="step-label">05　チャット / 相棒の勝ち筋を探す</div>'
         '<div class="page-eyebrow">POKEMON CHAMPIONS　 ·　 相談</div>',
         unsafe_allow_html=True,
     )
-    if pokemon_name:
-        _render_pokemon_banner(pokemon_name, partner_name)
+    if pokemon_names:
+        partner_name = pokemon_names[1] if len(pokemon_names) > 1 else ""
+        _render_pokemon_banner(pokemon_names[0], partner_name)
 
     st.markdown(
         '<div class="chat-intro"><span class="chat-intro-mark">✦</span>'
@@ -222,9 +210,10 @@ def _render_chat_header(pokemon_name: str, partner_name: str, pokemon_names: lis
         unsafe_allow_html=True,
     )
 
-    if pokemon_name:
-        _render_build_card(pokemon_name)
-        _render_team_cards(pokemon_names)
+    if pokemon_names:
+        for pokemon_name in pokemon_names:
+            _render_build_card(pokemon_name, builds.get(pokemon_name))
+        _render_edit_build_button(pokemon_names[0])
 
 
 def render() -> None:
@@ -232,7 +221,6 @@ def render() -> None:
     raw_id = st.query_params.get("conversation_id")
     conversation_id = conversation_id_from_url(raw_id)
     header = st.container()
-    battle = st.container()
     history = st.container()
     pending = st.empty()
     controls = st.container()
@@ -268,13 +256,26 @@ def render() -> None:
         render_sidebar(store)
         return
 
+    openings = st.session_state.setdefault("chat_openings", {})
+    opening_key = (store.user_id, conversation_id)
+    if messages or draft:
+        openings.pop(opening_key, None)
+    opening_status = openings.get(opening_key)
+    start_opening = opening_status == "retry" or (
+        opening_status == "queued" and st.query_params.get("opening") == "1"
+    )
+    if start_opening:
+        # Keep an explicit retry available if the page reruns before the save.
+        openings[opening_key] = "failed"
+    st.query_params.pop("opening", None)
+
     pokemon_names = st.session_state.get("conversation_pokemon", {}).get(conversation_id, [])
-    pokemon_name = pokemon_names[0] if pokemon_names else ""
-    partner_name = pokemon_names[1] if len(pokemon_names) > 1 else ""
+    builds = conversation_builds(store.user_id, conversation_id)
+    reply_pokemon = _reply_pokemon(pokemon_names, builds)
     with header:
-        _render_chat_header(pokemon_name, partner_name, pokemon_names)
+        _render_chat_header(pokemon_names, builds)
     with history:
-        if messages or draft:
+        if messages or draft or start_opening:
             st.markdown('<div class="chat-section-heading">会話</div>', unsafe_allow_html=True)
             for message in messages:
                 with st.chat_message(message["role"]):
@@ -311,9 +312,24 @@ def render() -> None:
             st.session_state.pop(f"conversation_history:{store.user_id}", None)
 
     with controls:
+        if conversation_id and start_opening:
+            try:
+                _render_reply(store, conversation_id, None, reply_pokemon)
+            except (ChatError, ConversationError) as error:
+                st.error(str(error))
+            else:
+                openings.pop(opening_key, None)
+                st.session_state.pop(f"conversation_history:{store.user_id}", None)
+        if conversation_id and openings.get(opening_key) == "failed":
+            st.button(
+                "最初のメッセージを再試行する",
+                key="retry_chat_opening",
+                on_click=_retry_opening,
+                args=(store.user_id, conversation_id),
+            )
         if awaiting_reply and start_reply:
             try:
-                _render_reply(store, conversation_id, question_id)
+                _render_reply(store, conversation_id, question_id, reply_pokemon)
             except (ChatError, ConversationError) as error:
                 st.error(str(error))
             else:
@@ -334,9 +350,6 @@ def render() -> None:
         on_submit=_queue_question,
         args=(store.user_id, conversation_id),
     )
-    if pokemon_name:
-        with battle:
-            _render_battle_data(pokemon_name)
     render_sidebar(store)
 
 
