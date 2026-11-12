@@ -16,6 +16,7 @@ def require_conversation_store() -> ConversationStore:
     if user is None:
         st.session_state.pop("auth_client", None)
         st.session_state.pop("current_account", None)
+        st.session_state.pop("chat_reply_request", None)
         st.session_state.pop("chat_question_drafts", None)
         st.switch_page("app_pages/login.py")
     st.session_state.current_account = user
