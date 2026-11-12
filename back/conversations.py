@@ -16,6 +16,9 @@ from supabase import Client
 from back.auth import ENV_PATH
 
 
+DEFAULT_CONVERSATION_TITLE = "新しいチャット"
+
+
 class ConversationError(RuntimeError):
     """A chat storage error safe to display to the user."""
 
@@ -75,7 +78,7 @@ class ConversationStore:
             raise ConversationError("この会話は開けません。")
         return messages
 
-    def create(self, title: str = "新しいチャット", *, conversation_id: str | None = None) -> dict:
+    def create(self, title: str = DEFAULT_CONVERSATION_TITLE, *, conversation_id: str | None = None) -> dict:
         values = {"title": title}
         if conversation_id is not None:
             values["id"] = conversation_id
@@ -128,12 +131,31 @@ class ConversationStore:
                 "values (%s, %s, 'user', %s, %s) returning *",
                 (question_id, conversation_id, content, last["position"] + 1 if last else 0),
             ).fetchone()
-            if last is None:
+            # A conversation can begin with an assistant opening at position zero.
+            if last is None or last["position"] == 0:
                 conn.execute(
-                    "update public.conversations set title = %s where id = %s",
-                    (content[:40], conversation_id),
+                    "update public.conversations set title = %s where id = %s and title = %s",
+                    (content[:40], conversation_id, DEFAULT_CONVERSATION_TITLE),
                 )
             return question
+
+    def save_opening(self, conversation_id: str, answer: str) -> str:
+        with self._locked_conversation(conversation_id) as conn:
+            first = conn.execute(
+                "select role, content from public.messages where conversation_id = %s "
+                "order by position limit 1",
+                (conversation_id,),
+            ).fetchone()
+            if first:
+                if first["role"] == "assistant":
+                    return first["content"]
+                raise ConversationError("会話が更新されました。履歴を開き直してください。")
+            conn.execute(
+                "insert into public.messages (conversation_id, role, content, position) "
+                "values (%s, 'assistant', %s, 0)",
+                (conversation_id, answer),
+            )
+            return answer
 
     def save_answer(self, conversation_id: str, question_id: str, answer: str) -> str:
         with self._locked_conversation(conversation_id) as conn:

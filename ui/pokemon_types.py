@@ -13,6 +13,7 @@ StatName: TypeAlias = Literal[
 ]
 
 StatPointValues: TypeAlias = dict[StatName, int]
+STAT_NAMES: tuple[StatName, ...] = ("HP", "こうげき", "ぼうぎょ", "とくこう", "とくぼう", "すばやさ")
 # Compatibility alias for callers that still use the old EV-oriented name.
 EffortValues: TypeAlias = StatPointValues
 
@@ -40,6 +41,7 @@ class PokemonBuild(TypedDict, total=False):
     ability: str
     item: str
     stat_points: StatPointValues
+    actual_stats: dict[StatName, int]
     effort: EffortValues  # Legacy EV field, migrated when the build is loaded.
     moves: list[str]
 

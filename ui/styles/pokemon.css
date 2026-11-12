@@ -605,56 +605,6 @@
 
 .type-pill { --type-color: #237b61; }
 
-.chat-pokemon-banner {
-    display: flex;
-    min-height: 68px;
-    align-items: center;
-    gap: 12px;
-    margin: 2px 0 16px;
-    padding: 8px 15px;
-    border-radius: 12px;
-    background: #f7f7f0;
-}
-
-.chat-banner-art {
-    display: flex;
-    width: 48px;
-    height: 48px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background: #fff2c8;
-}
-
-.chat-banner-art img {
-    width: 43px;
-    height: 43px;
-    object-fit: contain;
-}
-
-.chat-pokemon-name {
-    margin-bottom: 5px;
-    color: var(--ink);
-    font-size: 12px;
-    font-weight: 750;
-}
-
-.chat-partner-tag {
-    display: inline-block;
-    margin-left: 5px;
-    padding: 4px 7px;
-    border-radius: 10px;
-    background: #eaf5ee;
-    color: var(--green);
-    font-size: 9px;
-}
-
-.chat-banner-step {
-    margin-left: auto;
-    color: #9aa59f;
-    font-size: 9px;
-}
-
 .chat-intro {
     display: flex;
     gap: 9px;
@@ -678,15 +628,60 @@
     line-height: 1.7;
 }
 
-.chat-build-card {
-    display: flex;
-    gap: 12px;
+.st-key-chat_build_carousel [data-testid="stHorizontalBlock"] {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr) 76px;
     align-items: center;
-    margin: 0 0 18px;
+    gap: 8px;
+}
+
+.st-key-chat_build_carousel [data-testid="stColumn"] {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.st-key-chat_build_carousel [data-testid="stHorizontalBlock"] [data-testid="stColumn"] [data-testid="stButton"] {
+    width: 100%;
+}
+
+.st-key-chat_build_carousel [data-testid="stColumn"] [data-testid="stButton"] > button {
+    background: #fff;
+    color: var(--green);
+}
+
+.st-key-chat_build_carousel [data-testid="stButton"] > button:disabled {
+    background: #f2f5f1;
+    color: #83928a;
+}
+
+.chat-build-card {
+    min-height: 112px;
     padding: 12px 14px;
     border: 1px solid var(--line);
     border-radius: 14px;
     background: #fff;
+}
+
+.chat-build-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px 8px;
+    margin-bottom: 10px;
+}
+
+.chat-build-title h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.chat-build-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
 }
 
 .chat-build-art {
@@ -706,26 +701,50 @@
     object-fit: contain;
 }
 
-.chat-build-content { min-width: 0; }
-
-.chat-build-content b {
-    color: var(--ink);
+.chat-build-content {
+    flex: 1;
+    min-width: 0;
+    color: #52665c;
     font-size: 11px;
+    overflow-wrap: anywhere;
 }
 
-.chat-build-content p {
-    margin: 5px 0;
-    color: #7c8a82;
-    font-size: 9px;
+.chat-build-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 14px;
+    margin: 0;
+}
+
+.chat-build-fields > div {
+    min-width: 0;
+}
+
+.chat-build-fields dt,
+.chat-build-fields dd {
+    display: inline;
+    margin: 0;
+}
+
+.chat-build-fields dt {
+    margin-right: 5px;
+    color: var(--ink);
+    font-weight: 650;
+}
+
+.chat-build-content .chat-build-unset {
+    margin: 0;
+}
+
+.chat-build-moves,
+.chat-build-stats {
+    flex-basis: 100%;
 }
 
 .chat-build-moves {
     padding: 6px 8px;
     border-radius: 7px;
     background: #f2f5f1;
-    color: #718078;
-    font-size: 9px;
-    overflow-wrap: anywhere;
 }
 
 .chat-section-heading {
@@ -735,67 +754,10 @@
     font-weight: 700;
 }
 
-.chat-team-card,
-.chat-team-empty {
-    display: flex;
-    min-height: 54px;
-    align-items: center;
-    gap: 9px;
-    padding: 8px 10px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: #fff;
-}
-
-.chat-team-card img {
-    width: 39px;
-    height: 39px;
-    object-fit: contain;
-}
-
-.chat-team-card b {
-    margin-right: 7px;
-    color: var(--ink);
-    font-size: 10px;
-}
-
-.chat-team-card .type-pill { font-size: 8px; }
-
-.chat-team-empty {
-    justify-content: center;
-    color: #87948c;
-    font-size: 9px;
-    text-align: center;
-}
-
 .chat-empty-note {
     margin: 12px 0 20px;
     color: #98a39c;
     font-size: 9px;
-}
-
-.api-battle-stat {
-    min-height: 75px;
-    padding: 10px 11px;
-    border: 1px solid var(--line);
-    border-radius: 11px;
-    background: #fff;
-    color: #64766c;
-    font-size: 9px;
-    line-height: 1.8;
-}
-
-.api-battle-stat b {
-    display: block;
-    margin-bottom: 4px;
-    color: var(--ink);
-    font-size: 10px;
-}
-
-.battle-percentage {
-    margin-left: 5px;
-    color: #89968e;
-    font-size: 8px;
 }
 
 .api-attribution {
@@ -823,8 +785,21 @@
 }
 
 @media (max-width: 760px) {
-    .chat-pokemon-banner { padding: 8px; }
-    .chat-build-card { align-items: flex-start; padding: 10px; }
+    .st-key-chat_build_carousel [data-testid="stHorizontalBlock"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 24px;
+    }
+    .st-key-chat_build_carousel [data-testid="stColumn"]:nth-child(1) {
+        grid-area: 2 / 1;
+    }
+    .st-key-chat_build_carousel [data-testid="stColumn"]:nth-child(2) {
+        grid-area: 1 / 1 / 2 / -1;
+    }
+    .st-key-chat_build_carousel [data-testid="stColumn"]:nth-child(3) {
+        grid-area: 2 / 2;
+    }
+    .chat-build-card { padding: 10px; }
+    .chat-build-body { gap: 8px; }
     .chat-build-art { width: 52px; height: 52px; flex-basis: 52px; }
     .chat-build-art img { width: 48px; height: 48px; }
 }

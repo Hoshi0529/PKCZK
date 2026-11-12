@@ -1,65 +1,13 @@
-import json
 from html import escape
-from pathlib import Path
-from urllib.parse import quote
 
 import streamlit as st
 
 from back.conversations import ConversationError, ConversationStore
-from ui.chat_session import open_conversation, remember_selected_pokemon, require_conversation_store
+from ui.chat_session import create_pokemon_conversation, remember_selected_pokemon, require_conversation_store
 from ui.layout import configure_page
+from ui.pokemon_catalog import POKEMON, pokemon_image_url
 from ui.sidebar import render_sidebar
 from ui.pokemon_types import PokemonProfile
-
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
-
-
-def _load_json(filename: str) -> dict:
-    try:
-        with (DATA_DIR / filename).open(encoding="utf-8") as file:
-            value = json.load(file)
-        return value if isinstance(value, dict) else {}
-    except (OSError, json.JSONDecodeError):
-        return {}
-
-
-LOCAL_POKEMON_NAMES = _load_json("pokemon_champions_names_all_forms.json")
-PCBD_FORMS = _load_json("pcbd_forms.json")
-LOCAL_NAME_TO_ID = {
-    value.get("name_ja"): showdown_id
-    for showdown_id, value in LOCAL_POKEMON_NAMES.items()
-    if isinstance(value, dict)
-    and isinstance(value.get("name_ja"), str)
-    and isinstance(PCBD_FORMS.get(showdown_id), dict)
-    and PCBD_FORMS[showdown_id].get("metadata_row_available")
-}
-
-LEGACY_POKEMON = _load_json("legacy_pokemon.json")
-
-POKEMON: dict[str, PokemonProfile] = {}
-for pokemon_id, names in LOCAL_POKEMON_NAMES.items():
-    form = PCBD_FORMS.get(pokemon_id)
-    if not isinstance(names, dict) or not isinstance(form, dict):
-        continue
-    pokemon_name = names.get("name_ja")
-    if not isinstance(pokemon_name, str) or not form.get("metadata_row_available"):
-        continue
-    type_names = names.get("type_ja", [])
-    localized_type = " / ".join(
-        item for item in type_names if isinstance(item, str)
-    ) if isinstance(type_names, list) else ""
-    POKEMON[pokemon_name] = LEGACY_POKEMON.get(
-        pokemon_name,
-        {
-            "number": "",
-            "type": localized_type,
-            "image": "",
-            "description": "",
-            "color": "#6c8f82",
-        },
-    )
-for pokemon_name, profile in LEGACY_POKEMON.items():
-    POKEMON.setdefault(pokemon_name, profile)
 
 PLACEHOLDER = "選択してください"
 FIRST_SELECTION_STATE = "new_advice_first_pokemon"
@@ -68,18 +16,6 @@ SECOND_SELECTION_STATE = "new_advice_second_pokemon"
 
 def _local_pokemon_name(pokemon_name: str) -> str:
     return pokemon_name
-
-
-def _pokemon_image_url(pokemon_name: str, fallback: str) -> str:
-    showdown_id = LOCAL_NAME_TO_ID.get(pokemon_name, "")
-    form = PCBD_FORMS.get(showdown_id, {})
-    saved_name = form.get("saved_name") if isinstance(form, dict) else None
-    if not isinstance(saved_name, str) or not saved_name:
-        return fallback
-    return (
-        "https://championsbattledata.com/pokemon_champions_assets/pokemon/"
-        f"{quote(saved_name, safe='')}.png"
-    )
 
 
 def _start_new_advice(store: ConversationStore) -> None:
@@ -95,7 +31,7 @@ def _start_new_advice(store: ConversationStore) -> None:
     active_pokemon = st.session_state.get("conversation_pokemon", {}).get(active_id)
     if selected_pokemon and active_pokemon != selected_pokemon:
         try:
-            conversation = store.create(f"{selected_pokemon[0]}との相談")
+            conversation = create_pokemon_conversation(store, selected_pokemon)
         except ConversationError as error:
             st.error(str(error))
             return
@@ -118,7 +54,7 @@ def _remember_selection(widget_key: str, saved_key: str) -> None:
 def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
     pokemon: PokemonProfile = POKEMON[pokemon_name]
     display_name = _local_pokemon_name(pokemon_name)
-    image_url = _pokemon_image_url(pokemon_name, pokemon["image"])
+    image_url = pokemon_image_url(pokemon_name, pokemon["image"])
     pokemon_type = pokemon["type"]
     with st.container(key=card_key):
         art_col, text_col = st.columns([0.42, 0.58], vertical_alignment="center")
@@ -273,7 +209,7 @@ def _render_selection_workspace(store: ConversationStore) -> None:
             st.session_state.pokemon_detail_target = first_pokemon
             st.session_state.pokemon_detail_profile = {
                 **selected_profile,
-                "image": _pokemon_image_url(
+                "image": pokemon_image_url(
                     first_pokemon, selected_profile["image"]
                 ),
             }

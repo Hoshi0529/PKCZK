@@ -10,11 +10,18 @@ import streamlit as st
 
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import ConversationError, ConversationStore
-from ui.chat_session import open_conversation, remember_selected_pokemon, require_conversation_store
-from ui.battle_data import API_ATTRIBUTION, SHOWDOWN_IDS, get_battle_data
+from ui.chat_session import (
+    create_pokemon_conversation,
+    open_conversation,
+    remember_conversation_builds,
+    remember_selected_pokemon,
+    require_conversation_store,
+)
+from ui.battle_data import API_ATTRIBUTION
 from ui.layout import configure_page
 from ui.sidebar import render_sidebar
 from ui.pokemon_types import (
+    STAT_NAMES,
     PokemonBuild,
     PokemonBuildMap,
     PokemonProfile,
@@ -78,7 +85,6 @@ SPECIES: dict[str, PokemonSpecies] = {
     },
 }
 
-STAT_NAMES: list[StatName] = ["HP", "こうげき", "ぼうぎょ", "とくこう", "とくぼう", "すばやさ"]
 NATURES = [
     "指定なし", "さみしがり", "いじっぱり", "やんちゃ", "ゆうかん",
     "ずぶとい", "わんぱく", "のうてんき", "のんき",
@@ -565,20 +571,16 @@ def render() -> None:
                 if total_stat_points > 66:
                     st.error("能力ポイントの合計を66以下にしてください。")
                 else:
-                    if pokemon_name in SHOWDOWN_IDS:
-                        try:
-                            get_battle_data(pokemon_name, "Singles")
-                        except (RuntimeError, ValueError) as error:
-                            st.error(f"対戦データ API を取得できませんでした。{error}")
-                            return
-                    builds[pokemon_name] = {
+                    build: PokemonBuild = {
                         "nature": nature,
                         "ability": ability,
                         "item": item,
                         "stat_points": stat_points,
+                        "actual_stats": _calculate_champions_stats(
+                            species["base_stats"], stat_points, nature
+                        ),
                         "moves": moves,
                     }
-                    st.session_state.pokemon_builds = builds
                     first_selected = st.session_state.get(
                         "new_advice_first_pokemon",
                         st.session_state.get("first_pokemon_select", ""),
@@ -602,17 +604,21 @@ def render() -> None:
                             if second_selected not in ("", placeholder, pokemon_name)
                             else ""
                         )
-                    st.session_state.chosen_pokemon = first_pokemon
-                    st.session_state.partner_pokemon = second_pokemon
                     try:
-                        conversation = store.create(f"{first_pokemon}との相談")
+                        conversation = create_pokemon_conversation(store, (first_pokemon, second_pokemon))
                     except ConversationError as error:
                         st.error(str(error))
                     else:
+                        builds[pokemon_name] = build
                         remember_selected_pokemon(
                             conversation["id"], first_pokemon, second_pokemon
                         )
-                        open_conversation(conversation["id"])
+                        remember_conversation_builds(
+                            store.user_id,
+                            conversation["id"],
+                            {pokemon_name: {**build, "moves": selected_moves}},
+                        )
+                        open_conversation(conversation["id"], opening_for=store.user_id)
 
     st.markdown(
         f'<div class="api-attribution">{API_ATTRIBUTION}</div>',

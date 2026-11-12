@@ -28,6 +28,6 @@ def render_history(store: ConversationStore) -> None:
             updated_label = datetime.fromisoformat(updated).astimezone().strftime("%m/%d %H:%M")
         except (ValueError, TypeError):
             updated_label = ""
-        label = f"{title[:24]}\n{updated_label}"
+        label = f"{title}\n{updated_label}"
         if st.button(label, key=f"open_conversation_{conversation['id']}", use_container_width=True):
             open_conversation(conversation["id"])
