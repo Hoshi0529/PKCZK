@@ -1,18 +1,23 @@
 """Generate chat replies using a LangGraph workflow and Groq."""
 
+from collections.abc import Callable, Generator
+from contextlib import closing
 import os
 from pathlib import Path
 
 from dotenv import dotenv_values
 from groq import (
     APIConnectionError,
-    APIStatusError,
+    APIError,
     APITimeoutError,
     AuthenticationError,
     Groq,
     RateLimitError,
 )
-from groq.types.chat import ChatCompletion, ChatCompletionMessageParam
+from groq.types.chat import ChatCompletionMessageParam
+from groq.types.completion_usage import CompletionUsage
+from httpx import HTTPError, TimeoutException
+from langgraph.config import get_stream_writer
 from langgraph.graph import END, START, StateGraph
 from langgraph.runtime import Runtime
 from langsmith import traceable
@@ -46,16 +51,14 @@ class ReplyContext(TypedDict):
     store: ConversationStore
 
 
-def _trace_completion(completion: ChatCompletion | None) -> dict:
+def _trace_completion(completion: tuple[str, CompletionUsage | None] | None) -> dict:
     if completion is None:
         return {}
+    answer, usage = completion
     outputs = {
-        "choices": [
-            {"message": {"role": "assistant", "content": choice.message.content}}
-            for choice in completion.choices
-        ]
+        "choices": [{"message": {"role": "assistant", "content": answer}}]
     }
-    if usage := completion.usage:
+    if usage:
         outputs["usage_metadata"] = {
             "input_tokens": usage.prompt_tokens,
             "output_tokens": usage.completion_tokens,
@@ -68,9 +71,12 @@ def _trace_completion(completion: ChatCompletion | None) -> dict:
     name="Groq Chat Completion",
     run_type="llm",
     metadata={"ls_provider": "groq", "ls_model_name": MODEL},
+    process_inputs=lambda inputs: {"messages": inputs["messages"]},
     process_outputs=_trace_completion,
 )
-def _request_completion(messages: list[ChatCompletionMessageParam]) -> ChatCompletion:
+def _request_completion(
+    messages: list[ChatCompletionMessageParam], emit: Callable[[str], None],
+) -> tuple[str, CompletionUsage | None]:
     settings = dotenv_values(ENV_PATH, encoding="utf-8-sig", interpolate=False)
     api_key = (
         os.getenv("GROQ_API_KEY")
@@ -82,33 +88,47 @@ def _request_completion(messages: list[ChatCompletionMessageParam]) -> ChatCompl
     if not api_key:
         raise ChatError("既存の back/.env に GROQ_KEY または GROQ_API_KEY を設定してください。")
 
+    parts: list[str] = []
+    usage = None
+    finish_reason = None
     try:
         with Groq(api_key=api_key, timeout=30.0, max_retries=0) as client:
-            completion = client.chat.completions.create(
+            with client.chat.completions.create(
                 model=MODEL,
                 messages=messages,
                 max_completion_tokens=4096,
-            )
+                stream=True,
+            ) as stream:
+                for chunk in stream:
+                    usage = chunk.usage or (chunk.x_groq.usage if chunk.x_groq else None) or usage
+                    if not chunk.choices:
+                        continue
+                    choice = chunk.choices[0]
+                    if choice.finish_reason:
+                        finish_reason = choice.finish_reason
+                    if text := choice.delta.content:
+                        parts.append(text)
+                        emit(text)
     except AuthenticationError:
         raise ChatError("Groq の API キーを確認してください。") from None
     except RateLimitError:
         raise ChatError("Groq の利用制限に達しました。時間をおいて再試行してください。") from None
-    except APITimeoutError:
+    except (APITimeoutError, TimeoutException):
         raise ChatError("Groq の応答がタイムアウトしました。再試行してください。") from None
-    except APIConnectionError:
+    except (APIConnectionError, HTTPError):
         raise ChatError("Groq に接続できませんでした。接続を確認して再試行してください。") from None
-    except APIStatusError:
+    except APIError:
         raise ChatError("Groq がリクエストを処理できませんでした。時間をおいて再試行してください。") from None
 
-    answer = completion.choices[0].message.content if completion.choices else None
-    if not answer or not answer.strip():
+    answer = "".join(parts).strip()
+    if finish_reason not in {"stop", "length"} or not answer:
         raise ChatError("Groq から回答を取得できませんでした。再試行してください。")
-    return completion
+    return answer, usage
 
 
 def _generate_answer(state: ChatState) -> dict[str, str]:
-    completion = _request_completion(state["messages"])
-    return {"answer": (completion.choices[0].message.content or "").strip()}
+    answer, _ = _request_completion(state["messages"], get_stream_writer())
+    return {"answer": answer}
 
 
 def _load_history(state: ChatState, runtime: Runtime[ReplyContext]) -> dict:
@@ -154,12 +174,28 @@ workflow.add_edge("save_answer", END)
 chat_workflow = workflow.compile()
 
 
-def generate_reply(store: ConversationStore, conversation_id: str, question_id: str) -> str:
-    """Reply to a stored question using its owner's conversation history."""
+def stream_reply(store: ConversationStore, conversation_id: str, question_id: str) -> Generator[str, None, str]:
+    """Yield text as it arrives and return the answer stored for the question."""
+    streamed = False
+    answer = None
     with workflow_tracing(conversation_id):
-        result = chat_workflow.invoke(
+        events = chat_workflow.stream(
             {"conversation_id": conversation_id, "question_id": question_id, "messages": [], "answer": None},
             config={"run_name": "pokecham_chat"},
             context={"store": store},
+            stream_mode=["custom", "updates"],
         )
-    return result["answer"] or ""
+        with closing(events):
+            for mode, data in events:
+                if mode == "custom":
+                    streamed = True
+                    yield data
+                elif "save_answer" in data:
+                    answer = data["save_answer"]["answer"]
+                elif "load_history" in data:
+                    answer = data["load_history"].get("answer")
+    if answer is None:
+        raise ChatError("回答を取得できませんでした。再試行してください。")
+    if not streamed:
+        yield answer
+    return answer
