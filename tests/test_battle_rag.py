@@ -32,6 +32,47 @@ class MemoryStore:
 
 
 class BattleRagTest(TestCase):
+    def test_move_ranking_uses_only_pcbd(self):
+        pokemon = [{"name": "フシギバナ", "showdown_id": "venusaur"}]
+        for question, battle_format in (
+            ("フシギバナ技上位5件なに？", "Singles"),
+            ("フシギバナの技採用率上位5件パーセンテージ付きで教えて", "Singles"),
+            ("ダブルでフシギバナの技の使用率トップ５件を教えて", "Doubles"),
+        ):
+            with (
+                self.subTest(question=question),
+                patch.dict(os.environ, {"LANGSMITH_TRACING": "false"}),
+                patch("back.groq_chat._request_tool_decision") as decide,
+                patch("back.groq_chat.search_request", side_effect=BattleSearchError("検索障害")) as search,
+                patch("back.groq_chat.run_pcbd_tool", return_value={"results": [{"format": battle_format}]}) as pcbd,
+                patch("back.groq_chat._request_completion", return_value=("対戦統計の回答", None)) as generate,
+            ):
+                store = MemoryStore()
+                store.history[0]["content"] = question
+                self.assertEqual(list(stream_reply(store, "thread", "question", pokemon=pokemon)), ["対戦統計の回答"])
+                self.assertEqual(json.loads(pcbd.call_args.args[0]), {
+                    "showdown_ids": ["venusaur"], "battle_format": battle_format, "categories": ["move"],
+                })
+                self.assertEqual(pcbd.call_args.args[1], ["venusaur"])
+                self.assertEqual(generate.call_args.args[0][-1]["role"], "tool")
+                decide.assert_not_called()
+                search.assert_not_called()
+
+    def test_move_ranking_for_unselected_form_asks_to_select(self):
+        store = MemoryStore()
+        store.history[0]["content"] = "フシギバナ技上位5件なに？"
+        with (
+            patch.dict(os.environ, {"LANGSMITH_TRACING": "false"}),
+            patch("back.groq_chat._request_tool_decision") as decide,
+            patch("back.groq_chat.run_pcbd_tool") as pcbd,
+        ):
+            reply, = stream_reply(store, "thread", "question", pokemon=[
+                {"name": "メガフシギバナ", "showdown_id": "venusaurmega"},
+            ])
+            self.assertIn("選出して", reply)
+            decide.assert_not_called()
+            pcbd.assert_not_called()
+
     @patch("back.battle_rag.search_evidence", return_value=[])
     def test_default_and_explicit_format(self, search):
         args = json.dumps({"query": "ダブルウイングの挙動"})

@@ -5,6 +5,8 @@ from contextlib import closing, contextmanager
 import json
 import os
 from pathlib import Path
+import re
+import unicodedata
 
 from dotenv import dotenv_values
 from groq import (
@@ -38,7 +40,7 @@ SYSTEM_PROMPT = (
     "不明な情報は不明と伝え、確認できていない最新の対戦データや使用率を作らないでください。"
     "PCBDの結果を使う場合は、対戦形式とシーズンを示し、source_url を出典リンクにしてください。"
     "採用率が欠けている項目は数値を補わず、取得できない情報はその旨を伝えてください。"
-    "一部の順位だけを紹介するときは、紹介した件数を正確に表記してください。"
+    "一部の順位だけを紹介するときは、指定された件数までを順位順に示してください。"
 )
 PCBD_ROUTING_PROMPT = (
     "最後の質問に答えるために現行の対戦統計が必要か判定してください。"
@@ -56,7 +58,8 @@ BATTLE_ROUTING_PROMPT = (
     "いずれもなければ Singles を使ってください。構築関連は topic=build、それ以外は rules です。"
     "対象は2026年11月16日時点の『Pokémon Champions』ランクバトルM-Cです。"
     "他作品や別ルールを対象とする対戦質問でも search_battle_rules を呼び、outside_scope=true にしてください。"
-    "対戦統計だけの質問は利用可能ならPCBDツールを使い、挨拶やアプリ操作の質問では検索しないでください。"
+    "ランキングや採用率など対戦統計だけの質問ではPCBDツールを使ってください。"
+    "PCBDを使えない場合は SKIP と返してください。挨拶やアプリ操作の質問でも検索しないでください。"
     "今回は利用判断だけを行い、ツールが不要なら SKIP と返してください。"
 )
 BATTLE_ANSWER_PROMPT = (
@@ -238,7 +241,50 @@ def _request_tool_decision(
     }, response.usage
 
 
+BATTLE_MOVE_RANKING = re.compile(
+    r"(?:(シングル|ダブル)(?:バトル)?(?:で|の)\s*)?"
+    r"(?P<pokemon>[^、。！？?\n]{0,40}?)(?:の)?\s*技\s*(?:の)?\s*(?:採用率|使用率)?\s*"
+    r"(?:の)?\s*(?:上位|トップ)\s*[0-9]+\s*(?:件|個|つ|位)?"
+    r"\s*[、,]?\s*(?:パーセンテージ付き|割合付き|%付き)?\s*(?:で)?\s*"
+    r"(?:なに|何|は|教えて|を教えて|を知りたい)?[。!?]*"
+)
+
+
+def _move_ranking_request(question: str, pokemon: list[ReplyPokemon]) -> dict | None:
+    match = BATTLE_MOVE_RANKING.fullmatch(unicodedata.normalize("NFKC", question).strip())
+    if match is None:
+        return None
+
+    name = match["pokemon"].strip()
+    selected = pokemon if name in {"", "このポケモン", "この子"} else [
+        entry for entry in pokemon if entry["name"] == name
+    ]
+    if len(selected) != 1 or not (showdown_id := selected[0].get("showdown_id")):
+        return {"answer": "技の採用率を確認したいポケモンを選出して、もう一度聞いてください。"}
+
+    return {"tool_request": {
+        "role": "assistant",
+        "tool_calls": [{
+            "type": "function",
+            "id": "call_pcbd_move_ranking",
+            "function": {
+                "name": PCBD_TOOL["function"]["name"],
+                "arguments": json.dumps({
+                    "showdown_ids": [showdown_id],
+                    "battle_format": "Doubles" if match[1] == "ダブル" else "Singles",
+                    "categories": ["move"],
+                }),
+            },
+        }],
+    }}
+
+
 def _decide_tools(state: ChatState, runtime: Runtime[ReplyContext]) -> dict:
+    question = state["messages"][-1].get("content")
+    if isinstance(question, str):
+        ranking = _move_ranking_request(question, runtime.context["pokemon"])
+        if ranking is not None:
+            return ranking
     request, _ = _request_tool_decision(state["messages"], bool(_allowed_showdown_ids(runtime)))
     return {"tool_request": request} if request is not None else {}
 
@@ -367,8 +413,12 @@ workflow.add_edge(START, "load_history")
 workflow.add_conditional_edges("load_history", _route_history, [END, "generate_answer", "decide_tools"])
 workflow.add_conditional_edges(
     "decide_tools",
-    lambda state: "retrieve_battle_data" if state.get("tool_request") else "generate_answer",
-    ["retrieve_battle_data", "generate_answer"],
+    lambda state: (
+        "save_answer" if state["answer"] is not None
+        else "retrieve_battle_data" if state.get("tool_request")
+        else "generate_answer"
+    ),
+    ["save_answer", "retrieve_battle_data", "generate_answer"],
 )
 workflow.add_edge("retrieve_battle_data", "generate_answer")
 workflow.add_edge("generate_answer", "save_answer")
