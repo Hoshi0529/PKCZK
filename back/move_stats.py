@@ -56,6 +56,11 @@ def move_showdown_id(name: str) -> str | None:
     return _move_ids().get(_name_key(name))
 
 
+def move_japanese_name(name: str) -> str | None:
+    names = _read_table("move_names_ja_en.json").get(move_showdown_id(name), {})
+    return names.get("name_ja") or None
+
+
 def move_stats(name: str) -> dict | None:
     move_id = move_showdown_id(name)
     row = _read_table("move_power_accuracy.json").get(move_id)
@@ -77,10 +82,9 @@ def move_stats(name: str) -> dict | None:
         "always_hit": "必中",
         "no_check": "—（命中判定なし）",
     }.get(accuracy_kind, "未確認")
-    names = _read_table("move_names_ja_en.json").get(move_id, {})
     return {
         "move_id": move_id,
-        "name_ja": names.get("name_ja") or name,
+        "name_ja": move_japanese_name(name) or name,
         "power": power,
         "power_kind": power_kind,
         "power_label": power_label,

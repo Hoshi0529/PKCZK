@@ -12,7 +12,7 @@ from back.champions_battle_data import (
     fetch_pokemon_battle_data,
     rows_for_category,
 )
-from back.move_stats import move_stats
+from back.move_stats import move_japanese_name, move_stats
 
 
 CATEGORIES = ("move", "held_item", "teammate", "stat_alignment", "stat_points", "ability")
@@ -51,13 +51,14 @@ def _fetch_statistics(showdown_id: str, battle_format: BattleFormat, categories:
     for category in categories:
         statistics[category] = []
         for row in rows_for_category(data, category):
+            name = row["name"]
             entry = {
-                "name": row["name"],
+                "name": (move_japanese_name(name) or name) if category == "move" else name,
                 "rank": row.get("rank"),
                 "percentage": row.get("percentage") or None,
                 "percentage_value": row.get("percentage_value"),
             }
-            if category == "move" and (stats := move_stats(row["name"])) is not None:
+            if category == "move" and (stats := move_stats(name)) is not None:
                 entry["move_stats"] = stats
             statistics[category].append(entry)
     return {
@@ -67,6 +68,32 @@ def _fetch_statistics(showdown_id: str, battle_format: BattleFormat, categories:
         "source_url": f"{API_BASE}/battle/{battle_format}/{showdown_id}",
         "categories": statistics,
     }
+
+
+def render_move_ranking(result: dict, name: str, count: int, include_stats: bool) -> str | None:
+    moves = result.get("categories", {}).get("move")
+    if not moves:
+        return None
+
+    headers = ["順位", "技名", "採用率"]
+    if include_stats:
+        headers.extend(("基準威力", "基準命中率"))
+    table = [headers, ["---"] * len(headers)]
+    for move in moves[:count]:
+        display_name = move["name"].replace("|", r"\|").replace("\n", " ").replace("\r", " ")
+        row = [str(move["rank"] or "—"), display_name, move["percentage"] or "未確認"]
+        if include_stats:
+            stats = move.get("move_stats", {})
+            row.extend((stats.get("power_label", "未確認"), stats.get("accuracy_label", "未確認")))
+        table.append(row)
+
+    battle_format = "ダブル" if result["format"] == "Doubles" else "シングル"
+    lines = [f"**{name}の技採用率（{battle_format}・{result['season']}）**", ""]
+    lines.extend("| " + " | ".join(row) + " |" for row in table)
+    lines.extend(("", f"採用率の出典は [PCBD]({result['source_url']})。"))
+    if include_stats:
+        lines.append("基準威力・基準命中率の出典は推しポケラボの技データ。")
+    return "\n".join(lines)
 
 
 @traceable(name="Get PCBD Battle Data", run_type="tool")
