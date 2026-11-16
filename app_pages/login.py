@@ -29,6 +29,17 @@ def _open_after_authentication() -> None:
 def render() -> None:
     configure_page("推しポケラボ | ログイン", "login.css")
 
+    if st.session_state.pop("clear_setting_fields_on_login", False):
+        for key in (
+            "settings_new_email",
+            "settings_new_username",
+            "settings_current_password",
+            "settings_new_password",
+            "settings_confirm_password",
+            "settings_password_reauth_nonce",
+        ):
+            st.session_state.pop(key, None)
+
     left, right = st.columns([0.88, 1.12], gap=None)
 
     with left:

@@ -230,6 +230,35 @@
         width: 100%;
     }
 
+    .st-key-account_changes_card {
+        max-width: 585px;
+        margin-bottom: 12px;
+        padding: 18px 19px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: #fff;
+        box-sizing: border-box;
+    }
+
+    .st-key-account_changes_card > [data-testid="stVerticalBlock"] {
+        gap: 12px !important;
+    }
+
+    .st-key-account_changes_card [data-testid="stFormSubmitButton"] button {
+        width: auto;
+        min-height: 34px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: var(--green);
+        color: #fff;
+        font-size: 11px;
+    }
+
+    .st-key-account_changes_card .settings-section-divider {
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+    }
+
     .st-key-account_card {
         position: relative;
         max-width: 585px;

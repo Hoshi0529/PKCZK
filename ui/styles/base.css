@@ -25,8 +25,12 @@
         flex-direction: column;
     }
 
-    .shared-sidebar-user {
+    .st-key-shared_sidebar_account_actions {
         margin-top: auto;
+    }
+
+    .shared-sidebar-user {
+        margin-top: 0;
         padding-top: 12px;
         border-top: 1px solid #e6ebe5;
         color: #52665c;

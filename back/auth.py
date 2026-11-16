@@ -17,6 +17,10 @@ class AuthenticationError(RuntimeError):
     """An authentication failure safe to display to the user."""
 
 
+class ReauthenticationRequired(AuthenticationError):
+    """Raised when Supabase requires an email nonce before a password update."""
+
+
 @dataclass(frozen=True)
 class AccountResult:
     user: User | None
@@ -136,6 +140,44 @@ def get_verified_account(client: Client) -> User | None:
         raise AuthenticationError(_auth_error_message(error)) from None
     except (AuthError, HTTPError, OSError):
         raise AuthenticationError("ログイン状態を確認できませんでした。時間をおいて再度お試しください。") from None
+
+
+def sign_out_account(client: Client) -> bool:
+    """Revoke the current Supabase session; return False if the server is unreachable."""
+    try:
+        client.auth.sign_out()
+    except (AuthError, HTTPError, OSError):
+        return False
+    return True
+
+
+def update_account_user(client: Client, attributes: dict) -> User:
+    """Update the signed-in user's email, password, or metadata safely."""
+    try:
+        response = client.auth.update_user(attributes)
+    except AuthApiError as error:
+        if getattr(error, "code", None) == "reauthentication_needed":
+            raise ReauthenticationRequired from None
+        raise AuthenticationError(_auth_error_message(error)) from None
+    except AuthError as error:
+        raise AuthenticationError(_auth_error_message(error)) from None
+    except (HTTPError, OSError):
+        raise AuthenticationError(
+            "アカウントの更新に失敗しました。時間をおいて試してください。"
+        ) from None
+    if not response.user:
+        raise AuthenticationError("更新結果を取得できませんでした。")
+    return response.user
+
+
+def request_password_reauthentication(client: Client) -> None:
+    """Ask Supabase to email a one-time code for a sensitive password change."""
+    try:
+        client.auth.reauthenticate()
+    except (AuthError, HTTPError, OSError):
+        raise AuthenticationError(
+            "確認コードを送信できませんでした。時間をおいて試してください。"
+        ) from None
 
 
 def validate_account_input(
