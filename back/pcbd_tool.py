@@ -12,6 +12,7 @@ from back.champions_battle_data import (
     fetch_pokemon_battle_data,
     rows_for_category,
 )
+from back.move_stats import move_stats
 
 
 CATEGORIES = ("move", "held_item", "teammate", "stat_alignment", "stat_points", "ability")
@@ -46,23 +47,25 @@ PCBD_TOOL: ChatCompletionToolParam = {
 @traceable(name="PCBD Battle API", run_type="tool")
 def _fetch_statistics(showdown_id: str, battle_format: BattleFormat, categories: list[str]) -> dict:
     data = fetch_pokemon_battle_data(showdown_id, battle_format)
+    statistics = {}
+    for category in categories:
+        statistics[category] = []
+        for row in rows_for_category(data, category):
+            entry = {
+                "name": row["name"],
+                "rank": row.get("rank"),
+                "percentage": row.get("percentage") or None,
+                "percentage_value": row.get("percentage_value"),
+            }
+            if category == "move" and (stats := move_stats(row["name"])) is not None:
+                entry["move_stats"] = stats
+            statistics[category].append(entry)
     return {
         "showdown_id": showdown_id,
         "format": battle_format,
         "season": data.get("season") or "Current",
         "source_url": f"{API_BASE}/battle/{battle_format}/{showdown_id}",
-        "categories": {
-            category: [
-                {
-                    "name": row["name"],
-                    "rank": row.get("rank"),
-                    "percentage": row.get("percentage") or None,
-                    "percentage_value": row.get("percentage_value"),
-                }
-                for row in rows_for_category(data, category)
-            ]
-            for category in categories
-        },
+        "categories": statistics,
     }
 
 

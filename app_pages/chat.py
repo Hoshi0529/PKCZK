@@ -7,6 +7,7 @@ import streamlit as st
 
 from back.conversations import ConversationError, ConversationStore, conversation_id_from_url
 from back.groq_chat import ChatError, ReplyPokemon, stream_reply
+from back.move_stats import move_showdown_id
 from ui.battle_data import SHOWDOWN_IDS
 from ui.chat_session import conversation_builds, require_conversation_store
 from ui.layout import configure_page
@@ -14,7 +15,6 @@ from ui.pokemon_catalog import (
     ABILITY_SHOWDOWN_IDS,
     ITEM_SHOWDOWN_IDS,
     POKEMON,
-    move_showdown_id,
     pokemon_image_url,
 )
 from ui.pokemon_types import STAT_NAMES, PokemonBuild, PokemonBuildMap, PokemonProfile

@@ -3,7 +3,6 @@
 import json
 from pathlib import Path
 import re
-from unicodedata import normalize
 from urllib.parse import quote
 
 from ui.pokemon_types import PokemonProfile
@@ -24,13 +23,6 @@ def _load_json(filename: str) -> dict:
 _NAMES = _load_json("pokemon_champions_names_all_forms.json")
 _FORMS = _load_json("pcbd_forms.json")
 _LEGACY_POKEMON = _load_json("legacy_pokemon.json")
-_MOVE_SHOWDOWN_IDS = {
-    normalize("NFKC", name): move_id
-    for move_id, names in _load_json("move_names_ja_en.json").items()
-    if isinstance(names, dict)
-    for name in (names.get("name_ja"), names.get("name_en"))
-    if isinstance(name, str) and name
-}
 ABILITY_SHOWDOWN_IDS: dict[str, str] = {}
 # PCBD's translation table is keyed by English name. Use Showdown's toID rule.
 for english_name, japanese_name in _load_json("pcbd_ability_names_ja.json").items():
@@ -69,10 +61,6 @@ for pokemon_id, names in _NAMES.items():
 
 for pokemon_name, profile in _LEGACY_POKEMON.items():
     POKEMON.setdefault(pokemon_name, profile)
-
-
-def move_showdown_id(move_name: str) -> str | None:
-    return _MOVE_SHOWDOWN_IDS.get(normalize("NFKC", move_name))
 
 
 def pokemon_image_url(pokemon_name: str, fallback: str = "") -> str:

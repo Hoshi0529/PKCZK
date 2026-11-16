@@ -28,6 +28,7 @@ from typing_extensions import NotRequired, TypedDict
 
 from back.battle_rag import BATTLE_RULES_TOOL, BattleSearchError, render_answer, search_request
 from back.conversations import ConversationError, ConversationStore
+from back.move_stats import MOVE_STATS_TOOL, move_showdown_id, run_move_stats_tool
 from back.observability import workflow_tracing
 from back.pcbd_tool import PCBD_TOOL, run_pcbd_tool
 
@@ -41,6 +42,12 @@ SYSTEM_PROMPT = (
     "PCBDの結果を使う場合は、対戦形式とシーズンを示し、source_url を出典リンクにしてください。"
     "採用率が欠けている項目は数値を補わず、取得できない情報はその旨を伝えてください。"
     "一部の順位だけを紹介するときは、指定された件数までを順位順に示してください。"
+    "技の基準威力・基準命中率にはアプリ内の技データに由来する power_label と accuracy_label を使ってください。"
+    "採用率一覧に威力・命中率を求められたら、採用率、基準威力、基準命中率を別の列にしてください。"
+    "その一覧の出典には、採用率は [PCBD](取得結果のsource_url)、"
+    "基準威力・基準命中率は推しポケラボの技データと記載してください。"
+    "URLは実際の取得結果からコピーし、内部のフィールド名は回答に含めないでください。"
+    "技データが未確認なら数値を補わず、技を特定できないときは技名を確認してください。"
 )
 PCBD_ROUTING_PROMPT = (
     "最後の質問に答えるために現行の対戦統計が必要か判定してください。"
@@ -51,6 +58,8 @@ PCBD_ROUTING_PROMPT = (
     "別シーズンの統計、設定済みの型だけで答えられる質問、対象のIDが不明な質問ではPCBDを呼び出さないでください。"
 )
 BATTLE_ROUTING_PROMPT = (
+    "技の基準威力や基準命中率だけを聞かれたら get_move_stats を呼んでください。"
+    "技の採用率と一緒に聞かれた場合は get_pcbd_battle_data の技の行に威力と命中率が含まれます。"
     "最後の質問がポケモン対戦のルール、参加可否、例外、技や特性の挙動や処理順、"
     "構築・選出・立ち回りに関する場合は search_battle_rules を呼んでください。"
     "さっきの技などの参照は直近の会話から補い、質問の条件を検索文に残してください。"
@@ -208,7 +217,7 @@ def _request_tool_decision(
     pcbd_available: bool,
 ) -> tuple[ChatCompletionAssistantMessageParam | None, CompletionUsage | None]:
     prompt = BATTLE_ROUTING_PROMPT
-    tools = [BATTLE_RULES_TOOL]
+    tools = [BATTLE_RULES_TOOL, MOVE_STATS_TOOL]
     if pcbd_available:
         prompt += "\n" + PCBD_ROUTING_PROMPT
         tools.append(PCBD_TOOL)
@@ -246,8 +255,26 @@ BATTLE_MOVE_RANKING = re.compile(
     r"(?P<pokemon>[^、。！？?\n]{0,40}?)(?:の)?\s*技\s*(?:の)?\s*(?:採用率|使用率)?\s*"
     r"(?:の)?\s*(?:上位|トップ)\s*[0-9]+\s*(?:件|個|つ|位)?"
     r"\s*[、,]?\s*(?:パーセンテージ付き|割合付き|%付き)?\s*(?:で)?\s*"
-    r"(?:なに|何|は|教えて|を教えて|を知りたい)?[。!?]*"
+    r"(?:(?:なに|何|は|教えて|を教えて|を知りたい)"
+    r"|(?:に|を)[、,\s]*(?:基準)?(?:威力|命中率)(?:[と・、,](?:基準)?(?:威力|命中率))?"
+    r"(?:も|を)(?:付けて|つけて|教えて|出して|併記して|まとめて))?[。!?]*"
 )
+MOVE_STAT_QUESTION = re.compile(
+    r"(?P<move>[^、。!?\n]{1,40}?)(?:の|\s+)"
+    r"(?:基準)?(?:威力|命中率)(?:[と・、,](?:基準)?(?:威力|命中率))?"
+    r"(?:は|を|って)?\s*(?:なに|何|いくつ|何パーセント|教えて|知りたい)?[。!?]*"
+)
+
+
+def _local_tool_request(name: str, arguments: dict) -> dict:
+    return {"tool_request": {
+        "role": "assistant",
+        "tool_calls": [{
+            "type": "function",
+            "id": f"call_{name}",
+            "function": {"name": name, "arguments": json.dumps(arguments, ensure_ascii=False)},
+        }],
+    }}
 
 
 def _move_ranking_request(question: str, pokemon: list[ReplyPokemon]) -> dict | None:
@@ -262,21 +289,11 @@ def _move_ranking_request(question: str, pokemon: list[ReplyPokemon]) -> dict | 
     if len(selected) != 1 or not (showdown_id := selected[0].get("showdown_id")):
         return {"answer": "技の採用率を確認したいポケモンを選出して、もう一度聞いてください。"}
 
-    return {"tool_request": {
-        "role": "assistant",
-        "tool_calls": [{
-            "type": "function",
-            "id": "call_pcbd_move_ranking",
-            "function": {
-                "name": PCBD_TOOL["function"]["name"],
-                "arguments": json.dumps({
-                    "showdown_ids": [showdown_id],
-                    "battle_format": "Doubles" if match[1] == "ダブル" else "Singles",
-                    "categories": ["move"],
-                }),
-            },
-        }],
-    }}
+    return _local_tool_request(PCBD_TOOL["function"]["name"], {
+        "showdown_ids": [showdown_id],
+        "battle_format": "Doubles" if match[1] == "ダブル" else "Singles",
+        "categories": ["move"],
+    })
 
 
 def _decide_tools(state: ChatState, runtime: Runtime[ReplyContext]) -> dict:
@@ -285,6 +302,14 @@ def _decide_tools(state: ChatState, runtime: Runtime[ReplyContext]) -> dict:
         ranking = _move_ranking_request(question, runtime.context["pokemon"])
         if ranking is not None:
             return ranking
+        match = MOVE_STAT_QUESTION.fullmatch(unicodedata.normalize("NFKC", question).strip())
+        if match is not None:
+            move_name = match["move"].strip()
+            # A condition before the move name belongs to the general router.
+            if move_showdown_id(move_name):
+                return _local_tool_request(MOVE_STATS_TOOL["function"]["name"], {"moves": [move_name]})
+            if re.fullmatch(r"[ァ-ヶー]+", move_name):
+                return {"answer": f"「{move_name}」の威力・命中率は確認できませんでした。技名を確認してください。"}
     request, _ = _request_tool_decision(state["messages"], bool(_allowed_showdown_ids(runtime)))
     return {"tool_request": request} if request is not None else {}
 
@@ -311,6 +336,8 @@ def _retrieve_battle_data(state: ChatState, runtime: Runtime[ReplyContext]) -> d
         elif not pcbd_called and function["name"] == PCBD_TOOL["function"]["name"]:
             pcbd_called = True
             result = run_pcbd_tool(function["arguments"], _allowed_showdown_ids(runtime))
+        elif function["name"] == MOVE_STATS_TOOL["function"]["name"]:
+            result = run_move_stats_tool(function["arguments"])
         else:
             result = {"error": "この取得リクエストは実行できませんでした。"}
         messages.append({"role": "tool", "tool_call_id": call["id"], "content": json.dumps(result, ensure_ascii=False)})
