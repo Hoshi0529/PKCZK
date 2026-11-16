@@ -140,6 +140,65 @@ def _showdown_id_for_name(pokemon_name: str) -> str | None:
     return POKEMON_ID_BY_NAME.get(pokemon_name)
 
 
+def _mega_stone_for_pokemon(pokemon_name: str) -> str | None:
+    """選択中のメガフォームに対応するメガストーンを持ち物一覧から探す。"""
+    showdown_id = _showdown_id_for_name(pokemon_name)
+    if not _is_mega_pokemon(pokemon_name) or not showdown_id:
+        return None
+    form_names = POKEMON_NAMES.get(showdown_id)
+    japanese = form_names.get("name_ja") if isinstance(form_names, dict) else None
+    mega_prefix = "\u30e1\u30ac"
+    if not isinstance(japanese, str) or not japanese.startswith(mega_prefix):
+        return None
+
+    # 「メガ」を外し、X/Y/Zの違いを保ったまま候補の石名を組み立てる。
+    root = japanese[len(mega_prefix):]
+    variant = ""
+    if root[-1:] in ("X", "Y", "Z", "\uff38", "\uff39", "\uff3a"):
+        variant = {
+            "X": "X",
+            "Y": "Y",
+            "Z": "Z",
+            "\uff38": "X",
+            "\uff39": "Y",
+            "\uff3a": "Z",
+        }[root[-1]]
+        root = root[:-1]
+
+    night = "\u30ca\u30a4\u30c8"
+    candidates = [root + night + variant]
+    # 石の名前には語尾の長音や仮名を省くものがあるため、表記候補を追加する。
+    if root.endswith("\u30ca"):
+        candidates.append(root + "\u30a4\u30c8" + variant)
+    if root.endswith("\u30fc"):
+        candidates.append(root[:-1] + night + variant)
+    if root.endswith("\u30f3"):
+        candidates.append(root[:-1] + night + variant)
+    if variant:
+        candidates.append(root + variant + night)
+    candidates.append(root[:-1] + night + variant)
+
+    available_items = _load_local_options("items.json", "items") or ITEMS
+    return next((stone for stone in candidates if stone in available_items), None)
+
+
+def _is_mega_pokemon(pokemon_name: str) -> bool:
+    """通常のポケモン名と区別して、メガフォームかどうかを判定する。"""
+    showdown_id = _showdown_id_for_name(pokemon_name)
+    if not showdown_id or "mega" not in showdown_id:
+        return False
+    form_names = POKEMON_NAMES.get(showdown_id)
+    japanese = form_names.get("name_ja") if isinstance(form_names, dict) else None
+    form = PCBD_FORMS.get(showdown_id)
+    saved_name = form.get("saved_name") if isinstance(form, dict) else None
+    return (
+        isinstance(japanese, str)
+        and japanese.startswith("\u30e1\u30ac")
+        and isinstance(saved_name, str)
+        and saved_name.startswith("Mega ")
+    )
+
+
 @st.cache_data(ttl=24 * 60 * 60, show_spinner=False)
 def _fetch_species_metadata(pokemon_name: str) -> dict[str, object] | None:
     showdown_id = _showdown_id_for_name(pokemon_name)
@@ -427,7 +486,15 @@ def render() -> None:
     if not abilities:
         abilities = ["特性データを取得できません"]
     move_names = species["moves"]
-    item_names = _load_local_options("items.json", "items") or ITEMS
+    # メガフォームは対応する石だけを選択肢にし、未登録なら通常の持ち物を出さない。
+    is_mega = _is_mega_pokemon(pokemon_name)
+    mega_stone = _mega_stone_for_pokemon(pokemon_name)
+    unavailable_mega_stone = "\u5bfe\u5fdc\u3059\u308b\u30e1\u30ac\u30b9\u30c8\u30fc\u30f3\u304c\u3042\u308a\u307e\u305b\u3093"
+    item_names = [mega_stone] if mega_stone else (
+        [unavailable_mega_stone]
+        if is_mega
+        else (_load_local_options("items.json", "items") or ITEMS)
+    )
     nature_names = _load_local_options("natures.json", "natures") or NATURES
 
     st.markdown(
@@ -490,11 +557,16 @@ def render() -> None:
             )
         with item_col:
             saved_item = saved.get("item", "指定しない")
+            if is_mega:
+                # 保存済みの別アイテムがあっても、石以外が選択状態にならないよう補正する。
+                saved_item = mega_stone or unavailable_mega_stone
+                st.session_state[_key(pokemon_name, "item")] = saved_item
             item = st.selectbox(
                 "持ち物",
                 item_names,
                 key=_key(pokemon_name, "item"),
                 index=item_names.index(saved_item) if saved_item in item_names else 0,
+                disabled=is_mega and not mega_stone,
             )
 
         build_left, build_right = st.columns([1.2, 0.8], gap="medium")
@@ -568,7 +640,10 @@ def render() -> None:
                 type="primary",
                 use_container_width=True,
             ):
-                if total_stat_points > 66:
+                if is_mega and not mega_stone:
+                    # 対応する石がデータにない場合、別アイテムでビルドを保存させない。
+                    st.error(unavailable_mega_stone)
+                elif total_stat_points > 66:
                     st.error("能力ポイントの合計を66以下にしてください。")
                 else:
                     build: PokemonBuild = {
