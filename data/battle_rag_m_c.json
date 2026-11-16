@@ -1,0 +1,270 @@
+[
+  {
+    "id": "m8-regulation",
+    "format": "Both",
+    "kind": "official",
+    "valid_from": "2026-11-04",
+    "valid_until": "2026-12-02",
+    "title": "ランクバトル シーズンM-8公式告知",
+    "section": "開催期間・レギュレーション",
+    "url": "https://champions-news.pokemon-home.com/ja/page/867.html",
+    "content": "2026年11月16日のランクバトルはシーズンM-8。シーズンは11月4日から12月2日10:59（日本時間）までで、レギュレーションM-Cを使用する。シングルとダブルに対応する。形式別の細則はゲーム内のランクバトルで各形式の「詳しいルール」を開いて確認できる。参加できるポケモンは公式告知内の専用一覧で確認する。",
+    "entities": {
+      "m-c": [
+        "m-c",
+        "ｍ－ｃ",
+        "m-8",
+        "レギュレーション",
+        "ランクバトル"
+      ]
+    }
+  },
+  {
+    "id": "mc-move-restrictions",
+    "format": "Both",
+    "kind": "official",
+    "valid_from": "2026-09-09",
+    "valid_until": "2026-12-02",
+    "title": "9月9日更新データ配信のお知らせ",
+    "section": "対戦バランス調整・使用禁止になった技",
+    "url": "https://champions-news.pokemon-home.com/ja/page/817.html",
+    "content": "M-C開始時の更新で、ニョロトノの「はたく」とブリジュラスの「ミラーコート」「メタルバースト」が使用禁止になった。これは告知で指定されたポケモンと技の組み合わせの制限。更新では「きりさく」も使用可能になった。",
+    "entities": {
+      "politoed": [
+        "ニョロトノ"
+      ],
+      "pound": [
+        "はたく"
+      ],
+      "archaludon": [
+        "ブリジュラス"
+      ],
+      "mirrorcoat": [
+        "ミラーコート"
+      ],
+      "metalburst": [
+        "メタルバースト"
+      ],
+      "slash": [
+        "きりさく"
+      ]
+    }
+  },
+  {
+    "id": "mc-pp-changes",
+    "format": "Both",
+    "kind": "official",
+    "valid_from": "2026-09-09",
+    "valid_until": "2026-12-02",
+    "title": "9月9日更新データ配信のお知らせ",
+    "section": "技のPP調整",
+    "url": "https://champions-news.pokemon-home.com/ja/page/817.html",
+    "content": "M-C開始時の更新で、ねがいごととちからをすいとるのPPがそれぞれ12から8になった。",
+    "entities": {
+      "wish": [
+        "ねがいごと"
+      ],
+      "strengthsap": [
+        "ちからをすいとる"
+      ]
+    }
+  },
+  {
+    "id": "mc-battle-log",
+    "format": "Both",
+    "kind": "official",
+    "valid_from": "2026-09-09",
+    "valid_until": "2026-12-02",
+    "title": "9月9日更新データ配信のお知らせ",
+    "section": "対戦ログ・選出サポート",
+    "url": "https://champions-news.pokemon-home.com/ja/page/817.html",
+    "content": "対戦中は「ログを見る」でその対戦の行動履歴を確認できる。選出画面では対戦データを使った選出サポートを表示できる。",
+    "entities": {
+      "battlelog": [
+        "対戦ログ",
+        "行動履歴",
+        "ログを見る",
+        "選出サポート"
+      ]
+    }
+  },
+  {
+    "id": "faq-illusion-moves",
+    "format": "Both",
+    "kind": "official",
+    "valid_from": "2026-11-16",
+    "valid_until": "2026-12-02",
+    "title": "Pokémon Champions ゲームプレイFAQ",
+    "section": "見えているポケモンの覚えない技が出た",
+    "url": "https://app-pcs.pokemon-support.com/hc/ja/articles/59011165660185-%E6%9C%AC%E6%9D%A5-%E3%81%9D%E3%81%AE%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%81%A0%E3%81%A8%E4%BD%BF%E3%81%88%E3%81%AA%E3%81%84%E6%8A%80-%E3%82%B7%E3%83%A3%E3%83%89%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%AB-%E3%81%8A%E3%81%AB%E3%81%B3-%E3%81%8A%E3%81%8D%E3%81%BF%E3%82%84%E3%81%92-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F",
+    "content": "質問は、見た目のポケモンでは使えないはずのシャドーボール・おにび・おきみやげを相手が使った場合。公式FAQでは、ゾロアークやヒスイゾロアークがイリュージョンで別のポケモンに化けているときに起こりうると説明している。",
+    "entities": {
+      "illusion": [
+        "イリュージョン"
+      ],
+      "zoroark": [
+        "ゾロアーク"
+      ],
+      "shadowball": [
+        "シャドーボール"
+      ],
+      "willowisp": [
+        "おにび"
+      ],
+      "memento": [
+        "おきみやげ"
+      ]
+    }
+  },
+  {
+    "id": "faq-illusion-immunity",
+    "format": "Both",
+    "kind": "official",
+    "valid_from": "2026-11-16",
+    "valid_until": "2026-12-02",
+    "title": "Pokémon Champions ゲームプレイFAQ",
+    "section": "見かけのタイプでは有効なはずの技が無効になった",
+    "url": "https://app-pcs.pokemon-support.com/hc/ja/articles/59011501975833-%E3%82%BF%E3%82%A4%E3%83%97%E7%9B%B8%E6%80%A7%E4%B8%8A%E3%81%AF%E6%9C%89%E5%8A%B9%E3%81%AA%E3%81%AF%E3%81%9A%E3%81%AE-%E3%83%8E%E3%83%BC%E3%83%9E%E3%83%AB-%E3%82%B4%E3%83%BC%E3%82%B9%E3%83%88-%E3%81%8B%E3%81%8F%E3%81%A8%E3%81%86-%E3%82%A8%E3%82%B9%E3%83%91%E3%83%BC-%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AE%E6%8A%80%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%93%E3%82%8D-%E5%8A%B9%E6%9E%9C%E3%81%8C%E3%81%AA%E3%81%84%E3%81%A8%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%9F",
+    "content": "見た目のタイプ上は当たるはずのノーマル・ゴースト・かくとう・エスパー技が無効なら、実際の相手がイリュージョンで変装中のゾロアークまたはヒスイゾロアークという可能性がある。公式FAQはこの事例を変装中に起こりうる挙動として挙げている。",
+    "entities": {
+      "illusion": [
+        "イリュージョン"
+      ],
+      "zoroark": [
+        "ゾロアーク"
+      ],
+      "immunity": [
+        "タイプ相性",
+        "タイプ無効",
+        "効果がない"
+      ]
+    }
+  },
+  {
+    "id": "test-encore-prankster",
+    "format": "Doubles",
+    "kind": "verified",
+    "valid_from": "2026-11-16",
+    "valid_until": "2026-12-02",
+    "title": "Champions Battle Mechanics Research",
+    "section": "Hydrametr0nice・DarkFEの4月18日検証 #176",
+    "url": "https://www.smogon.com/forums/posts/10959837/",
+    "content": "ダブルでの複数の行動を用いた2026年4月18日の検証。いたずらごころのヤミラミがのしかかりを選んだ後、アンコールでじこさいせいに変わったケースでは、じこさいせいは最後に出た。逆に、いたずらごころのクレッフィがでんじはを選び、アンコールでじゃれつくに変わったケースでは、より速いオオニューラより先に行動した。検証時の観測であり、M-Cでの再検証は出典から確認できない。",
+    "entities": {
+      "prankster": [
+        "いたずらごころ"
+      ],
+      "encore": [
+        "アンコール"
+      ],
+      "recover": [
+        "じこさいせい"
+      ],
+      "bodyslam": [
+        "のしかかり"
+      ],
+      "thunderwave": [
+        "でんじは"
+      ],
+      "playrough": [
+        "じゃれつく"
+      ],
+      "priority": [
+        "行動順",
+        "優先度"
+      ]
+    }
+  },
+  {
+    "id": "test-knockoff-items",
+    "format": "Doubles",
+    "kind": "verified",
+    "valid_from": "2026-11-16",
+    "valid_until": "2026-12-02",
+    "title": "Champions Battle Mechanics Research",
+    "section": "DarkFEの4月10日検証 #112",
+    "url": "https://www.smogon.com/forums/threads/champions-battle-mechanics-research.3780372/post-10947013",
+    "content": "パッチ1.0.2のダブルで、マリルリとゲンガーを使用してはたきおとすと持ち物の順序を実機検証した。きあいのタスキ・ナモのみはそれぞれの条件を満たす場合にダメージの処理で効果が出た。検証時の観測であり、M-Cでの再検証は出典から確認できない。",
+    "entities": {
+      "knockoff": [
+        "はたきおとす"
+      ],
+      "focussash": [
+        "きあいのタスキ",
+        "タスキ"
+      ],
+      "colburberry": [
+        "ナモのみ"
+      ]
+    }
+  },
+  {
+    "id": "build-m7-bug-singles",
+    "format": "Singles",
+    "kind": "build",
+    "valid_from": "2026-11-16",
+    "valid_until": "2026-12-02",
+    "title": "M-7シングル 虫統一最終3桁（受験少女）",
+    "section": "構築の方針・基本の動き",
+    "url": "https://note.com/kamen_acht/n/n75c9afcc394a",
+    "content": "M-CのシーズンM-7シングルで、著者は虫統一で最終765位・レート2177と報告。先発を相手に合わせて1匹を倒すことを狙い、メガグソクムシャなどで相手を削って、バサギリ・ウルガモス・ペンドラーなどが残りを倒せる展開を目指した。相手の選出をゆがめる枠としてビビヨンを挙げている。M-7の事例。",
+    "entities": {
+      "golisopodmega": [
+        "メガグソクムシャ",
+        "グソクムシャ"
+      ],
+      "kleavor": [
+        "バサギリ"
+      ],
+      "volcarona": [
+        "ウルガモス"
+      ],
+      "scolipede": [
+        "ペンドラー"
+      ],
+      "vivillon": [
+        "ビビヨン"
+      ],
+      "bugmonotype": [
+        "虫統一"
+      ]
+    }
+  },
+  {
+    "id": "build-gc2-rain-trick-room",
+    "format": "Doubles",
+    "kind": "build",
+    "valid_from": "2026-11-16",
+    "valid_until": "2026-12-02",
+    "title": "グローバルチャレンジ2027 II 雨クチート・そうしょくリキキリン（コメット）",
+    "section": "選出・立ち回り：基本選出",
+    "url": "https://note.com/good_yak163/n/n5b7aecb3e276",
+    "content": "M-Cダブルのグローバルチャレンジ2027 IIで著者が使った構築例。トリックルーム軸の基本選出は先発クチートとそうしょくリキキリン、後発ペリッパーとブリジュラス。リキキリンでトリックルームを展開し、クチートなどでブリジュラスの障害を倒してから、ブリジュラスで残りを詰める。相手の並びに応じて、すいすいメガラグラージで雨下から先に動くプランも使った。大会での構築例。",
+    "entities": {
+      "mawilemega": [
+        "メガクチート",
+        "クチート"
+      ],
+      "farigiraf": [
+        "リキキリン"
+      ],
+      "sapsipper": [
+        "そうしょく"
+      ],
+      "pelipper": [
+        "ペリッパー"
+      ],
+      "archaludon": [
+        "ブリジュラス"
+      ],
+      "swampertmega": [
+        "メガラグラージ",
+        "ラグラージ"
+      ],
+      "trickroom": [
+        "トリックルーム",
+        "トリル"
+      ]
+    }
+  }
+]
