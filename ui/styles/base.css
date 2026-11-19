@@ -5,13 +5,7 @@
     }
 
 
-    [data-testid="stToolbar"],
-    [data-testid="stDecoration"],
-    [data-testid="stHeaderActionElements"] {
-        display: none;
-    }
-
-    [data-testid="stHeader"] {
+    [data-testid="stDecoration"] {
         display: none;
     }
 
