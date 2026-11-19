@@ -12,7 +12,8 @@ from back.champions_battle_data import (
     fetch_pokemon_battle_data,
     rows_for_category,
 )
-from back.move_stats import move_japanese_name, move_stats
+from back.battle_names import battle_japanese_name
+from back.move_stats import move_stats
 
 
 CATEGORIES = ("move", "held_item", "teammate", "stat_alignment", "stat_points", "ability")
@@ -53,7 +54,7 @@ def _fetch_statistics(showdown_id: str, battle_format: BattleFormat, categories:
         for row in rows_for_category(data, category):
             name = row["name"]
             entry = {
-                "name": (move_japanese_name(name) or name) if category == "move" else name,
+                "name": battle_japanese_name(category, name),
                 "rank": row.get("rank"),
                 "percentage": row.get("percentage") or None,
                 "percentage_value": row.get("percentage_value"),

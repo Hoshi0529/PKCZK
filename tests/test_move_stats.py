@@ -4,11 +4,65 @@ from unittest import TestCase
 from unittest.mock import patch
 
 from back.groq_chat import stream_reply
+from back.battle_names import battle_japanese_name
 from back.move_stats import move_stats, run_move_stats_tool
 from test_battle_rag import MemoryStore
 
 
 class MoveStatsTest(TestCase):
+    def test_natures_items_and_abilities_reach_llm_in_japanese(self):
+        examples = (
+            ("stat_alignment", "Jolly", "ようき"),
+            ("stat_alignment", "Adamant", "いじっぱり"),
+            ("stat_alignment", "Modest", "ひかえめ"),
+            ("stat_alignment", "Unknown Nature", "Unknown Nature"),
+            ("held_item", "Choice Scarf", "こだわりスカーフ"),
+            ("held_item", "Focus Sash", "きあいのタスキ"),
+            ("held_item", "Unknown Item", "Unknown Item"),
+            ("ability", "Rough Skin", "さめはだ"),
+            ("ability", "Chlorophyll", "ようりょくそ"),
+            ("ability", "Unknown Ability", "Unknown Ability"),
+        )
+        categories = ["stat_alignment", "held_item", "ability"]
+        request = {
+            "role": "assistant",
+            "tool_calls": [{
+                "id": "call_pcbd",
+                "type": "function",
+                "function": {
+                    "name": "get_pcbd_battle_data",
+                    "arguments": json.dumps({"showdown_ids": ["garchomp"], "categories": categories}),
+                },
+            }],
+        }
+        data = {"season": "Current", "rows": [
+            {"category": category, "name": english, "rank": index, "percentage": "12.3%"}
+            for index, (category, english, _) in enumerate(examples, 1)
+        ]}
+        store = MemoryStore()
+        store.history[0]["content"] = "性格、持ち物、特性の採用率を教えて"
+        with (
+            patch.dict(os.environ, {"LANGSMITH_TRACING": "false"}),
+            patch("back.groq_chat._request_tool_decision", return_value=(request, None)),
+            patch("back.pcbd_tool.fetch_pokemon_battle_data", return_value=data) as fetch,
+            patch("back.groq_chat._request_completion", return_value=("回答", None)) as generate,
+        ):
+            list(stream_reply(store, "thread", "question", pokemon=[
+                {"name": "ガブリアス", "showdown_id": "garchomp"},
+            ]))
+        fetch.assert_called_once_with("garchomp", "Singles")
+        actual = json.loads(generate.call_args.args[0][-1]["content"])["results"][0]["categories"]
+        for category in categories:
+            self.assertEqual(
+                [(row["name"], row["percentage"]) for row in actual[category]],
+                [(japanese, "12.3%") for cat, _, japanese in examples if cat == category],
+            )
+        for category, english, japanese in examples:
+            self.assertEqual(battle_japanese_name(category, japanese), japanese)
+            self.assertEqual(battle_japanese_name(category, english.lower()), japanese if english != japanese else english.lower())
+        self.assertEqual(battle_japanese_name("held_item", "focussash"), "きあいのタスキ")
+        self.assertEqual(battle_japanese_name("teammate", "Garchomp"), "Garchomp")
+
     def test_display_kinds(self):
         for name, power, accuracy in (
             ("じしん", "100", "100%"),
