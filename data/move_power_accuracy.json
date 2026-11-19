@@ -1,0 +1,4122 @@
+{
+  "accelerock": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "acidarmor": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "acidspray": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "acrobatics": {
+    "power": 55,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 55,
+    "pcbd_accuracy": 100
+  },
+  "acupressure": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "aerialace": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 101
+  },
+  "afteryou": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "agility": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "aircutter": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 95
+  },
+  "airslash": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 95
+  },
+  "alluringvoice": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "allyswitch": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "amnesia": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "ancientpower": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "appleacid": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "aquacutter": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "aquajet": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "aquaring": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "aquastep": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "aquatail": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 90
+  },
+  "armorcannon": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "aromaticmist": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "assurance": {
+    "power": 60,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "attract": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "aurasphere": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 101
+  },
+  "aurawheel": {
+    "power": 110,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 110,
+    "pcbd_accuracy": 100
+  },
+  "auroraveil": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "avalanche": {
+    "power": 60,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "axekick": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 90
+  },
+  "babydolleyes": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "banefulbunker": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "barbbarrage": {
+    "power": 60,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "batonpass": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "beakblast": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "beatup": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "belch": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 90
+  },
+  "bellydrum": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "bind": {
+    "power": 15,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 15,
+    "pcbd_accuracy": 85
+  },
+  "bite": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "bitterblade": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "bittermalice": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "blastburn": {
+    "power": 150,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 90
+  },
+  "blazekick": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 90
+  },
+  "blizzard": {
+    "power": 110,
+    "power_kind": "fixed",
+    "accuracy": 70,
+    "accuracy_kind": "percent",
+    "pcbd_power": 110,
+    "pcbd_accuracy": 70
+  },
+  "block": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "bodypress": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "bodyslam": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 100
+  },
+  "bonerush": {
+    "power": 30,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 30,
+    "pcbd_accuracy": 90
+  },
+  "boomburst": {
+    "power": 140,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 140,
+    "pcbd_accuracy": 100
+  },
+  "bounce": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 85
+  },
+  "bravebird": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "breakingswipe": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "brickbreak": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "brutalswing": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "bugbite": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "bugbuzz": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "bulkup": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "bulldoze": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "bulletpunch": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "bulletseed": {
+    "power": 25,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 25,
+    "pcbd_accuracy": 100
+  },
+  "burningjealousy": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "burnup": {
+    "power": 130,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 130,
+    "pcbd_accuracy": 100
+  },
+  "calmmind": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "ceaselessedge": {
+    "power": 65,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 90
+  },
+  "charge": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "chargebeam": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 90
+  },
+  "charm": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "chillingwater": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "chillyreception": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "circlethrow": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 90
+  },
+  "clangingscales": {
+    "power": 110,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 110,
+    "pcbd_accuracy": 100
+  },
+  "clangoroussoul": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "clearsmog": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 101
+  },
+  "closecombat": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "coaching": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "coil": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "comeuppance": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "confuseray": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "copycat": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "corrosivegas": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "cosmicpower": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "cottonguard": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "cottonspore": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "counter": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "courtchange": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "covet": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "crabhammer": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 95
+  },
+  "crosschop": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 80,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 80
+  },
+  "crosspoison": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "crunch": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "crushclaw": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 95
+  },
+  "curse": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "darkestlariat": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 100
+  },
+  "darkpulse": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "dazzlinggleam": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "decorate": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "defog": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "destinybond": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "detect": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "dig": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "direclaw": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "disable": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "disarmingvoice": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 101
+  },
+  "discharge": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "dive": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "doubleedge": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "doublehit": {
+    "power": 35,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 35,
+    "pcbd_accuracy": 90
+  },
+  "doubleshock": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "doubleteam": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "dracometeor": {
+    "power": 130,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 130,
+    "pcbd_accuracy": 90
+  },
+  "dragoncheer": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "dragonclaw": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "dragondance": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "dragondarts": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "dragonpulse": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 100
+  },
+  "dragonrush": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 75,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 75
+  },
+  "dragontail": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 90
+  },
+  "drainingkiss": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "drainpunch": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "drillpeck": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "drillrun": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 95
+  },
+  "drumbeating": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "dualwingbeat": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 90
+  },
+  "dynamicpunch": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 50,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 50
+  },
+  "earthpower": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "earthquake": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 100
+  },
+  "eerieimpulse": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "eeriespell": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "electricterrain": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "electrify": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "electroball": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "electroshot": {
+    "power": 130,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 130,
+    "pcbd_accuracy": 100
+  },
+  "electroweb": {
+    "power": 55,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 55,
+    "pcbd_accuracy": 95
+  },
+  "encore": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "endeavor": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "endure": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "energyball": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "entrainment": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "eruption": {
+    "power": 150,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 100
+  },
+  "expandingforce": {
+    "power": 80,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "explosion": {
+    "power": 250,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 250,
+    "pcbd_accuracy": 100
+  },
+  "extrasensory": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "extremespeed": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "facade": {
+    "power": 70,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "fairylock": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "fakeout": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "faketears": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "featherdance": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "feint": {
+    "power": 30,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 30,
+    "pcbd_accuracy": 100
+  },
+  "fellstinger": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "ficklebeam": {
+    "power": 80,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "fierydance": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "finalgambit": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "fireblast": {
+    "power": 110,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 110,
+    "pcbd_accuracy": 85
+  },
+  "firefang": {
+    "power": 65,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 95
+  },
+  "firelash": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "firepunch": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "firespin": {
+    "power": 35,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 35,
+    "pcbd_accuracy": 85
+  },
+  "firstimpression": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 100
+  },
+  "fissure": {
+    "power": null,
+    "power_kind": "ohko",
+    "accuracy": 30,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 30
+  },
+  "flail": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "flamecharge": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "flamethrower": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "flareblitz": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "flashcannon": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "flatter": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "fling": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "flipturn": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "flowertrick": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 101
+  },
+  "fly": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 95
+  },
+  "flyingpress": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 95
+  },
+  "focusblast": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 70,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 70
+  },
+  "focusenergy": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "focuspunch": {
+    "power": 150,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 100
+  },
+  "followme": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "forestscurse": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "foulplay": {
+    "power": 95,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 95,
+    "pcbd_accuracy": 100
+  },
+  "freezedry": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "frenzyplant": {
+    "power": 150,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 90
+  },
+  "frostbreath": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 90
+  },
+  "futuresight": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "gastroacid": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "gigadrain": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "gigaimpact": {
+    "power": 150,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 90
+  },
+  "gigatonhammer": {
+    "power": 160,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 160,
+    "pcbd_accuracy": 100
+  },
+  "glaiverush": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "glare": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "grassknot": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "grassyglide": {
+    "power": 55,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 55,
+    "pcbd_accuracy": 100
+  },
+  "grassyterrain": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "gravapple": {
+    "power": 90,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "gravity": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "growth": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "guardsplit": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "guardswap": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "guillotine": {
+    "power": null,
+    "power_kind": "ohko",
+    "accuracy": 30,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 30
+  },
+  "gunkshot": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 80,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 80
+  },
+  "gyroball": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "hammerarm": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 90
+  },
+  "hardpress": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "haze": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "headlongrush": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "headsmash": {
+    "power": 150,
+    "power_kind": "fixed",
+    "accuracy": 80,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 80
+  },
+  "healbell": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "healingwish": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "healpulse": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "heatcrash": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "heatwave": {
+    "power": 95,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 95,
+    "pcbd_accuracy": 90
+  },
+  "heavyslam": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "helpinghand": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "hex": {
+    "power": 65,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 100
+  },
+  "highhorsepower": {
+    "power": 95,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 95,
+    "pcbd_accuracy": 95
+  },
+  "highjumpkick": {
+    "power": 130,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 130,
+    "pcbd_accuracy": 90
+  },
+  "honeclaws": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "horndrill": {
+    "power": null,
+    "power_kind": "ohko",
+    "accuracy": 30,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 30
+  },
+  "hornleech": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "howl": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "hurricane": {
+    "power": 110,
+    "power_kind": "fixed",
+    "accuracy": 70,
+    "accuracy_kind": "percent",
+    "pcbd_power": 110,
+    "pcbd_accuracy": 70
+  },
+  "hydrocannon": {
+    "power": 150,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 90
+  },
+  "hydropump": {
+    "power": 110,
+    "power_kind": "fixed",
+    "accuracy": 80,
+    "accuracy_kind": "percent",
+    "pcbd_power": 110,
+    "pcbd_accuracy": 80
+  },
+  "hyperbeam": {
+    "power": 150,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 90
+  },
+  "hypervoice": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "hypnosis": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 60,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 60
+  },
+  "icebeam": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "icefang": {
+    "power": 65,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 95
+  },
+  "icehammer": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 90
+  },
+  "icepunch": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "iceshard": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "icespinner": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "iciclecrash": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 90
+  },
+  "iciclespear": {
+    "power": 25,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 25,
+    "pcbd_accuracy": 100
+  },
+  "icywind": {
+    "power": 55,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 55,
+    "pcbd_accuracy": 95
+  },
+  "imprison": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "infernalparade": {
+    "power": 65,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 100
+  },
+  "inferno": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 50,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 50
+  },
+  "infestation": {
+    "power": 20,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 20,
+    "pcbd_accuracy": 100
+  },
+  "ingrain": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "instruct": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "irondefense": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "ironhead": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "irontail": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 75,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 75
+  },
+  "jawlock": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "jetpunch": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "kingsshield": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "knockoff": {
+    "power": 65,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 100
+  },
+  "kowtowcleave": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 101
+  },
+  "lashout": {
+    "power": 75,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "lastresort": {
+    "power": 140,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 140,
+    "pcbd_accuracy": 100
+  },
+  "lastrespects": {
+    "power": 50,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "lavaplume": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "leafblade": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "leafstorm": {
+    "power": 130,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 130,
+    "pcbd_accuracy": 90
+  },
+  "leechlife": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "leechseed": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 90
+  },
+  "lifedew": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "lightofruin": {
+    "power": 140,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 140,
+    "pcbd_accuracy": 90
+  },
+  "lightscreen": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "liquidation": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 100
+  },
+  "lockon": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "lowkick": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "lowsweep": {
+    "power": 65,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 100
+  },
+  "luminacrash": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "lunge": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "machpunch": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "magicalleaf": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 101
+  },
+  "magicpowder": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "magicroom": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "magneticflux": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "magnetrise": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "makeitrain": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 95
+  },
+  "matchagotcha": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 90
+  },
+  "meanlook": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "megahorn": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 85
+  },
+  "megakick": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 75,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 75
+  },
+  "memento": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "metalburst": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "metalsound": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 85
+  },
+  "meteorassault": {
+    "power": 170,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 170,
+    "pcbd_accuracy": 100
+  },
+  "meteorbeam": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 90
+  },
+  "meteormash": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 90
+  },
+  "milkdrink": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "minimize": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "mirrorcoat": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "mistyexplosion": {
+    "power": 100,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 100
+  },
+  "mistyterrain": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "moonblast": {
+    "power": 95,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 95,
+    "pcbd_accuracy": 100
+  },
+  "moonlight": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "morningsun": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "mortalspin": {
+    "power": 30,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 30,
+    "pcbd_accuracy": 100
+  },
+  "mountaingale": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 85
+  },
+  "muddywater": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 85
+  },
+  "mudshot": {
+    "power": 55,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 55,
+    "pcbd_accuracy": 95
+  },
+  "mudslap": {
+    "power": 20,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 20,
+    "pcbd_accuracy": 100
+  },
+  "mysticalfire": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "nastyplot": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "nightdaze": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 95
+  },
+  "nightshade": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "nightslash": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "nobleroar": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "noretreat": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "nuzzle": {
+    "power": 20,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 20,
+    "pcbd_accuracy": 100
+  },
+  "octolock": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "outrage": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "overdrive": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "overheat": {
+    "power": 130,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 130,
+    "pcbd_accuracy": 90
+  },
+  "painsplit": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "paraboliccharge": {
+    "power": 65,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 100
+  },
+  "partingshot": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "payback": {
+    "power": 50,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "perishsong": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "petalblizzard": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "petaldance": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "phantomforce": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "pinmissile": {
+    "power": 25,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 25,
+    "pcbd_accuracy": 95
+  },
+  "playrough": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 90
+  },
+  "pluck": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "poisonfang": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "poisonjab": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "poisonpowder": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 75,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 75
+  },
+  "pollenpuff": {
+    "power": 90,
+    "power_kind": "damage_or_heal",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "poltergeist": {
+    "power": 110,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 110,
+    "pcbd_accuracy": 90
+  },
+  "populationbomb": {
+    "power": 20,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 20,
+    "pcbd_accuracy": 90
+  },
+  "pounce": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "powergem": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "powersplit": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "powerswap": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "powertrick": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "powertrip": {
+    "power": 20,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 20,
+    "pcbd_accuracy": 100
+  },
+  "powerwhip": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 85
+  },
+  "protect": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "psychic": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "psychicfangs": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 100
+  },
+  "psychicnoise": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "psychicterrain": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "psychocut": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "psychup": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "psyshieldbash": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 90
+  },
+  "psyshock": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "pyroball": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 90
+  },
+  "quash": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "quickattack": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "quickguard": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "quiverdance": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "ragefist": {
+    "power": 50,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "ragepowder": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "ragingbull": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "ragingfury": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "raindance": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "rapidspin": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "razorshell": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 95
+  },
+  "recover": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "recycle": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "reflect": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "reflecttype": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "rest": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "reversal": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "revivalblessing": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "risingvoltage": {
+    "power": 70,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "roar": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "rockblast": {
+    "power": 25,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 25,
+    "pcbd_accuracy": 90
+  },
+  "rockpolish": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "rockslide": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 90
+  },
+  "rocktomb": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 95
+  },
+  "rockwrecker": {
+    "power": 150,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 90
+  },
+  "roleplay": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "roost": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "round": {
+    "power": 60,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "sacredsword": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "safeguard": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "saltcure": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "sandstorm": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "sandtomb": {
+    "power": 35,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 35,
+    "pcbd_accuracy": 85
+  },
+  "scald": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "scaleshot": {
+    "power": 25,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 25,
+    "pcbd_accuracy": 90
+  },
+  "scaryface": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "scorchingsands": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "screech": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 85
+  },
+  "seedbomb": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "seismictoss": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "selfdestruct": {
+    "power": 200,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 200,
+    "pcbd_accuracy": 100
+  },
+  "shadowball": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "shadowclaw": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "shadowpunch": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 101
+  },
+  "shadowsneak": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "shedtail": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "sheercold": {
+    "power": null,
+    "power_kind": "ohko",
+    "accuracy": 30,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 30
+  },
+  "shellsidearm": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "shellsmash": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "shelter": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "shiftgear": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "simplebeam": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "sing": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 55,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 55
+  },
+  "skillswap": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "skittersmack": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 90
+  },
+  "skyattack": {
+    "power": 140,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 140,
+    "pcbd_accuracy": 90
+  },
+  "slackoff": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "slash": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "sleeppowder": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 75,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 75
+  },
+  "sleeptalk": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "sludgebomb": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "sludgewave": {
+    "power": 95,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 95,
+    "pcbd_accuracy": 100
+  },
+  "smackdown": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "smartstrike": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": null,
+    "accuracy_kind": "always_hit",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 101
+  },
+  "snaptrap": {
+    "power": 35,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 35,
+    "pcbd_accuracy": 100
+  },
+  "snarl": {
+    "power": 55,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 55,
+    "pcbd_accuracy": 95
+  },
+  "snipeshot": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 100
+  },
+  "snore": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "snowscape": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "soak": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "solarbeam": {
+    "power": 120,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "solarblade": {
+    "power": 125,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 125,
+    "pcbd_accuracy": 100
+  },
+  "sparklingaria": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "speedswap": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "spicyextract": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "spikes": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "spikyshield": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "spiritbreak": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "spiritshackle": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "spite": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "spitup": {
+    "power": null,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 100
+  },
+  "splash": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "stealthrock": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "steelbeam": {
+    "power": 140,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 140,
+    "pcbd_accuracy": 95
+  },
+  "steelroller": {
+    "power": 130,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 130,
+    "pcbd_accuracy": 100
+  },
+  "steelwing": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 90
+  },
+  "stickyweb": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "stockpile": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "stompingtantrum": {
+    "power": 75,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "stoneaxe": {
+    "power": 65,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 90
+  },
+  "stoneedge": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 80,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 80
+  },
+  "storedpower": {
+    "power": 20,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 20,
+    "pcbd_accuracy": 100
+  },
+  "stormthrow": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "strengthsap": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "stringshot": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 95
+  },
+  "strugglebug": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "stuffcheeks": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "stunspore": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 75,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 75
+  },
+  "substitute": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "suckerpunch": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "sunnyday": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "supercellslam": {
+    "power": 100,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 100,
+    "pcbd_accuracy": 95
+  },
+  "superfang": {
+    "power": null,
+    "power_kind": "direct_damage",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 1,
+    "pcbd_accuracy": 90
+  },
+  "superpower": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "surf": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "swagger": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 85
+  },
+  "swallow": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "sweetkiss": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 75,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 75
+  },
+  "sweetscent": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "switcheroo": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "swordsdance": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "synthesis": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "syrupbomb": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 90
+  },
+  "tailslap": {
+    "power": 25,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 25,
+    "pcbd_accuracy": 85
+  },
+  "tailwind": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "taunt": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "tearfullook": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "teatime": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "teeterdance": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "temperflare": {
+    "power": 75,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "terrainpulse": {
+    "power": 50,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "thief": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "thrash": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "throatchop": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "thunder": {
+    "power": 110,
+    "power_kind": "fixed",
+    "accuracy": 70,
+    "accuracy_kind": "percent",
+    "pcbd_power": 110,
+    "pcbd_accuracy": 70
+  },
+  "thunderbolt": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "thunderfang": {
+    "power": 65,
+    "power_kind": "fixed",
+    "accuracy": 95,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 95
+  },
+  "thunderpunch": {
+    "power": 75,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 75,
+    "pcbd_accuracy": 100
+  },
+  "thundershock": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "thunderwave": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 90
+  },
+  "tickle": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "tidyup": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "topsyturvy": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "torchsong": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "torment": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "toxic": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 90
+  },
+  "toxicspikes": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "toxicthread": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "trailblaze": {
+    "power": 50,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "transform": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "triattack": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "trick": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "trickortreat": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "trickroom": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "triplearrows": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "tripleaxel": {
+    "power": 20,
+    "power_kind": "variable",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 20,
+    "pcbd_accuracy": 90
+  },
+  "tropkick": {
+    "power": 85,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 85,
+    "pcbd_accuracy": 100
+  },
+  "twinbeam": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "upperhand": {
+    "power": 65,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 100
+  },
+  "uproar": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "uturn": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "vacuumwave": {
+    "power": 40,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 40,
+    "pcbd_accuracy": 100
+  },
+  "venoshock": {
+    "power": 65,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 65,
+    "pcbd_accuracy": 100
+  },
+  "voltswitch": {
+    "power": 70,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 70,
+    "pcbd_accuracy": 100
+  },
+  "volttackle": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "waterfall": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "waterpulse": {
+    "power": 60,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 60,
+    "pcbd_accuracy": 100
+  },
+  "watershuriken": {
+    "power": 15,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 15,
+    "pcbd_accuracy": 100
+  },
+  "waterspout": {
+    "power": 150,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 150,
+    "pcbd_accuracy": 100
+  },
+  "wavecrash": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "weatherball": {
+    "power": 50,
+    "power_kind": "variable",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 50,
+    "pcbd_accuracy": 100
+  },
+  "whirlpool": {
+    "power": 35,
+    "power_kind": "fixed",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": 35,
+    "pcbd_accuracy": 85
+  },
+  "whirlwind": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "wideguard": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "wildcharge": {
+    "power": 90,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 90,
+    "pcbd_accuracy": 100
+  },
+  "willowisp": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 85,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 85
+  },
+  "wish": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "wonderroom": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "woodhammer": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 100
+  },
+  "worryseed": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": null,
+    "pcbd_accuracy": 100
+  },
+  "wrap": {
+    "power": 15,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 15,
+    "pcbd_accuracy": 90
+  },
+  "xscissor": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  },
+  "yawn": {
+    "power": null,
+    "power_kind": "status",
+    "accuracy": null,
+    "accuracy_kind": "no_check",
+    "pcbd_power": null,
+    "pcbd_accuracy": 101
+  },
+  "zapcannon": {
+    "power": 120,
+    "power_kind": "fixed",
+    "accuracy": 50,
+    "accuracy_kind": "percent",
+    "pcbd_power": 120,
+    "pcbd_accuracy": 50
+  },
+  "zenheadbutt": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 90,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 90
+  },
+  "zingzap": {
+    "power": 80,
+    "power_kind": "fixed",
+    "accuracy": 100,
+    "accuracy_kind": "percent",
+    "pcbd_power": 80,
+    "pcbd_accuracy": 100
+  }
+}

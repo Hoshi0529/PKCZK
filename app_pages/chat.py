@@ -7,9 +7,16 @@ import streamlit as st
 
 from back.conversations import ConversationError, ConversationStore, conversation_id_from_url
 from back.groq_chat import ChatError, ReplyPokemon, stream_reply
+from back.move_stats import move_showdown_id
+from ui.battle_data import SHOWDOWN_IDS
 from ui.chat_session import conversation_builds, require_conversation_store
 from ui.layout import configure_page
-from ui.pokemon_catalog import POKEMON, pokemon_image_url
+from ui.pokemon_catalog import (
+    ABILITY_SHOWDOWN_IDS,
+    ITEM_SHOWDOWN_IDS,
+    POKEMON,
+    pokemon_image_url,
+)
 from ui.pokemon_types import STAT_NAMES, PokemonBuild, PokemonBuildMap, PokemonProfile
 from ui.sidebar import render_sidebar
 
@@ -153,14 +160,23 @@ def _reply_pokemon(names: list[str], builds: PokemonBuildMap) -> list[ReplyPokem
     for name in names:
         build = builds.get(name, {})
         info: ReplyPokemon = {"name": name}
+        if showdown_id := SHOWDOWN_IDS.get(name):
+            info["showdown_id"] = showdown_id
         if moves := [move for move in build.get("moves", []) if move not in unset]:
             info["moves"] = moves
+            move_ids = {move: move_id for move in moves if (move_id := move_showdown_id(move))}
+            if move_ids:
+                info["move_ids"] = move_ids
         if (nature := build.get("nature", "")) not in unset:
             info["nature"] = nature
         if (ability := build.get("ability", "")) not in unset:
             info["ability"] = ability
+            if ability_id := ABILITY_SHOWDOWN_IDS.get(ability):
+                info["ability_id"] = ability_id
         if (item := build.get("item", "")) not in unset:
             info["item"] = item
+            if item_id := ITEM_SHOWDOWN_IDS.get(item):
+                info["item_id"] = item_id
         if stats := build.get("actual_stats"):
             info["actual_stats"] = dict(stats)
         pokemon.append(info)

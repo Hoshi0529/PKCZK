@@ -2,6 +2,7 @@
 
 import json
 from pathlib import Path
+import re
 from urllib.parse import quote
 
 from ui.pokemon_types import PokemonProfile
@@ -22,6 +23,15 @@ def _load_json(filename: str) -> dict:
 _NAMES = _load_json("pokemon_champions_names_all_forms.json")
 _FORMS = _load_json("pcbd_forms.json")
 _LEGACY_POKEMON = _load_json("legacy_pokemon.json")
+ABILITY_SHOWDOWN_IDS: dict[str, str] = {}
+# PCBD's translation table is keyed by English name. Use Showdown's toID rule.
+for english_name, japanese_name in _load_json("pcbd_ability_names_ja.json").items():
+    if isinstance(japanese_name, str):
+        ability_id = re.sub(r"[^a-z0-9]", "", english_name.lower())
+        ABILITY_SHOWDOWN_IDS[english_name] = ability_id
+        ABILITY_SHOWDOWN_IDS[japanese_name] = ability_id
+
+ITEM_SHOWDOWN_IDS = _load_json("item_showdown_ids.json")
 _ARTWORK_NAMES: dict[str, str] = {}
 POKEMON: dict[str, PokemonProfile] = {}
 
