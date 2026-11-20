@@ -2,6 +2,7 @@
 
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor
 
 from groq.types.chat import ChatCompletionToolParam
 from langsmith import traceable
@@ -123,15 +124,23 @@ def run_pcbd_tool(arguments: str, allowed_ids: list[str]) -> dict:
         return {"error": "会話内のShowdown ID・対戦形式・項目を確認できませんでした。"}
 
     requested_categories = list(dict.fromkeys(categories))
-    results = []
-    for showdown_id in dict.fromkeys(showdown_ids):
+    unique_ids = list(dict.fromkeys(showdown_ids))
+
+    def fetch_result(showdown_id: str) -> dict:
         try:
-            result = _fetch_statistics(showdown_id, battle_format, requested_categories)
+            return _fetch_statistics(showdown_id, battle_format, requested_categories)
         except (RuntimeError, ValueError):
-            result = {
+            return {
                 "showdown_id": showdown_id,
                 "format": battle_format,
                 "error": "PCBDの対戦データを取得できませんでした。",
             }
-        results.append(result)
+
+    # Each Pokemon is independent. Run both permitted API requests together.
+    # executor.map preserves input order, so the response shape stays stable.
+    if len(unique_ids) == 1:
+        results = [fetch_result(unique_ids[0])]
+    else:
+        with ThreadPoolExecutor(max_workers=len(unique_ids)) as executor:
+            results = list(executor.map(fetch_result, unique_ids))
     return {"results": results}

@@ -128,6 +128,7 @@ def _options_from_api(rows: list[BattleRow]) -> list[str]:
     return list(dict.fromkeys(row["name"] for row in rows if row.get("name")))
 
 
+@st.cache_data(show_spinner=False)
 def _load_local_options(filename: str, key: str) -> list[str]:
     try:
         with (DATA_DIR / filename).open(encoding="utf-8") as file:

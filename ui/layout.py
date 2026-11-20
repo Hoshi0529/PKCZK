@@ -1,9 +1,17 @@
+from functools import lru_cache
 from pathlib import Path
 
 import streamlit as st
 
 
 STYLE_DIR = Path(__file__).parent / "styles"
+
+
+@lru_cache(maxsize=8)
+def _load_stylesheet(stylesheet: str) -> str:
+    return (STYLE_DIR / "base.css").read_text(encoding="utf-8") + (
+        STYLE_DIR / stylesheet
+    ).read_text(encoding="utf-8")
 
 
 def configure_page(title: str, stylesheet: str) -> None:
@@ -13,6 +21,5 @@ def configure_page(title: str, stylesheet: str) -> None:
         layout="wide",
         initial_sidebar_state="expanded",
     )
-    css = (STYLE_DIR / "base.css").read_text(encoding="utf-8")
-    css += (STYLE_DIR / stylesheet).read_text(encoding="utf-8")
+    css = _load_stylesheet(stylesheet)
     st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
