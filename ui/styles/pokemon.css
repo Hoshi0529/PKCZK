@@ -8,7 +8,7 @@
 
 [data-testid="stMainBlockContainer"] {
     max-width: 1600px;
-    padding: 0 !important;
+    padding: 3.75rem 0 0 !important;
 }
 
 [data-testid="stAppViewContainer"] > .main {

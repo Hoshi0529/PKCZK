@@ -9,6 +9,14 @@
         display: none;
     }
 
+    [data-testid="stHeader"] {
+        background: rgba(255, 255, 255, 0.96);
+    }
+
+    [data-testid="stMainBlockContainer"] {
+        padding-top: 3.75rem !important;
+    }
+
     .breadcrumb {
         display: flex;
         align-items: center;

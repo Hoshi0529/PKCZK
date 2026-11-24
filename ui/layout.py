@@ -39,7 +39,7 @@ def configure_page(
             )
         st.markdown(
             '<nav class="breadcrumb" aria-label="パンくずリスト">'
-            + '<span class="breadcrumb-home">推しポケラボ</span>'
+            + '<a class="breadcrumb-home" href="/new-advice">推しポケラボ</a>'
             + "<span class=\"breadcrumb-separator\">›</span>"
             + '<span class="breadcrumb-items">'
             + '<span class="breadcrumb-separator">›</span>'.join(trail)
