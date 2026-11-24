@@ -9,6 +9,45 @@
         display: none;
     }
 
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0 0 18px;
+        color: #829088;
+        font-size: 12px;
+    }
+
+    .breadcrumb-home {
+        color: #52665c;
+        font-weight: 650;
+    }
+
+    .breadcrumb-items {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .breadcrumb a {
+        color: #52665c;
+        text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+        color: #237b61;
+        text-decoration: underline;
+    }
+
+    .breadcrumb [aria-current="page"] {
+        color: #237b61;
+        font-weight: 650;
+    }
+
+    .breadcrumb-separator {
+        color: #a2aea6;
+    }
+
     [data-testid="stSidebar"] {
         background: #f6f6ee;
     }

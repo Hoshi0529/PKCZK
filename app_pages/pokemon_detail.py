@@ -455,7 +455,11 @@ def _render_stat_points_editor(
 
 
 def render() -> None:
-    configure_page("推しポケラボ | 個体の詳細設定", "pokemon.css")
+    configure_page(
+        "推しポケラボ | 個体の詳細設定",
+        "pokemon.css",
+        [("ポケモン選択", "/new-advice"), ("個体の詳細設定", None)],
+    )
     store = require_conversation_store()
     render_sidebar(store, back_to_selection=True)
     pokemon_name = cast(str | None, st.session_state.get("pokemon_detail_target"))

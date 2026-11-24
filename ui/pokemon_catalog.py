@@ -63,6 +63,54 @@ for pokemon_name, profile in _LEGACY_POKEMON.items():
     POKEMON.setdefault(pokemon_name, profile)
 
 
+# Mega forms share the species metadata ID with their unevolved form.
+_evolution_conflicts: dict[str, set[str]] = {}
+_mega_pokemon_names: set[str] = set()
+for form_id, form in _FORMS.items():
+    showdown_name = form.get("showdown_name") if isinstance(form, dict) else None
+    base_id = form.get("metadata_id") if isinstance(form, dict) else None
+    mega_names = _NAMES.get(form_id, {})
+    base_names = _NAMES.get(base_id, {}) if isinstance(base_id, str) else {}
+    mega_name = mega_names.get("name_ja") if isinstance(mega_names, dict) else None
+    base_name = base_names.get("name_ja") if isinstance(base_names, dict) else None
+    if (
+        isinstance(showdown_name, str)
+        and "-mega" in showdown_name.lower()
+        and isinstance(mega_name, str)
+        and mega_name in POKEMON
+    ):
+        _mega_pokemon_names.add(mega_name)
+        if isinstance(base_name, str) and base_name in POKEMON:
+            _evolution_conflicts.setdefault(mega_name, set()).add(base_name)
+            _evolution_conflicts.setdefault(base_name, set()).add(mega_name)
+
+# Only one Mega form can be selected across the two companion slots.
+for mega_name in _mega_pokemon_names:
+    _evolution_conflicts.setdefault(mega_name, set()).update(
+        _mega_pokemon_names - {mega_name}
+    )
+
+EVOLUTION_CONFLICTS = {
+    pokemon_name: frozenset(conflicts)
+    for pokemon_name, conflicts in _evolution_conflicts.items()
+}
+MEGA_POKEMON = frozenset(_mega_pokemon_names)
+
+
+def is_mega_pokemon(pokemon_name: str) -> bool:
+    return pokemon_name in MEGA_POKEMON
+
+
+def pokemon_selection_conflicts(first: str, second: str) -> bool:
+    return (
+        first != second
+        and (
+            first in MEGA_POKEMON and second in MEGA_POKEMON
+            or second in EVOLUTION_CONFLICTS.get(first, ())
+        )
+    )
+
+
 def pokemon_image_url(pokemon_name: str, fallback: str = "") -> str:
     saved_name = _ARTWORK_NAMES.get(pokemon_name)
     if not saved_name:

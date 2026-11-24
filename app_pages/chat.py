@@ -259,7 +259,11 @@ def _render_chat_header(
 
 
 def render() -> None:
-    configure_page("推しポケラボ | 相談", "pokemon.css")
+    configure_page(
+        "推しポケラボ | 相談",
+        "pokemon.css",
+        [("ポケモン選択", "/new-advice"), ("相談", None)],
+    )
     raw_id = st.query_params.get("conversation_id")
     conversation_id = conversation_id_from_url(raw_id)
     header = st.container()

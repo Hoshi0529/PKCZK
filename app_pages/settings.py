@@ -52,7 +52,11 @@ def _set_notice(level: str, message: str) -> None:
 
 
 def render() -> None:
-    configure_page("\u63a8\u3057\u30dd\u30b1\u30e9\u30dc | \u8a2d\u5b9a", "setting.css")
+    configure_page(
+        "\u63a8\u3057\u30dd\u30b1\u30e9\u30dc | \u8a2d\u5b9a",
+        "setting.css",
+        [("設定", None)],
+    )
     store = require_conversation_store()
 
     if st.session_state.pop("clear_setting_password_fields", False):

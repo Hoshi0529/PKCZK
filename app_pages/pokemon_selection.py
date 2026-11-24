@@ -5,7 +5,12 @@ import streamlit as st
 from back.conversations import ConversationError, ConversationStore
 from ui.chat_session import create_pokemon_conversation, remember_selected_pokemon, require_conversation_store
 from ui.layout import configure_page
-from ui.pokemon_catalog import POKEMON, pokemon_image_url
+from ui.pokemon_catalog import (
+    POKEMON,
+    is_mega_pokemon,
+    pokemon_image_url,
+    pokemon_selection_conflicts,
+)
 from ui.sidebar import render_sidebar
 from ui.pokemon_types import PokemonProfile
 
@@ -47,8 +52,20 @@ def _start_new_advice(store: ConversationStore) -> None:
         st.session_state.pop(key, None)
 
 
-def _remember_selection(widget_key: str, saved_key: str) -> None:
-    st.session_state[saved_key] = st.session_state.get(widget_key, PLACEHOLDER)
+def _remember_selection(
+    widget_key: str,
+    saved_key: str,
+    other_widget_key: str,
+    other_saved_key: str,
+) -> None:
+    selected = st.session_state.get(widget_key, PLACEHOLDER)
+    other_selected = st.session_state.get(
+        other_widget_key, st.session_state.get(other_saved_key, PLACEHOLDER)
+    )
+    if pokemon_selection_conflicts(selected, other_selected):
+        st.session_state[other_widget_key] = PLACEHOLDER
+        st.session_state[other_saved_key] = PLACEHOLDER
+    st.session_state[saved_key] = selected
 
 
 def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
@@ -122,8 +139,29 @@ def _render_selection_workspace(store: ConversationStore) -> None:
                 '<span class="count-pill">必須</span></div>',
                 unsafe_allow_html=True,
             )
-            first_options = [PLACEHOLDER, *POKEMON.keys()]
-            first_saved = st.session_state.get(FIRST_SELECTION_STATE, PLACEHOLDER)
+            first_saved = st.session_state.get(
+                "first_pokemon_select",
+                st.session_state.get(FIRST_SELECTION_STATE, PLACEHOLDER),
+            )
+            second_saved = st.session_state.get(
+                "second_pokemon_select",
+                st.session_state.get(SECOND_SELECTION_STATE, PLACEHOLDER),
+            )
+            if (
+                pokemon_selection_conflicts(first_saved, second_saved)
+                or is_mega_pokemon(first_saved) and is_mega_pokemon(second_saved)
+            ):
+                second_saved = PLACEHOLDER
+                st.session_state[SECOND_SELECTION_STATE] = PLACEHOLDER
+                st.session_state["second_pokemon_select"] = PLACEHOLDER
+            first_options = [
+                PLACEHOLDER,
+                *[
+                    name
+                    for name in POKEMON
+                    if not pokemon_selection_conflicts(name, second_saved)
+                ],
+            ]
             if first_saved not in first_options:
                 first_saved = PLACEHOLDER
             first_pokemon = st.selectbox(
@@ -134,7 +172,12 @@ def _render_selection_workspace(store: ConversationStore) -> None:
                 key="first_pokemon_select",
                 format_func=_local_pokemon_name,
                 on_change=_remember_selection,
-                args=("first_pokemon_select", FIRST_SELECTION_STATE),
+                args=(
+                    "first_pokemon_select",
+                    FIRST_SELECTION_STATE,
+                    "second_pokemon_select",
+                    SECOND_SELECTION_STATE,
+                ),
             )
             st.session_state[FIRST_SELECTION_STATE] = first_pokemon
 
@@ -144,14 +187,26 @@ def _render_selection_workspace(store: ConversationStore) -> None:
                 '<span class="count-pill count-pill-optional">任意</span></div>',
                 unsafe_allow_html=True,
             )
-            second_saved = st.session_state.get(SECOND_SELECTION_STATE, PLACEHOLDER)
-            if second_saved == first_pokemon:
+            second_saved = st.session_state.get(
+                "second_pokemon_select",
+                st.session_state.get(SECOND_SELECTION_STATE, PLACEHOLDER),
+            )
+            if (
+                second_saved == first_pokemon
+                or pokemon_selection_conflicts(first_pokemon, second_saved)
+                or is_mega_pokemon(first_pokemon) and is_mega_pokemon(second_saved)
+            ):
                 second_saved = PLACEHOLDER
                 st.session_state[SECOND_SELECTION_STATE] = PLACEHOLDER
                 st.session_state["second_pokemon_select"] = PLACEHOLDER
             second_options = [
                 PLACEHOLDER,
-                *[name for name in POKEMON if name != first_pokemon],
+                *[
+                    name
+                    for name in POKEMON
+                    if name != first_pokemon
+                    and not pokemon_selection_conflicts(first_pokemon, name)
+                ],
             ]
             if second_saved not in second_options:
                 second_saved = PLACEHOLDER
@@ -163,7 +218,12 @@ def _render_selection_workspace(store: ConversationStore) -> None:
                 key="second_pokemon_select",
                 format_func=_local_pokemon_name,
                 on_change=_remember_selection,
-                args=("second_pokemon_select", SECOND_SELECTION_STATE),
+                args=(
+                    "second_pokemon_select",
+                    SECOND_SELECTION_STATE,
+                    "first_pokemon_select",
+                    FIRST_SELECTION_STATE,
+                ),
             )
             st.session_state[SECOND_SELECTION_STATE] = second_pokemon
             st.caption("2匹目は任意です。あとから追加・変更できます。")
@@ -218,7 +278,11 @@ def _render_selection_workspace(store: ConversationStore) -> None:
 
 
 def render() -> None:
-    configure_page("推しポケラボ | ポケモン選択", "pokemon.css")
+    configure_page(
+        "推しポケラボ | ポケモン選択",
+        "pokemon.css",
+        [("ポケモン選択", None)],
+    )
     store = require_conversation_store()
 
     render_sidebar(store)
