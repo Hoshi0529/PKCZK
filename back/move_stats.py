@@ -85,6 +85,7 @@ def move_stats(name: str) -> dict | None:
     return {
         "move_id": move_id,
         "name_ja": move_japanese_name(name) or name,
+        "type_ja": _read_table("move_names_ja_en.json").get(move_id, {}).get("type_ja"),
         "power": power,
         "power_kind": power_kind,
         "power_label": power_label,

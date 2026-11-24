@@ -6,7 +6,7 @@ from pathlib import Path
 import re
 from unicodedata import normalize
 
-from back.move_stats import move_japanese_name
+from back.entity_references import entity_id, entity_name
 
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
@@ -39,6 +39,8 @@ def _name_tables() -> dict[str, dict[str, str]]:
 
 
 def battle_japanese_name(category: str, name: str) -> str:
-    if category == "move":
-        return move_japanese_name(name) or name
+    kind = {"move": "move", "ability": "ability", "held_item": "item"}.get(category)
+    if kind:
+        showdown_id = entity_id(kind, name)
+        return entity_name(kind, showdown_id) if showdown_id else name
     return _name_tables().get(category, {}).get(_name_key(name)) or name

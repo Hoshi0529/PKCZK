@@ -88,7 +88,7 @@ class MoveStatsTest(TestCase):
             ("Bullet Punch", "バレットパンチ", "69.3%"),
             ("Ice Punch", "れいとうパンチ", "52.4%"),
             ("Knock Off", "はたきおとす", "24.4%"),
-            ("Unregistered Move", "Unregistered Move", "4%"),
+            ("Unregistered Move", "技名未登録", "4%"),
         )
         battle_data = {"season": "Current", "rows": [
             {"category": "move", "rank": rank, "name": name, "percentage": percentage}
@@ -152,7 +152,7 @@ class MoveStatsTest(TestCase):
             generate.assert_not_called()
             fetch.assert_called_once_with("venusaur", "Singles")
             self.assertIn("| 1 | こうごうせい | 61% | —（変化技） | —（命中判定なし） |", answer)
-            self.assertIn("| 2 | Unregistered Move | 4% | 未確認 | 未確認 |", answer)
+            self.assertIn("| 2 | 技名未登録 | 4% | 未確認 | 未確認 |", answer)
 
     def test_move_interaction_still_uses_battle_search(self):
         store = MemoryStore()

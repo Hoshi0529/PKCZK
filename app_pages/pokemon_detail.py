@@ -3,13 +3,12 @@ import re
 from html import escape
 from pathlib import Path
 from typing import cast
-from urllib.error import URLError
-from urllib.request import Request, urlopen
 
 import streamlit as st
 
 from back.champions_battle_data import BattleDataResponse, BattleRow, rows_for_category
 from back.conversations import ConversationError, ConversationStore
+from back.pokemon_metadata import fetch_species_metadata
 from ui.chat_session import (
     create_pokemon_conversation,
     open_conversation,
@@ -143,34 +142,7 @@ def _showdown_id_for_name(pokemon_name: str) -> str | None:
 @st.cache_data(ttl=24 * 60 * 60, show_spinner=False)
 def _fetch_species_metadata(pokemon_name: str) -> dict[str, object] | None:
     showdown_id = _showdown_id_for_name(pokemon_name)
-    form = PCBD_FORMS.get(showdown_id) if showdown_id else None
-    if not isinstance(form, dict) or not form.get("metadata_row_available"):
-        return None
-    metadata_name = form.get("metadata_id")
-    if not isinstance(metadata_name, str) or not metadata_name:
-        return None
-    request = Request(
-        f"https://championsbattledata.com/api/metadata/{metadata_name}",
-        headers={"Accept": "application/json", "User-Agent": "pokecham/1.0"},
-    )
-    try:
-        with urlopen(request, timeout=8) as response:
-            payload = json.load(response)
-    except (URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError):
-        return None
-    rows = payload.get("rows", []) if isinstance(payload, dict) else []
-    if not isinstance(rows, list):
-        return None
-    row = next(
-        (
-            item
-            for item in rows
-            if isinstance(item, dict)
-            and item.get("saved_name") == form.get("saved_name")
-        ),
-        None,
-    )
-    return row if isinstance(row, dict) else None
+    return fetch_species_metadata(showdown_id) if showdown_id else None
 
 
 def _metadata_abilities(metadata: dict[str, object] | None, fallback: list[str]) -> list[str]:

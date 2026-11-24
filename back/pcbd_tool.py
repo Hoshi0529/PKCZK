@@ -13,6 +13,7 @@ from back.champions_battle_data import (
     rows_for_category,
 )
 from back.battle_names import battle_japanese_name
+from back.entity_references import entity_id, entity_name
 from back.move_stats import move_stats
 
 
@@ -59,6 +60,9 @@ def _fetch_statistics(showdown_id: str, battle_format: BattleFormat, categories:
                 "percentage": row.get("percentage") or None,
                 "percentage_value": row.get("percentage_value"),
             }
+            kind = {"move": "move", "ability": "ability", "held_item": "item"}.get(category)
+            if kind:
+                entry[f"{kind}_id"] = entity_id(kind, name)
             if category == "move" and (stats := move_stats(name)) is not None:
                 entry["move_stats"] = stats
             statistics[category].append(entry)
@@ -81,7 +85,8 @@ def render_move_ranking(result: dict, name: str, count: int, include_stats: bool
         headers.extend(("基準威力", "基準命中率"))
     table = [headers, ["---"] * len(headers)]
     for move in moves[:count]:
-        display_name = move["name"].replace("|", r"\|").replace("\n", " ").replace("\r", " ")
+        move_id = move.get("move_id") or entity_id("move", move["name"])
+        display_name = entity_name("move", move_id or "")
         row = [str(move["rank"] or "—"), display_name, move["percentage"] or "未確認"]
         if include_stats:
             stats = move.get("move_stats", {})
