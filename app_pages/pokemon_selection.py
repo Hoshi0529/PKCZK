@@ -118,12 +118,6 @@ def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
 @st.fragment
 def _render_selection_workspace(store: ConversationStore) -> None:
     st.markdown(
-        '<div class="advice-progress">'
-        '<span class="advice-progress-step advice-progress-active"><b>01</b> ポケモンを選ぶ</span>'
-        '<span class="advice-progress-line"></span>'
-        '<span class="advice-progress-step"><b>02</b> 個体の型を決める</span>'
-        '</div>'
-        '<div class="page-eyebrow">NEW ADVICE　 ·　 はじめの一歩</div>'
         '<h1 class="page-title">相談する相棒を選ぼう。</h1>'
         '<p class="page-description">名前を入力して検索できます。まず1匹、必要なら2匹目も選べます。</p>',
         unsafe_allow_html=True,
@@ -281,7 +275,6 @@ def render() -> None:
     configure_page(
         "推しポケラボ | ポケモン選択",
         "pokemon.css",
-        [("ポケモン選択", None)],
     )
     store = require_conversation_store()
 
