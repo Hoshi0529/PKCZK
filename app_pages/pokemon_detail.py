@@ -458,7 +458,6 @@ def render() -> None:
     configure_page(
         "推しポケラボ | 個体の詳細設定",
         "pokemon.css",
-        [("ポケモン選択", "/new-advice"), ("個体の詳細設定", None)],
     )
     store = require_conversation_store()
     render_sidebar(store, back_to_selection=True)
@@ -503,12 +502,6 @@ def render() -> None:
     nature_names = _load_local_options("natures.json", "natures") or NATURES
 
     st.markdown(
-        '<div class="advice-progress">'
-        '<span class="advice-progress-step advice-progress-complete"><b>01</b> ポケモンを選ぶ</span>'
-        '<span class="advice-progress-line advice-progress-line-complete"></span>'
-        '<span class="advice-progress-step advice-progress-active"><b>02</b> 個体の型を決める</span>'
-        '</div>'
-        '<div class="page-eyebrow">POKEMON CHAMPIONS　 ·　 BUILD</div>'
         '<h1 class="page-title">相棒の型を組み立てよう。</h1>'
         '<p class="page-description">能力ポイントを調整し、性格や技を選んで相談内容を整えます。</p>',
         unsafe_allow_html=True,
