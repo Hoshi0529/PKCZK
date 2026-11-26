@@ -1,4 +1,3 @@
-from functools import lru_cache
 from html import escape
 from pathlib import Path
 
@@ -8,7 +7,6 @@ import streamlit as st
 STYLE_DIR = Path(__file__).parent / "styles"
 
 
-@lru_cache(maxsize=8)
 def _load_stylesheet(stylesheet: str) -> str:
     return (STYLE_DIR / "base.css").read_text(encoding="utf-8") + (
         STYLE_DIR / stylesheet
@@ -27,7 +25,7 @@ def configure_page(
         initial_sidebar_state="expanded",
     )
     css = _load_stylesheet(stylesheet)
-    st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+    st.html(f"<style>{css}</style>")
     if breadcrumbs:
         trail = []
         for label, url in breadcrumbs:

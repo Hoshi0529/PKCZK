@@ -56,7 +56,7 @@
         gap: 7px;
         margin: 0 0 34px;
         color: var(--ink);
-        font-size: 15px;
+        font-size: 17px;
         font-weight: 750;
         line-height: 20px;
         letter-spacing: -0.02em;
@@ -71,7 +71,7 @@
         border-radius: 6px;
         background: var(--green);
         color: #fff;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     [data-testid="stButton"] > button {
@@ -80,13 +80,13 @@
         border: 0;
         border-radius: 8px;
         font-family: inherit;
-        font-size: 9px;
+        font-size: 16px;
         font-weight: 650;
     }
 
     [data-testid="stButton"] > button p {
         margin: 0 !important;
-        font-size: 9px !important;
+        font-size: 16px !important;
         line-height: 1.2 !important;
     }
 
@@ -104,7 +104,7 @@
     .history-heading {
         margin: 0 0 12px;
         color: #8c9891;
-        font-size: 8px;
+        font-size: 16px;
     }
 
     .history-item {
@@ -114,7 +114,7 @@
         margin: 0 0 12px;
         padding: 3px 5px;
         color: #50635a;
-        font-size: 9px;
+        font-size: 16px;
         line-height: 1.55;
     }
 
@@ -145,7 +145,7 @@
         display: block;
         padding-left: 15px;
         color: #9aa59f;
-        font-size: 8px;
+        font-size: 16px;
     }
 
     .sidebar-bottom {
@@ -162,7 +162,7 @@
         border-radius: 14px;
         background: #fff;
         color: var(--green);
-        font-size: 8px;
+        font-size: 16px;
         font-weight: 600;
         line-height: 1.7;
     }
@@ -176,7 +176,7 @@
         border-radius: 9px;
         background: #dceee2;
         color: #4a6558;
-        font-size: 9px;
+        font-size: 16px;
         font-weight: 650;
     }
 
@@ -186,7 +186,7 @@
         align-items: center;
         padding: 2px 0;
         color: #52665c;
-        font-size: 9px;
+        font-size: 16px;
         font-weight: 600;
     }
 
@@ -199,21 +199,21 @@
         border-radius: 50%;
         background: #d8eee0;
         color: var(--green);
-        font-size: 8px;
+        font-size: 16px;
         font-weight: 700;
     }
 
     .page-eyebrow {
         margin: 0 0 17px;
         color: var(--green);
-        font-size: 7px;
+        font-size: 16px;
         letter-spacing: 0.06em;
     }
 
     .page-title {
         margin: 0 0 14px !important;
         color: var(--ink);
-        font-size: 18px !important;
+        font-size: 20px !important;
         font-weight: 750;
         line-height: 1.3 !important;
         padding: 0 !important;
@@ -222,7 +222,7 @@
     .page-description {
         margin: 0 0 10px !important;
         color: #8b9790;
-        font-size: 9px !important;
+        font-size: 16px !important;
         line-height: 1.6 !important;
     }
 
@@ -251,7 +251,7 @@
         border-radius: 8px;
         background: var(--green);
         color: #fff;
-        font-size: 11px;
+        font-size: 16px;
     }
 
     .st-key-account_changes_card .settings-section-divider {
@@ -277,7 +277,7 @@
     .account-heading {
         margin: 0 0 9px;
         color: var(--ink);
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 750;
         line-height: 1.3;
     }
@@ -285,7 +285,7 @@
     .account-name {
         margin: 0 0 11px;
         color: #4e6258;
-        font-size: 9px;
+        font-size: 16px;
         font-weight: 650;
         line-height: 1.3;
     }
@@ -293,21 +293,21 @@
     .account-description {
         margin: 0 0 9px !important;
         color: #87948c;
-        font-size: 9px !important;
+        font-size: 16px !important;
         line-height: 1.5 !important;
     }
 
     .logout-heading {
         margin: 0 0 6px;
         color: #52665c;
-        font-size: 9px;
+        font-size: 16px;
         font-weight: 700;
     }
 
     .logout-description {
         margin: 0 !important;
         color: #87948c;
-        font-size: 8px !important;
+        font-size: 16px !important;
         line-height: 1.5 !important;
     }
 

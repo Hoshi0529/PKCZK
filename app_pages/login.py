@@ -64,17 +64,10 @@ def render() -> None:
         st.markdown(
             f"""
             <div class="brand"><span class="brand-mark">✦</span><span>推しポケラボ</span></div>
-            <div class="eyebrow">YOUR FAVORITE, YOUR TEAM</div>
             <h1 class="hero-title">好きなポケモンと、<br>勝つ方法を見つけよう。</h1>
             <div class="team-art">
                 {artwork_html}
             </div>
-            <div class="left-copy">
-                相棒の育て方も、仲間選びも。<br>
-                AIと話しながら、あなただけの作戦を。
-            </div>
-            <div class="left-note">今日も、相棒と一歩ずつ。</div>
-            <div class="left-footer">推しポケラボ / 好きな一匹からはじまる作戦会議</div>
             """,
             unsafe_allow_html=True,
         )
@@ -173,11 +166,6 @@ def render() -> None:
                     else:
                         st.session_state.account_notice = result.notice
                     st.rerun()
-
-        st.markdown(
-            '<p class="form-footnote">好きなポケモンで勝ちたい。その気持ちを応援するよ。</p>',
-            unsafe_allow_html=True,
-        )
 
 
 render()

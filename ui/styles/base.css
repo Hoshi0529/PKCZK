@@ -1,3 +1,12 @@
+    [data-testid="stTextInput"] input,
+    [data-testid="stNumberInput"] input,
+    [data-testid="stChatInput"] textarea,
+    [data-testid="stSelectbox"] [data-baseweb="select"] > div,
+    [data-testid="stButton"] button p,
+    [data-testid="stFormSubmitButton"] button p {
+        font-size: 18px !important;
+    }
+
     .stApp {
         background: #e8eee7;
         color: var(--ink);
@@ -23,7 +32,7 @@
         gap: 9px;
         margin: 0 0 18px;
         color: #829088;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .breadcrumb-home {
@@ -105,7 +114,7 @@
     .st-key-shared_sidebar_history .history-heading {
         margin: 0 0 0.75rem;
         color: #52665c;
-        font-size: 0.8rem;
+        font-size: calc(0.875rem + 2px);
         font-weight: 700;
     }
 
@@ -124,5 +133,5 @@
         padding-top: 12px;
         border-top: 1px solid #e6ebe5;
         color: #52665c;
-        font-size: 13px;
+        font-size: 16px;
     }

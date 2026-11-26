@@ -48,7 +48,7 @@
     gap: 8px;
     margin: 0 0 34px;
     color: var(--ink);
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 750;
 }
 
@@ -67,7 +67,7 @@
     min-height: 34px;
     border-radius: 9px;
     font-family: inherit;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 650;
 }
 
@@ -84,7 +84,7 @@
     border-radius: 7px;
     background: #f7f9f7;
     color: var(--green);
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1;
 }
 
@@ -105,7 +105,7 @@
 .history-heading {
     margin: 22px 0 12px;
     color: #8c9891;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .history-item {
@@ -114,13 +114,13 @@
     gap: 9px;
     margin: 0 0 13px;
     color: #50635a;
-    font-size: 11px;
+    font-size: 16px;
 }
 
 .history-item small {
     display: block;
     color: #9aa59f;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .history-icon { color: #81948a; }
@@ -138,20 +138,20 @@
     border-radius: 13px;
     background: #fff;
     color: var(--green);
-    font-size: 10px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
 .sidebar-user {
     margin-top: 12px;
     color: #52665c;
-    font-size: 11px;
+    font-size: 16px;
 }
 
 .step-label {
     margin: 0 0 24px;
     color: #536960;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 650;
 }
 
@@ -162,14 +162,14 @@
     border-radius: 20px;
     background: #eaf5ee;
     color: var(--green);
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .page-title {
     margin: 0 0 8px !important;
     padding: 0 !important;
     color: var(--ink);
-    font-size: clamp(20px, 2.4vw, 27px) !important;
+    font-size: calc(clamp(20px, 2.4vw, 27px) + 2px) !important;
     font-weight: 750;
     line-height: 1.35 !important;
 }
@@ -177,7 +177,7 @@
 .page-description {
     margin: 0 0 26px !important;
     color: var(--muted);
-    font-size: 11px !important;
+    font-size: 16px !important;
     line-height: 1.7 !important;
 }
 
@@ -193,7 +193,7 @@
     align-items: center;
     gap: 7px;
     color: #a0aaa3;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
 }
@@ -208,7 +208,7 @@
     border-radius: 50%;
     background: #fff;
     color: #8b9990;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .advice-progress-active { color: var(--ink); }
@@ -230,7 +230,7 @@
 .section-title {
     margin: 0 0 12px;
     color: var(--ink);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -255,7 +255,7 @@
     gap: 7px;
     margin: 17px 0 8px;
     color: var(--ink);
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -270,7 +270,7 @@
     border-radius: 50%;
     background: #eaf5ee;
     color: var(--green);
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .picker-slot-number-optional {
@@ -286,7 +286,7 @@
 .selected-panel-hint {
     margin: -6px 0 12px;
     color: #89968e;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .count-pill {
@@ -296,7 +296,7 @@
     border-radius: 12px;
     background: #eaf4ec;
     color: var(--green);
-    font-size: 9px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -306,7 +306,7 @@
     border-color: var(--line);
     border-radius: 9px;
     background: #fff;
-    font-size: 11px;
+    font-size: 16px;
 }
 
 [class*="st-key-pokemon_row_"] {
@@ -327,14 +327,14 @@
 
 .pokemon-name {
     color: var(--ink);
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 700;
 }
 
 .pokemon-number,
 .detail-number {
     color: #8c9991;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .type-pill {
@@ -343,7 +343,7 @@
     border-radius: 12px;
     background: color-mix(in srgb, var(--type-color) 12%, white);
     color: var(--type-color);
-    font-size: 9px;
+    font-size: 16px;
     white-space: nowrap;
 }
 
@@ -351,7 +351,7 @@
     min-height: 26px;
     height: 26px;
     padding: 2px 8px;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 [class*="st-key-pokemon_row_"] [data-testid="stButton"] button[kind="primary"] {
@@ -362,7 +362,7 @@
 
 [data-testid="stCaptionContainer"] {
     color: #89968e;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .st-key-pokemon_detail_card,
@@ -376,13 +376,13 @@
 .detail-name {
     margin: 5px 0 9px !important;
     color: var(--ink);
-    font-size: 16px !important;
+    font-size: 18px !important;
 }
 
 .pokemon-description {
     margin: 7px 0 10px !important;
     color: #718078;
-    font-size: 10px !important;
+    font-size: 16px !important;
     line-height: 1.65 !important;
 }
 
@@ -399,7 +399,7 @@
     border-radius: 13px;
     background: #f7f7f0;
     color: #718078;
-    font-size: 11px;
+    font-size: 16px;
 }
 
 .empty-selection {
@@ -422,7 +422,7 @@
     border-radius: 11px;
     background: #eaf5ee;
     color: var(--green);
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .partner-heading { margin-top: 22px; }
@@ -430,7 +430,7 @@
 .selection-summary {
     margin: 21px 0 12px;
     color: #718078;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .st-key-build_editor_card {
@@ -452,21 +452,21 @@
 .build-identity-eyebrow {
     margin-bottom: 4px;
     color: #839189;
-    font-size: 9px;
+    font-size: 16px;
     font-weight: 650;
 }
 
 .build-pokemon-name {
     margin-top: 3px;
     color: var(--ink);
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 750;
 }
 
 .build-section-title {
     margin: 19px 0 9px;
     color: var(--ink);
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -497,17 +497,17 @@
     justify-content: space-between;
     margin-bottom: 8px;
     color: #718078;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .stat-points-total b {
     color: var(--green);
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .stat-points-total small {
     color: #8b9990;
-    font-size: 9px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -529,7 +529,7 @@
 .base-stat {
     padding: 7px 0;
     color: #8b9790;
-    font-size: 9px;
+    font-size: 16px;
     white-space: nowrap;
 }
 
@@ -541,7 +541,7 @@
 .stat-table-header {
     padding: 0 0 5px;
     color: #85938a;
-    font-size: 8px;
+    font-size: 16px;
     font-weight: 650;
     text-align: center;
     white-space: nowrap;
@@ -549,7 +549,7 @@
 
 .stat-name {
     color: #52665c;
-    font-size: 9px;
+    font-size: 16px;
     font-weight: 650;
     white-space: nowrap;
 }
@@ -559,7 +559,7 @@
     flex-wrap: wrap;
     gap: 6px;
     margin-top: 5px;
-    font-size: 9px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -569,7 +569,7 @@
 
 .nature-mark {
     margin-left: 3px;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 800;
 }
 
@@ -578,7 +578,7 @@
     border-radius: 7px;
     background: #eaf5ee;
     color: var(--green);
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 750;
     text-align: center;
 }
@@ -589,14 +589,14 @@
     border-radius: 11px;
     background: #eaf5ee;
     color: #52685c;
-    font-size: 10px;
+    font-size: 16px;
     line-height: 1.7;
     overflow-wrap: anywhere;
 }
 
 .build-summary b {
     color: var(--green);
-    font-size: 11px;
+    font-size: 16px;
 }
 
 .build-summary span {
@@ -610,17 +610,17 @@
     gap: 9px;
     margin: 11px 0 16px;
     color: #52665c;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .chat-intro-mark {
     color: var(--green);
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .chat-intro b {
     color: var(--green);
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .chat-intro p {
@@ -674,7 +674,7 @@
     margin: 0;
     padding: 0;
     color: var(--ink);
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.4;
 }
 
@@ -705,7 +705,7 @@
     flex: 1;
     min-width: 0;
     color: #52665c;
-    font-size: 11px;
+    font-size: 16px;
     overflow-wrap: anywhere;
 }
 
@@ -750,20 +750,20 @@
 .chat-section-heading {
     margin: 16px 0 8px;
     color: var(--ink);
-    font-size: 11px;
+    font-size: 18px;
     font-weight: 700;
 }
 
 .chat-empty-note {
     margin: 12px 0 20px;
     color: #98a39c;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .api-attribution {
     margin: 12px 0 4px;
     color: #96a199;
-    font-size: 8px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -781,7 +781,7 @@
 [data-testid="stChatInput"] textarea {
     border-color: var(--line);
     border-radius: 11px;
-    font-size: 10px;
+    font-size: 18px;
 }
 
 @media (max-width: 760px) {
@@ -808,7 +808,7 @@
 [data-testid="stSelectbox"] [data-baseweb="select"] > div {
     border-color: var(--line);
     border-radius: 8px;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .st-key-build_editor_card [data-testid="stHorizontalBlock"] {
@@ -819,7 +819,7 @@
     .st-key-build_editor_card { padding: 14px; }
     .st-key-selection_picker_panel,
     .st-key-selected_companions_panel { padding: 15px; }
-    .base-stat { font-size: 8px; }
+    .base-stat { font-size: 16px; }
 }
 
 [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stHorizontalBlock"]:last-child [data-testid="stButton"] button[kind="primary"] {
@@ -863,7 +863,7 @@
     .sidebar-bottom, .sidebar-user { display: none; }
     [data-testid="stColumn"]:first-child [data-testid="stButton"] { display: inline-block; width: 48%; }
     .advice-progress { gap: 6px; margin-bottom: 18px; }
-    .advice-progress-step { gap: 5px; font-size: 9px; }
+    .advice-progress-step { gap: 5px; font-size: 16px; }
     .advice-progress-line { width: 18px; }
     .st-key-selection_picker_panel,
     .st-key-selected_companions_panel { padding: 13px; }
