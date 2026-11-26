@@ -860,7 +860,7 @@
     }
 
     .brand { margin-bottom: 10px; }
-    .history-heading, .history-item, .sidebar-bottom, .sidebar-user { display: none; }
+    .sidebar-bottom, .sidebar-user { display: none; }
     [data-testid="stColumn"]:first-child [data-testid="stButton"] { display: inline-block; width: 48%; }
     .advice-progress { gap: 6px; margin-bottom: 18px; }
     .advice-progress-step { gap: 5px; font-size: 9px; }

@@ -58,16 +58,65 @@
 
     [data-testid="stSidebar"] {
         background: #f6f6ee;
+        overflow: hidden;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: hidden !important;
+        padding-top: 0.5rem !important;
     }
 
     [data-testid="stSidebarUserContent"] > div:first-child {
         display: flex;
-        min-height: calc(100vh - 2rem);
+        height: 100%;
+        min-height: 0;
         flex-direction: column;
     }
 
+    .st-key-shared_sidebar_top {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        padding-top: 0.25rem;
+        background: #f6f6ee;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h2 {
+        margin-top: 0.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .st-key-shared_sidebar_history {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .st-key-shared_sidebar_history .history-heading {
+        margin: 0 0 0.75rem;
+        color: #52665c;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
     .st-key-shared_sidebar_account_actions {
+        flex: 0 0 auto;
+        z-index: 2;
+        box-sizing: border-box;
+        width: 100%;
         margin-top: auto;
+        padding: 0.5rem 0 1rem;
+        background: #f6f6ee;
     }
 
     .shared-sidebar-user {
