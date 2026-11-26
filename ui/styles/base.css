@@ -8,7 +8,8 @@
     }
 
     .stApp {
-        background: #e8eee7;
+        --app-background: #e8eee7;
+        background: var(--app-background);
         color: var(--ink);
         font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
     }
@@ -19,7 +20,7 @@
     }
 
     [data-testid="stHeader"] {
-        background: rgba(255, 255, 255, 0.96);
+        background: var(--app-background);
     }
 
     [data-testid="stMainBlockContainer"] {

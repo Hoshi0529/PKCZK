@@ -16,7 +16,7 @@
     }
 
     [data-testid="stHorizontalBlock"] {
-        align-items: flex-start;
+        align-items: stretch;
         gap: 0 !important;
         min-height: 0;
         overflow: hidden;
@@ -68,6 +68,16 @@
 
     [data-testid="stForm"] [data-testid="stVerticalBlock"] {
         gap: 21px !important;
+    }
+
+    [data-testid="stForm"] > [data-testid="stVerticalBlock"] {
+        min-height: 388px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    [data-testid="stForm"] > [data-testid="stVerticalBlock"] > [data-testid="stElementContainer"]:has([data-testid="stFormSubmitButton"]) {
+        margin-top: auto;
     }
 
     .brand {
@@ -264,6 +274,10 @@
     }
 
     @media (max-width: 760px) {
+        .form-subtitle {
+            min-height: 2.4em;
+        }
+
         [data-testid="stMainBlockContainer"] {
             padding: 8px;
         }
