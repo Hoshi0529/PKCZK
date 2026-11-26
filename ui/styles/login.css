@@ -16,9 +16,9 @@
     }
 
     [data-testid="stHorizontalBlock"] {
-        align-items: stretch;
+        align-items: flex-start;
         gap: 0 !important;
-        min-height: calc(100vh - 8px);
+        min-height: 0;
         overflow: hidden;
         border-radius: 14px;
         background: #fff;
@@ -30,11 +30,12 @@
 
     [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child {
         background: var(--pale);
+        padding-bottom: 40px;
     }
 
     [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(2) {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         background: #fff;
     }
@@ -42,12 +43,11 @@
     [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(2) > [data-testid="stVerticalBlock"] {
         width: 100%;
         max-width: 400px;
-        margin: auto;
+        margin: 0 auto;
         gap: 4px !important;
         flex: 0 1 auto !important;
         height: auto !important;
-        position: relative;
-        top: 4px;
+
     }
 
     [data-testid="stHeadingWithActionElements"] h2 {
@@ -106,25 +106,24 @@
     .team-art {
         position: relative;
         display: flex;
-        height: 120px;
         align-items: flex-end;
         justify-content: center;
-        gap: 34px;
-        margin: 92px 0 8px;
-        overflow: hidden;
+        gap: 16px;
+        margin: 32px 0 0;
     }
 
     .team-art img {
         display: block;
         width: auto;
-        max-width: 52%;
-        height: 120px;
+        max-width: calc((100% - 16px) / 2);
+        height: auto;
+        max-height: 260px;
         object-fit: contain;
         object-position: center bottom;
     }
 
     .team-art img:first-child {
-        height: 80px;
+        max-height: 200px;
     }
 
     .form-heading {
@@ -205,31 +204,51 @@
     }
 
     [data-testid="stTextInputRootElement"] {
-        height: 36px !important;
-        min-height: 36px !important;
-        align-items: flex-start !important;
+        height: 44px !important;
+        min-height: 44px !important;
+        align-items: center !important;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        color: var(--ink);
     }
 
     [data-testid="stTextInput"] input {
-        height: 36px !important;
-        min-height: 36px !important;
+        height: 44px !important;
+        min-height: 44px !important;
         box-sizing: border-box;
         padding: 4px 8px 4px 12px;
-        border: 1px solid var(--line);
-        border-radius: 9px;
-        background: #fff;
-        color: var(--ink);
+        border: 0;
+        background: transparent;
+        color: var(--ink) !important;
         font-size: 18px !important;
     }
 
-    [data-testid="stTextInput"] input:focus {
+    [data-testid="stTextInput"] input::placeholder {
+        color: #7d8c84;
+        opacity: 1;
+    }
+
+    [data-testid="stTextInputRootElement"] button {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        flex: 0 0 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: var(--ink);
+    }
+
+    [data-testid="stTextInputRootElement"]:focus-within {
         border-color: #80b49d;
         box-shadow: 0 0 0 1px #80b49d;
     }
 
     [data-testid="stFormSubmitButton"] button {
-        min-height: 28px;
-        height: 28px;
+        min-height: 48px;
+        height: 48px;
         margin-top: 0;
         border: 0;
         border-radius: 9px;
@@ -257,21 +276,24 @@
             padding: 28px 24px;
         }
 
+        [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child {
+            padding-bottom: 40px;
+        }
+
         [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(2) > [data-testid="stVerticalBlock"] {
             max-width: 100%;
         }
 
         .team-art {
-            height: 150px;
             margin-top: 18px;
         }
 
         .team-art img {
-            height: 125px;
+            max-height: 180px;
         }
 
         .team-art img:first-child {
-            height: 90px;
+            max-height: 140px;
         }
 
         }

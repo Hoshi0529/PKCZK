@@ -72,6 +72,7 @@
 
     [data-testid="stSidebar"] [data-testid="stSidebarContent"] {
         height: 100vh;
+        height: 100dvh;
         display: flex;
         flex-direction: column;
         overflow: hidden !important;
@@ -81,7 +82,7 @@
         flex: 1 1 auto;
         min-height: 0;
         overflow: hidden !important;
-        padding-top: 0.5rem !important;
+        padding-block: 0.5rem 0 !important;
     }
 
     [data-testid="stSidebarUserContent"] > div:first-child {
@@ -92,9 +93,7 @@
     }
 
     .st-key-shared_sidebar_top {
-        position: sticky;
-        top: 0;
-        z-index: 3;
+        flex: 0 0 auto;
         padding-top: 0.25rem;
         background: #f6f6ee;
     }
@@ -104,15 +103,16 @@
         margin-bottom: 0.75rem;
     }
 
+    [data-testid="stLayoutWrapper"]:has(> .st-key-shared_sidebar_history),
     .st-key-shared_sidebar_history {
-        flex: 1 1 auto;
+        flex: 1 1 0;
         min-height: 0;
         overflow-y: auto;
         overscroll-behavior: contain;
     }
 
-    .st-key-shared_sidebar_history .history-heading {
-        margin: 0 0 0.75rem;
+    .st-key-shared_sidebar_top .history-heading {
+        margin: 0;
         color: #52665c;
         font-size: calc(0.875rem + 2px);
         font-weight: 700;

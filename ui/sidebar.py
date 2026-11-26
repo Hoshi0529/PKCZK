@@ -17,17 +17,12 @@ def account_display_name(user) -> str:
     return "\u30e6\u30fc\u30b6\u30fc"
 
 
-def render_sidebar(store: ConversationStore, *, back_to_selection: bool = False) -> None:
+def render_sidebar(store: ConversationStore) -> None:
     with st.sidebar:
         with st.container(key="shared_sidebar_top"):
             st.markdown("## \u63a8\u3057\u30dd\u30b1\u30e9\u30dc")
 
-            label = (
-                "\u2190 \u30dd\u30b1\u30e2\u30f3\u9078\u629e\u306b\u623b\u308b"
-                if back_to_selection
-                else "\uff0b \u65b0\u3057\u3044\u76f8\u8ac7\u3092\u59cb\u3081\u308b"
-            )
-            if st.button(label, use_container_width=True, key="shared_sidebar_new_advice"):
+            if st.button("＋ 新しい相談をはじめる", use_container_width=True, key="shared_sidebar_new_advice"):
                 for key in (
                     "first_pokemon_select",
                     "second_pokemon_select",
@@ -36,6 +31,8 @@ def render_sidebar(store: ConversationStore, *, back_to_selection: bool = False)
                 ):
                     st.session_state.pop(key, None)
                 st.switch_page("app_pages/pokemon_selection.py")
+
+            st.markdown('<div class="history-heading">相談履歴</div>', unsafe_allow_html=True)
 
         with st.container(key="shared_sidebar_history"):
             render_history(store)

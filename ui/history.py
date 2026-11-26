@@ -7,7 +7,6 @@ from ui.chat_session import open_conversation
 
 
 def render_history(store: ConversationStore) -> None:
-    st.markdown('<div class="history-heading">\u30c1\u30e3\u30c3\u30c8\u5c65\u6b74</div>', unsafe_allow_html=True)
     # Streamlit redraws the sidebar on every interaction. Cache this user's
     # recent history briefly to avoid a database request on each rerun.
     cache_key = f"conversation_history:{store.user_id}"
@@ -18,7 +17,7 @@ def render_history(store: ConversationStore) -> None:
         st.session_state[cache_key] = cached
     conversations = cached[1]
     if not conversations:
-        st.caption("\u30c1\u30e3\u30c3\u30c8\u5c65\u6b74\u306f\u307e\u3060\u3042\u308a\u307e\u305b\u3093")
+        st.caption("相談履歴はまだありません")
         return
 
     for conversation in conversations:

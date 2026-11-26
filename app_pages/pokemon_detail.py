@@ -432,7 +432,7 @@ def render() -> None:
         "pokemon.css",
     )
     store = require_conversation_store()
-    render_sidebar(store, back_to_selection=True)
+    render_sidebar(store)
     pokemon_name = cast(str | None, st.session_state.get("pokemon_detail_target"))
     raw_pokemon = st.session_state.get("pokemon_detail_profile")
     if not pokemon_name or not raw_pokemon:
