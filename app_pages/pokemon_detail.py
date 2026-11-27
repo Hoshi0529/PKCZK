@@ -117,6 +117,15 @@ NATURE_MODIFIERS: dict[str, tuple[StatName, StatName]] = {
 }
 
 
+def _format_nature_option(nature: str) -> str:
+    modifier = NATURE_MODIFIERS.get(nature)
+    if modifier:
+        return f"{nature}　🔴↑{modifier[0]} / 🔵↓{modifier[1]}"
+    if nature == "指定なし":
+        return nature
+    return f"{nature}　（補正なし）"
+
+
 def _category_rows(
     battle_data: BattleDataResponse | None, category: str
 ) -> list[BattleRow]:
@@ -499,6 +508,7 @@ def render() -> None:
             nature = st.selectbox(
                 "性格",
                 nature_names,
+                format_func=_format_nature_option,
                 key=_key(pokemon_name, "nature"),
                 index=nature_names.index(saved_nature) if saved_nature in nature_names else 0,
             )
