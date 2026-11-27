@@ -3,116 +3,63 @@ from html import escape
 import streamlit as st
 
 from back.conversations import ConversationError, ConversationStore
-from ui.chat_session import create_pokemon_conversation, remember_selected_pokemon, require_conversation_store
-from ui.layout import configure_page
-from ui.pokemon_catalog import (
-    POKEMON,
-    is_mega_pokemon,
-    pokemon_image_url,
-    pokemon_selection_conflicts,
+from ui.chat_session import (
+    create_pokemon_conversation,
+    open_conversation,
+    remember_selected_pokemon,
+    require_conversation_store,
 )
+from ui.layout import configure_page
+from ui.pokemon_catalog import POKEMON, pokemon_image_url, pokemon_selection_conflicts
 from ui.sidebar import render_sidebar
-from ui.pokemon_types import PokemonProfile
 
 PLACEHOLDER = "選択してください"
-FIRST_SELECTION_STATE = "new_advice_first_pokemon"
-SECOND_SELECTION_STATE = "new_advice_second_pokemon"
 
 
-def _local_pokemon_name(pokemon_name: str) -> str:
-    return pokemon_name
-
-
-def _start_new_advice(store: ConversationStore) -> None:
-    first_pokemon = st.session_state.get("first_pokemon_select", PLACEHOLDER)
-    second_pokemon = st.session_state.get("second_pokemon_select", PLACEHOLDER)
-    selected_pokemon = [
-        name
-        for name in (first_pokemon, second_pokemon)
-        if name and name != PLACEHOLDER
-    ]
-
-    active_id = st.session_state.get("active_conversation_id")
-    active_pokemon = st.session_state.get("conversation_pokemon", {}).get(active_id)
-    if selected_pokemon and active_pokemon != selected_pokemon:
-        try:
-            conversation = create_pokemon_conversation(store, selected_pokemon)
-        except ConversationError as error:
-            st.error(str(error))
-            return
-        st.session_state.active_conversation_id = conversation["id"]
-        remember_selected_pokemon(conversation["id"], selected_pokemon[0], selected_pokemon[1] if len(selected_pokemon) > 1 else "")
-
-    for key in (
-        "first_pokemon_select",
-        "second_pokemon_select",
-        FIRST_SELECTION_STATE,
-        SECOND_SELECTION_STATE,
-    ):
-        st.session_state.pop(key, None)
-
-
-def _remember_selection(
-    widget_key: str,
-    saved_key: str,
-    other_widget_key: str,
-    other_saved_key: str,
-) -> None:
-    selected = st.session_state.get(widget_key, PLACEHOLDER)
-    other_selected = st.session_state.get(
-        other_widget_key, st.session_state.get(other_saved_key, PLACEHOLDER)
+def _saved_selection(slot: str) -> str:
+    name = st.session_state.get(
+        f"{slot}_pokemon_select", st.session_state.get(f"new_advice_{slot}_pokemon")
     )
-    if pokemon_selection_conflicts(selected, other_selected):
-        st.session_state[other_widget_key] = PLACEHOLDER
-        st.session_state[other_saved_key] = PLACEHOLDER
-    st.session_state[saved_key] = selected
+    return name if name in POKEMON else PLACEHOLDER
 
 
-def _render_pokemon_detail(pokemon_name: str, card_key: str) -> None:
-    pokemon: PokemonProfile = POKEMON[pokemon_name]
-    display_name = _local_pokemon_name(pokemon_name)
-    image_url = pokemon_image_url(pokemon_name, pokemon["image"])
-    pokemon_type = pokemon["type"]
-    with st.container(key=card_key):
-        art_col, text_col = st.columns([0.42, 0.58], vertical_alignment="center")
-        with art_col:
-            if image_url:
-                st.markdown(
-                    f'<img src="{escape(image_url, quote=True)}" '
-                    f'alt="{escape(display_name, quote=True)}" '
-                    'width="112" loading="lazy" style="object-fit:contain">',
-                    unsafe_allow_html=True,
-                )
-        with text_col:
-            number_and_type = "　 ·　".join(
-                escape(value) for value in (pokemon["number"], pokemon_type) if value
+def _render_slot(slot: str, saved: str, other: str) -> str:
+    label = "1匹目（必須）" if slot == "first" else "2匹目（任意）"
+    options = [PLACEHOLDER] + [
+        name for name in POKEMON
+        if name != other and not pokemon_selection_conflicts(name, other)
+    ]
+    with st.container(key=f"selection_{slot}_panel"):
+        selected = st.selectbox(
+            label, options, index=options.index(saved), key=f"{slot}_pokemon_select"
+        )
+        st.session_state[f"new_advice_{slot}_pokemon"] = selected
+        profile = POKEMON.get(selected)
+        if profile:
+            image_url = pokemon_image_url(selected, profile["image"])
+            artwork = (
+                f'<img src="{escape(image_url, quote=True)}" alt="{escape(selected)}">'
+                if image_url else "画像未登録"
             )
-            st.markdown(
-                f'<div class="detail-number">{number_and_type}</div>'
-                f'<h2 class="detail-name">{escape(display_name)}</h2>'
-                f'<span class="type-pill" style="--type-color:{pokemon["color"]}">{escape(pokemon_type)}</span>'
-                if pokemon_type
-                else "",
-                unsafe_allow_html=True,
+            preview = (
+                f'<h2>{escape(selected)}</h2>'
+                f'<span class="type-pill" style="--type-color:{escape(profile["color"])}">'
+                f'{escape(profile["type"])}</span><div class="selection-art">{artwork}</div>'
             )
-        if pokemon["description"]:
-            st.markdown(
-                f'<p class="pokemon-description">{escape(pokemon["description"])}</p>',
-                unsafe_allow_html=True,
-            )
-        elif not pokemon_type:
-            st.caption("タイプ・図鑑説明データは未登録です。")
+        else:
+            preview = '<p>ポケモンを選ぶとここに表示されます。</p>'
+        st.markdown(
+            f'<div class="selection-preview">{preview}</div>', unsafe_allow_html=True
+        )
         if st.button(
-            "個体の型を設定する",
-            key=f"configure_build_{pokemon_name}",
-            use_container_width=True,
+            "個体の型を設定する", key=f"configure_{slot}_build",
+            use_container_width=True, disabled=profile is None,
         ):
-            st.session_state.pokemon_detail_target = pokemon_name
-            st.session_state.pokemon_detail_profile = {**pokemon, "image": image_url}
-            st.session_state.pokemon_detail_slot = (
-                "second" if card_key == "partner_detail_card" else "first"
-            )
+            st.session_state.pokemon_detail_target = selected
+            st.session_state.pokemon_detail_profile = {**profile, "image": image_url}
+            st.session_state.pokemon_detail_slot = slot
             st.switch_page("app_pages/pokemon_detail.py")
+    return selected
 
 
 @st.fragment
@@ -122,162 +69,35 @@ def _render_selection_workspace(store: ConversationStore) -> None:
         '<p class="page-description">名前を入力して検索できます。まず1匹、必要なら2匹目も選べます。</p>',
         unsafe_allow_html=True,
     )
+    first = _saved_selection("first")
+    second = _saved_selection("second")
+    if first != PLACEHOLDER and (first == second or pokemon_selection_conflicts(first, second)):
+        second = PLACEHOLDER
+        st.session_state["second_pokemon_select"] = second
 
-    roster, details = st.columns([1.04, 0.96], gap="large")
-    with roster:
-        with st.container(key="selection_picker_panel"):
-            st.markdown(
-                '<div class="section-title">相談するポケモン</div>'
-                '<div class="picker-slot-title">'
-                '<span class="picker-slot-number">1</span> 1匹目'
-                '<span class="count-pill">必須</span></div>',
-                unsafe_allow_html=True,
-            )
-            first_saved = st.session_state.get(
-                "first_pokemon_select",
-                st.session_state.get(FIRST_SELECTION_STATE, PLACEHOLDER),
-            )
-            second_saved = st.session_state.get(
-                "second_pokemon_select",
-                st.session_state.get(SECOND_SELECTION_STATE, PLACEHOLDER),
-            )
-            if (
-                pokemon_selection_conflicts(first_saved, second_saved)
-                or is_mega_pokemon(first_saved) and is_mega_pokemon(second_saved)
-            ):
-                second_saved = PLACEHOLDER
-                st.session_state[SECOND_SELECTION_STATE] = PLACEHOLDER
-                st.session_state["second_pokemon_select"] = PLACEHOLDER
-            first_options = [
-                PLACEHOLDER,
-                *[
-                    name
-                    for name in POKEMON
-                    if not pokemon_selection_conflicts(name, second_saved)
-                ],
-            ]
-            if first_saved not in first_options:
-                first_saved = PLACEHOLDER
-            first_pokemon = st.selectbox(
-                "1匹目のポケモン",
-                first_options,
-                index=first_options.index(first_saved),
-                label_visibility="collapsed",
-                key="first_pokemon_select",
-                format_func=_local_pokemon_name,
-                on_change=_remember_selection,
-                args=(
-                    "first_pokemon_select",
-                    FIRST_SELECTION_STATE,
-                    "second_pokemon_select",
-                    SECOND_SELECTION_STATE,
-                ),
-            )
-            st.session_state[FIRST_SELECTION_STATE] = first_pokemon
-
-            st.markdown(
-                '<div class="picker-slot-title picker-slot-second">'
-                '<span class="picker-slot-number picker-slot-number-optional">2</span> 2匹目'
-                '<span class="count-pill count-pill-optional">任意</span></div>',
-                unsafe_allow_html=True,
-            )
-            second_saved = st.session_state.get(
-                "second_pokemon_select",
-                st.session_state.get(SECOND_SELECTION_STATE, PLACEHOLDER),
-            )
-            if (
-                second_saved == first_pokemon
-                or pokemon_selection_conflicts(first_pokemon, second_saved)
-                or is_mega_pokemon(first_pokemon) and is_mega_pokemon(second_saved)
-            ):
-                second_saved = PLACEHOLDER
-                st.session_state[SECOND_SELECTION_STATE] = PLACEHOLDER
-                st.session_state["second_pokemon_select"] = PLACEHOLDER
-            second_options = [
-                PLACEHOLDER,
-                *[
-                    name
-                    for name in POKEMON
-                    if name != first_pokemon
-                    and not pokemon_selection_conflicts(first_pokemon, name)
-                ],
-            ]
-            if second_saved not in second_options:
-                second_saved = PLACEHOLDER
-            second_pokemon = st.selectbox(
-                "2匹目のポケモン",
-                second_options,
-                index=second_options.index(second_saved),
-                label_visibility="collapsed",
-                key="second_pokemon_select",
-                format_func=_local_pokemon_name,
-                on_change=_remember_selection,
-                args=(
-                    "second_pokemon_select",
-                    SECOND_SELECTION_STATE,
-                    "first_pokemon_select",
-                    FIRST_SELECTION_STATE,
-                ),
-            )
-            st.session_state[SECOND_SELECTION_STATE] = second_pokemon
-            st.caption("2匹目は任意です。あとから追加・変更できます。")
-
-    with details:
-        with st.container(key="selected_companions_panel"):
-            st.markdown(
-                '<div class="section-title">選んだ相棒</div>'
-                '<div class="selected-panel-hint">選んだポケモンの情報がここに表示されます。</div>',
-                unsafe_allow_html=True,
-            )
-            if first_pokemon != PLACEHOLDER:
-                _render_pokemon_detail(first_pokemon, "pokemon_detail_card")
-            if second_pokemon != PLACEHOLDER:
-                _render_pokemon_detail(second_pokemon, "partner_detail_card")
-            if first_pokemon == PLACEHOLDER and second_pokemon == PLACEHOLDER:
-                st.markdown(
-                    '<div class="empty-selection">'
-                    '<span class="empty-selection-mark">✦</span>'
-                    '<span>ポケモンを選ぶと、ここに相棒カードが表示されます。</span>'
-                    '</div>',
-                    unsafe_allow_html=True,
-                )
-
-    if first_pokemon != PLACEHOLDER:
-        summary = f"選択中: {first_pokemon}"
-        if second_pokemon != PLACEHOLDER:
-            summary += f" と {second_pokemon}"
-        st.markdown(f'<div class="selection-summary">{escape(summary)}</div>', unsafe_allow_html=True)
-
-    _, action_col = st.columns([0.48, 0.52])
-    with action_col:
+    with st.container(key="selection_workspace"):
+        left, right = st.columns(2)
+        with left:
+            first = _render_slot("first", first, second)
+        with right:
+            second = _render_slot("second", second, first)
         if st.button(
-            "個体の型を決める　→",
-            type="primary",
-            use_container_width=True,
-            key="continue_button",
-            disabled=first_pokemon == PLACEHOLDER,
+            "チャットへ進む", type="primary", use_container_width=True,
+            key="continue_button", disabled=first == PLACEHOLDER,
         ):
-            st.session_state[FIRST_SELECTION_STATE] = first_pokemon
-            st.session_state[SECOND_SELECTION_STATE] = second_pokemon
-            selected_profile = POKEMON[first_pokemon]
-            st.session_state.pokemon_detail_target = first_pokemon
-            st.session_state.pokemon_detail_profile = {
-                **selected_profile,
-                "image": pokemon_image_url(
-                    first_pokemon, selected_profile["image"]
-                ),
-            }
-            st.session_state.pokemon_detail_slot = "first"
-            st.switch_page("app_pages/pokemon_detail.py")
+            partner = "" if second == PLACEHOLDER else second
+            try:
+                conversation = create_pokemon_conversation(store, (first, partner))
+            except ConversationError as error:
+                st.error(str(error))
+                return
+            remember_selected_pokemon(conversation["id"], first, partner)
+            open_conversation(conversation["id"], opening_for=store.user_id)
 
 
 def render() -> None:
-    configure_page(
-        "推しポケラボ | ポケモン選択",
-        "pokemon.css",
-    )
+    configure_page("推しポケラボ | ポケモン選択", "pokemon.css")
     store = require_conversation_store()
-
     render_sidebar(store)
     _render_selection_workspace(store)
 
